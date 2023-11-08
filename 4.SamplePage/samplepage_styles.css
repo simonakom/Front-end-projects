@@ -1,0 +1,129 @@
+
+html{
+scroll-behavior: smooth;
+}
+
+.container {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: dashed;
+    font-size: 20px;
+    color: rgba(98, 17, 173, 0.781);
+}
+
+a:hover {
+    color:rgb(193, 140, 145);
+    font-size: 22px;
+}
+
+a:visited{
+    color: rgb(74, 2, 60);
+}
+
+a:active{
+    color: rgb(20, 5, 151);
+}
+
+
+
+
+/* Header content */
+
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+img {
+    border-radius: 50%;
+    height: 6cm;
+    width: 6cm ;
+}
+
+.header_list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+
+/* Body content */
+
+section {
+    height: 200px;
+}
+
+.one {
+background: rgb(230,198,232);
+background: linear-gradient(90deg, rgba(230,198,232,1) 0%, rgba(148,211,233,0.4653842374213837) 100%);
+}   
+
+.two {
+    background: rgb(185,167,235);
+    background: linear-gradient(262deg, rgba(185,167,235,0.8270194575471699) 0%, rgba(233,192,228,0.3993465015723271) 100%);
+}
+
+.three {
+    background: rgb(225,205,235);
+background: linear-gradient(262deg, rgba(225,205,235,0.7955729166666666) 0%, rgba(119,180,221,0.3993465015723271) 100%);
+}
+
+.four{
+    background: rgb(171,179,231);
+background: linear-gradient(262deg, rgba(171,179,231,0.7955729166666666) 0%, rgba(221,119,154,0.3993465015723271) 100%);
+}
+
+.five{
+    background: rgb(171,213,231);
+background: linear-gradient(262deg, rgba(171,213,231,0.7955729166666666) 0%, rgba(233,165,145,0.3993465015723271) 100%);
+}
+
+.six{
+    background: rgb(237,139,139);
+background: linear-gradient(262deg, rgba(237,139,139,0.7955729166666666) 0%, rgba(161,193,222,0.3993465015723271) 100%);
+}
+
+h3  {
+    margin: 0;
+    padding:30px 50px 20px 50px;
+    text-align:center;
+    color: rgb(69, 69, 120);
+}
+
+p {
+    margin: 0;
+    padding:20px 200px 20px 200px;
+    text-align:center;
+    color: rgb(73, 73, 113);
+}
+
+
+/* Footer content */
+
+footer{
+    display: flex;
+    justify-content:center;
+    align-items: center; 
+    padding: 30px;
+}
+
+.footer_list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+ 
