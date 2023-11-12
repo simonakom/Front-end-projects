@@ -11,19 +11,40 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+h1  {
+  margin: 0;
+  padding:80px 50px 20px 50px;
+  text-align:center;
+  color: rgb(0, 0, 0);
+}
+
+p {
+  margin: 0;
+  text-align:center;
+  color: rgb(0, 0, 0);
+  font-size:20px;
+}
+
 
 /* Containers */
+
+.container_header {
+  display: flex;
+  justify-content:space-between;
+  flex-direction:row;
+  align-items:center;  
+}
 
 .container {
   width: 1500px;
   margin: 0 auto;
 }
 
-header .container {
+/* header .container {
   display: flex;
   justify-content: space-between;
   align-items: center; 
-}
+} */
 
 .container_2 {
   display: flex;
@@ -45,7 +66,7 @@ a:hover {
     font-size: 22px;
 }
 
- a:visited{
+a:visited{
     color: rgb(54, 52, 52);
 } 
 
@@ -54,11 +75,30 @@ a:active{
 }
 
 
-
 /* Header content */
-img {
+
+.before_after {
+  margin: 30px 70px;
+}
+
+.before_after::before {
+  content: "+370 600 88779 ";
+  font-size: 35px;
+  color: rgba(57, 55, 55, 0.89);
+  float: left;
+}
+
+.before_after::after {
+  content: "  info@christmasshop.com ";
+  font-size: 35px;
+  color: rgba(57, 55, 55, 0.89);
+  float: right;
+}
+
+.logo {
   border-radius: 50%;
-  height: 120px;   
+  height: 190px;  
+  padding-left: 40px;
 }
 
 .header_list{
@@ -68,6 +108,8 @@ img {
     display: flex;
     gap: 20px;
     margin-right: 50px;
+    font-size: 40px;
+    padding-right: 30px;
 }
 
 
@@ -82,12 +124,14 @@ img {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+  box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.586);
 }
     
 .frame_1 {
     background-color: #58565496;
     color: rgba(85, 55, 33, 0.105);
     height: 600px;
+    
   }
     
  .first_block_title {
@@ -138,6 +182,9 @@ img {
     width: 500px;
     height: 600px;
     background-position: center;
+    box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.796);
+    border-radius: 50px 50px 50px 50px;
+    margin-left: 30px;
   }
   
   .frame_2 {
@@ -147,6 +194,8 @@ img {
     padding-left: 10px;
     padding-right: 10px;
     align-items: center;
+    box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.796);
+    border-radius: 50px 50px 50px 50px;
   }
 
   .text_a {
@@ -171,7 +220,6 @@ img {
     margin: 40px 30px 30px 40px
   }
 
-
  /* section3 */
 
  .section_3 {
@@ -181,6 +229,7 @@ img {
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+    box-shadow: 0px 141px 200px -80px rgba(32, 44, 73, 0.556);
 }
     
     
@@ -206,18 +255,16 @@ img {
     margin: auto;
  }
 
-  
  /* section4 */
-
 
  .section_4 {
     background: rgba(202, 196, 182, 0.539);
-    height: 1150px;
+    min-height: 1100px;
 } 
 
 .fourth_block_title {
     font-weight: bold;
-    color: rgb(53, 48, 48);
+    color: rgba(57, 55, 55, 0.89);
     width: 500px;
     font-size: 40px;
     margin: auto;
@@ -225,7 +272,7 @@ img {
 
  .fourth_block_content {
     font-weight: bold;
-    color: rgb(53, 48, 48);
+    color: rgba(57, 55, 55, 0.89);
     width: 750px;
     font-size: 30px;
     margin: auto;
@@ -245,6 +292,8 @@ img {
     width: 300px;
     height: 250px;
     background-position: center;
+    box-shadow: 0px 141px 200px -30px rgba(214, 181, 126, 0.991);
+    border-radius: 50px 50px 50px 50px;
   }
   
   .candle_2 {
@@ -253,6 +302,8 @@ img {
     width: 300px;
     height: 250px;
     background-position: center;
+    box-shadow: 0px 141px 200px -30px rgba(214, 181, 126, 0.991);
+    border-radius: 50px 50px 50px 50px;
   }
   
   .candle_3 {
@@ -261,6 +312,8 @@ img {
     width: 300px;
     height: 250px;
     background-position: center;
+    box-shadow: 0px 141px 200px -30px rgba(214, 181, 126, 0.991);
+    border-radius: 50px 50px 50px 50px;
   }
 
   .candle_4 {
@@ -269,9 +322,10 @@ img {
     width: 300px;
     height: 250px;
     background-position: center;
+    box-shadow: 0px 141px 200px -30px rgba(214, 181, 126, 0.991);
+    border-radius: 50px 50px 50px 50px;
   }
 
- 
 .candle_decription  {
   display: flex;
   justify-content: space-between;
@@ -284,9 +338,7 @@ img {
     color: rgb(177, 103, 103);
 }
 
-
  /* section5 */
-
 
  .section_5 {
   height: 900px;
@@ -295,8 +347,8 @@ img {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+  box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.586);
 }
-  
   
 .frame_5 {
   background-color: #58565496;
@@ -320,10 +372,8 @@ img {
   margin: auto;
 }
 
-
  /* section6 */   
 
- 
  .section_6 {
   min-height: 850px;
   background: rgba(248, 188, 147, 0.298)
@@ -335,7 +385,6 @@ color: rgba(57, 55, 55, 0.89);
 font-size: 40px;
 }
 
-
 .flex2 {
 display: flex;
 justify-content: space-between;
@@ -346,42 +395,48 @@ gap: 10px;
 .map {
 background-image: url(map.png);
 width: 500px;
-height: 600px;
+min-height: 600px;
 background-position: center;
+box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.796);
+border-radius: 50px 50px 50px 50px;
 }
 
 .frame_6 {
 background-color: rgba(176, 121, 99, 0.346);
 width: 500px ;
-height: 5000;
-padding-left: 10px;
+min-height: 600px;
+padding-left: 20px;
 padding-right: 10px;
 align-items: center;
+box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.796);
+ border-radius: 50px 50px 50px 50px;
 }
 
-.text_b {
-color:   rgb(40, 16, 4);
-font-size: 22px;
-padding: 0%;
-margin: 40px 30px 30px 40px
+.flex_icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 60px 20px;
 }
 
-
-h1  {
-    margin: 0;
-    padding:80px 50px 20px 50px;
-    text-align:center;
-    color: rgb(0, 0, 0);
+img {
+  height: 60px;
 }
 
-p {
-    margin: 0;
-    text-align:center;
-    color: rgb(0, 0, 0);
-    font-size:20px;
+.icon_title {
+  font-size: 23px;
+  text-align: center;
+  padding-top: 10px;
 }
 
-
+.icon_text {
+  color: #DD5471;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px 40px;
+}
 
 /* Footer content */
 
@@ -390,7 +445,6 @@ footer{
     justify-content:center;
     align-items: center; 
     padding: 30px;
-    
 }
 
 .footer_list{
@@ -400,6 +454,7 @@ footer{
     display: flex;
     gap: 20px;
 }
+
 .rights_reserved{
     text-align: center;
 }
