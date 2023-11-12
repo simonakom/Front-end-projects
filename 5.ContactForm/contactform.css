@@ -8,7 +8,7 @@
 }
 body {
     margin: 0;
-    background: url(bp.png) no-repeat center center / cover;
+    background: url(pictures/bp.png) no-repeat center center / cover;
 }
 
 
@@ -218,7 +218,7 @@ input[type="checkbox"] {
                   /* Right side */
 
 .right {
-    background-image: url(map.png);
+    background-image: url(pictures/map.png);
     width: 50%;
     height: 134%;
 }
