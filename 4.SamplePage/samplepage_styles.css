@@ -83,14 +83,14 @@ a:active{
 
 .before_after::before {
   content: "+370 600 88779 ";
-  font-size: 35px;
+  font-size: 30px;
   color: rgba(57, 55, 55, 0.89);
   float: left;
 }
 
 .before_after::after {
   content: "  info@christmasshop.com ";
-  font-size: 35px;
+  font-size: 30px;
   color: rgba(57, 55, 55, 0.89);
   float: right;
 }
@@ -119,7 +119,7 @@ a:active{
 
 .section_1 {
   height: 600px;
-  background: url(christmas.jpg); 
+  background: url(images/christmas.jpg); 
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -178,7 +178,7 @@ a:active{
   }
 
   .toyimage {
-    background-image: url(toy.webp);
+    background-image: url(images/toy.webp);
     width: 500px;
     height: 600px;
     background-position: center;
@@ -224,7 +224,7 @@ a:active{
 
  .section_3 {
     height: 600px;
-    background: url(light.jpg); 
+    background: url(images/light.jpg); 
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -287,7 +287,7 @@ a:active{
   }
 
   .candle_1 {
-    background-image: url(candle1.webp);
+    background-image: url(images/candle1.webp);
     background-size: 300px 250px;
     width: 300px;
     height: 250px;
@@ -297,7 +297,7 @@ a:active{
   }
   
   .candle_2 {
-    background-image: url(candle2.webp);
+    background-image: url(images/candle2.webp);
     background-size: 300px 250px;
     width: 300px;
     height: 250px;
@@ -307,7 +307,7 @@ a:active{
   }
   
   .candle_3 {
-    background-image: url(candle3.webp);
+    background-image: url(images/candle3.webp);
     background-size: 300px 250px;
     width: 300px;
     height: 250px;
@@ -317,7 +317,7 @@ a:active{
   }
 
   .candle_4 {
-    background-image: url(candle4.webp);
+    background-image: url(images/candle4.webp);
     background-size: 300px 250px;
     width: 300px;
     height: 250px;
@@ -342,7 +342,7 @@ a:active{
 
  .section_5 {
   height: 900px;
-  background: url(blanket.webp); 
+  background: url(images/blanket.webp); 
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -393,7 +393,7 @@ gap: 10px;
 }
 
 .map {
-background-image: url(map.png);
+background-image: url(images/map.png);
 width: 500px;
 min-height: 600px;
 background-position: center;
