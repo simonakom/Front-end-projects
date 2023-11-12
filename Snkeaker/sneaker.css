@@ -1,0 +1,116 @@
+/* Purple Bacground */
+
+body{
+    background-color: #C174C3;
+}
+
+/* White Block */
+
+        /* Header */
+        .box{
+            position:relative;
+        background-color: #F9F9F9;
+        width: 1440px;
+        height: 820px;
+        margin: 100px auto; 
+        padding: 40px 80px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        .logo div{
+            color: #111111;
+            font-size: 36px;
+            font-family: 'Jost', sans-serif;
+            font-weight: bold;
+            margin-left: 100px;
+        }
+
+        .logo span{
+            color:#C8815F;
+        }
+
+        .navigation ul{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            align-items: center;
+            gap: 35px;
+            list-style: none;
+            font-family: 'Jost', sans-serif;
+            font-size: 17px;
+        }
+
+        .icon ul{
+            display: flex;
+            justify-content: center;
+            flex-direction:row;
+            align-items: center;
+            gap: 35px;
+            list-style:none;
+            margin-right: 100px;
+        }
+
+
+
+                /* Middle */
+                .right{
+                    float: right;
+                    margin-top: 300px;
+                }
+
+                .left{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 300px;
+                    position: absolute;
+                    z-index: 2;
+                }
+
+                .title{
+                    position: absolute;
+                    z-index: 1;
+                    width: 30%;
+                    height: 90%;
+                    margin-top: 10%;
+                    margin-left: 10%;
+                    font-family:'Jost', sans-serif;
+                    font-weight: bold;
+                    font-size: 56px;
+                    line-height: 60px;
+                }
+
+                .title span{
+                    font-size: 17px;
+                }
+
+
+                button{
+                    background:none;
+                    font-family:'Jost', sans-serif;
+                    font-size: 16px;
+                    border: 1px solid #111111;
+                    padding: 12px 32px 12px 32px;
+                    border-radius: 4px;
+                }
+
+                .nike{
+                    margin-left: 35%;
+                }
+
+
+/* Footer */
+
+footer img {
+    margin: 10px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
