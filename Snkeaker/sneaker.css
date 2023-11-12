@@ -1,20 +1,34 @@
 /* Purple Bacground */
 
 body{
-    background-color: #C174C3;
+    background: url(Pictures/bg.png) no-repeat center center / cover;
+    margin: 0;
 }
+
 
 /* White Block */
 
         /* Header */
         .box{
-            position:relative;
+            position: relative;
+            background-color: var(--shade-background, #F9F9F9);
+            max-width: 1440px;
+            min-height: 780px;
+            width: 100%;
+            margin: 100px auto;
+            padding: 30px 70px;
+            box-shadow: 200px 141px 200px -80px rgba(25, 58, 75, 0.302);
+         }
+
+
+
+        /* position:relative; 
         background-color: #F9F9F9;
         width: 1440px;
         height: 820px;
         margin: 100px auto; 
         padding: 40px 80px;
-        }
+        } */
 
         header {
             display: flex;
@@ -67,8 +81,9 @@ body{
                     display: flex;
                     justify-content: space-between;
                     margin-top: 300px;
-                    position: absolute;
+                    position:absolute;
                     z-index: 2;
+                
                 }
 
                 .title{
