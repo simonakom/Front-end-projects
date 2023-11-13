@@ -69,6 +69,9 @@ body{
             margin-right: 100px;
         }
 
+        p {
+            margin-bottom: 30px;
+        }
 
 
                 /* Middle */
@@ -91,7 +94,7 @@ body{
                     z-index: 1;
                     width: 30%;
                     height: 90%;
-                    margin-top: 10%;
+                    margin-top: 3%;
                     margin-left: 10%;
                     font-family:'Jost', sans-serif;
                     font-weight: bold;
@@ -109,7 +112,7 @@ body{
                     font-family:'Jost', sans-serif;
                     font-size: 16px;
                     border: 1px solid #111111;
-                    padding: 12px 32px 12px 32px;
+                    padding: 9px 32px 12px 32px;
                     border-radius: 4px;
                 }
 
