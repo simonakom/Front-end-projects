@@ -1,0 +1,240 @@
+
+/* Bacground */
+
+*{
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background: rgb(34,114,195);
+    background: linear-gradient(0deg, rgba(34,114,195,1) 0%, rgba(206,215,227,0.217546393557423) 100%); 
+}
+
+/* White block */
+
+.main_block{
+    background-color: white;
+    width: 1366px;
+    height: 768px;
+    position: relative;
+    display: flex;
+    margin: 100px auto;
+}
+
+
+/* Left side */
+
+.left{
+    background-image: url(Pictures/background.png);
+    height: 768px;
+    width: 500px;
+    padding: 12px;
+}
+
+.frame {
+    background-color: rgba(0, 0, 0, 0.15);
+    height: 744px;
+    width: 476px;
+    padding: 24px;
+  }
+
+.text_box{
+    height: 223px;
+    width: 428px;
+    padding: 36px;
+}
+
+.intro_text{
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px; 
+    font-weight: normal;
+}
+
+
+
+
+
+
+/* Right side */
+
+.right{
+    background-color: #FFF;
+    width: 863px;
+    height: 768px;
+}
+
+.centered_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    height: 700px;
+}
+
+
+/* text */
+
+.text{
+    font-family: 'Open Sans', sans-serif;
+    color: #6B7280;
+    font-size: 16px;
+}
+.text span{
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* google-facebook */
+
+.button {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.google{
+
+    width: 281px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    
+    color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    background-color: #4285F4;
+    border-radius: 4px;
+    padding: 2px;
+    
+   
+}
+.google img{
+    justify-content: center;
+    padding-right: 40px;
+}
+
+.facebook {
+    width: 47px;
+    height: 48px;
+    float:right;
+    border:none;
+    border-radius: 4px;
+    background-color: #ECF2FC;
+    padding: 6px 12px 10px 2px
+    
+}
+
+.facebook img{
+    margin-right: 300px;
+}
+
+
+/* or */
+
+.line {
+    width: 340px;
+    height: 40px;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+.line span {
+    color: #E5E7EB;
+    font-size: 12px;
+}
+
+
+/* @ */
+
+.input_field {
+    width: 340px;
+    height: 48px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #E5E7EB;
+    background: #FFF;   
+    font-size: 14px;
+    color: #125fd3;
+}
+
+.input-icon img {
+    position: absolute;
+}
+
+::placeholder {
+    color: #D1D5DB;
+  }
+
+.icon {
+    padding: 12px 10px 10px 10px;
+    min-width: 40px;
+    text-align: center;
+}
+ 
+
+ /* Password */
+
+ .password {
+    width: 340px;
+    height: 32px;
+    color: var(--gray-cool-gray-500, #6B7280);
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; 
+    padding-top: 6px;
+    padding-bottom: 50px;
+ }
+
+a {
+    text-decoration: none;
+    color: var(--primery-100, #6D58BA);
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; 
+}
+
+
+/* Continue */
+
+
+.continue {
+    width: 340px;
+    height: 48px;
+    text-align: center;
+    color: #FFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    border: none;
+    background-color: #724DFF;
+    border-radius: 4px;
+    line-height: 24px; /* 150% */
+}
+
+/* Questions */
+
+.Questions {
+    color: var(--gray-cool-gray-500, #6B7280);
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px; 
+}
