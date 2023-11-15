@@ -1,4 +1,5 @@
 
+
 /* Bacground */
 
 *{
@@ -7,7 +8,7 @@
 }
 
 body{
-    background: #303030; 
+    background: #98949423; 
     margin: 0;
     padding: 0;
 }
@@ -15,35 +16,33 @@ body{
 /* White block */
 
 .main_block{
-    background-color: white;
-    max-width: 1363px;
-    min-height: 768px;
-    position: relative;
+    background-color: #FFF;
+    /* min-height: 768px; */
     display: flex;
-    margin: 100px auto; 
+    /* delete to have full screen */
+    max-width: 1363px; 
+    margin: 100px auto;  
 }
-
 
 /* Left side */
 
 .left{
     background-image: url(Pictures/background.png);
-    background-size: cover;
-    m-height: 768px;
-    width: 500px;
+    background-position: center center ;
+     /* flex-grow,flex-shring,flex basis - to center */
+    flex: 0 1 500px;
     padding: 12px;
+    min-width: 500px;
 }
 
 .frame {
     background-color: rgba(0, 0, 0, 0.15);
-    height: 744px;
-    width: 476px;
+    height: 744px; 
     padding: 24px;
   }
 
 .text_box{
-    min-height: 223px;
-    min-width: 428px;
+    height: 223px;  
     padding: 36px;
 }
 
@@ -62,22 +61,19 @@ body{
 
 .right{
     background-color: #FFF;
-    width: 863px;
-    min-height: 768px;
-
+    /* flex-grow,flex-shring,flex basis - to center */
+    flex: 0 1 100%;
+    min-height: 768px ;
 }
 
 .centered_form{
-    min-width: 863px;
-    min-height: 768px;
+    height: 768px;
+    max-width: 863px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-form {
-    width: 50%;
-    margin: 0 auto;
-}
 
 
 /* Intro text */
@@ -86,9 +82,11 @@ form {
     font-family: 'Open Sans', sans-serif;
     color: #6B7280;
     font-size: 16px;
+    margin-bottom: 24px;
+   
 }
 .intro span{
-    color: black;
+    color: #1F2937;
     font-size: 18px;
     font-weight: bold;
 }
@@ -98,54 +96,56 @@ form {
 
 .google{
     min-width: 281px;
-    height: 49px;
-    line-height: 26px; 
+    min-height: 49px;
     border: 1px solid #E5E7EB;
     border-radius: 4px;
     background:#4285F4;  
 
     text-align: center;
+    padding-left: 40px;
     color: #FFF; 
     font-family: Open Sans;
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
+
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 .google_icon{
     position: absolute;
-    padding: 3px 2px;   
+    padding: 15px 2px;   
     }
     
 
 .facebook{
     min-width: 47px;
-    height: 49px;
-    line-height: 26px; 
+    min-height: 49px;
     border: 1px solid #E5E7EB;
     border-radius: 4px;
-    background:#ECF2FC;;  
+    background:#ECF2FC;
 
     text-align: center;
     color: #FFF; 
     font-family: Open Sans;
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
+    margin-left: 6px;
 }
 
 .facebook_icon{
     position: absolute;
-    padding: 3px 2px;   
+    padding: 14px 8px;  
     }
 
 /* or */
 
 .line {
-    min-width: 340px;
+    max-width: 340px;
     height: 40px;
-    margin-top: 14px;
-    margin-bottom: 6px;
+
+    margin-top: 9px;
+    margin-bottom: 9px;
 }
 
 .line span {
@@ -168,9 +168,8 @@ form {
 
 .a_icon {
     position: absolute;
-    padding: 12px 10px 10px 10px;
-    max-width: 40px;
-    text-align: center;
+    padding: 15px 10px 8px;
+    max-width: 40px; 
 }
 
 ::placeholder {
@@ -181,21 +180,17 @@ form {
  /* Password */
 
  .password {
-    min-width: 340px;
-    max-height: 32px;
-    color: var(--gray-cool-gray-500, #6B7280);
+    max-width: 340px;
+    color: #6B7280;
     font-family: Open Sans;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
-    line-height: 20px; 
-    padding-top: 6px;
-    padding-bottom: 50px;
  }
 
 a {
     text-decoration: none;
-    color: var(--primery-100, #6D58BA);
+    color: #6D58BA;
     font-family: Open Sans;
     font-size: 14px;
     font-style: normal;
@@ -219,25 +214,29 @@ a {
     border: none;
     background-color: #724DFF;
     border-radius: 4px;
-    line-height: 24px; /* 150% */
+    line-height: 24px;     
 }
 
 /* Questions */
 
 .Questions {
     
-    color: var(--gray-cool-gray-500, #6B7280);
+    color:#6B7280;
     font-family: Open Sans;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
     line-height: 26px; 
-    
 }
 
 
 /* Repsonsive */
 
+@media screen and (max-width: 1024px) {
+    .left {
+        min-width: auto;  
+    }
+}
 
 
 @media screen and (max-width: 768px) {
@@ -251,7 +250,7 @@ a {
     .left  {
         background-image: url(Pictures/background.png);
         width: 100%;
-        height: 129px;
+        max-height: 129px;
 
         background-size: cover;
         background-repeat: no-repeat;
@@ -260,7 +259,7 @@ a {
 
     .frame {
         width: 100%;
-        height: 105px;
+        max-height: 105px;
     }
   
     .intro_text {
@@ -268,38 +267,25 @@ a {
     }
 
     .text_box {
-        margin: 0;
+        margin-top: 10px;
         padding: 0;
-        padding-left: 20px;
-        padding-top: 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
     }
 
 
-    .right {
-        background-color: #FFF;
-        width: 100%;
-        height: 129px
-}
 
     .centered_form {
-    display: block;
-    justify-content: center;
-    align-items: center;
-    min-width: 863px;
-    min-height: 768px;
-    }
-
-    form {
-        padding: 24px;
-        width: 312px;
-        margin-top: 80px;
-        margin-right: 90px;
-        margin-left: 20px;
-    }
+    height: 30rem ;
+    padding-left: 20px;
+    padding-right: 20px;
+  
+}
 
 
-    .intro {
-        width: auto;
-    }
+
 
 }
+
+
