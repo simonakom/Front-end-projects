@@ -7,8 +7,7 @@
 }
 
 body{
-    background: rgb(126, 101, 101);
-    /* #303030; */
+    background: #303030; 
     margin: 0;
     padding: 0;
 }
@@ -21,8 +20,7 @@ body{
     min-height: 768px;
     position: relative;
     display: flex;
-    margin: auto;
-    /* margin: 100px auto; */
+    margin: 100px auto; 
 }
 
 
@@ -99,7 +97,7 @@ form {
 /* SingIn buttons */
 
 .google{
-    width: 281px;
+    min-width: 281px;
     height: 49px;
     line-height: 26px; 
     border: 1px solid #E5E7EB;
@@ -121,7 +119,7 @@ form {
     
 
 .facebook{
-    width: 47px;
+    min-width: 47px;
     height: 49px;
     line-height: 26px; 
     border: 1px solid #E5E7EB;
@@ -144,7 +142,7 @@ form {
 /* or */
 
 .line {
-    width: 340px;
+    min-width: 340px;
     height: 40px;
     margin-top: 14px;
     margin-bottom: 6px;
@@ -159,7 +157,7 @@ form {
 /* @ */
 
 .input_field {
-    width: 340px;
+    min-width: 340px;
     height: 48px;
     text-align: center;
     border-radius: 4px;
@@ -183,7 +181,7 @@ form {
  /* Password */
 
  .password {
-    width: 340px;
+    min-width: 340px;
     max-height: 32px;
     color: var(--gray-cool-gray-500, #6B7280);
     font-family: Open Sans;
@@ -209,7 +207,7 @@ a {
 /* Continue */
 
 .continue {
-    width: 340px;
+    min-width: 340px;
     height: 49px;
     text-align: center;
     color: #FFF;
@@ -242,7 +240,7 @@ a {
 
 
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 768px) {
   
     .main_block{
         display: flex;
@@ -277,9 +275,6 @@ a {
     }
 
 
-   
-    
-    
     .right {
         background-color: #FFF;
         width: 100%;
@@ -303,37 +298,8 @@ a {
     }
 
 
-
     .intro {
         width: auto;
     }
 
-    .google {
-        width: auto;
-        
-    }
-
-    .google_icon {
-        width: auto;
-    }
-
-    .line {
-        width: auto;
-    }
-
-    .input_field {
-        width: auto;
-    }
-
-    .password {
-        width: auto;
-    }
-
-    .continue {
-        width: auto;
-    }
-
-    .Questions {
-        width: auto;
-    }
 }
