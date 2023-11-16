@@ -21,7 +21,7 @@ body{
     display: flex;
     /* delete to have full screen */
     max-width: 1363px; 
-    margin: 100px auto;  
+    /* margin: 100px auto;   */
 }
 
 /* Left side */
