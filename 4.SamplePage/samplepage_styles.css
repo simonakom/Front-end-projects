@@ -13,16 +13,19 @@ body {
 
 h1  {
   margin: 0;
-  padding:80px 50px 20px 50px;
+  padding:60px 50px 20px 50px;
   text-align:center;
   color: rgb(0, 0, 0);
+  font-size: 15px;
 }
 
 p {
   margin: 0;
   text-align:center;
   color: rgb(0, 0, 0);
-  font-size:20px;
+  font-size: 11px;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 
@@ -36,7 +39,7 @@ p {
 }
 
 .container {
-  width: 1500px;
+  width: 800px;
   margin: 0 auto;
 }
 
@@ -50,26 +53,26 @@ p {
 /* Header content */
 
 .before_after {
-  margin: 30px 70px;
+  margin: 20px 70px;
 }
 
 .before_after::before {
   content: "+370 600 88779 ";
-  font-size: 30px;
+  font-size: 15px;
   color: rgba(57, 55, 55, 0.89);
   float: left;
 }
 
 .before_after::after {
   content: "  info@christmasshop.com ";
-  font-size: 30px;
+  font-size: 15px;
   color: rgba(57, 55, 55, 0.89);
-  float: right;
+  float: right; 
 }
 
 .logo {
   border-radius: 50%;
-  height: 190px;  
+  height: 100px;  
   padding-left: 40px;
 }
 
@@ -78,13 +81,13 @@ p {
     padding: 0;
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     margin-right: 50px;
     padding-right: 30px;
 }
 
 .header_list a {
-  font-size: 30px;
+  font-size: 15px;
 }
 
 /* Navigation decorations */
@@ -97,14 +100,23 @@ a {
 
 a:hover {
   color:rgb(140, 169, 83);
-  font-size: 35px;
+  font-size: 17px;
 }
-
 a:visited{
   color: rgba(97, 53, 53, 0.425);
 } 
-
 a:active{
+  color: rgba(49, 23, 143, 0.935);
+}
+
+.footer_list a:hover {
+  color:rgb(140, 169, 83);
+  font-size: 17px;
+}
+.footer_list a:visited{
+  color: rgba(97, 53, 53, 0.425);
+} 
+.footer_list a:active{
   color: rgba(49, 23, 143, 0.935);
 }
 
@@ -113,7 +125,7 @@ a:active{
     /* section1 */
 
 .section_1 {
-  min-height: 600px;
+  min-height: 280px;
   background: url(images/christmass.avif); 
   background-repeat: no-repeat;
   background-position: center center;
@@ -125,7 +137,7 @@ a:active{
 .frame_1 {
     background-color: #58565458;
     color: rgba(85, 55, 33, 0.105);
-    height: 600px;
+    min-height: 280px;
     
   }
     
@@ -133,7 +145,7 @@ a:active{
     font-weight: bold;
     color: rgb(247, 229, 229);
     width: 400px;
-    font-size: 40px;
+    font-size: 25px;
     margin:auto
  }
 
@@ -141,28 +153,29 @@ a:active{
     font-weight: bold;
     color: rgb(247, 229, 229);
     width: 600px;
-    font-size: 30px;
+    font-size: 15px;
     margin:auto
  }
 
     /* section2 */
 
   .section_2 {
-       min-height: 1100px;
-       background: rgba(247, 244, 247, 0.219)
+    min-height: 600px;
+    background: rgba(247, 244, 247, 0.219)
     } 
 
   .second_block_title {
     font-weight: bold;
     color: rgba(57, 55, 55, 0.89);
-    font-size: 40px;
+    font-size: 25px;
   }
   
   .second_block_content {
     font-weight: bold;
     color:rgba(57, 55, 55, 0.89);
     width: 800px;
-    font-size: 30px;
+    font-size: 15px;
+    width: 600px;
   }
 
   .flex2 {
@@ -174,8 +187,10 @@ a:active{
 
   .toyimage {
     background-image: url(images/toy.webp);
-    width: 500px;
-    height: 600px;
+    background-size: cover;
+    width: 200px;
+    height: 320px;
+    object-fit:contain;
     background-position: center;
     box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.796);
     border-radius: 50px 50px 50px 50px;
@@ -184,8 +199,8 @@ a:active{
   
   .frame_2 {
     background-color: rgba(33, 25, 31, 0.182);
-    width: 500px ;
-    height: 5000;
+    width: 200px ;
+    min-height: 320px;
     padding-left: 10px;
     padding-right: 10px;
     align-items: center;
@@ -195,30 +210,25 @@ a:active{
 
   .text_a {
     color:  rgb(40, 16, 4);
-    font-size: 30px;
+    font-size: 15px;
     padding: 0%;
-    margin-top: 3cm;
+    margin-top: 40px;
   }
   
   .text_aa {
     color:   rgb(40, 16, 4);
-    font-size: 22px;
+    font-size: 12px;
     padding: 0%;
-    margin: 40px 30px 30px 40px
+    margin: 20px 30px 30px 40px
     
   }
-  
-  .text_aaa {
-    color:    rgb(40, 16, 4);
-    font-size: 19px;
-    padding: 0%;
-    margin: 40px 30px 30px 40px
-  }
+
 
  /* section3 */
 
+
  .section_3 {
-    min-height: 700px;
+    min-height: 300px;
     background: url(images/lights.avif); 
     background-repeat: no-repeat;
     background-position: center center;
@@ -230,14 +240,14 @@ a:active{
 .frame_3 {
     background-color: #58565496;
     color: rgba(85, 55, 33, 0.105);
-    min-height: 700px;
+    min-height: 300px;
   }
     
   .third_block_title {
     font-weight: bold;
     color: rgb(247, 229, 229);
     width: 500px;
-    font-size: 40px;
+    font-size: 25px;
     margin: auto;
  }
 
@@ -245,7 +255,7 @@ a:active{
     font-weight: bold;
     color: rgb(247, 229, 229);
     width: 600px;
-    font-size: 30px;
+    font-size: 15px;
     margin: auto;
  }
 
@@ -253,83 +263,95 @@ a:active{
 
  .section_4 {
   background: rgba(247, 244, 247, 0.219);
-  min-height: 1500px;
+  min-height: 900px;
 } 
 
 .fourth_block_title {
     font-weight: bold;
     color: rgba(57, 55, 55, 0.89);
     width: 500px;
-    font-size: 40px;
+    font-size: 25px;
     margin: auto;
  }
 
  .fourth_block_content {
     font-weight: bold;
     color: rgba(57, 55, 55, 0.89);
-    width: 750px;
-    font-size: 30px;
+    width: 600px;
+    font-size: 15px;
     margin: auto;
+    padding-bottom: 20px;
  }
 
 .candles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 100px;
+  gap: 20px;
   margin-top: 0px;
   margin-bottom: 40px;
 }
 
 .candles .block {
   flex: 0,0,50%;
+  width: 180px;
+}
+
+.candles {
+  margin-right: 120px;
 }
 
 .candle_text h1{
   margin: 0;
-  padding:30px 50px 20px 50px;
+  padding: 30px 0px 20px 0px;
   text-align:center;
   color: rgb(0, 0, 0);
+ 
 }
 
 
   .candle_1 {
     background-image: url(images/candle1.webp);
+    justify-content: center center;
     background-size: 300px 250px;
-    width: 300px;
-    height: 250px;
-    background-position: center;
+    width: 180px;
+    height: 180px;
+    background-position: center center;
     box-shadow: 0px 141px 200px -30px rgb(183, 205, 212);
     border-radius: 50px 50px 50px 50px;
+    margin-left: 60px;
   }
   
   .candle_2 {
     background-image: url(images/candle2.webp);
     background-size: 300px 250px;
-    width: 300px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
     background-position: center;
     box-shadow: 0px 141px 200px -30px rgb(183, 205, 212);
     border-radius: 50px 50px 50px 50px;
+    margin-left: 60px;
   }
   
   .candle_3 {
     background-image: url(images/candle3.webp);
     background-size: 300px 250px;
-    width: 300px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
     background-position: center;
     box-shadow: 0px 141px 200px -30px rgb(183, 205, 212);
     border-radius: 50px 50px 50px 50px;
+    margin-left: 60px;
   }
 
   .candle_4 {
     background-image: url(images/candle4.webp);
     background-size: 300px 250px;
-    width: 300px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
     background-position: center;
     box-shadow: 0px 141px 200px -30px rgb(183, 205, 212);
     border-radius: 50px 50px 50px 50px;
+    margin-left: 60px;
   }
 
 .candle_decription  {
@@ -348,7 +370,7 @@ a:active{
  /* section5 */
 
  .section_5 {
-  height: 850px;
+  min-height: 350px;
   background: url(images/bed.avif); 
   background-repeat: no-repeat;
   background-position: center center;
@@ -360,14 +382,14 @@ a:active{
 .frame_5 {
   background-color: #58565496;
   color: rgba(85, 55, 33, 0.105);
-  height: 850px;
+  min-height: 350px;
 }
   
 .fifth_block_title {
   font-weight: bold;
   color: rgb(247, 229, 229);
   width: 500px;
-  font-size: 40px;
+  font-size: 25px;
   margin: auto;
 }
 
@@ -375,21 +397,21 @@ a:active{
   font-weight: bold;
   color: rgb(247, 229, 229);
   width: 600px;
-  font-size: 30px;
+  font-size: 15px;
   margin: auto;
 }
 
  /* section6 */   
 
  .section_6 {
-  min-height: 850px;
+min-height: 650px;
 background: rgba(247, 244, 247, 0.219)
 } 
 
 .six_block_title {
 font-weight: bold;
 color: rgba(57, 55, 55, 0.89);
-font-size: 40px;
+font-size: 25px;
 }
 
 .flex2 {
@@ -400,16 +422,16 @@ gap: 10px;
 }
 
 iframe {
-  width: 500px;
-  min-height: 630px;
+  width: 400px;
+  min-height: 350px;
   box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.796);
   border-radius: 50px 50px 50px 50px;
   }
 
 .frame_6 {
 background-color: rgba(33, 25, 31, 0.182);
-width: 500px ;
-min-height: 600px;
+width: 200px ;
+min-height: 400px;
 padding-left: 20px;
 padding-right: 10px;
 align-items: center;
@@ -422,23 +444,23 @@ box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.796);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
   padding: 60px 20px;
 }
 
 img {
-  height: 60px;
+  height: 40px;
 }
 
 .icon_title {
-  font-size: 23px;
+  font-size: 13px;
   text-align: center;
   padding-top: 10px;
 }
 
 .icon_text {
   color: #DD5471;
-  font-size: 25px;
+  font-size: 11px;
   text-align: center;
   padding: 10px 40px;
 }
@@ -461,7 +483,7 @@ footer{
 }
 
 .footer_list a {
-  font-size: 30px;
+  font-size: 16px;
 }
 
 .rights_reserved{
