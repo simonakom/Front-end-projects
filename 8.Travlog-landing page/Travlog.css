@@ -24,6 +24,8 @@
 
 body {
     font-family: "CircularSTD";
+    background-image: url(images/bg.png)  ;
+    background-size: cover;
 }
 
 img {
@@ -65,15 +67,29 @@ section.home .decoration::before {
     height: 170px;
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: -80px;
     left: -71px;
+
 }
 
 .btn {
     --bs-btn-padding-y: .9rem;
     --bs-btn-padding-x: 2rem;
     font-weight: 600;
+        /*login button: added blue active & grey hover  */
+   --bs-btn-active-color: #222831 ;
+   --bs-btn-active-bg: #0d6efd ;
+   --bs-btn-active-border-color: #EEEEEE ;
+   --bs-btn-hover-color: #222831;
+   --bs-btn-hover-bg: #EEEEEE;
+   --bs-btn-hover-border-color: #EEEEEE;
 }
+
+     /* added height to adjust to singup button  */
+     .btn-empty {
+        max-height: 51px;
+        }
+
 
 .btn-primary {
     --bs-btn-bg: #5D50C6;
@@ -158,6 +174,8 @@ section.home .decoration::before {
     font-size: 23px;
     font-weight: bold;
     letter-spacing: 5px;
+    
+    
 }
 
 .section-heading h2 {
@@ -182,6 +200,7 @@ section.home .decoration::before {
     font-weight: 600;
     font-size: 28px;
 }
+
 
 .service p {
     color: #19182584;
@@ -359,6 +378,200 @@ footer h3 {
     font-weight: bold;
     font-size: 23px;
 }
+
+
+
+
+
+
+
+
+.offer {
+    margin-top: 4rem;
+}
+
+.offer .text {
+    color: rgba(25, 24, 37, 0.50);
+    font-family: Inter;
+    font-size: 18px;
+    margin: 1.5rem 0 4rem; 
+    line-height: 160%;
+}
+
+
+ .option h3 {
+    color: #191825;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: bold ;
+    line-height: 120%; 
+    margin-bottom: 10px;
+}
+
+
+ .option p {
+    color: rgba(25, 24, 37, 0.50);
+    font-size: 18px;
+    font-style: normal;
+    line-height: 160%; 
+}
+
+.option img {
+    margin-right: 2rem;
+}
+
+.option{
+    padding: 20px;
+}
+
+.option:hover {
+    border: 1px solid rgb(25, 24, 27, .1);
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.offer .church {
+    height: 100%;
+    width: 120%;
+    margin-left: 3rem;
+}
+
+
+
+
+
+.testimonials {
+    margin-top: 5rem;
+}
+
+.enthusiast p {
+    color:  rgba(25, 24, 37, 0.75);
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.enthusiast span {
+    color: #FF5722;
+    font-size: 28px;
+    font-style: normal;
+    line-height: 160%; 
+    font-weight: 700;
+    line-height: 120%; 
+}
+
+
+.testimonials .text {
+    color:   rgba(25, 24, 37, 0.75);
+    text-align: center;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 160%; 
+}
+
+.testimonials {
+background-image: url(images/bg-shape.svg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center; 
+}
+
+.testimonials .box {
+    height: 20px;
+    width: 20px;
+    background: rgba(25, 24, 37, 0.05);
+    border-radius: 100px;
+}
+
+.testimonials .pinkbox {
+    height: 20px;
+    width: 20px;
+    background: #F85E9F;
+    border-radius: 100px;
+}
+
+
+.testimonials .arrows {
+  
+   margin-top: 17rem;
+    gap: 2rem;
+    width: 150%;
+}
+
+.testimonials .arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(25, 24, 27, .1);
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;    
+}
+
+.testimonials .arrows svg {
+    fill: #191825;
+    transition: all .5s ease-in-out;
+}
+
+.testimonials .arrows a:hover {
+    background-color: #5D50C6;
+    border-color: #5D50C6;
+}
+
+.testimonials .arrows a:hover svg {
+    fill: white;
+} 
+
+.subscribe .container-lg {
+    border-radius: 32px;
+    background: rgba(250, 205, 73, 0.08);
+}
+
+.subscribe p {
+    color: var(--grey-scale-black, #191825);
+    font-size: 55px;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+.input-group span  {
+    background: #FFF;
+    border: #FFF;
+    border-radius: 32%;
+
+    
+}
+.input-group .form-control {
+    background: #FFF;
+    border: #FFF;
+    padding-right: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (min-width: 992px) {
     nav.navbar {
