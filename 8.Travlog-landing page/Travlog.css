@@ -32,6 +32,8 @@ img {
     max-width: 100%;
 }
 
+/* Footer */
+
 ul {
     list-style: none;
     margin: 0;
@@ -56,6 +58,8 @@ nav.navbar li.active a {
     color: #222831;
 }
 
+/* Section Home */
+
 section.home .decoration {
     position: relative;
 }
@@ -69,7 +73,6 @@ section.home .decoration::before {
     position: absolute;
     bottom: -80px;
     left: -71px;
-
 }
 
 .btn {
@@ -168,14 +171,17 @@ section.home .decoration::before {
     background: url(icons/14.svg) no-repeat center center;
 }
 
+
+
+/* Section Services */
+
+
 .section-heading h3 {
     text-transform: uppercase;
     color: var(--primary-color);
     font-size: 23px;
     font-weight: bold;
     letter-spacing: 5px;
-    
-    
 }
 
 .section-heading h2 {
@@ -201,12 +207,13 @@ section.home .decoration::before {
     font-size: 28px;
 }
 
-
 .service p {
     color: #19182584;
     font-family: Inter;
     font-size: 18px;
 }
+
+/* Section destination */
 
 .destination {
     background-color: white;
@@ -281,12 +288,16 @@ section.home .decoration::before {
     fill: white;
 }
 
+/* Section travel */
+
 .travel p {
     color: rgba(25, 24, 37, 0.50);
     font-family: Inter;
     font-size: 18px;
     margin: 1.5rem 0 4rem;
 }
+
+/* Section feature */
 
 .feature {
     border: 1px solid rgb(25, 24, 27, .1);
@@ -324,67 +335,6 @@ section.home .decoration::before {
     top: 129px;
     left: -1000%;
 }
-
-footer {
-    padding-bottom: 2rem;
-}
-
-footer p {
-    color: rgba(25, 24, 37, 0.50);
-    font-size: 23px;
-    margin: 2rem 0 3rem;
-}
-
-footer .social ul {
-    display: flex;
-    gap: 2rem;
-}
-
-footer .social a {
-    background-color: #5D50C6;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-}
-
-footer .social a svg {
-    fill: white;
-}
-
-footer .social ul > li:nth-child(1) a svg {
-    transform: scale(.8);
-}
-
-footer .footer-links li,
-footer .footer-links a {
-    font-size: 18px;
-    font-family: Inter;
-    color: #191825c7;
-    text-decoration: none;
-}
-
-footer .footer-links li {
-    padding: .8rem 0;
-}
-
-footer .footer-links a:hover {
-    text-decoration: underline;
-}
-
-footer h3 {
-    font-weight: bold;
-    font-size: 23px;
-}
-
-
-
-
-
-
-
 
 .offer {
     margin-top: 4rem;
@@ -436,9 +386,7 @@ footer h3 {
     margin-left: 3rem;
 }
 
-
-
-
+/* Section Testimonials*/
 
 .testimonials {
     margin-top: 5rem;
@@ -471,8 +419,9 @@ footer h3 {
     line-height: 160%; 
 }
 
-.testimonials {
+.testimonials  {
 background-image: url(images/bg-shape.svg);
+/* opacity: 0.7; */
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center; 
@@ -527,6 +476,8 @@ background-position: center;
     fill: white;
 } 
 
+/* Section Subscribe*/
+
 .subscribe .container-lg {
     border-radius: 32px;
     background: rgba(250, 205, 73, 0.08);
@@ -549,17 +500,103 @@ background-position: center;
 .input-group .form-control {
     background: #FFF;
     border: #FFF;
-    padding-right: 600px;
+    /* padding-right: 600px; */
+}
+
+section.subscribe .decoration {
+    position: relative;
+}
+
+section.subscribe .decoration::before {
+    content: "";
+    background: url(images/deco2.png) no-repeat center center;
+    width: 183px;
+    height: 176%;
+    display: block;
+    position: absolute;
+    bottom: 75px;
+    left: -35px;
 }
 
 
+/* Footer*/
 
 
+footer {
+    padding-bottom: 2rem;
+    padding-top: 5rem;
+}
+
+footer p {
+    color: rgba(25, 24, 37, 0.50);
+    font-size: 23px;
+    margin: 2rem 0 3rem;
+}
+
+footer .social ul {
+    display: flex;
+    gap: 2rem;
+}
+
+footer .social a {
+    background-color: #5D50C6;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+footer .social a svg {
+    fill: white;
+}
+
+footer .social ul > li:nth-child(1) a svg {
+    transform: scale(.8);
+}
+
+footer .footer-links li,
+footer .footer-links a {
+    font-size: 18px;
+    font-family: Inter;
+    color: #191825c7;
+    text-decoration: none;
+}
+
+footer .footer-links li {
+    padding: .8rem 0;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer h3 {
+    font-weight: bold;
+    font-size: 23px;
+}
+
+footer .decoration {
+    position: relative;
+}
 
 
+footer .decoration {
+    position: relative;
+}
 
+footer .decoration::after {
+    content: "";
+    background: url(images/deco3.png) no-repeat center center;
+    width: 332px;
+    height: 351px;
+    display: block;
+    position: absolute;
+    bottom: 150px;
+    right: -820px;
 
-
+}
 
 
 
