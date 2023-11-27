@@ -24,8 +24,14 @@
 
 body {
     font-family: "CircularSTD";
-    background-image: url(images/bg.png)  ;
+    background-image: url(images/background.png);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container-lg {
+    margin-left: 6rem;
 }
 
 img {
@@ -73,6 +79,7 @@ section.home .decoration::before {
     position: absolute;
     bottom: -80px;
     left: -71px;
+   
 }
 
 .btn {
@@ -104,6 +111,15 @@ section.home .decoration::before {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+.shadow {
+     box-shadow: 0 15px 15px 0 #00000012;
+    --bs-btn-color: var(--primary-color);
+    font-size: 14px;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .btn-shadow {
@@ -297,6 +313,21 @@ section.home .decoration::before {
     margin: 1.5rem 0 4rem;
 }
 
+section.travel .decoration {
+    position: relative;
+}
+
+section.travel .decoration::before {
+    content: "";
+    background: url(images/discount-icon.png) no-repeat center center;
+    width: 277px;
+    height: 353px;
+    display: block;
+    position: absolute;
+    bottom: 143px;
+    left: 1050px;
+}
+
 /* Section feature */
 
 .feature {
@@ -388,9 +419,14 @@ section.home .decoration::before {
 
 /* Section Testimonials*/
 
-.testimonials {
+.testimonials  {
     margin-top: 5rem;
-}
+    background-image: url(images/bg-shape.svg);
+    /* opacity: 0.7; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    }
 
 .enthusiast p {
     color:  rgba(25, 24, 37, 0.75);
@@ -407,8 +443,8 @@ section.home .decoration::before {
     line-height: 160%; 
     font-weight: 700;
     line-height: 120%; 
+    position: relative;
 }
-
 
 .testimonials .text {
     color:   rgba(25, 24, 37, 0.75);
@@ -417,14 +453,6 @@ section.home .decoration::before {
     font-style: normal;
     font-weight: 450;
     line-height: 160%; 
-}
-
-.testimonials  {
-background-image: url(images/bg-shape.svg);
-/* opacity: 0.7; */
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center; 
 }
 
 .testimonials .box {
@@ -441,18 +469,17 @@ background-position: center;
     border-radius: 100px;
 }
 
-
 .testimonials .arrows {
-  
    margin-top: 17rem;
-    gap: 2rem;
-    width: 150%;
+   gap: 2rem; 
+   width: 150%;
+   position: relative;
 }
 
 .testimonials .arrows {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:space-between;
     width: 100px;
     height: 100px;
     border: 1px solid rgb(25, 24, 27, .1);
@@ -481,6 +508,7 @@ background-position: center;
 .subscribe .container-lg {
     border-radius: 32px;
     background: rgba(250, 205, 73, 0.08);
+    margin-top: 100px;
 }
 
 .subscribe p {
@@ -493,14 +521,14 @@ background-position: center;
 .input-group span  {
     background: #FFF;
     border: #FFF;
-    border-radius: 32%;
-
-    
+    border-radius: 32%; 
 }
+
 .input-group .form-control {
     background: #FFF;
     border: #FFF;
-    /* padding-right: 600px; */
+    padding-right: 400px;
+    height: 80px;
 }
 
 section.subscribe .decoration {
@@ -595,7 +623,6 @@ footer .decoration::after {
     position: absolute;
     bottom: 150px;
     right: -820px;
-
 }
 
 
@@ -650,7 +677,58 @@ footer .decoration::after {
     input[name="nav-toggler"]:checked + nav::after {
         left: 280px;
     }
+
+    body {
+        background-image: url(images/Tablet.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+    .section-heading {
+        text-align: center;
+    }
+
+    .arrows {
+        justify-content: center; 
+        align-items: center;
+    }
+
+    section.destinations .decoration::before { 
+        display: none;
+    }
+
+    section.travel .decoration::before { 
+        display: none;
+    }
+
+    .travel p {
+        text-align: center;
+    }
+
+    .reverse {
+        display: flex;
+        flex-direction:column-reverse;
+    }
+
+    .offer .text {
+        text-align: center;
+    }
+
 } 
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 768px) {
     section.home h2 {
@@ -660,7 +738,30 @@ footer .decoration::after {
     section.home .decoration::before { 
         display: none;
     }
+
 }   
+
+
+@media screen and (max-width: 768px) {
+    .section-heading h2 {
+        font-size: 32px;
+    }
+    .section-heading h3 {
+        font-size: 16px;
+    }
+    .travel .image {
+        height: 320px;
+    }
+
+    
+    .arrows {
+        justify-content:space-between; 
+        align-items: center;
+    }
+}
+
+
+
 
 @media screen and (min-width: 1400px) {
     .p-custom {
@@ -683,17 +784,4 @@ footer .decoration::after {
     .travel .image::before {
         display: none;
     }
-}
-
-@media screen and (max-width: 768px) {
-    .section-heading h2 {
-        font-size: 32px;
-    }
-    .section-heading h3 {
-        font-size: 16px;
-    }
-    .travel .image {
-        height: 320px;
-    }
-
 }
