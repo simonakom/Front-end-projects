@@ -418,89 +418,52 @@ section.travel .decoration::before {
 
 /* Section Testimonials*/
 
+
 .testimonials  {
-    margin-top: 5rem;
+    position: relative;
     background-image: url(images/bg-shape.svg);
-    /* opacity: 0.7; */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
-    }
-
-.enthusiast p {
-    color:  rgba(25, 24, 37, 0.75);
-    font-size: 23px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;
+    width: 100%
 }
 
-.enthusiast span {
-    color: #FF5722;
+
+ .testimonials span {
+    color:#FF5722;
     font-size: 28px;
-    font-style: normal;
-    line-height: 160%; 
-    font-weight: 700;
-    line-height: 120%; 
-    position: relative;
-}
 
-.testimonials .text {
-    color:   rgba(25, 24, 37, 0.75);
-    text-align: center;
+ }
+ .enthusiast {
+    color: rgba(25, 24, 37, 0.75);
     font-size: 23px;
-    font-style: normal;
-    font-weight: 450;
-    line-height: 160%; 
-}
+    font-weight: bold;
+    margin-bottom: 20px;
+ }
 
-.testimonials .box {
-    height: 20px;
-    width: 20px;
-    background: rgba(25, 24, 37, 0.05);
-    border-radius: 100px;
-}
+ .testimonials p {
+    color: rgba(25, 24, 37, 0.75);
+    font-size: 23px;
+    text-align: center;
+ }
 
-.testimonials .pinkbox {
-    height: 20px;
-    width: 20px;
-    background: #F85E9F;
-    border-radius: 100px;
-}
-
-.testimonials .arrows {
-   margin-top: 17rem;
-   gap: 2rem; 
-   width: 150%;
-   position: relative;
-}
-
-.testimonials .arrows {
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    width: 100px;
-    height: 100px;
-    border: 1px solid rgb(25, 24, 27, .1);
-    align-items: center;
-    justify-content: center;
+ .dots a {
+    background: #19182513;
     border-radius: 50%;
-    transition: all .5s ease-in-out;    
-}
+    margin-top: 2rem;
+    width: 24px;
+    height: 24px;
+    transition: all 0.5s ease-in-out;
+  }
 
-.testimonials .arrows svg {
-    fill: #191825;
-    transition: all .5s ease-in-out;
-}
+  .dots a:nth-child(2) {
+    background: var(--primary-color);
+  }
 
-.testimonials .arrows a:hover {
-    background-color: #5D50C6;
-    border-color: #5D50C6;
-}
+  .space {
+    padding-top: 300px;
+ }
 
-.testimonials .arrows a:hover svg {
-    fill: white;
-} 
 
 /* Section Subscribe*/
 
@@ -708,6 +671,7 @@ footer .decoration::after {
     .offer .text {
         text-align: center;
     }
+
 } 
 
 
@@ -728,12 +692,20 @@ footer .decoration::after {
     }
     .travel .image {
         height: 320px;
-    }
+    }  
 
     .arrows {
-        justify-content:space-between; 
-        align-items: center;
+        justify-content: space-between;
     }
+
+    .testimonials  {
+        background-image: none;
+    }
+
+    .space {
+        padding-top: 800px;
+     }
+
 }
 
 
