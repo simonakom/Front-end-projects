@@ -38,7 +38,7 @@ img {
     max-width: 100%;
 }
 
-/* Footer */
+/* Header */
 
 ul {
     list-style: none;
@@ -79,7 +79,6 @@ section.home .decoration::before {
     position: absolute;
     bottom: -80px;
     left: -71px;
-   
 }
 
 .btn {
@@ -527,7 +526,6 @@ section.travel .decoration::before {
 .input-group .form-control {
     background: #FFF;
     border: #FFF;
-    padding-right: 400px;
     height: 80px;
 }
 
@@ -609,7 +607,6 @@ footer .decoration {
     position: relative;
 }
 
-
 footer .decoration {
     position: relative;
 }
@@ -624,13 +621,6 @@ footer .decoration::after {
     bottom: 150px;
     right: -820px;
 }
-
-
-
-
-
-
-
 
 
 
@@ -685,7 +675,6 @@ footer .decoration::after {
         background-position: center;
     }
 
-
     .section-heading {
         text-align: center;
     }
@@ -703,6 +692,10 @@ footer .decoration::after {
         display: none;
     }
 
+    footer .decoration::after  {
+    display: none;
+    }
+
     .travel p {
         text-align: center;
     }
@@ -715,19 +708,7 @@ footer .decoration::after {
     .offer .text {
         text-align: center;
     }
-
 } 
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media screen and (max-width: 768px) {
@@ -739,10 +720,6 @@ footer .decoration::after {
         display: none;
     }
 
-}   
-
-
-@media screen and (max-width: 768px) {
     .section-heading h2 {
         font-size: 32px;
     }
@@ -753,7 +730,6 @@ footer .decoration::after {
         height: 320px;
     }
 
-    
     .arrows {
         justify-content:space-between; 
         align-items: center;
@@ -761,10 +737,8 @@ footer .decoration::after {
 }
 
 
-
-
 @media screen and (min-width: 1400px) {
-    .p-custom {
+      .p-custom {
         padding-left: 100px;
     }
 
