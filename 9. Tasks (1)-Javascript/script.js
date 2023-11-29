@@ -1,6 +1,8 @@
 //1 Task
 let vardas = 'Tom'; 
 let pavarde = 'Hanks';
+// console.log(vardas, pavarde);
+// console.log(typeof vardas, typeof pavarde);
 
 if(vardas.length > pavarde.length){
     console.log(pavarde);
@@ -8,6 +10,7 @@ if(vardas.length > pavarde.length){
 else{
     console.log(vardas);
 }
+
 
 // 2 Task
 let manoVardas = 'Simona', manoPavarde = 'Komarovska', gimimoMetai = '1997', sieMetai = '2023';
@@ -27,6 +30,9 @@ console.log (inicialai);
 // //4 Task
 let aktoriausVardas = 'Johnny'; 
 let aktoriausPavarde = 'Depp';
+// console.log(aktoriausVardas, aktoriausPavarde);
+// console.log(typeof aktoriausVardas, typeof aktoriausPavarde);
+
 let inicialaiTrys = 
 aktoriausVardas [3] + 
 aktoriausVardas [4] + 
@@ -35,9 +41,8 @@ aktoriausPavarde [1] +
 aktoriausPavarde [2] +
 aktoriausPavarde [3];
 
-
 console.log(inicialaiTrys);
-console.log(typeof inicialaiTrys);
+// console.log(typeof inicialaiTrys);
 
 
 // //5 Task
