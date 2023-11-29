@@ -11,8 +11,8 @@ let smallTitle = title.toLowerCase();
 // let starTitle = smallTitle.replaceAll('o', star);
 let starTitle = smallTitle.replaceAll('o', '*');
 
-console.log(title, smallTitle, starTitle);
-console.log(typeof title, typeof smallTitle, typeof starTitle);
+console.log(starTitle);
+// console.log(typeof title, typeof smallTitle, typeof starTitle);
 
 
 //7 Task
@@ -91,8 +91,8 @@ let actorName = 'Johnny';
 let actorSurname = 'Depp';
 let initials = actorName[0] + actorSurname[0]; 
 
-console.log(actorName, actorSurname, initials);
-console.log(typeof actorName,typeof actorSurname,typeof initials);
+console.log(initials);
+// console.log(typeof actorName,typeof actorSurname,typeof initials);
 
   
  //11 Task 
