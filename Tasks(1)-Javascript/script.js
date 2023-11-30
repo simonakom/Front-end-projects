@@ -15,13 +15,14 @@ else{
 // 2 Task
 let manoVardas = 'Simona', manoPavarde = 'Komarovska', gimimoMetai = '1997', sieMetai = '2023';
 let amzius = sieMetai - gimimoMetai
+console.log(amzius)
 
-console.log('Aš esu ' + manoVardas + ' ' + manoPavarde + '. Man yra ' + amzius + ' metai.')
+console.log('Aš esu ' + manoVardas + ' ' + manoPavarde + '. Man yra ' + amzius + ' metai(ų).')
 
 
 // //3 Task
-let vartotojoVardas = 'Vardas'; 
-let vartotojoPavarde = 'Pavarde';
+let vartotojoVardas = 'Simona'; 
+let vartotojoPavarde = 'Komarovska';
 let inicialai = vartotojoVardas [0] + vartotojoPavarde [0];
 
 console.log (inicialai);
