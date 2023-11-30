@@ -63,3 +63,4 @@ else if (menesis === '10') console.log ('Spalis')
 else if (menesis === '11') console.log ('Lapkritis')
 else if (menesis === '12') console.log ('Gruodis')
 else console.log ('error');
+
