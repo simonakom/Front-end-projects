@@ -60,7 +60,9 @@ let one = rand (0,4),
     // console.log(two);
     console.log(one, two);
 
-if (one==0) {result=0;} 
+if (one==0 || two==0) 
+console.log('dalyba su 0 negalima');
+else if (one === two) {result=1;} 
 else if (two==0) {result=0;} 
 else if (one>=two) {result = one / two;} 
 else if (one<= two) {result = two / one;} 
@@ -69,44 +71,44 @@ console.log(result);
 console.log(result.toFixed(2));
 
 
-//9 Task
+// //9 Task
 
-let a = rand(0, 25),
-    b = rand(0, 25),
-    c = rand(0, 25);
+// let a = rand(0, 25),
+//     b = rand(0, 25),
+//     c = rand(0, 25);
 
-console.log(a, b, c);
+// console.log(a, b, c);
 
-if (c<a && c>b) {console.log(c)}
-else if (c>a && c<b) {console.log(c)}
-else if (a<b && a>c) {console.log(a)}
-else if (a>b && a<c) {console.log(a)}
-else if (b<a && b>c) {console.log(b)}
-else if (b>a && b<c) {console.log(b)}
-else if (b==c, a==b, a==c)  {console.log('no middle value')}
+// if (c<a && c>b) {console.log(c)}
+// else if (c>a && c<b) {console.log(c)}
+// else if (a<b && a>c) {console.log(a)}
+// else if (a>b && a<c) {console.log(a)}
+// else if (b<a && b>c) {console.log(b)}
+// else if (b>a && b<c) {console.log(b)}
+// else if (b==c, a==b, a==c)  {console.log('no middle value')}
 
 
- //10 Task
-let actorName = 'Johnny'; 
-let actorSurname = 'Depp';
-let initials = actorName[0] + actorSurname[0]; 
+//  //10 Task
+// let actorName = 'Johnny'; 
+// let actorSurname = 'Depp';
+// let initials = actorName[0] + actorSurname[0]; 
 
-console.log(initials);
-// console.log(typeof actorName,typeof actorSurname,typeof initials);
+// console.log(initials);
+// // console.log(typeof actorName,typeof actorSurname,typeof initials);
 
   
- //11 Task 
-let letter1 = rand(97, 122);
-let letter2 = rand(97, 122);
-let letter3 = rand(97, 122);
-console.log(String.fromCharCode(letter1), String.fromCharCode(letter2), String.fromCharCode(letter3));
-console.log(typeof letter1, typeof letter2, typeof letter3);
+//  //11 Task 
+// let letter1 = rand(97, 122);
+// let letter2 = rand(97, 122);
+// let letter3 = rand(97, 122);
+// console.log(String.fromCharCode(letter1), String.fromCharCode(letter2), String.fromCharCode(letter3));
+// console.log(typeof letter1, typeof letter2, typeof letter3);
 
-// changed value from number to string:
-let string1 = '' + letter1;
-let string2 = '' + letter2;
-let string3 = '' + letter3;
-console.log(typeof string1, typeof string2, typeof string3);
+// // changed value from number to string:
+// let string1 = '' + letter1;
+// let string2 = '' + letter2;
+// let string3 = '' + letter3;
+// console.log(typeof string1, typeof string2, typeof string3);
 
 
 
