@@ -53,7 +53,6 @@ let countZero = 0,
     // console.log("Zero's -", countZero,"One's -", countOne, "Two's - ", countTwo  );
  
 
-
 // //8 Task
 let one = rand (0,4),
     two = rand (0,4);
@@ -76,7 +75,6 @@ else if (one<= two) {
     result = two / one;
     console.log(result);console.log(result.toFixed(2));
 } 
-
 
 
 // //9 Task
