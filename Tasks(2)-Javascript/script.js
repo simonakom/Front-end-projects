@@ -31,26 +31,26 @@ let countZero = 0,
     countOne = 0,
     countTwo = 0;
 
-    if (numberOne === 0) {countZero++;} 
-    else if (numberOne === 1) {countOne++;}
-    else if (numberOne === 2) { countTwo++;}
-    
-    if (numberTwo === 0) {countZero++;} 
-    else if (numberTwo === 1) {countOne++;}
-    else if (numberTwo === 2) { countTwo++;}
+if (numberOne === 0) {countZero++;} 
+else if (numberOne === 1) {countOne++;}
+else if (numberOne === 2) { countTwo++;}
 
-    if (numberThree === 0) {countZero++;} 
-    else if (numberThree === 1) {countOne++;}
-    else if (numberThree === 2) { countTwo++;}
+if (numberTwo === 0) {countZero++;} 
+else if (numberTwo === 1) {countOne++;}
+else if (numberTwo === 2) { countTwo++;}
 
-    if (numberFour === 0) {countZero++;} 
-    else if (numberFour === 1) {countOne++;}
-    else if (numberFour === 2) { countTwo++;}
+if (numberThree === 0) {countZero++;} 
+else if (numberThree === 1) {countOne++;}
+else if (numberThree === 2) { countTwo++;}
 
-    console.log("Zero's -", countZero);
-    console.log("One's - ", countOne);
-    console.log("Two's - ", countTwo);
-    // console.log("Zero's -", countZero,"One's -", countOne, "Two's - ", countTwo  );
+if (numberFour === 0) {countZero++;} 
+else if (numberFour === 1) {countOne++;}
+else if (numberFour === 2) { countTwo++;}
+
+console.log("Zero's -", countZero);
+console.log("One's - ", countOne);
+console.log("Two's - ", countTwo);
+// console.log("Zero's -", countZero,"One's -", countOne, "Two's - ", countTwo  );
  
 
 // //8 Task
