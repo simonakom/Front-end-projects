@@ -65,17 +65,16 @@ else if (one === two) {
     result=1;
     console.log(result);console.log(result.toFixed(2));
 }
-    
+
 else if (one>=two) {
     result = one / two;
     console.log(result);console.log(result.toFixed(2));
 } 
 
-else if (one<= two) {
+else {
     result = two / one;
     console.log(result);console.log(result.toFixed(2));
 } 
-
 
 // //9 Task
 
