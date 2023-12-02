@@ -490,7 +490,9 @@ section.travel .decoration::before {
     background: #FFF;
     border: #FFF;
     height: 80px;
+    width: 480px;
 }
+
 
 section.subscribe .decoration {
     position: relative;
@@ -671,7 +673,6 @@ footer .decoration::after {
     .offer .text {
         text-align: center;
     }
-
 } 
 
 
@@ -706,6 +707,20 @@ footer .decoration::after {
         padding-top: 800px;
      }
 
+
+     .column7 {
+        display: flex;
+        flex-direction: column;  
+     }
+
+     .flex {
+        display: flex;
+        flex-direction: column;  
+     }
+
+     .btnsubscribe {
+        height: 80px;
+     }
 }
 
 
