@@ -11,7 +11,7 @@ else{
     console.log(vardas);
 }
 
-// 2 Task
+//2 Task
 let manoVardas = 'Simona', manoPavarde = 'Komarovska', gimimoMetai = '1997', sieMetai = '2023';
 let amzius = sieMetai - gimimoMetai
 console.log(amzius)
