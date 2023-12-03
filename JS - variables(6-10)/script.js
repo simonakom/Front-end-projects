@@ -15,7 +15,7 @@ console.log(starTitle);
 // console.log(typeof title, typeof smallTitle, typeof starTitle);
 
 
- //7 Task
+//7 Task
 let numberOne = rand (0,2), numberTwo = rand (0,2), numberThree = rand (0,2), numberFour = rand (0,2); 
 console.log(numberOne, numberTwo, numberThree, numberFour);
 
@@ -39,14 +39,13 @@ if (numberFour === 0) countZero++;
 else if (numberFour === 1) countOne++;
 else countTwo++;
 
-console.log(`Zero's - ${countZero}\t One's - ${countOne} Two's - ${countTwo}`);
+console.log(`Zero's - ${countZero}\tOne's - ${countOne}\tTwo's - ${countTwo}`);
 // console.log("Zero's -", countZero);
 // console.log("One's - ", countOne); 
 // console.log("Two's - ", countTwo);
 
  
-
-// //8 Task
+//8 Task
 let one = rand (0,4),
     two = rand (0,4);
     console.log(one, two);
@@ -67,44 +66,59 @@ else {
     //console.log(result);console.log(result.toFixed(2));
 }
 
-// // //9 Task
+//9 Task
 
-let a = rand(0, 25),
-    b = rand(0, 25),
-    c = rand(0, 25);
+let sk1 = rand(0, 25),
+    sk2 = rand(0, 25),
+    sk3 = rand(0, 25);
+console.log(sk1, sk2, sk3);
 
-console.log(a, b, c);
+let big = Math.max (sk1, sk2, sk3), 
+    small = Math.min (sk1, sk2, sk3);
 
-if (c<a && c>b) {console.log(c)}
-else if (c>a && c<b) {console.log(c)}
-else if (a<b && a>c) {console.log(a)}
-else if (a>b && a<c) {console.log(a)}
-else if (b<a && b>c) {console.log(b)}
-else if (b>a && b<c) {console.log(b)}
-else if (b==c || a==b || a==c)  {console.log('no middle value')}
+if (sk1 !== big && sk1 !== small) console.log(sk1);
+else if (sk2 !== big && sk2!== small) console.log(sk2);
+else if (sk3 !== big && sk3!== small) console.log(sk3);
+else console.log (`no middle value`);
 
 
-// //  // N/A Task
-// let actorName = 'Johnny'; 
-// let actorSurname = 'Depp';
-// let initials = actorName[0] + actorSurname[0]; 
+// if (c<a && c>b) {console.log(c)}
+// else if (c>a && c<b) {console.log(c)}
+// else if (a<b && a>c) {console.log(a)}
+// else if (a>b && a<c) {console.log(a)}
+// else if (b<a && b>c) {console.log(b)}
+// else if (b>a && b<c) {console.log(b)}
+// else if (b==c || a==b || a==c)  {console.log('no middle value')}
 
-// console.log(initials);
-// // console.log(typeof actorName,typeof actorSurname,typeof initials);
+
+// N/A Task
+let actorName = 'Johnny'; 
+let actorSurname = 'Depp';
+let initials = actorName[0] + actorSurname[0]; 
+
+console.log(initials);
+// console.log(typeof actorName,typeof actorSurname,typeof initials);
 
   
-// //  //10 Task 
-// let letter1 = rand(97, 122);
-// let letter2 = rand(97, 122);
-// let letter3 = rand(97, 122);
-// console.log(String.fromCharCode(letter1), String.fromCharCode(letter2), String.fromCharCode(letter3));
-// console.log(typeof letter1, typeof letter2, typeof letter3);
+//10 Task 
+let letter1 = rand(97, 122);
+let letter2 = rand(97, 122);
+let letter3 = rand(97, 122);
+console.log(String.fromCharCode(letter1), String.fromCharCode(letter2), String.fromCharCode(letter3));
+console.log(typeof letter1, typeof letter2, typeof letter3);
 
-// // changed value from number to string:
-// let string1 = '' + letter1;
-// let string2 = '' + letter2;
-// let string3 = '' + letter3;
-// console.log(typeof string1, typeof string2, typeof string3);
+let result =
+String.fromCharCode(letter1) + 
+String.fromCharCode(letter2) +
+String.fromCharCode(letter3);
+
+console.log(result);
+console.log(typeof result);
 
 
-
+// Short version:
+// console.log (
+// String.fromCharCode(rand(97, 122)) +
+//  String.fromCharCode(rand(97, 122)) + 
+//  String.fromCharCode(rand(97, 122))
+//  )
