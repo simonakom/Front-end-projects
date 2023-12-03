@@ -97,11 +97,3 @@ else if (sk<=99 && +sk.toString()[1]===6 || +sk.toString()[1]===7) {
 // }
     
 
-
-
-
-
-
-
-
-

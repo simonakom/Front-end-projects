@@ -87,15 +87,6 @@ else {
 
 
 
-
-
-
-
-
-
-
-
-
 // // // Not using fuctions
 
 // function rand(min, max) {
@@ -143,26 +134,4 @@ else {
 // else {
 //     console.log (`Skaičius ${sk} nepriklauso nei vienai kategorijai`)
 // }
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
