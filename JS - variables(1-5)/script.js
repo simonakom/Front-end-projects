@@ -44,7 +44,7 @@ aktoriausPavarde [3];
 console.log(inicialaiTrys);
 // console.log(typeof inicialaiTrys);
 
- //5 Task
+//5 Task
 let data = '2023-11-28'; 
 
 let menesis = data[5]+data[6];
