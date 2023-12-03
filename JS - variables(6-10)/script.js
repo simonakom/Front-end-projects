@@ -15,7 +15,7 @@ console.log(starTitle);
 // console.log(typeof title, typeof smallTitle, typeof starTitle);
 
 
-// //7 Task
+ //7 Task
 let numberOne = rand (0,2), numberTwo = rand (0,2), numberThree = rand (0,2), numberFour = rand (0,2); 
 console.log(numberOne, numberTwo, numberThree, numberFour);
 
@@ -53,22 +53,21 @@ let one = rand (0,4),
 
 if (one===0 || two===0) console.log(`Dalyba iš 0 negalima`);
 
-else if (one === two) {
-    result=1;
-    console.log(result);console.log(result.toFixed(2));
+else {
+    if (one === two)  console.log((1).toFixed(2));
+    // result=1;
+    // console.log(result);console.log(result.toFixed(2));
+
+    else if (one>=two) console.log((one/two).toFixed(2));
+    // result = one / two;
+    // console.log(result);console.log(result.toFixed(2));
+
+    else console.log((two/one).toFixed(2));
+    // result = two / one;
+    //console.log(result);console.log(result.toFixed(2));
 }
 
-else if (one>=two) {
-    result = one / two;
-    console.log(result);console.log(result.toFixed(2));
-} 
-
-else {
-    result = two / one;
-    console.log(result);console.log(result.toFixed(2));
-}  
-
-// //9 Task
+// // //9 Task
 
 let a = rand(0, 25),
     b = rand(0, 25),
@@ -85,27 +84,27 @@ else if (b>a && b<c) {console.log(b)}
 else if (b==c || a==b || a==c)  {console.log('no middle value')}
 
 
-//  // N/A Task
-let actorName = 'Johnny'; 
-let actorSurname = 'Depp';
-let initials = actorName[0] + actorSurname[0]; 
+// //  // N/A Task
+// let actorName = 'Johnny'; 
+// let actorSurname = 'Depp';
+// let initials = actorName[0] + actorSurname[0]; 
 
-console.log(initials);
-// console.log(typeof actorName,typeof actorSurname,typeof initials);
+// console.log(initials);
+// // console.log(typeof actorName,typeof actorSurname,typeof initials);
 
   
-//  //10 Task 
-let letter1 = rand(97, 122);
-let letter2 = rand(97, 122);
-let letter3 = rand(97, 122);
-console.log(String.fromCharCode(letter1), String.fromCharCode(letter2), String.fromCharCode(letter3));
-console.log(typeof letter1, typeof letter2, typeof letter3);
+// //  //10 Task 
+// let letter1 = rand(97, 122);
+// let letter2 = rand(97, 122);
+// let letter3 = rand(97, 122);
+// console.log(String.fromCharCode(letter1), String.fromCharCode(letter2), String.fromCharCode(letter3));
+// console.log(typeof letter1, typeof letter2, typeof letter3);
 
-// changed value from number to string:
-let string1 = '' + letter1;
-let string2 = '' + letter2;
-let string3 = '' + letter3;
-console.log(typeof string1, typeof string2, typeof string3);
+// // changed value from number to string:
+// let string1 = '' + letter1;
+// let string2 = '' + letter2;
+// let string3 = '' + letter3;
+// console.log(typeof string1, typeof string2, typeof string3);
 
 
 

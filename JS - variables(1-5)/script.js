@@ -11,7 +11,6 @@ else{
     console.log(vardas);
 }
 
-
 // 2 Task
 let manoVardas = 'Simona', manoPavarde = 'Komarovska', gimimoMetai = '1997', sieMetai = '2023';
 let amzius = sieMetai - gimimoMetai
@@ -20,7 +19,7 @@ console.log(amzius)
 console.log('Aš esu ' + manoVardas + ' ' + manoPavarde + '. Man yra ' + amzius + ' metai(ų).')
 
 
-// //3 Task
+//3 Task
 let vartotojoVardas = 'Simona'; 
 let vartotojoPavarde = 'Komarovska';
 let inicialai = vartotojoVardas [0] + vartotojoPavarde [0];
@@ -28,7 +27,7 @@ let inicialai = vartotojoVardas [0] + vartotojoPavarde [0];
 console.log (inicialai);
 
 
-// //4 Task
+//4 Task
 let aktoriausVardas = 'Johnny'; 
 let aktoriausPavarde = 'Depp';
 // console.log(aktoriausVardas, aktoriausPavarde);
@@ -45,8 +44,7 @@ aktoriausPavarde [3];
 console.log(inicialaiTrys);
 // console.log(typeof inicialaiTrys);
 
-
-// //5 Task
+ //5 Task
 let data = '2023-11-28'; 
 
 let menesis = data[5]+data[6];
