@@ -16,41 +16,34 @@ console.log(starTitle);
 
 
 // //7 Task
-let numberOne = rand (0,2),
-    numberTwo = rand (0,2),
-    numberThree = rand (0,2),
-    numberFour = rand (0,2);
-
+let numberOne = rand (0,2), numberTwo = rand (0,2), numberThree = rand (0,2), numberFour = rand (0,2); 
 console.log(numberOne, numberTwo, numberThree, numberFour);
-// console.log (numberOne);
-// console.log (numberTwo);
-// console.log (numberThree);
-// console.log (numberFour);
 
 let countZero = 0,
     countOne = 0,
     countTwo = 0;
 
-if (numberOne === 0) {countZero++;} 
-else if (numberOne === 1) {countOne++;}
-else if (numberOne === 2) { countTwo++;}
+if (numberOne === 0) countZero++; 
+else if (numberOne === 1) countOne++;
+else countTwo++;
 
-if (numberTwo === 0) {countZero++;} 
-else if (numberTwo === 1) {countOne++;}
-else if (numberTwo === 2) { countTwo++;}
+if (numberTwo === 0) countZero++;
+else if (numberTwo === 1) countOne++;
+else countTwo++;
 
-if (numberThree === 0) {countZero++;} 
-else if (numberThree === 1) {countOne++;}
-else if (numberThree === 2) { countTwo++;}
+if (numberThree === 0) countZero++;
+else if (numberThree === 1) countOne++;
+else countTwo++;
 
-if (numberFour === 0) {countZero++;} 
-else if (numberFour === 1) {countOne++;}
-else if (numberFour === 2) { countTwo++;}
+if (numberFour === 0) countZero++;
+else if (numberFour === 1) countOne++;
+else countTwo++;
 
-console.log("Zero's -", countZero);
-console.log("One's - ", countOne);
-console.log("Two's - ", countTwo);
-// console.log("Zero's -", countZero,"One's -", countOne, "Two's - ", countTwo  );
+console.log(`Zero's - ${countZero}\t One's - ${countOne} Two's - ${countTwo}`);
+// console.log("Zero's -", countZero);
+// console.log("One's - ", countOne); 
+// console.log("Two's - ", countTwo);
+
  
 
 // //8 Task
@@ -58,8 +51,7 @@ let one = rand (0,4),
     two = rand (0,4);
     console.log(one, two);
 
-if (one==0 || two==0) 
-console.log('dalyba su 0 negalima');
+if (one===0 || two===0) console.log(`Dalyba iš 0 negalima`);
 
 else if (one === two) {
     result=1;
@@ -93,7 +85,7 @@ else if (b>a && b<c) {console.log(b)}
 else if (b==c || a==b || a==c)  {console.log('no middle value')}
 
 
-//  //10 Task
+//  // N/A Task
 let actorName = 'Johnny'; 
 let actorSurname = 'Depp';
 let initials = actorName[0] + actorSurname[0]; 
@@ -102,7 +94,7 @@ console.log(initials);
 // console.log(typeof actorName,typeof actorSurname,typeof initials);
 
   
-//  //11 Task 
+//  //10 Task 
 let letter1 = rand(97, 122);
 let letter2 = rand(97, 122);
 let letter3 = rand(97, 122);
