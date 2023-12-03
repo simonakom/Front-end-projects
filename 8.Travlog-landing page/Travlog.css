@@ -657,8 +657,15 @@ footer .decoration::after {
         display: none;
     }
 
-    footer .decoration::after  {
-    display: none;
+    footer .decoration::after {
+        content: "";
+        background: url(images/deco3.png) no-repeat center center;
+        width: 332px;
+        height: 351px;
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        right: -220px;
     }
 
     .travel p {
@@ -677,6 +684,11 @@ footer .decoration::after {
 
 
 @media screen and (max-width: 768px) {
+
+    body {
+        background-image: none;
+    }
+
     section.home h2 {
         font-size: 40px;
     }
@@ -718,9 +730,23 @@ footer .decoration::after {
         flex-direction: column;  
      }
 
+     .input-group .form-control {
+        background: #FFF;
+        border: #FFF;
+        height: 80px;
+        width: 280px;
+    }
      .btnsubscribe {
         height: 80px;
      }
+     
+     footer .decoration::after {
+      display: none;
+    }
+
+    section.subscribe .decoration::before {
+        display: none;
+    }
 }
 
 
