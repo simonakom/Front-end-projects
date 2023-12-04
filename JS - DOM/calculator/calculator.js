@@ -5,13 +5,9 @@ function calculate() {
     let result = document.querySelector (`#result`);
 
     let operation = document.querySelector (`#operation`).value;
-    // let rez; 
-
-
 
     // console.log (firstNumber, secondNumber, operation)
     // console.log (typeof firstNumber, typeof secondNumber)
-    
 
 if ( isNaN(firstNumber) || isNaN(secondNumber) ) {
     result.innerText = 'Action is impossible. All numbers are not entered';
@@ -32,7 +28,6 @@ else if(operation === `/`) {
     {result.innerText = `Result = ${firstNumber/secondNumber}`}
     else {result.innerText = `One of numbers is 0. Cannot divide by 0`}; 
     // 0/3=0 3/0=error
-
 }
 
 else if(operation === `**`) {
