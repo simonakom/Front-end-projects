@@ -71,6 +71,28 @@ for (let i = 0; i < 3; i++) {
      document.write('<br>')
      document.write('<br>')
 
+
+// with arrey
+    //  let numbers = [];
+    //  let biggerThan150 = 0;
+    //  for (let i = 0; i < 300; i++) {
+    //      let randomNumber = rand(0, 300);
+    //      if (randomNumber > 150) biggerThan150++;
+     
+    //      if (randomNumber > 275) {
+    //          //raudonas skaicius
+    //          document.write(`<span style="color: red">${randomNumber}</span> `);
+    //      } else {
+    //          //paprastas skaicius
+    //          // document.write("<black>" + randomNumber + "</black> ");
+    //          document.write(`<span style="color: black">${randomNumber}</span> `);
+    //      }
+    //  }
+    //  console.log(`Didesnių skaičių nei 150 masyve yra: ${biggerThan150}`);
+
+
+
+
 // 5 task
 /*Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia, panaudokite css, kad visi rezultatai matytųsi ekrane.*/
 
