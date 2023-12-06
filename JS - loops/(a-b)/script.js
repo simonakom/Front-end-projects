@@ -30,11 +30,11 @@ for(let i = 0; i < 8; i++){
     document.querySelector("#max_50").innerText += max50;
 }
 
-// second option:
-let i = ""; for(let i = 0; i < 400; i++) {
-maxx50 = "*";
-if ((i + 1) % 50 === 0) 
-maxx50 += '<br>';
-document.write(maxx50);
-}
+// // second option:
+// let i = ""; for(let i = 0; i < 400; i++) {
+// maxx50 = "*";
+// if ((i + 1) % 50 === 0) 
+// maxx50 += '<br>';
+// document.write(maxx50);
+// }
 
