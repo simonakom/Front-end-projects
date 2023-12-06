@@ -26,6 +26,16 @@ let example = newFunction (0,4);
     console.log(example);
 
 
+// //12 Task
 
+let a = 5, 
+    b = 20;
+console.log(a,b);
+
+a = a + b;
+b = a - b;
+a = a - b;
+
+console.log(a,b);
 
 
