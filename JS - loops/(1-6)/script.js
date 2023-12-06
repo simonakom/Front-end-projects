@@ -18,7 +18,6 @@ for (let i = 0; i < 3; i++) {
     let randomNumber = rand(-10, 10);
     console.log (randomNumber)
 
-
     let color = '';
     if (randomNumber < 0) {
         color = 'green';
@@ -28,7 +27,7 @@ for (let i = 0; i < 3; i++) {
         color= 'blue';
     }
 
-    document.write('<p class="' + color + '">' + randomNumber + '</p>');
+    document.write('<p class= "' + color + ' ">' + randomNumber + '</p>' );
 }
 
 
