@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 25rem;
+    height: 12rem;
+    background-color: rgba(21, 88, 150, 0.488);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 20px;
+    border: 3px solid rgb(51, 45, 164);
+}
+
+span {
+    font-size: 2rem;
+}
+
+.buttons {
+    margin-top: 2rem;
+}
+
+button {
+    margin: 5px;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subtract {
+    background-color: rgb(200, 37, 37);
+    color: white;
+}
+
+.add {
+    background-color: rgb(47, 116, 65);
+    color: white;
+}
+
