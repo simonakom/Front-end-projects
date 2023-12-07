@@ -64,6 +64,12 @@ nav.navbar li.active a {
     color: #222831;
 }
 
+.hover:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+ }
+
 /* Section Home */
 
 section.home .decoration {
