@@ -1,9 +1,7 @@
-body {
-    background-color: rgba(88, 86, 84, 0.148);
-}
+
 
 .container {
-    width: 72%;
+    min-width: 70%;
     margin: 0 auto; 
     padding: 20px;
     line-height: 1.4;
@@ -12,7 +10,6 @@ body {
     padding-bottom: 60px;
     }
 
-  
 
 /* Font */
 
