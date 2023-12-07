@@ -7,15 +7,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
+
+        body {
+            background-color: rgba(242, 210, 189, 0.491);
+        }
+      
+        h1 {
+            color: #3d210b;
+            margin-bottom: 25px;
+        }
         .frame {
-            border: 2px solid rgb(13, 8, 102);
-            background-color: rgba(122, 101, 167, 0.207);
-            border-radius: 300px;
+            border: 2px solid rgba(232, 177, 140, 0.481);
+            background-color: #f5ddcb;
+            border-radius: 10%;
             width: 540px;
-            height: 450px;
+            height: 430px;
+            box-shadow:  5px 6px rgba(30, 30, 29, 0.101);
+
         }  
         .down {
-            padding-top: 40px;
+            padding-top: 20px;
         }
         #num1 {
             width: 125px;
@@ -35,14 +46,33 @@
         .btn {
             background-color: rgba(196, 228, 240, 0.451);
             border: 2px solid rgb(13, 8, 102);
+            color: #6e246edc;
         }
+
+        .btn:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease-in-out;
+            color: #ff00ff;
+            background-color: #ff00ff2f;
+            opacity: 0.8;
+            }
+
         .calc {
             margin-left: 202px;
             width: 140px;
             border: 2px solid rgb(100, 8, 102);
             height: 40px;
             background-color: rgba(182, 45, 146, 0.13);
+            color: #6e246edc
         }
+
+        .calc:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease-in-out;
+            color: #ff00ff;
+            background-color: #ff00ff2f;
+            opacity: 0.8;
+            }
 
         .result {
             margin-left: 160px;
@@ -52,6 +82,18 @@
             background-color: rgba(153, 223, 148, 0.257);
             padding: 5px;
         }
+
+        input {
+        background-color: rgba(173, 216, 230, 0.376);
+        }
+
+        #operation {
+        background-color: rgba(173, 216, 230, 0.443);
+        color: #6e246edc
+        }
+
+
+
     </style>
 </head>
 <body>
