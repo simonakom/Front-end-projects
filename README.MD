@@ -1,6 +1,8 @@
 <h1>Namų darbai<h1>
 
-<h4>Wikipedia page sample [View!](https://simonakom.github.io/Namu-darbai/1.RichardGere/Richard%20Gere.html)<h4>
+<h4>Wikipedia page sample <a href="https://simonakom.github.io/Namu-darbai/1.RichardGere/Richard%20Gere.html" style="font-size:small;">View</a>
+
+ <h4>
 
 
-<a href="http://www.example.com" style="font-size:small;">Small-sized Link</a>
+
