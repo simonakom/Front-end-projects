@@ -6,6 +6,7 @@ body {
     background-color: rgba(205, 233, 228, 0.825);
 }
 
+
 .container {
     width: 25rem;
     height: 25rem;
@@ -13,10 +14,14 @@ body {
     padding: 1rem;
     text-align: center;
     border-radius: 20px;
-    border: 3px solid rgba(72, 151, 138, 0.277);
-    box-shadow:  2px 5px rgba(130, 100, 194, 0.2)
-
+    box-shadow:  5px 6px rgba(30, 30, 29, 0.101);
 }
+
+hr {
+    border: 1px solid #193c1c3b; 
+    margin: 20px 0;
+}
+
 
 span {
     font-size: 2rem;  
