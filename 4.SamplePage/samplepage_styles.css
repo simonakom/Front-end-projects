@@ -99,7 +99,7 @@ a {
 }
 
 a:hover {
-  color:rgb(140, 169, 83);
+  color:rgb(38, 49, 16);
   font-size: 17px;
 }
 a:visited{
@@ -110,7 +110,7 @@ a:active{
 }
 
 .footer_list a:hover {
-  color:rgb(140, 169, 83);
+  color:rgb(106, 77, 116);
   font-size: 17px;
 }
 .footer_list a:visited{
@@ -131,7 +131,7 @@ a:active{
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  box-shadow: 0px 141px 200px -40px rgba(73, 54, 32, 0.586);
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
 }
     
 .frame_1 {
@@ -192,7 +192,7 @@ a:active{
     height: 320px;
     object-fit:contain;
     background-position: center;
-    box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.796);
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
     border-radius: 50px 50px 50px 50px;
     margin-left: 30px;
   }
@@ -204,8 +204,15 @@ a:active{
     padding-left: 10px;
     padding-right: 10px;
     align-items: center;
-    box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.796);
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
     border-radius: 50px 50px 50px 50px;
+  }
+
+  .flex2 .frame_2:hover {
+    background-color: #dd54727e;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
   }
 
   .text_a {
@@ -234,8 +241,8 @@ a:active{
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
-    box-shadow: 0px 141px 200px -80px rgba(32, 44, 73, 0.556);
-}
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
+  }
     
 .frame_3 {
     background-color: #58565496;
@@ -316,20 +323,32 @@ a:active{
     width: 180px;
     height: 180px;
     background-position: center center;
-    box-shadow: 0px 141px 200px -30px rgb(183, 205, 212);
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
     border-radius: 50px 50px 50px 50px;
     margin-left: 60px;
   }
-  
+
+  .block .candle_1:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+  }
+
   .candle_2 {
     background-image: url(images/candle2.webp);
     background-size: 300px 250px;
     width: 180px;
     height: 180px;
     background-position: center;
-    box-shadow: 0px 141px 200px -30px rgb(183, 205, 212);
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
     border-radius: 50px 50px 50px 50px;
     margin-left: 60px;
+  }
+
+  .block .candle_2:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
   }
   
   .candle_3 {
@@ -338,10 +357,17 @@ a:active{
     width: 180px;
     height: 180px;
     background-position: center;
-    box-shadow: 0px 141px 200px -30px rgb(183, 205, 212);
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
     border-radius: 50px 50px 50px 50px;
     margin-left: 60px;
   }
+
+  .block .candle_3:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+  }
+  
 
   .candle_4 {
     background-image: url(images/candle4.webp);
@@ -349,10 +375,17 @@ a:active{
     width: 180px;
     height: 180px;
     background-position: center;
-    box-shadow: 0px 141px 200px -30px rgb(183, 205, 212);
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
     border-radius: 50px 50px 50px 50px;
     margin-left: 60px;
   }
+
+  .block .candle_4:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+  }
+  
 
 .candle_decription  {
   display: flex;
@@ -376,7 +409,7 @@ a:active{
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.586);
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
 }
   
 .frame_5 {
@@ -424,19 +457,19 @@ gap: 10px;
 iframe {
   width: 400px;
   min-height: 350px;
-  box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.796);
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
   border-radius: 50px 50px 50px 50px;
   }
 
 .frame_6 {
-background-color: rgba(33, 25, 31, 0.182);
+background-color: rgba(68, 58, 66, 0.1);
 width: 200px ;
 min-height: 400px;
 padding-left: 20px;
 padding-right: 10px;
 align-items: center;
-box-shadow: 0px 141px 200px -80px rgba(73, 54, 32, 0.796);
- border-radius: 50px 50px 50px 50px;
+box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
+border-radius: 50px 50px 50px 50px;
 }
 
 .flex_icon {
@@ -488,4 +521,12 @@ footer{
 
 .rights_reserved{
     text-align: center;
+}
+
+
+.frame_6 .icon_text:hover {
+
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  opacity: 0.8;
 }
