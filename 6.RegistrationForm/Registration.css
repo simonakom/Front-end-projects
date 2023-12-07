@@ -79,6 +79,8 @@ body{
 /* Intro text */
 
 .intro{
+    display: inline-flex;
+    flex-direction: row;
     font-family: 'Open Sans', sans-serif;
     color: #6B7280;
     font-size: 16px;
@@ -114,7 +116,8 @@ body{
 
 .google_icon{
     position: absolute;
-    padding: 15px 2px;   
+    padding: 15px 2px; 
+    /* z-index: 1 */
     }
     
 
@@ -138,6 +141,17 @@ body{
     padding: 14px 8px;  
     }
 
+    .sing_button .google:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+        opacity: 0.8;
+     }
+
+     .sing_button .facebook_icon:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+        opacity: 0.8;
+     }
 /* or */
 
 .line {
@@ -198,6 +212,12 @@ a {
     line-height: 20px; 
 }
 
+.password p :hover {
+    color: #724DFF;
+    font-size: 15px;
+ }
+
+
 
 /* Continue */
 
@@ -217,6 +237,12 @@ a {
     line-height: 24px;     
 }
 
+.continue:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+ }
+
 /* Questions */
 
 .Questions {
@@ -228,6 +254,11 @@ a {
     font-weight: 600;
     line-height: 26px; 
 }
+
+.Questions p :hover {
+    color: #724DFF;
+    font-size: 15px;
+ }
 
 
 /* Repsonsive */
