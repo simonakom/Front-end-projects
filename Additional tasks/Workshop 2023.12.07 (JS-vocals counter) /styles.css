@@ -51,3 +51,11 @@ img {
     margin-bottom: 15px;
     margin-top: 30px;
 }
+
+.btn:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    color: #ff00ff;
+    background-color: #ff00ff2f;
+    opacity: 0.8;
+    }
