@@ -10,6 +10,12 @@
         .container {
             background-color: #faf8ef;
         }
+
+        .btn_hover:hover {
+            transform: scale(0.9);
+            transition: transform 0.3s ease-in-out;
+            opacity: 0.8;
+         }
     </style>
 </head>
 <body>
@@ -29,10 +35,10 @@
         <div class="d-flex justify-content-between">
             <div style="line-height: 6px;">
                 <p class="pt-1" style="color: #786f66">Join the tiles, get to <span class="fw-bold" style="color: #786f66">2048!</span></p>
-                <p class="text-decoration-underline fw-bold" style="color: #786f66;">How to play <span class="fw-normal">&#8594</span></p>
+                <p class="btn_hover text-decoration-underline fw-bold" style="color: #786f66;">How to play <span class="fw-normal">&#8594</span></p>
             </div>
             <div style="line-height: 37px;">
-                <p class="text-center fw-bold px-3 rounded-1" style="background-color:#8e7a67; color:#faf6f3">New Game</p>
+                <p class="btn_hover text-center fw-bold px-3 rounded-1" style="background-color:#8e7a67; color:#faf6f3">New Game</p>
             </div>
         </div>
 
