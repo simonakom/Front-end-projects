@@ -24,7 +24,7 @@
 
 <h4>• "Calculator" sample (JavaScript) - <a href="https://simonakom.github.io/Namu-darbai/JS%20-%20DOM/calculator/calculator.html">View</a><h4>
 
-<h4>• "Counter App" sample (JavaScript) - <a href="https://simonakom.github.io/Namu-darbai/Additional tasks/Workshop 2023.12.06 (JS-number counter)">View</a><h4>
+<h4>• "Counter App" sample (JavaScript) - <a href="https://simonakom.github.io/Namu-darbai/Additional tasks/Workshop 2023.12.06 (JS-number counter)/js.html)">View</a><h4>
 
 <h4>• "Vowel Counter App" sample (JavaScript) - <a href="https://simonakom.github.io/Namu-darbai/Additional%20tasks/Workshop%202023.12.07%20(JS-vocals%20counter)%20/index.html">View</a><h4>
 
