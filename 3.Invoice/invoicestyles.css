@@ -1,4 +1,18 @@
+body {
+    background-color: rgba(88, 86, 84, 0.148);
+}
 
+.container {
+    width: 72%;
+    margin: 0 auto; 
+    padding: 20px;
+    line-height: 1.4;
+    background-color: white;
+    border-radius: 60px;
+    padding-bottom: 60px;
+    }
+
+  
 
 /* Font */
 
@@ -10,7 +24,6 @@ h1 {
 font-weight: normal;
 font-family: 'Roboto', sans-serif;
 }
-
 
 
 /* table 1 */
