@@ -1,4 +1,4 @@
-<h3 style="font-size: 30px;">Samples<h3> <hr>
+<h1 style="font-size: 30px;border-bottom: 1px solid pink;">Samples<h3> 
 
 <h4>• Wikipedia page sample - <a href="https://simonakom.github.io/Namu-darbai/1.RichardGere/Richard%20Gere.html" style="font-size:small;">View</a><h4>
 
