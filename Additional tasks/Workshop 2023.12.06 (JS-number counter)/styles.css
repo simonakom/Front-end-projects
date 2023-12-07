@@ -3,20 +3,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: rgba(205, 233, 228, 0.825);
 }
 
 .container {
     width: 25rem;
-    height: 12rem;
-    background-color: rgba(21, 88, 150, 0.488);
+    height: 25rem;
+    background-color: rgba(72, 151, 138, 0.277);
     padding: 1rem;
     text-align: center;
     border-radius: 20px;
-    border: 3px solid rgb(51, 45, 164);
+    border: 3px solid rgba(72, 151, 138, 0.277);
 }
 
 span {
-    font-size: 2rem;
+    font-size: 2rem;  
+    color: rgba(32, 32, 40, 0.696);  
 }
 
 .buttons {
@@ -32,12 +34,19 @@ button {
 }
 
 .subtract {
-    background-color: rgb(200, 37, 37);
+    background-color: rgb(219 94 135);
     color: white;
 }
 
 .add {
-    background-color: rgb(47, 116, 65);
+    background-color: rgba(47, 116, 65, 0.713);
     color: white;
 }
 
+img {
+    height: 150px;
+}
+
+h1 {
+    color: rgba(32, 32, 40, 0.696);
+}
