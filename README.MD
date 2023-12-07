@@ -10,7 +10,7 @@
 
 <h4> "Sneaker" home page sample - <a href="https://simonakom.github.io/Namu-darbai/Additional%20tasks/Sneaker/sneaker.html">View</a><h4>
 
-<h4> Contact Form sample - <a href="https://simonakom.github.io/Namu-darbai/5.ContactForm/Contact-form.html" style="font-size:small;">View</a><h4>
+<h4> Contact Form sample - <a href="https://simonakom.github.io/Namu-darbai/5.ContactForm/contactform(with responsive).html" style="font-size:small;">View</a><h4>
 
 <h4> SingIn page sample - <a href="https://simonakom.github.io/Namu-darbai/6.RegistrationForm/Registration.html" style="font-size:small;">View</a><h4>
 
