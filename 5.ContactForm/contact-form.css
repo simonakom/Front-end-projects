@@ -181,14 +181,17 @@ body {
 
             .contact-details {
                 display: flex;
+                flex-direction: row;
                 justify-content: space-evenly;   
                 align-items: center;  
+                flex-direction: row;
                 gap: 15px;
                 margin-top: 20px;
             }
     
             .contact-details .box {
                 display: flex;
+                flex-direction: row;
                 gap: 15px;
                 align-items: center;
             }
@@ -235,7 +238,7 @@ body {
                 padding-left: 9px;
             } */
 
-/* when resizing */
+/* responsive */
 
 @media screen and (max-width: 768px) {
     .inner_block {
