@@ -52,3 +52,23 @@ img {
 h1 {
     color: rgba(32, 32, 40, 0.696);
 }
+
+.subtract:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+    }
+    
+.add:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+    }
+
+.reset:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    color: #ff00ff;
+    background-color: #ff00ff2f;
+    opacity: 0.8;
+    }
