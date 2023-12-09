@@ -26,7 +26,7 @@ let example = newFunction (0,4);
     console.log(example);
 
 
-// //12 Task
+// //13 Task
 
 let a = 5, 
     b = 20;
