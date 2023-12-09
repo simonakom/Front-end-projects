@@ -15,25 +15,28 @@
         align-items: center;
         height: 100vh;
     }
+
+    .container1 {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
     
-    .container {
-        width: 60%;
-        height: 30%;
+    .container2 {
         background-color: white;
+        border-radius: 40px;
+        box-shadow:  2px 5px rgba(130, 100, 194, 0.2);
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        border-radius: 40px;
-        box-shadow:  2px 5px rgba(130, 100, 194, 0.2);
-        margin-top: 50px;
+        width: 40%;
     }
 
     img {
-        height: 30%;
-        padding-bottom:50px;
-        margin-top: 20px;
-        padding-left: 20%;
+        width: 30%;
     }
 
     .btn {
@@ -43,7 +46,7 @@
         border-radius: 15px;
         color: rgb(21, 3, 3);
         background-color: rgba(192, 174, 179, 0.615);
-        width: 150px;
+        /* width: 150px; */
     }
 
     .btn:hover {
@@ -55,7 +58,16 @@
         }
 
     .form-control {
-        width: 400px;
+        max-width: 400px;
+        
+    }
+    .selected2 {
+        background-color: #cf7a847f;
+        color:  rgb(255, 255, 255);
+        padding: 30px;
+        border-radius: 20px;
+        padding: 20px 20px 20px 20px;
+        width: 80%;
     }
 
    .selected {
@@ -64,34 +76,38 @@
         padding: 30px;
         border-radius: 20px;
         padding: 20px 20px 20px 20px;
+        width: 80%;
     }
 
-    .selected2 {
-        background-color: #cf7a847f;
-        color:  rgb(255, 255, 255);
-        padding: 30px;
-        border-radius: 20px;
-        padding: 20px 20px 20px 20px;
-        float: left;
+    .title {
+        color: #5c8badef;
+        font-size: 30px;
+    }
+
+    .title2 {
+        color: #23445cef;
+        font-size: 20px;
     }
   </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <div><img src="password.png" class="mb-4 ms-5">
-            
-            <form id="passwordForm">
-                <div class="form-group d-flex gap-3">
-           
-                <input type="password" class="form-control mt-5" id="password" name="password" placeholder="Enter your password..." required>
-                <button type="button" onclick="validatePassword()" class="btn btn-primary mt-5">Check</button>
 
-                </div>
-                <p class="error-message" id="errorDisplay"></p>
-            </form>
+
+    <div class="container1 mt-5">
+        <div><img src="password.png"> </div>
+        <p class="title mt-5 mb-4">How Secure is Your Password?</p>
+        <p class="title2 mb-5">Take the Password Test below! ⥥</p>
+       
+     
+
+        <div class="container2 form-group d-flex gap-3 mb-4">
+            <input type="password" class="form-control mt-5 py-2" id="password" name="password" placeholder="Type your password here..." required>
+            <button type="button" onclick="validatePassword()" class="btn btn-primary my-3 py-3 px-5" id="again">Check</button>
             <p class="result" id="result"></p>
-        </div>
+        </div>   
+
     </div>
+   
   <script src="pass.js"></script>
 </body>
 </html>

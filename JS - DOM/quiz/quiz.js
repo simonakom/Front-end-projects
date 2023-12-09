@@ -153,56 +153,9 @@ function calculateScore() {
                             displayAnswerFive.innerText = `You didn't select... but correct Answer was B) Blue Whale! 😢`;
                         }
 
-
-
-
-
-                        
-                        
-
-
-                        // let displayAnswerTwo = document.querySelector('#displayCorrectAnswer2');
-                        // if (document.querySelector('#seven').classList.contains('selected')) {
-                        //     displayAnswerTwo.innerText = `You are right! 👏`;
-                        //     displayAnswerTwo.style.color = '#309a53d2'; 
-                        //     selectOne.classList.add('selected2');
-                        // }else {
-                        //     displayAnswerTwo.innerText = `Correct Answer: B) 7! 😢`;
-                        // }
-
-                        // let displayAnswerThree = document.querySelector('#displayCorrectAnswer3');
-                        // if (document.querySelector('#seven').classList.contains('selected')) {
-                        //     displayAnswerThree.innerText = `You are right! 👏`;
-                        //     displayAnswerThree.style.color = '#309a53d2'; 
-                        // }else {
-                        //     displayAnswerThree.innerText = `Correct Answer: A) Mars! 😢`;
-                        // }
-
-                        // let displayAnswerFour = document.querySelector('#displayCorrectAnswer4');
-                        // if (document.querySelector('#seven').classList.contains('selected')) {
-                        //     displayAnswerFour.innerText = `You are right! 👏`;
-                        //     displayAnswerFour.style.color = '#309a53d2'; 
-                        // }else {
-                        // displayAnswerFour.innerText = `Correct Answer: B) Carbon Dioxide! 😢`;
-                        // }
-
-                        // let displayAnswerFive = document.querySelector('#displayCorrectAnswer5');
-                        // if (document.querySelector('#seven').classList.contains('selected')) {
-                        //     displayAnswerFive.innerText = `You are right! 👏`;
-                        //     displayAnswerFive.style.color = '#309a53d2'; 
-                        // }else {
-                        // displayAnswerFive.innerText = `Correct Answer: B) Blue Whale  ! 😢`;
-                        // }
-
                         document.querySelector('#hide').onclick = playAgain;
                         document.querySelector('#hide').innerHTML = 'Play Again!';
-
-
 }
-
-
-
-
 
 
 

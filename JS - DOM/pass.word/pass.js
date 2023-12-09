@@ -27,14 +27,22 @@ function validatePassword() {
       result.classList.add('selected2');
     } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
       isValid = false;
-      result.innerText = "The password must contain at least one special character";
+      result.innerText =  "The password must contain at least one special character";
       result.classList.add('selected2');
-    } else {
-      errorDisplay.textContent = "";
-    }
-
-    if (isValid) {
-        result.innerText = "Password is Strong!";
-        result.classList.add('selected');
-    }
+    } else if (isValid) {
+      result.innerText = "Password is Strong!";
+      result.classList.add('selected');
   }
+
+  document.querySelector('#again').onclick = playAgain;
+  document.querySelector('#again').innerHTML = 'Check Again!';
+}
+    
+    
+    
+  
+function playAgain() {
+  location.reload();
+
+  let button =  document.querySelector('#again')
+}
