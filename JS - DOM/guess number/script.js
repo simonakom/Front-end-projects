@@ -16,16 +16,12 @@ function guessNumber() {
 	// if not entered any number
 	if (inputElement.value.trim() === "") {
 		resultParagraph.innerText = `Please enter a guess 🔮`;
-	
         return;
     }
 
 	// run out of guesses
 	if (spejimuSkaicius === 0) {
 		resultParagraph.innerText = `The number of guesses has run out, please try again! 😓`;
-		document.getElementById("again").removeEventListener("click", guessNumber);
-        document.getElementById("again").addEventListener("click", refreshPage);
-		document.getElementById("again").innerText = "Play again!";
 		// check button disabled and play again appear
         document.getElementById("again").disabled = true;
 		document.getElementById("again").style.display = "none";
