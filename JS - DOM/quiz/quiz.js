@@ -14,8 +14,7 @@ function markSelectedAnswer(questionId, selectedAnswerId) {
 
 function calculateScore() {
 
-  
-    
+
                         // Count total Score
                         let correctAnswers = 0;
 
@@ -156,8 +155,6 @@ function calculateScore() {
                         document.querySelector('#hide').onclick = playAgain;
                         document.querySelector('#hide').innerHTML = 'Play Again!';
 }
-
-
 
 
 function playAgain() {
