@@ -30,6 +30,7 @@
 
 <h4>• "Quiz" sample (JavaScript) - <a href="https://simonakom.github.io/Namu-darbai/JS - DOM/quiz/quiz.html">View</a><h4>
 
+<h4>• "Password Validator" sample (JavaScript) - <a href="https://simonakom.github.io/Namu-darbai/JS - DOM/pass.word/pass.html">View</a><h4>
 
 
 
