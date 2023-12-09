@@ -7,7 +7,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <style>
-
     body {
         background-color: rgba(211, 211, 222, 0.305);
         display: flex;
@@ -15,7 +14,6 @@
         align-items: center;
         height: 100vh;
     }
-
     .container1 {
         align-items: center;
         text-align: center;
@@ -23,7 +21,6 @@
         display: flex;
         flex-direction: column;
     }
-    
     .container2 {
         background-color: white;
         border-radius: 40px;
@@ -34,11 +31,9 @@
         flex-direction: column;
         width: 40%;
     }
-
     img {
         width: 30%;
     }
-
     .btn {
         padding: 10px 10px;
         border: none;
@@ -46,9 +41,7 @@
         border-radius: 15px;
         color: rgb(21, 3, 3);
         background-color: rgba(192, 174, 179, 0.615);
-        /* width: 150px; */
     }
-
     .btn:hover {
         transform: scale(1.1);
         transition: transform 0.3s ease-in-out;
@@ -56,10 +49,8 @@
         color: rgb(255, 255, 255);
         opacity: 0.8;
         }
-
     .form-control {
-        max-width: 400px;
-        
+        max-width: 400px; 
     }
     .selected2 {
         background-color: #cf7a847f;
@@ -69,7 +60,6 @@
         padding: 20px 20px 20px 20px;
         width: 80%;
     }
-
    .selected {
         background-color: #367a345b;
         color:  rgb(255, 255, 255);
@@ -78,12 +68,10 @@
         padding: 20px 20px 20px 20px;
         width: 80%;
     }
-
     .title {
         color: #5c8badef;
         font-size: 30px;
     }
-
     .title2 {
         color: #23445cef;
         font-size: 20px;
@@ -91,24 +79,17 @@
   </style>
 </head>
 <body>
-
-
     <div class="container1 mt-5">
         <div><img src="password.png"> </div>
         <p class="title mt-5 mb-4">How Secure is Your Password?</p>
         <p class="title2 mb-5">Take the Password Test below! ⥥</p>
-       
-     
-
         <div class="container2 form-group d-flex gap-3 mb-4">
             <input type="password" class="form-control mt-5 py-2" id="password" name="password" placeholder="Type your password here..." required>
             <button type="button" onclick="validatePassword()" class="btn btn-primary my-3 py-3 px-5" id="again">Check</button>
             <p class="result" id="result"></p>
-        </div>   
-
+        </div>  
     </div>
-   
-  <script src="pass.js"></script>
+<script src="pass.js"></script>
 </body>
 </html>
 

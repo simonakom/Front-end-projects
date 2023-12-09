@@ -38,9 +38,6 @@ function validatePassword() {
   document.querySelector('#again').innerHTML = 'Check Again!';
 }
     
-    
-  aaa
-  
 function playAgain() {
   location.reload();
 
