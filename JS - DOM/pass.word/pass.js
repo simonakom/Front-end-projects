@@ -4,7 +4,6 @@ function validatePassword() {
     let isValid = true;
     let result= document.querySelector('#result');
 
-
     if (password.length < 8) {
         isValid = false;
         result.innerText = "The password must be at least 8 characters or longer";
