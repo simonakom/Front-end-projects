@@ -6,15 +6,13 @@
 // s0 = 20, v1 = 70, v2 = 80, t = 3, s = 10 km. Aplenkė.
 
 
-
 let s0 = 200; // Pradinis atstumas km
-let v1 = 70; // Greitis pirmojo automobilio km/h
-let v2 = 80; // Greitis antrojo automobilio km/h
-let t = 3;  // Laikas 
+let v1 = 80; // Greitis pirmojo automobilio km/h
+let v2 = 50; // Greitis antrojo automobilio km/h
+let t = 2;  // Laikas 
 
 let s = (v1 - v2) * t;
 document.write(`Atstumas tarp automobilių po ${t} valandų yra: ${s} km.<br>`);
-
 
 
 if (s === 0) {
