@@ -4,6 +4,8 @@ function rand(min, max) {
 }
 
 //6 Task
+// Sukurti kintamąjį su stringu: “Once upon a time in hollywood”. Jame visas “o” (didžiąsias ir mažąsias) pakeisti žvaigždutėm “*”.  Rezultatą atspausdinti.
+
 let title = 'Once upon a time in hollywood';
 let smallTitle = title.toLowerCase();
 
@@ -16,6 +18,8 @@ console.log(starTitle);
 
 
 //7 Task
+// Sukurkite keturis kintamuosius kuriems sugeneruokite atsitiktines reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. 
+
 let numberOne = rand (0,2), numberTwo = rand (0,2), numberThree = rand (0,2), numberFour = rand (0,2); 
 console.log(numberOne, numberTwo, numberThree, numberFour);
 
@@ -73,6 +77,8 @@ console.log(`Zero's - ${countZero}\tOne's - ${countOne}\tTwo's - ${countTwo}`);
 
  
 //8 Task
+// Pasinaudokite atsitiktinio skaičiaus generavimo funkcija. Sukurkite du kintamuosius ir naudodamiesi funkcija jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. Didesnę reikšmę padalinkite iš mažesnės. Atspausdinkite rezultatą jį suapvalinę iki 2 skaičių po kablelio.
+
 let one = rand (0,4),
     two = rand (0,4);
     console.log(one, two);
@@ -94,6 +100,8 @@ else {
 }
 
 //9 Task
+// Naudokite funkciją ir sukurkite tris kintamuosius kuriems priskirkite atsitiktines reikšmes nuo 0 iki 25. Raskite ir atspausdinkite vidurinę reikšmę.
+
 
 let sk1 = rand(0, 25),
     sk2 = rand(0, 25),
@@ -119,6 +127,8 @@ else console.log (`no middle value`);
 
 
 // N/A Task
+// Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. Stringo ilgis: 3 simboliai.
+
 let actorName = 'Johnny'; 
 let actorSurname = 'Depp';
 let initials = actorName[0] + actorSurname[0]; 
@@ -128,6 +138,8 @@ console.log(initials);
 
   
 //10 Task 
+// Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. Stringo ilgis: 3 simboliai.
+
 let letter1 = rand(97, 122);
 let letter2 = rand(97, 122);
 let letter3 = rand(97, 122);
