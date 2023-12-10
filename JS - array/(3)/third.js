@@ -32,7 +32,6 @@ function getNextElement (array, index ){
 // }
 
 
-
 // a. Yra lyginiai;
 let third = generateArrayOfRandomNumbers(0,10,20);
 console.log(third);
@@ -136,12 +135,6 @@ for (let i = 0; i < third.length; i++) {
   }
 }
 console.log(third);
-
-
-
-
-
-
 
 
 
