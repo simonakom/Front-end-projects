@@ -52,3 +52,5 @@ function guessNumber() {
 function refreshPage() {
     location.reload();
 }
+
+
