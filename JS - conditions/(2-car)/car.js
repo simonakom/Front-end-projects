@@ -8,24 +8,19 @@
 
 
 let s0 = 200; // Pradinis atstumas km
-let v1 = 80; // Greitis pirmojo automobilio km/h
-let v2 = 50; // Greitis antrojo automobilio km/h
-let t = 2;  // Laikas 
+let v1 = 70; // Greitis pirmojo automobilio km/h
+let v2 = 80; // Greitis antrojo automobilio km/h
+let t = 3;  // Laikas 
 
-let s = s0 + (v1 - v2) * t;
+let s = (v1 - v2) * t;
 document.write(`Atstumas tarp automobilių po ${t} valandų yra: ${s} km.<br>`);
 
 
-if (s < 0) {
-    document.write ("Automobiliai susitiks");
-} else if (s == 0) {
-    document.write ("Automobiliai yra vienas šalia kito");
-} else if (v1 * t <= s0) {
-    document.write ("Antrasis automobilis niekada nepavys pirmojo");
-} else if (v2 * t < s0) {
-    document.write ("Antrasis automobilis aplenks pirmąjį");
+
+if (s === 0) {
+    document.write("Automobiliai yra vienas šalia kito");
+} else if (0 < s) {
+    document.write("Antrasis automobilis niekada nepavys pirmojo");
 } else {
-    document.write ("Antrasis automobilis pavys pirmąjį");
+    document.write("Antrasis automobilis aplenks pirmąjį");
 }
-
-
