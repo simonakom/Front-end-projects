@@ -1,3 +1,6 @@
+// Sukurkite viktorinos puslapį, kuriame vartotojas gauna 5 klausimus. Gale viktorinos yra mygtukas baigti. Paspaudus mygtuką baigti, vartotojas gauna rezultatą, kiek taškų surinko. Bei prie kiekvieno klausimo nurodykite, ar vartotojas teisingai į jį atsakė.
+
+
 function markSelectedAnswer(questionId, selectedAnswerId) {
     // Remove 'selected' class from all answer options for the given question
     let answerOptions = document.querySelectorAll(`#${questionId} .answer-option`);
@@ -9,7 +12,6 @@ function markSelectedAnswer(questionId, selectedAnswerId) {
         selectedOption.classList.add('selected');
     }
 }
-
 
 
 function calculateScore() {
