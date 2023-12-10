@@ -62,3 +62,5 @@ console.log("Sugeneruoti 80 skaičiai:", numbers);
 let average = sum / 80;
 console.log("Sugeneruotas skaičių vidurkis:", average);
 
+
+
