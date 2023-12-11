@@ -111,3 +111,5 @@ for (let i = 0; i < numbersArray.length; i++) {
 let average = total / numbersArray.length;
 
 console.log(`10. Average: ${average}`);
+
+
