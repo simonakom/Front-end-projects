@@ -52,14 +52,14 @@ function showResult (value, color ) {
 }
 
 function resetForm() {
-//    location.reload();
+   location.reload();
 
- // Reset input values
- height.value = '';
- weight.value = '';
- // Reset the result
- result.style.display = 'none';
- result.innerHTML = '';
+//  // Reset input values
+//  height.value = '';
+//  weight.value = '';
+//  // Reset the result
+//  result.style.display = 'none';
+//  result.innerHTML = '';
 
 calculate.style.display = 'block';
 reset.style.display = 'none';
