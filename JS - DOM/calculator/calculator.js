@@ -21,7 +21,7 @@ function calculate() {
     // console.log (typeof firstNumber, typeof secondNumber)
 
 if ( isNaN(firstNumber) || isNaN(secondNumber) ) {
-    result.innerText = 'Action is impossible. All numbers are not entered';
+    result.innerText = 'Action is impossible.\n All numbers are not entered';
     return;
 }
 
@@ -37,14 +37,28 @@ else if(operation === `/` && secondNumber !== 0 ) result.innerText = `Result = $
 else if(operation === `/`) {
     if (secondNumber !== 0)
     {result.innerText = `Result = ${firstNumber/secondNumber}`}
-    else {result.innerText = `One of numbers is 0. Cannot divide by 0`}; 
+    else {result.innerText = `One of numbers is 0.\n Cannot divide by 0`}; 
     // 0/3=0 3/0=error
 }
 
 else if(operation === `**`) {
     if (firstNumber===0 && secondNumber<=0) 
-    {result.innerText = `One of numbers is 0. Squared action not possible`;} 
+    {result.innerText = `One of numbers is 0.\n Squared action not possible`;} 
     // Jei pirmas skaicius yra nulis o kitas yra negatyvus skaicius, negalime atlikti operacijos
     else { result.innerText = `Result = ${firstNumber**secondNumber}`};
 } 
 }
+
+
+
+// (max-width: 540px)
+if (window.matchMedia("(max-width: 540px)").matches) {
+    document.getElementById('num1').placeholder = '#';
+    document.getElementById('num2').placeholder = '#';
+    document.getElementById('select').textContent = '↓';
+
+  } else {
+    document.getElementById('num1').placeholder = 'Number 1';
+    document.getElementById('num2').placeholder = 'Number 2'
+    document.getElementById('defaultOption').textContent = 'Choose...';
+  }

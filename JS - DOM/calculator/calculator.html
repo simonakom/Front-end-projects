@@ -21,43 +21,48 @@ Rekomendacija: Tam, kad prisiminti HTML ir CSS, stilizuokite skaičiuotuvą; -->
     <style>
         body {
             background-color: rgba(107, 104, 103, 0.145);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-      
-        h1 {
-            color: #3d210b;
-            margin-bottom: 25px;
+
+         img {
+            width: 30%;
         }
+
         .frame {
-            /* border: 2px solid rgba(231, 229, 228, 0.481); */
             background-color: white;
             border-radius: 10%;
-            width: 540px;
-            height: 430px;
+            max-width: 80%;
             box-shadow:  5px 6px rgba(30, 30, 29, 0.101);
-
         }  
-        .down {
-            padding-top: 20px;
+
+        h1 {
+            color: #3d210b;
         }
+    
         #num1 {
-            width: 125px;
+            max-width: 130px;
             border: 1px solid rgb(13, 8, 102);
-            height: 40px;
+            max-height: 40px;
         }
         #num2 {
-            width: 125px;
+            max-width: 130px;
             border: 1px solid rgb(13, 8, 102);
-            height: 40px;
+            max-height: 40px;
         }
         #operation {
-            width: 110px;
+            max-width: 110px;
             border: 1px solid rgb(13, 8, 102);
-            height: 40px;
+            max-height: 40px;
         }
-        .btn {
+
+        .butn {
             background-color: rgba(196, 228, 240, 0.451);
             border: 1px solid rgb(13, 8, 102);
             color: #6e246edc;
+            
         }
 
         .btn:hover {
@@ -69,12 +74,13 @@ Rekomendacija: Tam, kad prisiminti HTML ir CSS, stilizuokite skaičiuotuvą; -->
             }
 
         .calc {
-            margin-left: 202px;
-            width: 140px;
-            border: 1px solid rgb(100, 8, 102);
-            height: 40px;
             background-color: rgba(182, 45, 146, 0.13);
-            color: #6e246edc
+            border: 1px solid rgb(100, 8, 102);
+            color: #6e246edc;
+            max-height: 40px;
+            padding: 5px;
+            width: 50%;
+            margin: auto;
         }
 
         .calc:hover {
@@ -83,16 +89,14 @@ Rekomendacija: Tam, kad prisiminti HTML ir CSS, stilizuokite skaičiuotuvą; -->
             color: #ff00ff;
             background-color: #ff00ff2f;
             opacity: 0.8;
-            border: 2px solid rgb(100, 8, 102);
             }
 
         .result {
-            margin-left: 160px;
-            width: 220px;
             border: 1px dashed rgb(102, 8, 17);
-            height: 70px;
             background-color: rgba(23, 86, 149, 0.272);
             padding: 5px;
+            width: 50%;
+            margin: auto;
         }
 
         input {
@@ -106,42 +110,45 @@ Rekomendacija: Tam, kad prisiminti HTML ir CSS, stilizuokite skaičiuotuvą; -->
     </style>
 </head>
 <body>
-    <div class="container d-flex flex-column align-items-center my-5">
-            <div><h1>Calculator</h1></div>
-            <div class="frame">
-                <div class="down d-flex justify-content-center my-4 ">
-                    <input type="number" id="num1" placeholder="Number 1" required class="rounded-5 px-3 mx-3">
-                    <select name="operation" id="operation" class="rounded-5 py-1 px-2" >
-                        <option>Compute</option><hr>
-                        <option value="+">+</option>
-                        <option value="-">-</option>
-                        <option value="*">*</option>
-                        <option value="/">/</option>
-                        <option value="**">x²</option>
-                    </select>
-                    <input type="number" id="num2" placeholder="Number 2" required class="rounded-5 px-3 mx-3">
+    <div class="container text-center d-flex flex-column align-items-center">
+        <div>
+            <div><img src="calc.png" class="mb-"></div>
+            <div><h1 class="my-3">Calculator</h1></div>
+        </div>
+            <div class="frame py-4 px-3">
+                <div class="d-flex justify-content-center my-3">
+                    <input type="number" id="num1" placeholder="Number 1" required class="form-control rounded-5 px-3 mx-3">                
+                        <select name="operation" id="operation" class="form-select rounded-5 py-1 px-2" >
+                          <option selected id="select">Choose...</option>
+                          <option value="+">+</option>
+                          <option value="-">-</option>
+                          <option value="*">*</option>
+                          <option value="/">/</option>
+                          <option value="**">x²</option> 
+                        </select>
+                    <input type="number" id="num2" placeholder="Number 2" required class="form-control rounded-5 px-3 mx-3">                
                 </div>
-
                 <div class="buttons">
-                    <div class="d-flex justify-content-center mb-1 gap-2"> 
-                        <button class="rounded-5 btn">1</button>
-                        <button class="rounded-5 btn">2</button>
-                        <button class="rounded-5 btn">3</button>
-                        <button class="rounded-5 btn">4</button>
-                        <button class="rounded-5 btn">5</button>
+                    <div class="d-flex justify-content-center my-2 gap-1"> 
+                        <button type="button" class="btn btn-light rounded-5 butn">1</button>
+                        <button type="button" class="btn btn-light rounded-5 butn">2</button>
+                        <button type="button" class="btn btn-light rounded-5 butn">3</button>
+                        <button type="button" class="btn btn-light rounded-5 butn">4</button>
+                        <button type="button" class="btn btn-light rounded-5 butn">5</button>
+                        <button type="button" class="btn btn-light rounded-5 butn">6</button>
                     </div>
-                    <div class="d-flex justify-content-center mb-1 gap-2"> 
-                        <button class="rounded-5 btn">6</button>
-                        <button class="rounded-5 btn">7</button>
-                        <button class="rounded-5 btn">8</button>
-                        <button class="rounded-5 btn">9</button>
+                    <div class="d-flex justify-content-center my-2 gap-1"> 
+                        <button type="button" class="btn btn-light rounded-5 butn">6</button>
+                        <button type="button" class="btn btn-light rounded-5 butn">7</button>
+                        <button type="button" class="btn btn-light rounded-5 butn">8</button>
+                        <button type="button" class="btn btn-light rounded-5 butn">9</button>
                     </div>
                     <div class="text-center mb-1">
-                        <button class="rounded-5 btn">0</button>
+                        <button type="button" class="btn btn-light rounded-5 butn">0</button>
                     </div>
 
-                    <button onclick="calculate()" class="calc rounded-5 mt-3">Calculate</button><br>
-                    <p class="result rounded-4 text-center mt-4 pt-2" id="result">Result will appear here</p>
+                    <button onclick="calculate()" type="button" class="btn btn-light rounded-5 butn calc my-3">Calculate</button>
+                    <p class="result rounded-4 text-center" id="result">Result will appear here</p>
                 </div>
             </div>
     </div>
