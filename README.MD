@@ -1,4 +1,5 @@
-<h1 style="font-size: 30px;border-bottom: 1px solid pink;">Samples<h3> 
+<h1 style="font-size: 30px;border-bottom: 1px solid pink;">Samples<h1><br>
+<p style="font-size: 16px;border-bottom: 1px solid pink;">HTML/CSS<p> 
 
 <h4>• Wikipedia page sample - <a href="https://simonakom.github.io/Namu-darbai/1.RichardGere/Richard%20Gere.html" style="font-size:small;">View</a><h4>
 
@@ -14,13 +15,18 @@
 
 <h4>• SingIn page sample - <a href="https://simonakom.github.io/Namu-darbai/6.RegistrationForm/Registration.html" style="font-size:small;">View</a><h4>
 
-<h4>• 2048 Game sample (bootstrap) - <a href="https://simonakom.github.io/Namu-darbai/7.%20Bootstrap/2048-Game/Game2048.html" style="font-size:small;">View</a><h4>
+<p style="font-size: 16px;border-bottom: 1px solid pink;">Bootsrap<p> 
 
-<h4>• Shopping Cart sample (bootstrap) - <a href="https://simonakom.github.io/Namu-darbai/7.%20Bootstrap/Shopping-Cart/ShoppingCard.html" style="font-size:small;">View</a><h4>
+<h4>• 2048 Game sample - <a href="https://simonakom.github.io/Namu-darbai/7.%20Bootstrap/2048-Game/Game2048.html" style="font-size:small;">View</a><h4>
 
-<h4>• "Travlog" Landing page (bootstrap) sample - <a href="https://simonakom.github.io/Namu-darbai/8.Travlog-landing%20page/Travlog.html">View</a><h4>
+<h4>• Shopping Cart sample - <a href="https://simonakom.github.io/Namu-darbai/7.%20Bootstrap/Shopping-Cart/ShoppingCard.html" style="font-size:small;">View</a><h4>
 
-<h4>• "Collab" Landing page (bootstrap) sample - <a href="https://simonakom.github.io/Namu-darbai/Additional%20tasks/Collab-landing%20page/collab.html">View</a><h4>
+<h4>• "Travlog" Landing page sample - <a href="https://simonakom.github.io/Namu-darbai/8.Travlog-landing%20page/Travlog.html">View</a><h4>
+
+<h4>• "Collab" Landing page sample - <a href="https://simonakom.github.io/Namu-darbai/Additional%20tasks/Collab-landing%20page/collab.html">View</a><h4>
+
+
+<p style="font-size: 16px;border-bottom: 1px solid pink;">JavaScript<p> 
 
 <h4>• "Counter App" sample (JavaScript)- <a href="https://simonakom.github.io/Namu-darbai/Additional%20tasks/Workshop%202023.12.06%20(JS-number%20counter)/js.html">View</a><h4>
 
