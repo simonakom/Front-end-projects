@@ -25,7 +25,7 @@ buttonElement.addEventListener("click", ()=>{
     }
 
     if (!/^[A-Za-z\s]+$/.test(person.firstName) || !/^\d+$/.test(person.age) || !/^[A-Za-z\s]+$/.test(person.nationality)) {
-        result.innerText = (`Invalid input.\n Please use only letters for names and nationality, and only numbers for age.`);
+        result.innerText = (`Invalid input.\n Please use only letters for names/nationality, and numbers for age.`);
         result.style.display = 'block';
         return;
     }
