@@ -34,6 +34,9 @@
 
 <h4>• "Guess the Number" sample (JavaScript) - <a href="https://simonakom.github.io/Namu-darbai/JS - DOM/guess number/index.html">View</a><h4>
 
+<h4>• "BMI Calculator" sample (JavaScript) - <a href="https://simonakom.github.io/Namu-darbai/Additional tasks/Workshop 2023.12.13 (BMI calculator)/index.html
+">View</a><h4>
+
 
 
 
