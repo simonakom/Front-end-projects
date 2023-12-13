@@ -1,6 +1,6 @@
 <h1 style="font-size: 30px;border-bottom: 1px solid pink;">Samples<h1>
 
-<h4 style="font-size: 20px;">HTML/CSS<h4> 
+<h4 style="font-size: 20px;">☆ HTML/CSS<h4> 
 
 <h4>• Wikipedia page sample - <a href="https://simonakom.github.io/Namu-darbai/1.RichardGere/Richard%20Gere.html" style="font-size:small;">View</a><h4>
 
@@ -17,7 +17,7 @@
 <h4>• SingIn page sample - <a href="https://simonakom.github.io/Namu-darbai/6.RegistrationForm/Registration.html" style="font-size:small;">View</a><h4>
 
 
-<h4 style="font-size: 20px;">Bootstrap<h4> 
+<h4 style="font-size: 20px;">☆ Bootstrap<h4> 
 
 <h4>• 2048 Game sample - <a href="https://simonakom.github.io/Namu-darbai/7.%20Bootstrap/2048-Game/Game2048.html" style="font-size:small;">View</a><h4>
 
@@ -29,7 +29,7 @@
 
 
 
-<h4 style="font-size: 20px;">Javascript<h4> 
+<h4 style="font-size: 20px;">☆ Javascript<h4> 
 
 <h4>• "Counter App" sample (JavaScript)- <a href="https://simonakom.github.io/Namu-darbai/Additional%20tasks/Workshop%202023.12.06%20(JS-number%20counter)/js.html">View</a><h4>
 
