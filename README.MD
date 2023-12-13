@@ -46,6 +46,8 @@
 <h4>• "BMI Calculator" sample - <a href="https://simonakom.github.io/Namu-darbai/Additional tasks/Workshop 2023.12.13 (BMI calculator)/index.html
 ">View</a><h4>
 
+<h4>• "Data table" sample - <a href="https://simonakom.github.io/Namu-darbai/JS - objects/dynamic-table.html
+
 
 
 
