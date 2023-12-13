@@ -21,20 +21,7 @@
     }
 
     img {
-        width: 25%;
-    }
-
-    .align0 {
-        margin-left: 20px;
-
-    }
-
-    .align {
-        margin-left: 70px;
-    }
-
-    .align1 {
-        margin-left: 170px;
+        width: 20%;
     }
 
     .option:hover {
@@ -60,7 +47,6 @@
     color: #250682;
     background-color: rgba(62, 134, 211, 0.164);
     border-radius: 20px;
-    width: 15%;
     margin-top: 30px;
     border: 1px dashed rgb(102, 8, 17);
     }
@@ -95,6 +81,14 @@
         background-color: #a20e222c;
         color:  #cf1326cf;
     }   
+
+    @media screen and (max-width: 500px) {
+
+img {
+    width: 60%;
+    padding-right: 20px;
+}
+}
   </style>
 </head>
 <body>
@@ -106,7 +100,7 @@
 
         <div class="my-3" id="question1">
             <p class="my-2 title">What is the capital of France?</p>
-                <div class="q1 d-flex flex-column align-items-start align0 ps-5">
+                <div class="q1 d-flex flex-column">
                     <p onclick="markSelectedAnswer('question1', 'berlin')" id="berlin" class="option answer-option my-1">A) Berlin</p>
                     <p onclick="markSelectedAnswer('question1', 'london')" id="london" class="option answer-option my-1">B) London</p>
                     <p onclick="markSelectedAnswer('question1', 'paris')" id="paris"  class="option answer-option my-1">C) Paris</p>
@@ -118,7 +112,7 @@
         <!-- question 2 -->
         <div class="my-3" id="question2">
             <p class="my-2 title">How many continents are there on Earth?</p>
-                <div class="d-flex flex-column align-items-start align ps-5">
+                <div class="d-flex flex-column">
                     <p onclick="markSelectedAnswer('question2', 'five')" id="five" class="option answer-option my-1">A) 5</p>
                     <p onclick="markSelectedAnswer('question2', 'seven')" id="seven" class="option answer-option my-1">B) 7</p>
                     <p onclick="markSelectedAnswer('question2', 'six')" id="six"  class="option answer-option my-1">C) 6</p>
@@ -129,7 +123,7 @@
         <!-- question 3 -->
         <div class="my-3" id="question3">
             <p class="my-2 title">Which planet is known as the Red Planet?</p>
-                <div class="d-flex flex-column align-items-start align ps-5">
+                <div class="d-flex flex-column">
                     <p onclick="markSelectedAnswer('question3', 'mars')" id="mars" class="option answer-option my-1">A) Mars</p>
                     <p onclick="markSelectedAnswer('question3', 'jupiter')" id="jupiter" class="option answer-option my-1">B) Jupiter</p>
                     <p onclick="markSelectedAnswer('question3', 'saturn')" id="saturn"  class="option answer-option my-1">C) Saturn</p>
@@ -140,7 +134,7 @@
          <!-- question 4 -->
          <div class="my-3" id="question4">
             <p class="my-2 title">What gas do plants breathe in that humans and animals breathe out?</p>
-                <div class="d-flex flex-column align-items-start align1 ps-5">
+                <div class="d-flex flex-column">
                     <p onclick="markSelectedAnswer('question4', 'oxygen')" id="oxygen" class="option answer-option my-1">A) Oxygen</p>
                     <p onclick="markSelectedAnswer('question4', 'dioxide')" id="dioxide" class="option answer-option my-1">B) Carbon Dioxide</p>
                     <p onclick="markSelectedAnswer('question4', 'nitrogen')" id="nitrogen"  class="option answer-option my-1">C) Nitrogen</p>
@@ -151,7 +145,7 @@
         <!-- question 5 -->
         <div class="my-3" id="question5">
             <p class="my-2 title">What is the largest mammal in the world?</p>
-                <div class="d-flex flex-column align-items-start align ps-5">
+                <div class="d-flex flex-column">
                     <p onclick="markSelectedAnswer('question5', 'elephant')" id="elephant" class="option answer-option my-1">A) Elephant</p>
                     <p onclick="markSelectedAnswer('question5', 'whale')" id="whale" class="option answer-option my-1">B) Blue Whale</p>
                     <p onclick="markSelectedAnswer('question5', 'giraffe')" id="giraffe"  class="option answer-option my-1">C) Giraffe</p>
@@ -159,7 +153,7 @@
             <p id="displayCorrectAnswer5" class="correct_answer my-2"></p>
           </div>
 
-  <button onclick="calculateScore()" class="btn button" id="hide">Check Answers!</button>
+  <button onclick="calculateScore()" class="btn button px-4 py-2" id="hide">Check Answers!</button>
   <p class="result rounded-4 text-center mt-4 pt-2" id="result"></p>
 </div>
 <script src="quiz.js"></script>
