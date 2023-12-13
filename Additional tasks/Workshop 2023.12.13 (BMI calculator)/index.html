@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.886);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0px 20px 0px 20px;
+        }
+        .container {
+            background-color: rgba(208, 194, 194, 0.122);
+            width: 30rem;
+            box-shadow:  2px 5px rgba(244, 244, 244, 0.038);
+        }
+        .title {
+            color: #92d2ff;
+            font-size: 30px;
+        }
+        img {
+            width: 30%;
+        }
+        hr {
+            border: 1px solid grey; 
+            margin: 30px 0;
+        }
+        .result { 
+            display: none;
+            background-color: rgba(205, 191, 191, 0.18); 
+            color:  #b0a6aa;
+            box-shadow:  2px 5pxrgba(205, 191, 191, 0.625); 
+            border-radius: 20px;
+            margin: 10px 50px 10px 50px;
+            padding: 10px 20px 10px 20px;
+        }
+        .reset {
+            display: none;
+            margin: auto;
+        }
+        .calc {
+            margin: auto;
+        }
+        .buton {
+        padding: 10px 10px;
+        border: none;
+        outline: none;
+        border-radius: 15px;
+        color: rgb(21, 3, 3);
+        background-color: rgba(192, 174, 179, 0.615);
+        }
+        .buton:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+            background-color: rgba(161, 83, 104, 0.615);
+            color: rgb(255, 255, 255);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <section class="container py-4 text-center rounded-5">
+        <div>
+            <div><img src="bmi.png" class=""></div>
+        </div>
+        <div>
+            <h1 class="title fw-bold">Calculator</h1>
+            <hr class="mb-4">
+            <form action="">
+                <div class="input-group px-5 my-4">
+                    <span class="input-group-text py-3" id="basic-addon1">Height(cm)</span>
+                    <input type="number" class="form-control height" placeholder="Type here your height in cm..." aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group px-5 my-4">
+                    <span class="input-group-text py-3" id="basic-addon1">Weight(kg)</span>
+                    <input type="number" class="form-control weight" placeholder="Type here your weight in kg..." aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <button type="button" class="btn btn-light buton calc py-2 px-4 my-2">Calculate</button>
+            </form>
+        </div>
+        <div>
+            <p class="result rounded-5">srfe</p>
+            <button type="button" class="btn btn-light buton reset py-2 px-4 my-3">Reset</button>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
