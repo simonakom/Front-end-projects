@@ -46,12 +46,12 @@ Jei slaptažodis praėjo validaciją: informuoti kad slaptazodis tinkamas -->
         width: 30%;
     }
     .btn {
-        padding: 10px 10px;
         border: none;
         outline: none;
         border-radius: 15px;
         color: rgb(21, 3, 3);
         background-color: rgba(192, 174, 179, 0.615);
+        width: 40%;
     }
     .btn:hover {
         transform: scale(1.1);
@@ -61,7 +61,8 @@ Jei slaptažodis praėjo validaciją: informuoti kad slaptazodis tinkamas -->
         opacity: 0.8;
         }
     .form-control {
-        max-width: 400px; 
+        width: 70%;
+       
     }
     .selected2 {
         background-color: #cf7a847f;
@@ -96,7 +97,7 @@ Jei slaptažodis praėjo validaciją: informuoti kad slaptazodis tinkamas -->
         <p class="title2 mb-5">Take the Password Test below! ⥥</p>
         <div class="container2 form-group d-flex gap-3 mb-4">
             <input type="password" class="form-control mt-5 py-2" id="password" name="password" placeholder="Type your password here..." required>
-            <button type="button" onclick="validatePassword()" class="btn btn-primary my-3 py-3 px-5" id="again">Check</button>
+            <button type="button" onclick="validatePassword()" class="btn btn-primary py-2" id="again">Check</button>
             <p class="result" id="result"></p>
         </div>  
     </div>
