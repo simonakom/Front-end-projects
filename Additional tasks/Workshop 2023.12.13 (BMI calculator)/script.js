@@ -30,16 +30,16 @@ function calBMI (e) {
         calculate.style.display = 'none';
         reset.style.display = 'block';
     
-                    if (bmi < 18.5){
+                    if (bmi <= 18.5){
                         showResult (`Underweight: <span>${bmi}</span>`, "#55bbdd8d")
                     }
-                    if (bmi > 18.5 && bmi < 25){
+                    if (bmi >= 18.5 && bmi <= 25){
                         showResult (`Normal: <span>${bmi}</span>`, " #85b18496")
                     }
-                    if (bmi > 25 && bmi < 30){
+                    if (bmi >= 25 && bmi <= 30){
                         showResult (`Overweight: <span>${bmi}</span>`, "#f5c0397e")
                     }
-                    if (bmi > 30){    
+                    if (bmi >= 30){    
                         showResult (`Obese: <span>${bmi}</span>`, "#c97262aa")
                     }
     }
