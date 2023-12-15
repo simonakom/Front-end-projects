@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhombus</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 6rem;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+
+function getRandomColor() {
+//This line declares a helper function named randomComponent. It's an arrow function that generates a random number between 0 and 255.
+  const randomComponent = () => Math.floor(Math.random() * 256);
+// The return statement sends a value back to the code that called the function. In this case, the function returns a string representing an RGB color constructed by calling randomComponent() three times for the red, green, and blue components.
+  return `rgb(${randomComponent()}, ${randomComponent()}, ${randomComponent()})`;
+}
+
+  const n = 10;
+
+  // virsutine puse:
+  for (let i = 1; i < n; i++) {
+    let row = '';
+
+    for (let k = 1; k < 2 * i - 1; k++) {
+    const color = getRandomColor();
+    row += `<span style="color:${color};">*</span>`;
+  }
+
+    document.write(row + '<br>');
+  }
+
+  // apatine puse: 
+  for (let i = n - 1; i > 1; i--) {
+    let row = '';
+
+    for (let k = 1; k < 2 * i - 1; k++) {
+    const color = getRandomColor();
+    row += `<span style="color:${color};">*</span>`;
+  }
+  
+    document.write(row + '<br>');
+  }
+
+</script>
+
+</body>
+</html>
