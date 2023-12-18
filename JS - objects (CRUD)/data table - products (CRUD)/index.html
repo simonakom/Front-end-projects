@@ -21,14 +21,6 @@
             font-size: 40px;
             color: #cc897e;
         }
-
-     
-
-     
-
-
-
-
         #submit {
             background-color: rgba(87, 191, 232, 0.712);
             color:white;
@@ -71,11 +63,9 @@
         max-width:40%;   
         margin: auto;
         }
-
         #delete {
             gap: 20px;
         }
-
         
         @media screen and (max-width: 768px) {    
         img {
@@ -92,19 +82,14 @@
         form {
             margin: auto;
         } 
-
         }
 
-         
         @media screen and (max-width: 570px) {    
         form {
            width:  100%;
            margin-left: 40px;
         }
-
-      
-        }
-       
+        }  
     </style>
 </head>
 <body>
@@ -182,7 +167,6 @@
         </table>
     </div>
 
-
     <script src="products.js"></script>
 
     <script>
@@ -199,7 +183,6 @@
 				categoryInputElement = document.getElementById("category"),
 				submitButtonElement = document.getElementById("submit");
                 const addResult = document.getElementById ("add-result");
-
 
 
         // READ - kiekvieno produkto atvaizdavimas lenteleje
@@ -293,7 +276,6 @@
                 addResult.style.display = 'block';
                 return;
                 }
-
 
                 // prie "products" masyvo prideti nauja produkta
                 products.push(newProduct);
