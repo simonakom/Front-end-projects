@@ -1,6 +1,6 @@
 const people = []; //An array to store information about people.
 let currentNumeration= 1; //A variable to keep track of the current numeration for each person.
-const allowedNationalities = ['USA', 'Canada', 'UK', 'Australia', 'France', 'Germany', 'Japan'];
+const allowedNationalities = ['US', 'CANADA', 'UK', 'AUSTRALIA', 'FRANCE', 'GERMANY', 'JAPAN'];
 
 //selecting HTML elements 
 const buttonElement = document.querySelector ("#add-button");
@@ -24,7 +24,8 @@ buttonElement.addEventListener("click", ()=>{
     person.firstName = document.getElementById(`firstNameInput`).value;
     person.lastName = document.getElementById(`lastNameInput`).value;
     person.age = document.getElementById(`ageInput`).value;
-    person.nationality = document.getElementById(`nationalityInput`).value.toUpperCase();
+    // person.nationality = document.getElementById(`nationalityInput`).value.toUpperCase();
+    person.nationality = document.getElementById("nationalityInput").value.toUpperCase() 
     console.log (person);
 
 
@@ -37,7 +38,7 @@ buttonElement.addEventListener("click", ()=>{
         addResult.style.display = 'none';
     }
 
-    if (!/^[A-Za-z\s]+$/.test(person.firstName) || !/^\d+$/.test(person.age) || !/^[A-Za-z\s]+$/.test(person.nationality)) {
+    if (!/^[A-Za-z\s]+$/.test(person.firstName) || !/^[A-Za-z\s]+$/.test(person.lastName) || !/^\d+$/.test(person.age) || !/^[A-Za-z\s]+$/.test(person.nationality)) {
         addResult.innerText = (`Invalid input.\n Please use only letters for names/nationality, and numbers for age`);
         addResult.style.display = 'block';
         return;
@@ -54,7 +55,7 @@ buttonElement.addEventListener("click", ()=>{
     }
 
     if (!allowedNationalities.includes(person.nationality)) {
-        addResult.innerText = `Invalid nationality. Please enter a valid nationality: USA, Canada, UK, Australia, France, Germany, Japan`;
+        addResult.innerText = `Invalid nationality. Please enter a valid nationality: US, Canada, UK, Australia, France, Germany, Japan`;
         addResult.style.display = 'block';
         return;
     } else {
@@ -189,7 +190,7 @@ updateElement.addEventListener("click", () => {
     updatedPerson.firstName = document.getElementById("updateFirstNameInput").value;
     updatedPerson.lastName = document.getElementById("updateLastNameInput").value;
     updatedPerson.age = document.getElementById("updateAgeInput").value;
-    updatedPerson.nationality = document.getElementById("updateNationalityInput").value;
+    updatedPerson.nationality = document.getElementById("updateNationalityInput").value.toUpperCase();
     console.log (updatedPerson);
 
    //Validation
@@ -201,7 +202,7 @@ updateElement.addEventListener("click", () => {
         updateResult.style.display = 'none';
     }
 
-    if (!/^[A-Za-z\s]+$/.test(updatedPerson.firstName) || !/^\d+$/.test(updatedPerson.age) || !/^[A-Za-z\s]+$/.test(updatedPerson.nationality)) {
+    if (!/^[A-Za-z\s]+$/.test(updatedPerson.firstName) || !/^[A-Za-z\s]+$/.test(updatedPerson.lastName) || !/^\d+$/.test(updatedPerson.age) || !/^[A-Za-z\s]+$/.test(updatedPerson.nationality)) {
         updateResult.innerText = "Invalid input. Please use only letters for names/nationality, and numbers for age";
         updateResult.style.display = 'block';
         return;
@@ -218,7 +219,7 @@ updateElement.addEventListener("click", () => {
     }
 
     if (!allowedNationalities.includes(updatedPerson.nationality)) {
-        updateResult.innerText = "Invalid nationality. Please enter a valid nationality: USA, Canada, UK, Australia, France, Germany, Japan";
+        updateResult.innerText = "Invalid nationality. Please enter a valid nationality: US, Canada, UK Australia, France, Germany, Japan";
         updateResult.style.display = 'block';
         return;
     }  else {
