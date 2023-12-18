@@ -16,7 +16,7 @@ const deleteResult = document.querySelector (".delete-result");
 const updateResult = document.querySelector (".update-result");
 
 
-//When "Add" is pressed: 
+//CREATE: When "Add" is pressed: 
 buttonElement.addEventListener("click", ()=>{
     
     //When the "Add" button is clicked, a new person object is created from the form inputs.
@@ -24,7 +24,7 @@ buttonElement.addEventListener("click", ()=>{
     person.firstName = document.getElementById(`firstNameInput`).value;
     person.lastName = document.getElementById(`lastNameInput`).value;
     person.age = document.getElementById(`ageInput`).value;
-    person.nationality = document.getElementById(`nationalityInput`).value;
+    person.nationality = document.getElementById(`nationalityInput`).value.toUpperCase();
     console.log (person);
 
 
@@ -86,7 +86,7 @@ buttonElement.addEventListener("click", ()=>{
         formElement.reset(); //resets the form (formElement) after adding a person. It clears the input fields in the form,
 }); 
 
-//A function to generate HTML content for displaying the list of people in a table.
+//READ: A function to generate HTML content for displaying the list of people in a table.
 function generateTableContent (people){
     let dynamicHTML = ``; 
     for(let person of people){
@@ -104,7 +104,7 @@ function generateTableContent (people){
     tbody.innerHTML = dynamicHTML;
 }
 
-//When "delete" is pressed: 
+//DELETE: When "delete" is pressed: 
 deleteElement.addEventListener("click", ()=>{
     const removeElementImput = document.querySelector ("#numberInput"); //representing the number of the person to be deleted.
     let num = +removeElementImput.value;//It retrieves the numerical value from the input and stores it in the variable num.
@@ -112,7 +112,7 @@ deleteElement.addEventListener("click", ()=>{
     deleteResult.style.display = "none";
 
     // findindex grazina indeksa pagal elelemnto reiksme. Jei toks nebuvo rastas, garzina -1.
-    let foundIndexDelete = people.findIndex((person) => person.number === +num) //The findIndex method is used to find the index of the person in the people array whose number matches the input value (num).If no matching person is found, foundIndexDelete is set to -1.
+    let foundIndexDelete = people.findIndex((person) => person.number == +num) //The findIndex method is used to find the index of the person in the people array whose number matches the input value (num).If no matching person is found, foundIndexDelete is set to -1.
 
 
     //validation (checks are performed on the input value)
@@ -149,7 +149,7 @@ findElement.addEventListener("click", ()=>{
     let updateNumber = +updateElementImput.value;
 
 //Uses the findIndex method to search for the person with the specified number in the people array and assigns the index to foundIndexUpdate.
-foundIndexUpdate = people.findIndex((person) => person.number === updateNumber);
+foundIndexUpdate = people.findIndex((person) => person.number == updateNumber); // kazkur pasikete type tad reikia tik == kad updatinti kelis kartus.(Tikrinti: console.log(foundIndexUpdate)/console.log(people)/console.log(updateNumber))
 
     //validation
     if (!updateNumber || isNaN(updateNumber)) {
