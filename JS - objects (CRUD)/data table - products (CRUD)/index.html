@@ -217,7 +217,7 @@
         // CREATE - gauti kiekvineo input element reiksme ir tai sudeti i objekta
         // funkcija sukuria nauja objekta i kuri isides input reiksmes 
         const createNewRecord = (event) => {
-            //event.PreventDefault - kad puslapis nepersikrautu (dazniausiai naudojama su formomis)
+            //event.PreventDefault - kad puslapis nepersikrautu (dazniausiai naudojama su formomis kai nera nurodytas button type: button, nes tada automatiskai buna submit ir persikrauna)
             event.preventDefault(); //console.log (event);
 				const newProduct = {
 					id: products[products.length - 1].id + 1, //kiekvinas naujas pridetas elementas tures vis didesni id
