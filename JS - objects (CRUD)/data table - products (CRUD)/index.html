@@ -14,14 +14,21 @@
             justify-content: center;
             align-items: center;
         }
-        
+        img {
+            width: 15%;
+        }
         .data{
             font-size: 40px;
-            color: aliceblue;
+            color: #cc897e;
         }
-        form {
-            width:32%
-        }
+
+     
+
+     
+
+
+
+
         #submit {
             background-color: rgba(87, 191, 232, 0.712);
             color:white;
@@ -55,58 +62,86 @@
         color:white;
         opacity: 0.8;
         }
+        .add-result {
+        display: none;
+        background-color: #cf7a847f;
+        color:  rgb(255, 255, 255);
+        border-radius: 20px;
+        padding: 10px;  
+        max-width:40%;   
+        margin: auto;
+        }
 
-        @media screen and (max-width: 767px) {       
-            .d-flex {
-                flex-direction: column;
-                align-items: center;
-            }
-            .gap-4 {
-            gap: 0!important
-            }
-            form {
-            width: max-content;
-            }
-            .data {
-                margin-left: 30%;
-            }
+        #delete {
+            gap: 20px;
+        }
+
+        
+        @media screen and (max-width: 768px) {    
+        img {
+        width: 30%;
+        }   
+        .d-flex {
+        flex-direction: column;
+        align-items: center;
+        }
+        .gap-4 {
+        gap: 0!important
+        }
+
+        form {
+            margin: auto;
+        } 
+
+        }
+
+         
+        @media screen and (max-width: 570px) {    
+        form {
+           width:  100%;
+           margin-left: 40px;
+        }
+
+      
         }
        
     </style>
 </head>
 <body>
     <!-- html kodas skirtas CRUD -->
-    <div class="container text-center mx-5 my-3">
-        <p class="data my-5">Data Table</p>
+    <div class="container text-center mx- my-3">
+        <div><img src="new-product.png" class="my-3"></div>
+        <p class="data mb-5">Data Table</p>
+        <p class="add-result mb-4" id="add-result"></p>
         <form>
             <div class="row">
                 <div class="d-flex gap-4">
-                    <div class="col-4 input-group mb-3">
-                        <span class="title input-group-text" id="basic-addon1">Product&nbsp&nbsp</span>
+                    <div class="input-group mb-3">
+                        <span class="title input-group-text" id="basic-addon1">Product</span>
                         <input type="text" id="title" name="title" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
                     </div>
     
-                    <div class="col-4 input-group mb-3">
-                        <span class="price input-group-text" id="basic-addon1">Price&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                    <div class="input-group mb-3">
+                        <span class="price input-group-text" id="basic-addon1">Price</span>
                         <input type="text" id="price" name="price" class="form-control" placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
                     </div>
 
-                    <div class="col-4 input-group mb-3">
-                        <span class="stock input-group-text" id="basic-addon1">Stock&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                    <div class="input-group mb-3">
+                        <span class="stock input-group-text" id="basic-addon1">Stock</span>
                         <input type="text" id="stock" name="stock" class="form-control" placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
 
                 <div class="d-flex gap-4">
-                    <div class="col-4 input-group mb-3">
-                        <span class="brand input-group-text" id="basic-addon1">Brand&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+                    <div class=" input-group mb-3">
+                        <span class="brand input-group-text" id="basic-addon1">Brand</span>
                         <input type="text" id="brand" name="brand" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
                     </div>
 
-                    <div class="col-4 input-group mb-3">
+                    <div class="input-group mb-3">
                         <label class="input-group-text" for="category">Category</label>
                         <select class="form-select" id="category" name="category">
-                        <option selected>Choose...</option>
+                        <option disabled selected>Choose...</option>
                         <option value="smartphones">Smartphones</option>
                         <option value="laptops">Laptops</option>
                         <option value="fragrances">Fragrances</option>
@@ -118,11 +153,10 @@
 
                   <div class="col-4"><button type="button" class="btn btn-default px-5" id="submit">Submit</button></div> 
                 </div>
-
             </div>
         </form>
 
-        <table class="table table-light table-hover table-bordered mt-5">
+        <table class=" table table-light table-hover table-bordered my-5">
             <thead>
                 <tr class="table-dark">
                     <th>#</th>
@@ -164,6 +198,8 @@
 				brandInputElement = document.getElementById("brand"),
 				categoryInputElement = document.getElementById("category"),
 				submitButtonElement = document.getElementById("submit");
+                const addResult = document.getElementById ("add-result");
+
 
 
         // READ - kiekvieno produkto atvaizdavimas lenteleje
@@ -181,8 +217,8 @@
 						<td>${product.brand}</td>
 						<td>${product.category}</td>
                         <td>
-                            <button class="btn btn-default" id="delete" onclick="deleteProduct(${product.id})">Delete</button>
-                            <button class="btn btn-default" id="update" onclick="setEdit(${product.id})">Update</button>
+                            <button class="btn btn-default" id="delete" onclick="deleteProduct(${product.id})"style="margin-bottom: 3px;">Delete</button>
+                            <button class="btn btn-default" id="update" onclick="setEdit(${product.id})" style="margin-bottom: 3px;">Update</button>
                         </td>
                 </tr>`;
             }  
@@ -208,6 +244,57 @@
 					brand: brandInputElement.value,
 					category: categoryInputElement.value,
 				};
+
+                    // Get input values for validation
+                    const title = titleInputElement.value;
+                    const price = priceInputElement.value;
+                    const stock = stockInputElement.value;
+                    const brand = brandInputElement.value;
+                    const category = categoryInputElement.value;
+                    // console.log(title), console.log(price), console.log(stock), console.log(brand), console.log(category)
+
+
+                   // Validations:
+                if (!title || !price || !stock || !brand || !category) {
+                    addResult.innerText = (`Something is missing....\n Please, fill in the complete form!`)
+                    addResult.style.display = 'block';
+                    return;
+                } else {
+                    addResult.style.display = 'none';
+                }
+
+                if (!/^\d+$/.test(price) ||  !/^\d+$/.test(stock) || category == "") {
+                    addResult.innerText = (`Invalid input.\n Please use only letters for title/brand, numbers for price/stock and don't forget to choose category!`);
+                    addResult.style.display = 'block';
+                    return;
+                } else {
+                    addResult.style.display = 'none';
+                }
+
+                if (category === '' || category === 'Choose...') {
+                    addResult.innerText =  ('Please select a category!');
+                    addResult.style.display = 'block';
+                    return;
+                } else {
+                    addResult.style.display = 'none';
+                }
+
+                // Duplicate product check is performed based on product details.
+                const duplicateProduct = products.find((existingProduct) =>
+                existingProduct.title.toLowerCase() === newProduct.title.toLowerCase() &&
+                existingProduct.price === newProduct.price &&
+                existingProduct.stock === newProduct.stock &&
+                existingProduct.brand.toLowerCase() === newProduct.brand.toLowerCase() &&
+                existingProduct.category === newProduct.category
+                );
+
+                if (duplicateProduct) {
+                addResult.innerText = `A product with the same details already exists!`;
+                addResult.style.display = 'block';
+                return;
+                }
+
+
                 // prie "products" masyvo prideti nauja produkta
                 products.push(newProduct);
 
@@ -253,14 +340,39 @@
           products [currentProduct].brand = brandInputElement.value;
           products [currentProduct].category = categoryInputElement.value;
 
-            currentProduct = undefined;
-            editMode = false; 
-            submitButtonElement.onclick = createNewRecord;
-            //Pakeisti mygtuko teksta
-            submitButtonElement.innerText = 'Submit';
-            //kad pakeisti naujo update button spalva (per klase-  submitButtonElement.classList.add/remove('btn-primary');
-            submitButtonElement.style.backgroundColor = 'rgba(87, 191, 232, 0.712)';
+            // updated values for validation
+            const updatedTitle = products[currentProduct].title;
+            const updatedPrice = products[currentProduct].price;
+            const updatedStock = products[currentProduct].stock;
+            const updatedBrand = products[currentProduct].brand;
+            const updatedCategory = products[currentProduct].category;
 
+                // Validations:
+                if (!updatedTitle || !updatedPrice || !updatedStock || !updatedBrand || !updatedCategory) {
+                addResult.innerText = (`Something is missing....\n Please, fill in the complete form!`)
+                addResult.style.display = 'block';
+                return;
+                } else {
+                    addResult.style.display = 'none';
+                }
+
+                if (!/^\d+$/.test(updatedPrice) ||  !/^\d+$/.test(updatedStock) || category == "" || updatedCategory === 'Choose...') {
+                    addResult.innerText = (`Invalid input.\n Please use only letters for title/brand, numbers for price/stock and don't forget to choose category!`);
+                    addResult.style.display = 'block';
+                    return;
+                } else {
+                    addResult.style.display = 'none';
+                }
+
+        currentProduct = undefined;
+        editMode = false; 
+        submitButtonElement.onclick = createNewRecord;
+        //Pakeisti mygtuko teksta
+        submitButtonElement.innerText = 'Submit';
+        //kad pakeisti naujo update button spalva (per klase-  submitButtonElement.classList.add/remove('btn-primary');
+        submitButtonElement.style.backgroundColor = 'rgba(87, 191, 232, 0.712)';
+
+        
             // palikti inputus tuscius
             titleInputElement.value = "";
             priceInputElement.value = "";
@@ -296,14 +408,6 @@
 
             editMode = true; 
         };
-
-
-
-
-
-
-
-
     </script>
 </body>
 </html>
