@@ -32,6 +32,7 @@ buttonElement.addEventListener("click", ()=>{
     // Validations:
     if (!person.firstName || !person.lastName || !person.age || !person.nationality) {
         addResult.innerText = (`Something is missing....\n Please, fill in the complete form!`)
+        addResult.style.backgroundColor = '#cf7a847f';
         addResult.style.display = 'block';
         return;
     } else {
@@ -40,6 +41,7 @@ buttonElement.addEventListener("click", ()=>{
 
     if (!/^[A-Za-z\s]+$/.test(person.firstName) || !/^[A-Za-z\s]+$/.test(person.lastName) || !/^\d+$/.test(person.age) || !/^[A-Za-z\s]+$/.test(person.nationality)) {
         addResult.innerText = (`Invalid input.\n Please use only letters for names/nationality, and numbers for age`);
+        addResult.style.backgroundColor = '#cf7a847f';
         addResult.style.display = 'block';
         return;
     } else {
@@ -48,6 +50,7 @@ buttonElement.addEventListener("click", ()=>{
 
     if (person.age < 0 || person.age > 150) {
         addResult.innerText = (`Please, enter valid age`);
+        addResult.style.backgroundColor = '#cf7a847f';
         addResult.style.display = 'block';
         return;
     } else {
@@ -56,6 +59,7 @@ buttonElement.addEventListener("click", ()=>{
 
     if (!allowedNationalities.includes(person.nationality)) {
         addResult.innerText = `Invalid nationality. Please enter a valid nationality: US, Canada, UK, Australia, France, Germany, Japan`;
+        addResult.style.backgroundColor = '#cf7a847f';
         addResult.style.display = 'block';
         return;
     } else {
@@ -73,6 +77,7 @@ buttonElement.addEventListener("click", ()=>{
     if (duplicatePerson) {
         addResult.innerText = `A person with the same contact details already exists!`;
         addResult.style.display = 'block';
+        addResult.style.backgroundColor = '#cf7a847f';
         return;
     } 
                                     // *currentNumeration disabeled as after deleting 2no. contact, new contact should be have 2id but it has 3id. Numeration is wrong: 1,3,4,5... Instead using (person.number = people.length + 1).
@@ -84,6 +89,12 @@ buttonElement.addEventListener("click", ()=>{
 
         // If all checks pass, the person object is added to people array, and the table (generateTableContent) is updated.
         people.push(person);
+
+         //Pakeisti alert teksta
+         addResult.style.display = 'block';
+         addResult.innerText = 'New Person has been successfully added!';
+         //kad pakeisti spalva
+         addResult.style.backgroundColor = '#1a995750';
 
         generateTableContent (people); //calls the generateTableContent function, passing the updated people array as an argument. The purpose of this function is to generate HTML content for displaying the list of people in a table. 
         formElement.reset(); //resets the form (formElement) after adding a person. It clears the input fields in the form.
@@ -121,6 +132,7 @@ deleteElement.addEventListener("click", ()=>{
     if (!num || isNaN(num)) {
         deleteResult.innerText = "Please enter a number";
         deleteResult.style.display = "block";
+        deleteResult.style.backgroundColor = '#cf7a847f';
         return;
     } else {
         deleteResult.style.display = 'none';
@@ -129,10 +141,17 @@ deleteElement.addEventListener("click", ()=>{
     if(foundIndexDelete === -1){
         deleteResult.innerText = `Person with provided number do not exist`;
         deleteResult.style.display = 'block';
+        deleteResult.style.backgroundColor = '#cf7a847f';
         return;
     } else {
         deleteResult.style.display = 'none';
     }
+
+    //Pakeisti alert teksta
+    deleteResult.style.display = 'block';
+    deleteResult.innerText = 'Selected Person has been successfully deleted!';
+    //kad pakeisti spalva
+    deleteResult.style.backgroundColor = '#1a995750';
 
     people.splice(foundIndexDelete,1);//If the validation checks pass, it uses splice to remove one element at the found index from the people array.
     generateTableContent(people);//It then calls the generateTableContent function to update the table display with the modified people array.
@@ -154,12 +173,14 @@ foundIndexUpdate = people.findIndex((person) => person.number == updateNumber); 
     if (!updateNumber || isNaN(updateNumber)) {
         updateResult.innerText = "Please enter a number";
         updateResult.style.display = "block";
+        updateResult.style.backgroundColor = '#cf7a847f';
         return;
     }
 
     if (foundIndexUpdate === -1) {
-        updateResult.innerText = `Person with provided number do not exist or you already updated it`;
+        updateResult.innerText = `Person with provided number do not exist`;
         updateResult.style.display = 'block';
+        updateResult.style.backgroundColor = '#cf7a847f';
         return;
     } 
 
@@ -176,6 +197,12 @@ foundIndexUpdate = people.findIndex((person) => person.number == updateNumber); 
     findElement.style.display = 'none';//hide find button
     updateElement.style.display = 'block';//show update button
     updateResult.style.display = "none";//hide alert notes
+
+    //Pakeisti alert teksta
+    updateResult.style.display = 'block';
+    updateResult.innerText = 'Person has been found! Now you can update his data :)';
+    //kad pakeisti spalva
+    updateResult.style.backgroundColor = '#1a995750';
 }); 
 
 //When "update" is pressed: 
@@ -192,6 +219,7 @@ updateElement.addEventListener("click", () => {
    //Validation
     if (!updatedPerson.firstName || !updatedPerson.lastName || !updatedPerson.age || !updatedPerson.nationality) {
         updateResult.innerText = "Something is missing. Please fill in the complete form!";
+        updateResult.style.backgroundColor = '#cf7a847f';
         updateResult.style.display = 'block';
         return;
     }  else {
@@ -200,6 +228,7 @@ updateElement.addEventListener("click", () => {
 
     if (!/^[A-Za-z\s]+$/.test(updatedPerson.firstName) || !/^[A-Za-z\s]+$/.test(updatedPerson.lastName) || !/^\d+$/.test(updatedPerson.age) || !/^[A-Za-z\s]+$/.test(updatedPerson.nationality)) {
         updateResult.innerText = "Invalid input. Please use only letters for names/nationality, and numbers for age";
+        updateResult.style.backgroundColor = '#cf7a847f';
         updateResult.style.display = 'block';
         return;
     }  else {
@@ -208,6 +237,7 @@ updateElement.addEventListener("click", () => {
 
     if (updatedPerson.age < 0 || updatedPerson.age > 150) {
         updateResult.innerText = "Please enter a valid age";
+        updateResult.style.backgroundColor = '#cf7a847f';
         updateResult.style.display = 'block';
         return;
     }  else {
@@ -216,6 +246,7 @@ updateElement.addEventListener("click", () => {
 
     if (!allowedNationalities.includes(updatedPerson.nationality)) {
         updateResult.innerText = "Invalid nationality. Please enter a valid nationality: US, Canada, UK Australia, France, Germany, Japan";
+        updateResult.style.backgroundColor = '#cf7a847f';
         updateResult.style.display = 'block';
         return;
     }  else {
@@ -224,6 +255,12 @@ updateElement.addEventListener("click", () => {
 
     // Update the person in the people array at the index foundIndexUpdate.
     people[foundIndexUpdate] = updatedPerson;
+
+    //Pakeisti alert teksta
+    updateResult.style.display = 'block';
+    updateResult.innerText = 'Person has been successfully updated!';
+    //kad pakeisti spalva
+    updateResult.style.backgroundColor = '#1a995750';
 
     // Update the table with the modified data.
     generateTableContent(people);
