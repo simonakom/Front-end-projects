@@ -170,28 +170,27 @@
     <script src="products.js"></script>
 
     <script>
-        // priega prie kintamuju is scripto products: console.log (products);
-        // JS kodas skirtas atlikti CRUD veiksmams
-        //  produktu atvaizdavimas yra per JS - atvaizduojami html tbody
+        // Priega prie kintamuju is scripto "products": console.log (products);
+        // JS kodas skirtas atlikti CRUD veiksmams;
+        // Produktu atvaizdavimas yra per JS - atvaizduojami html tbody;
 
         // elementu paemimas:
         const dynamicDataElement = document.getElementById("dynamic-data"),
-				titleInputElement = document.getElementById("title"),
+			    titleInputElement = document.getElementById("title"),
 				priceInputElement = document.getElementById("price"),
 				stockInputElement = document.getElementById("stock"),
 				brandInputElement = document.getElementById("brand"),
 				categoryInputElement = document.getElementById("category"),
-				submitButtonElement = document.getElementById("submit");
-                const addResult = document.getElementById ("add-result");
-
+				submitButtonElement = document.getElementById("submit"),
+                addResult = document.getElementById ("add-result");
 
         // READ - kiekvieno produkto atvaizdavimas lenteleje
         const getTableContents = () => {
 				let dynamicHTML = ``;
-            // einamasis vienas objektas "product" imtas is masyvo "products" ir ciklas kartojasi 30kartu
+            // Einamasis vienas objektas "product" imtas is masyvo "products" ir ciklas kartojasi 30kartu
             for (const product of products) {
-                //yra sukuriamas papildomai delete button (tik cia) ir jam priskiriama delete funkcija. Button duoda nuorodo i button id kuri reikia istrinti. Id lieka unikalus visada.
-                ///yra sukuriamas papildomai update button (tik cia) ir jam priskiriama setEdit funkcija. Kai nusetinsime editinima kazkuriam produktui - tada visas reiskmes is produkto perkeliamos i imputus.
+                //Yra sukuriamas papildomai delete button (tik cia) ir jam priskiriama delete funkcija. Button duoda nuorodo i button id kuri reikia istrinti. Id lieka unikalus visada.
+                //Yyra sukuriamas papildomai update button (tik cia) ir jam priskiriama setEdit funkcija. Kai nusetinsime editinima kazkuriam produktui - tada visas reiskmes is produkto perkeliamos i imputus.
 					dynamicHTML += `<tr>
 						<td>${product.id}</td>
 						<td>${product.title}</td>
@@ -205,22 +204,19 @@
                         </td>
                 </tr>`;
             }  
-            // ideti ciklo rezultata i html:
-            // console.log ([dynamicDataElement]);
+            // ideti ciklo rezultata i html (console.log ([dynamicDataElement]));
             dynamicDataElement.innerHTML = dynamicHTML; //jeigu prideti += tada prisides EXAMPLE eilute
         };
  
-        // kad funkcija suveiktu ja reikia iskviesti 
-        // ya galimas automatinis funckijos sikvietimas apskaiciavus funkcija ir uz jos ribu padejus skliaustelius.
+        // kad funkcija suveiktu ja reikia iskviesti (yra galimas automatinis funckijos sikvietimas apskliaudus funkcija ir uz jos ribu padejus skliaustelius).
         getTableContents ();
 
-        // CREATE - gauti kiekvineo input element reiksme ir tai sudeti i objekta
-        // funkcija sukuria nauja objekta i kuri isides input reiksmes 
+        // CREATE - funkcija sukuria nauja objekta i kuri isides input reiksmes 
         const createNewRecord = (event) => {
             //event.PreventDefault - kad puslapis nepersikrautu (dazniausiai naudojama su formomis kai nera nurodytas button type: button, nes tada automatiskai buna submit ir persikrauna)
             event.preventDefault(); //console.log (event);
 				const newProduct = {
-					id: products[products.length - 1].id + 1, //kiekvinas naujas pridetas elementas tures vis didesni id
+					id: products[products.length - 1].id + 1, //kiekvinas naujas pridetas elementas tures vis didesni id priklausomai nuo paskutnio elemento id.
 					title: titleInputElement.value,
 					price: priceInputElement.value,
 					stock: stockInputElement.value,
@@ -228,7 +224,7 @@
 					category: categoryInputElement.value,
 				};
 
-                    // Get input values for validation
+                    // Get input values for validation:
                     const title = titleInputElement.value;
                     const price = priceInputElement.value;
                     const stock = stockInputElement.value;
@@ -236,11 +232,11 @@
                     const category = categoryInputElement.value;
                     // console.log(title), console.log(price), console.log(stock), console.log(brand), console.log(category)
 
-
                    // Validations:
                 if (!title || !price || !stock || !brand || !category) {
                     addResult.innerText = (`Something is missing....\n Please, fill in the complete form!`)
                     addResult.style.display = 'block';
+                    addResult.style.backgroundColor = '#cf7a847f';
                     return;
                 } else {
                     addResult.style.display = 'none';
@@ -249,6 +245,7 @@
                 if (!/^\d+$/.test(price) ||  !/^\d+$/.test(stock) || category == "") {
                     addResult.innerText = (`Invalid input.\n Please use only letters for title/brand, numbers for price/stock and don't forget to choose category!`);
                     addResult.style.display = 'block';
+                    addResult.style.backgroundColor = '#cf7a847f';
                     return;
                 } else {
                     addResult.style.display = 'none';
@@ -257,12 +254,13 @@
                 if (category === '' || category === 'Choose...') {
                     addResult.innerText =  ('Please select a category!');
                     addResult.style.display = 'block';
+                    addResult.style.backgroundColor = '#cf7a847f';
                     return;
                 } else {
                     addResult.style.display = 'none';
                 }
 
-                // Duplicate product check is performed based on product details.
+                // Validations: Duplicate product check is performed based on product details.
                 const duplicateProduct = products.find((existingProduct) =>
                 existingProduct.title.toLowerCase() === newProduct.title.toLowerCase() &&
                 existingProduct.price === newProduct.price &&
@@ -274,6 +272,7 @@
                 if (duplicateProduct) {
                 addResult.innerText = `A product with the same details already exists!`;
                 addResult.style.display = 'block';
+                addResult.style.backgroundColor = '#cf7a847f';
                 return;
                 }
 
@@ -286,41 +285,51 @@
                     stockInputElement.value = "";
                     brandInputElement.value = "";
                     categoryInputElement.value = "";
+        
+                //Pakeisti alert teksta
+                addResult.style.display = 'block';
+                addResult.innerText = 'New element has been successfully added!';
+                //kad pakeisti spalva
+                addResult.style.backgroundColor = '#76cd7e7f';
 
-                // kad table atsinajunitu su naujo elementu, reikia vel iskviesti atvaizdavimo funkcija
+                // kad table atsinajunitu su naujU elementu, reikia vel iskviesti atvaizdavimo funkcija
                 getTableContents();
         }; 
 
         // Kai mygtukas yra spaudziamas - issikviecia funkcija
         submitButtonElement.onclick = createNewRecord;
 
-
-        // DELETE - Sukurti nuaja delete button
+        // DELETE - Sukurti nuaja delete button ir istrina elementa pagal jo id(parametras)
         const deleteProduct = (id) => {
             // Unikalus/nesikartojantis ID. kad suzinoti elemento vieta masyve - naudoti findindex. Funkcija("value"- kiekvieno producto reiksme): joje ieskome produkto kurio id atitnka auksciau(deleteProducts) nurodyta id.
             let elementIndex = products.findIndex(value=>value.id === id);
             // console.log(elementIndex); 
             products.splice(elementIndex,1);
-             // kad table atsinajunitu su istrintu elementu, reikia vel iskviesti atvaizdavimo funkcija
+
+            //Pakeisti alert teksta
+            addResult.style.display = 'block';
+            addResult.innerText = 'Selected element has been successfully deleted!';
+            //kad pakeisti spalva
+            addResult.style.backgroundColor = '#76cd7e7f';
+
+            // kad table atsinajunitu su istrintu elementu, reikia vel iskviesti atvaizdavimo funkcija
              getTableContents();
         };
  
-
         // UPDATE - Sukurti nuaja update button
-
         // Svarbus prie update: kai neesame update rezime (nepaspaustas mygtukas) tada yra false. Kaip paspaudziam, rezimas keiciasi i "true".
         let editMode = false; 
         let currentProduct;
 
-        // Back to Initial state: kai updatinimas bus baigtas, grizti prie defoult vaizdo
+        // Back to Initial state: kai updatinimas bus baigtas, grizti prie default vaizdo
         const updateProduct = (event)=>{
             event.preventDefault();
             //reiskme bus tokia kokia inpute
-          products [currentProduct].title = titleInputElement.value;
-          products [currentProduct].price = priceInputElement.value;
-          products [currentProduct].stock = stockInputElement.value;
-          products [currentProduct].brand = brandInputElement.value;
-          products [currentProduct].category = categoryInputElement.value;
+            products [currentProduct].title = titleInputElement.value;
+            products [currentProduct].price = priceInputElement.value;
+            products [currentProduct].stock = stockInputElement.value;
+            products [currentProduct].brand = brandInputElement.value;
+            products [currentProduct].category = categoryInputElement.value;
 
             // updated values for validation
             const updatedTitle = products[currentProduct].title;
@@ -333,6 +342,7 @@
                 if (!updatedTitle || !updatedPrice || !updatedStock || !updatedBrand || !updatedCategory) {
                 addResult.innerText = (`Something is missing....\n Please, fill in the complete form!`)
                 addResult.style.display = 'block';
+                addResult.style.backgroundColor = '#cf7a847f';
                 return;
                 } else {
                     addResult.style.display = 'none';
@@ -341,26 +351,32 @@
                 if (!/^\d+$/.test(updatedPrice) ||  !/^\d+$/.test(updatedStock) || category == "" || updatedCategory === 'Choose...') {
                     addResult.innerText = (`Invalid input.\n Please use only letters for title/brand, numbers for price/stock and don't forget to choose category!`);
                     addResult.style.display = 'block';
+                    addResult.style.backgroundColor = '#cf7a847f';
                     return;
                 } else {
                     addResult.style.display = 'none';
                 }
 
-        currentProduct = undefined;
-        editMode = false; 
-        submitButtonElement.onclick = createNewRecord;
-        //Pakeisti mygtuko teksta
-        submitButtonElement.innerText = 'Submit';
-        //kad pakeisti naujo update button spalva (per klase-  submitButtonElement.classList.add/remove('btn-primary');
-        submitButtonElement.style.backgroundColor = 'rgba(87, 191, 232, 0.712)';
+            currentProduct = undefined;
+            editMode = false; 
+            submitButtonElement.onclick = createNewRecord;
+            //Pakeisti mygtuko teksta
+            submitButtonElement.innerText = 'Submit';
+            //kad pakeisti naujo update button spalva (per klase- submitButtonElement.classList.add/remove('btn-primary');
+            submitButtonElement.style.backgroundColor = 'rgba(87, 191, 232, 0.712)';
 
-        
             // palikti inputus tuscius
             titleInputElement.value = "";
             priceInputElement.value = "";
             stockInputElement.value = "";
             brandInputElement.value = "";
             categoryInputElement.value = "";
+
+             //Pakeisti alert teksta
+             addResult.style.display = 'block';
+            addResult.innerText = 'Selected element has been successfully updated!';
+            //kad pakeisti spalva
+            addResult.style.backgroundColor = '#76cd7e7f';
 
             getTableContents();
         };
