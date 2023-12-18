@@ -153,7 +153,14 @@ deleteElement.addEventListener("click", ()=>{
     //kad pakeisti spalva
     deleteResult.style.backgroundColor = '#1a995750';
 
-    people.splice(foundIndexDelete,1);//If the validation checks pass, it uses splice to remove one element at the found index from the people array.
+    
+                                    // (disabled as currentnumeration)*people.splice(foundIndexDelete,1);//If the validation checks pass, it uses splice to remove one element at the found index from the people array.
+    // Remove the person from the array
+    people.splice(foundIndexDelete, 1);
+    // Reassign numbers to all people in the array
+    people.forEach((person, index) => {
+        person.number = index + 1;
+    });
     generateTableContent(people);//It then calls the generateTableContent function to update the table display with the modified people array.
 }); 
 
