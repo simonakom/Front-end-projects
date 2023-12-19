@@ -46,6 +46,8 @@
 <h4>• "BMI Calculator" sample - <a href="https://simonakom.github.io/Namu-darbai/Additional tasks/Workshop 2023.12.13 (BMI calculator)/index.html
 ">View</a><h4>
 
+<h4>• DOM Manipulation - <a href="https://simonakom.github.io/Namu-darbai/JS - objects (CRUD)/DOM Manipulation/products.html">View</a><h4>
+
 <h4>• "Data Table of People" CRUD sample - <a href="https://simonakom.github.io/Namu-darbai/JS - objects (CRUD)/data table - people (CRUD) /dynamic-table.html">View</a><h4>
 
 <h4>• "Data Table of Products" CRUD sample - <a href="https://simonakom.github.io/Namu-darbai/JS - objects (CRUD)/data table - products (CRUD)/index.html">View</a><h4>
