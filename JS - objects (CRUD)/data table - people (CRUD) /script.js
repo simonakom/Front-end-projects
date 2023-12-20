@@ -121,7 +121,7 @@ function generateTableContent (people){
 //DELETE: When "delete" is pressed: 
 deleteElement.addEventListener("click", ()=>{
     const removeElementImput = document.querySelector ("#numberInput"); //representing the number of the person to be deleted.
-    let num = removeElementImput.value;//It retrieves the numerical value from the input and stores it in the variable num.
+    let num = +removeElementImput.value;//It retrieves the numerical value from the input and stores it in the variable num. Alos makes it string.
     removeElementImput.value = ''; //reiksmiu nusinulinimas
     deleteResult.style.display = "none";
 
