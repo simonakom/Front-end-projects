@@ -272,12 +272,13 @@ updateElement.addEventListener("click", () => {
     // Update the table with the modified data.
     generateTableContent(people);
 
-    // Reset the form  
-    document.querySelector("#numberInputUpdate").value = "";
-    document.getElementById("updateFirstNameInput").value = "";
-    document.getElementById("updateLastNameInput").value = "";
-    document.getElementById("updateAgeInput").value = "";
-    document.getElementById("updateNationalityInput").value = "";
+    // Reset the form  (instead writing manually, use function)
+    nullifyInputValues()
+    // document.querySelector("#numberInputUpdate").value = "";
+    // document.getElementById("updateFirstNameInput").value = "";
+    // document.getElementById("updateLastNameInput").value = "";
+    // document.getElementById("updateAgeInput").value = "";
+    // document.getElementById("updateNationalityInput").value = "";
 
     updateForm.style.display = 'none'; //hide the update form
     findElement.style.display = 'block'; //show find button
@@ -285,3 +286,10 @@ updateElement.addEventListener("click", () => {
 });
 
 
+function nullifyInputValues (){
+    document.querySelector("#numberInputUpdate").value = "";
+    document.getElementById("updateFirstNameInput").value = "";
+    document.getElementById("updateLastNameInput").value = "";
+    document.getElementById("updateAgeInput").value = "";
+    document.getElementById("updateNationalityInput").value = "";
+}
