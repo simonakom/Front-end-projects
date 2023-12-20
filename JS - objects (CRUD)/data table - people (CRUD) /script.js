@@ -1,8 +1,34 @@
-const people = []; //An array to store information about people.
+//local storage
+console.log(localStorage.getItem("people")); //patikrinti ar egzistuoja masyvas (people) ir kokia to reiksme(jei neegzituoja-null reiksme)
+
+//patikrinti ar kazkada buvo uzeita i si websaita, jie ne, yra sukuriamas irasas:
+if (!localStorage.getItem("people")){
+    //jei tokio "key" people nera, laukelis buvo neuzpildytas, tada priskirti pradine reiksme siame local storage
+    //Tuscio masyvo issaugoti negalima.Tik teksines strnig reiksmes. Tad reikia prideti kabutes ('[]') arba JSON
+    localStorage.setItem("people", JSON.stringify([]));
+} 
+
+//Jeigu nusetiname zmogui reiksme, kita karta turetume gauti ta reiksme (is localstorage) i people masyva (kai yra apsilankymas, turime gauti visu zmomiu irasus is localstorage):
+//irasus gauname string formatu - JASON.parse keicia string i objekta
+const people = JSON.parse (localStorage.getItem("people"))
+ 
+//Kai yra atnaujinamas pats masyvas- reikia atnaujiti localstorage esancius duomenys ----> ziureti prie create, delete,update
+
+//kad atvaizduoti:
+generateTableContent (people)
+
+
+
+
+
+// const people = []; //An array to store information about people. is hidden as there is local storage
 const allowedNationalities = ['US', 'CANADA', 'UK', 'AUSTRALIA', 'FRANCE', 'GERMANY', 'JAPAN'];
 
-                                 // *currentNumeration disabeled as after deleting 2no. contact, new contact should be have 2id but it has 3id. Numeration is wrong: 1,3,4,5...
-                                 // *let currentNumeration= 1; //A variable to keep track of the current numeration for each person.
+                                 /* *currentNumeration disabeled as after deleting 2no. contact, new contact should be have 2id but it has 3id. Numeration is wrong: 1,3,4,5...
+                                 let currentNumeration= +localStorage.getItem("currentNumeration"); //A variable to keep track of the current numeration for each person.*/
+                                 /*to have right numeration in storage with currentNumeration style:
+                                 if(!localStorage.getItem('currentNumeration'))
+                                 localStorage.setItem("currentNumeration", "1");*/
 
 
 //selecting HTML elements 
@@ -80,9 +106,10 @@ buttonElement.addEventListener("click", ()=>{
         addResult.style.backgroundColor = '#cf7a847f';
         return;
     } 
-                                    // *currentNumeration disabeled as after deleting 2no. contact, new contact should be have 2id but it has 3id. Numeration is wrong: 1,3,4,5... Instead using (person.number = people.length + 1).
+                                    // *disabeled as after deleting 2no. contact, new contact should be have 2id but it has 3id. Numeration is wrong: 1,3,4,5... Instead using (person.number = people.length + 1).
                                     // *person.number = currentNumeration; // assigns a number property to the person object.
                                     // *currentNumeration++; // After assigning the number to the current person, currentNumeration is incremented by 1.
+                                    // localStorage.setItem("currentNumeration", "" + currentNumeration );
 
         // This will assign a unique number to each person based on the length of the people array. The +1 is added because array indices start from 0, but you want to display a human-readable number starting from 1.
         person.number = people.length + 1;
@@ -98,6 +125,9 @@ buttonElement.addEventListener("click", ()=>{
 
         generateTableContent (people); //calls the generateTableContent function, passing the updated people array as an argument. The purpose of this function is to generate HTML content for displaying the list of people in a table. 
         formElement.reset(); //resets the form (formElement) after adding a person. It clears the input fields in the form.
+         
+//Kai yra atnaujinamas pats masyvas- reikia atnaujiti localstorage esancius duomenys 
+localStorage.setItem("people", JSON.stringify(people));
 }); 
 
 //READ: A function to generate HTML content for displaying the list of people in a table.
@@ -162,6 +192,9 @@ deleteElement.addEventListener("click", ()=>{
         person.number = index + 1;
     });
     generateTableContent(people);//It then calls the generateTableContent function to update the table display with the modified people array.
+
+//Kai yra atnaujinamas pats masyvas- reikia atnaujiti localstorage esancius duomenys 
+localStorage.setItem("people", JSON.stringify(people));
 }); 
 
 //declares a variable outside of any function, making it accessible globally. This variable will be used to store the index of the person with the specified number when the "Find" button is clicked.
@@ -269,9 +302,6 @@ updateElement.addEventListener("click", () => {
     //kad pakeisti spalva
     updateResult.style.backgroundColor = '#1a995750';
 
-    // Update the table with the modified data.
-    generateTableContent(people);
-
     // Reset the form  (instead writing manually, use function)
     nullifyInputValues()
     // document.querySelector("#numberInputUpdate").value = "";
@@ -292,4 +322,10 @@ function nullifyInputValues (){
     document.getElementById("updateLastNameInput").value = "";
     document.getElementById("updateAgeInput").value = "";
     document.getElementById("updateNationalityInput").value = "";
+
+        // Update the table with the modified data.
+        generateTableContent(people);
+
+        //Kai yra atnaujinamas pats masyvas- reikia atnaujiti localstorage esancius duomenys 
+        localStorage.setItem("people", JSON.stringify(people));
 }
