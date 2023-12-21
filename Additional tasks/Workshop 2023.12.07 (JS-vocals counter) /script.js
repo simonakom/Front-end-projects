@@ -21,4 +21,15 @@ function countVowel () {
     result.innerHTML=`${word.value.toUpperCase()} has ${vowelCount} vowels`
 
 
+    if (word.value === "") {
+        result.style.display = 'block';
+		result.innerText = `Please enter a word`;
+        
+        return;
+    }
+
+    if (/^\d+$/.test(word.value) || /[^a-zA-Z]/.test(word.value)) {
+        result.innerText = `Please enter a valid word \n (only letters are allowed)`;
+        return;
+    }
 }

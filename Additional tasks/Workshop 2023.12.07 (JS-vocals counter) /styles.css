@@ -8,7 +8,7 @@ body {
 
 .container {
     width: 350px;
-    height: 250px;
+    height: 260px;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -33,10 +33,10 @@ input {
     border-radius: 10px;
     color: white;
     background-color: rgba(161, 83, 104, 0.592);
-    color: rgb(255, 255, 255);
 }
 
 p {
+    display: none;
     border: 1px solid black ;
     border-style: dotted;
     border-radius: 9px;
@@ -49,13 +49,13 @@ img {
     height: 40px;
     padding-bottom: 20px;
     margin-bottom: 15px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .btn:hover {
     transform: scale(1.2);
     transition: transform 0.3s ease-in-out;
-    color: #ff00ff;
-    background-color: #ff00ff2f;
+    color: white;
+    background-color: rgba(161, 83, 104, 0.492);
     opacity: 0.8;
     }
