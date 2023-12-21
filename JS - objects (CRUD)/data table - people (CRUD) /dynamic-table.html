@@ -20,7 +20,8 @@
             margin-top: 50px;
             margin-bottom: 100px;
         }
-        .butn{
+      
+        .butn {
             padding: 10px 10px;
             border: none;
             outline: none;
@@ -28,15 +29,28 @@
             color: rgb(255, 255, 255);
             background-color: rgba(123, 35, 116, 0.557);
             margin: auto;
-         }
-        .btn_hover:hover {
-        transform: scale(1.2);
-        transition: transform 0.3s ease-in-out;
-        color: #4182ba;
-        background-color: #15648f2f;
-        opacity: 0.8;
-        border: none;
-         }
+        }
+
+        .butn:hover {
+            transform: scale(1.2);
+            transition: transform 0.9s ease-in-out;
+            color: rgb(255, 255, 255);
+            background-color: rgba(123, 35, 116, 0.557);
+            opacity: 0.8;
+            border: none; 
+        } 
+
+        .butn:active {
+            background-color: rgba(161, 83, 104, 0.615)  !important;
+            color: rgb(255, 255, 255)  !important;
+        }
+
+        .butn:active
+        .butn:focus {
+            background-color: #9c4ea096 !important; /* Darker green color when active or clicked */
+            color: white !important;
+        }
+
          .form{
         box-shadow:  2px 5px rgba(145, 192, 236, 0.104);
         margin-bottom: 50px;
