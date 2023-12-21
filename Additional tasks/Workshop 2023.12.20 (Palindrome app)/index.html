@@ -52,20 +52,26 @@
             -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         }
 
-        .btn {
+
+        .custom-button {
             color: white;
             background-color: rgba(103, 56, 148, 0.496);
             padding: 8px 24px  8px  24px;
             font-size: 17px;
         }
 
-        .btn:hover {
+        .custom-button:hover {
             transform: scale(1.1);
             border: none;
             transition: transform 0.3s ease-in-out;
+            opacity: 0.8;
             background-color: rgba(161, 89, 161, 0.791);
             color:white;
-            opacity: 0.8;
+
+        }
+        .custom-button:focus {
+            background-color: #9c4ea096 !important; /* Darker green color when active or clicked */
+            color: white !important;
         }
             .result {
             display: none;
@@ -110,7 +116,7 @@
             <div class="input-group">
                 <input type="text" class="mx-5 mt-4 input form-control weight" placeholder="Type here your word..." aria-label="Username" aria-describedby="basic-addon1">
             </div>
-            <button type="button" class="mt-4 mb-4 btn btn-light">Check</button>
+            <button type="button" class="custom-button mt-4 mb-4 btn btn-light">Check</button>
             <p class="result mb-4"></p> 
         </section>
     </div>
