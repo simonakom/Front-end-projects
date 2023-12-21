@@ -16,7 +16,6 @@ function markSelectedAnswer(questionId, selectedAnswerId) {
 
 function calculateScore() {
 
-
                         // Count total Score
                         let correctAnswers = 0;
 
@@ -35,12 +34,19 @@ function calculateScore() {
                         if (document.querySelector('#whale').classList.contains('selected')) {
                             correctAnswers++;
                         }
-
+                        
                         let score = document.getElementById('result');
                         if (correctAnswers === 5) {
                             score.innerHTML += "<br><span style='color: #ea226c; font-size: 20px;'>Congratulations! You answered all questions correctly! 🥳</span>";
                         } else {
                             score.innerText = `Your Score: ${correctAnswers} out of 5. You can do better! 😓`
+                        }
+
+                        //check if all selected
+                        let answeredQuestions = document.querySelectorAll('.answer-option.selected').length;
+                        if (answeredQuestions < 5) {
+                            score.innerText = ('Please answer all questions before submitting!');
+                            return;
                         }
 
                         // Display correct answers
@@ -62,7 +68,7 @@ function calculateScore() {
                             selectThree.classList.add('selected3');
                             displayAnswerOne.innerText = `Correct Answer: C) Paris! 😢`;
                         }else {
-                            displayAnswerOne.innerText = `You didn't select...\n but correct Answer was C) Paris! 😢`;
+                            displayAnswerOne.innerText = `Correct answer was C) Paris! 😢`;
                         }
                         
 
@@ -84,7 +90,7 @@ function calculateScore() {
                             select33.classList.add('selected3');
                             displayAnswerTwo.innerText = `Correct Answer: B) Seven! 😢`;
                         }else {
-                            displayAnswerTwo.innerText = `You didn't select...\n but correct Answer was B) Seven! 😢`;
+                            displayAnswerTwo.innerText = `Correct answer was B) Seven! 😢`;
                         }
 
                         // 3 question
@@ -105,7 +111,7 @@ function calculateScore() {
                             select333.classList.add('selected3');
                             displayAnswerThree.innerText = `Correct Answer: A) Mars! 😢`;
                         }else {
-                            displayAnswerThree.innerText = `You didn't select...\n but correct Answer was A) Mars! 😢`;
+                            displayAnswerThree.innerText = `Correct answer was A) Mars! 😢`;
                         }
 
                         // 4 question
@@ -128,7 +134,7 @@ function calculateScore() {
                             displayAnswerFour.innerText = `Correct Answer:\n B) Carbon Dioxide
                             ! 😢`;
                         }else {
-                            displayAnswerFour.innerText = `You didn't select...\n but correct Answer was B) Carbon Dioxide! 😢`;
+                            displayAnswerFour.innerText = `Correct answer was B) Carbon Dioxide! 😢`;
                         }
 
                         // 5 question
@@ -151,7 +157,7 @@ function calculateScore() {
                             displayAnswerFive.innerText = `Correct Answer:\n B) Blue Whale
                             ! 😢`;
                         }else {
-                            displayAnswerFive.innerText = `You didn't select... but correct Answer was B) Blue Whale! 😢`;
+                            displayAnswerFive.innerText = `Correct answer was B) Blue Whale! 😢`;
                         }
 
                         document.querySelector('#hide').onclick = playAgain;
