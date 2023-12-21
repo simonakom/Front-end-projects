@@ -14,39 +14,69 @@ function calculate() {
     let firstNumber = parseFloat(document.querySelector (`#num1`).value);
     let secondNumber = parseFloat(document.querySelector (`#num2`).value);
     let result = document.querySelector (`#result`);
-
     let operation = document.querySelector (`#operation`).value;
+    var selectElement = document.getElementById("operation");
+
 
     // console.log (firstNumber, secondNumber, operation)
     // console.log (typeof firstNumber, typeof secondNumber)
 
 if ( isNaN(firstNumber) || isNaN(secondNumber) ) {
-    result.innerText = 'Action is impossible.\n All numbers are not entered';
+    result.style.display = 'block';
+    result.innerText = 'Action is impossible.\n Please, enter all numbers!';
     return;
 }
 
-if(operation === `+`) result.innerText = `Result = ${firstNumber+secondNumber}`;
+
+if (!selectElement || selectElement.selectedIndex <= 0) {
+    result.style.display = 'block';
+    result.innerText = 'Action is impossible.\nPlease, select a symbol!';
+    return;
+}
+
+
+if(operation === `+`) {
+    result.style.display = 'block';
+    result.innerText = `Result = ${firstNumber+secondNumber}`;
+} 
 // if(operation === `+`){
 // let final = firstNumber + secondNumber;
 // result.innerText = `Result = ${final}`;
 // }
-else if(operation === `-`) result.innerText = `Result = ${firstNumber-secondNumber}`;
-else if(operation === `*`) result.innerText = `Result = ${firstNumber*secondNumber}`;
-else if(operation === `/` && secondNumber !== 0 ) result.innerText = `Result = ${firstNumber/secondNumber}`;
+else if(operation === `-`){
+    result.style.display = 'block';
+    result.innerText = `Result = ${firstNumber-secondNumber}`;
+} 
+
+else if(operation === `*`){
+    result.style.display = 'block';
+    result.innerText = `Result = ${firstNumber*secondNumber}`;
+} 
+
+else if(operation === `/` && secondNumber !== 0 ){
+    result.style.display = 'block';
+    result.innerText = `Result = ${firstNumber/secondNumber}`;
+} 
 
 else if(operation === `/`) {
-    if (secondNumber !== 0)
-    {result.innerText = `Result = ${firstNumber/secondNumber}`}
-    else {result.innerText = `One of numbers is 0.\n Cannot divide by 0`}; 
+    if (secondNumber !== 0){
+        result.style.display = 'block';
+        result.innerText = `Result = ${firstNumber/secondNumber}`}
+    else {
+        result.style.display = 'block';
+        result.innerText = `One of numbers is 0.\n Cannot divide by 0`}; 
     // 0/3=0 3/0=error
 }
 
 else if(operation === `**`) {
-    if (firstNumber===0 && secondNumber<=0) 
-    {result.innerText = `One of numbers is 0.\n Squared action not possible`;} 
+    if (firstNumber===0 && secondNumber<=0) {
+        result.style.display = 'block';
+        result.innerText = `Both numbers are 0.\n Squared action not possible`;} 
     // Jei pirmas skaicius yra nulis o kitas yra negatyvus skaicius, negalime atlikti operacijos
-    else { result.innerText = `Result = ${firstNumber**secondNumber}`};
-} 
+    else { 
+        result.style.display = 'block';
+        result.innerText = `Result = ${firstNumber**secondNumber}`};
+    } 
 }
 
 

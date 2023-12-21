@@ -44,69 +44,78 @@ Rekomendacija: Tam, kad prisiminti HTML ir CSS, stilizuokite skaičiuotuvą; -->
     
         #num1 {
             max-width: 130px;
-            border: 1px solid rgb(13, 8, 102);
+            border: 1px solid #be965abf;
             max-height: 40px;
         }
         #num2 {
             max-width: 130px;
-            border: 1px solid rgb(13, 8, 102);
+            border: 1px solid #be965abf;
             max-height: 40px;
         }
         #operation {
             max-width: 110px;
-            border: 1px solid rgb(13, 8, 102);
+            border: 1px solid #be965a62;
             max-height: 40px;
+            background-color:  #be965a51;
+            color: #352b1cba;
         }
 
         .butn {
-            background-color: rgba(196, 228, 240, 0.451);
-            border: 1px solid rgb(13, 8, 102);
-            color: #6e246edc;
-            
+            background-color:  #be965a2a;
+            border: 1px solid #be965a62;
+            color: #352b1cba;
         }
 
         .btn:hover {
             transform: scale(1.2);
             transition: transform 0.3s ease-in-out;
-            color: #ff00ff;
-            background-color: #ff00ff2f;
+            color: #352b1cba;
+            background-color: #be965a2c;
             opacity: 0.8;
+            border: none;
             }
 
+
+        .butn:focus {
+            background-color: #be965a56 !important; /* Darker green color when active or clicked */
+            color: rgb(111, 73, 17) !important;
+        }
+
+
         .calc {
-            background-color: rgba(182, 45, 146, 0.13);
-            border: 1px solid rgb(100, 8, 102);
-            color: #6e246edc;
+            background-color:  #be965a51;
+            color: #352b1cba;
             max-height: 40px;
             padding: 5px;
             width: 50%;
             margin: auto;
+            border: 1px solid #be965a2c;
         }
 
         .calc:hover {
             transform: scale(1.2);
             transition: transform 0.3s ease-in-out;
-            color: #ff00ff;
-            background-color: #ff00ff2f;
+            color: #be965a2c;
+            background-color: #be965a2c;
+            color: #352b1cba;
             opacity: 0.8;
+            border: none;
             }
 
         .result {
-            border: 1px dashed rgb(102, 8, 17);
-            background-color: rgba(23, 86, 149, 0.272);
-            padding: 5px;
-            width: 50%;
+            /* border: 1px dashed rgb(102, 8, 17); */
+            display: none;
+            background-color: rgba(200, 180, 138, 0.119);
+            padding: 8px;
+            width: 90%;
             margin: auto;
+            color: #352b1cba;
         }
 
         input {
         background-color: rgba(173, 216, 230, 0.376);
         }
 
-        #operation {
-        background-color: rgba(173, 216, 230, 0.443);
-        color: #6e246edc
-        }
     </style>
 </head>
 <body>
@@ -119,7 +128,7 @@ Rekomendacija: Tam, kad prisiminti HTML ir CSS, stilizuokite skaičiuotuvą; -->
                 <div class="d-flex justify-content-center my-3">
                     <input type="number" id="num1" placeholder="Number 1" required class="form-control rounded-5 px-3 mx-3">                
                         <select name="operation" id="operation" class="form-select rounded-5 py-1 px-2" >
-                          <option selected id="select">Choose...</option>
+                          <option selected disabled selected id="select">Choose...</option>
                           <option value="+">+</option>
                           <option value="-">-</option>
                           <option value="*">*</option>
