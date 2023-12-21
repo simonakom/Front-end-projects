@@ -45,7 +45,7 @@ Jei slaptažodis praėjo validaciją: informuoti kad slaptazodis tinkamas -->
     img {
         width: 30%;
     }
-    .btn {
+    /* .btn {
         border: none;
         outline: none;
         border-radius: 15px;
@@ -53,13 +53,48 @@ Jei slaptažodis praėjo validaciją: informuoti kad slaptazodis tinkamas -->
         background-color: rgba(192, 174, 179, 0.615);
         width: 40%;
     }
+
     .btn:hover {
         transform: scale(1.1);
         transition: transform 0.3s ease-in-out;
         background-color: rgba(161, 83, 104, 0.615);
         color: rgb(255, 255, 255);
         opacity: 0.8;
-        }
+        } */
+
+    .press {
+        border: none;
+        outline: none;
+        border-radius: 15px;
+        color: #23445cef;
+        background-color: rgba(192, 174, 179, 0.615);
+        width: 40%;
+    }
+
+    .press:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+        background-color: rgba(161, 83, 104, 0.615);
+        color: rgb(255, 255, 255);
+        opacity: 0.8;
+        } 
+
+    .press:active {
+        background-color: rgba(161, 83, 104, 0.615)  !important;
+    }
+
+    .press:active
+    .press:focus {
+        background-color: #9c4ea096 !important; /* Darker green color when active or clicked */
+        color: white !important;
+    }
+
+
+
+
+
+
+
     .form-control {
         width: 70%;
        
@@ -97,7 +132,7 @@ Jei slaptažodis praėjo validaciją: informuoti kad slaptazodis tinkamas -->
         <p class="title2 mb-5">Take the Password Test below! ⥥</p>
         <div class="container2 form-group d-flex gap-3 mb-4">
             <input type="password" class="form-control mt-5 py-2" id="password" name="password" placeholder="Type your password here..." required>
-            <button type="button" onclick="validatePassword()" class="btn btn-primary py-2" id="again">Check</button>
+            <button type="button" onclick="validatePassword()" class="btn btn-primary py-2 press" id="again">Check</button>
             <p class="result" id="result"></p>
         </div>  
     </div>
