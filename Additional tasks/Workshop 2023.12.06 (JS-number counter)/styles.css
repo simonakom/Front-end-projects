@@ -73,7 +73,7 @@ h1 {
 .reset:hover {
     transform: scale(1.2);
     transition: transform 0.3s ease-in-out;
-    color: #ff00ff;
-    background-color: #ff00ff2f;
+    /* color: #f5f5f5; */
+    /* background-color: #c5b8c5; */
     opacity: 0.8;
     }
