@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+ // Skaiciu Suma
+function add (a,b) {
+    return a+b
+}
+console.log ("Sum of numbers: " + add(5,6))
+
+// Lyginis skaicius
+function isEven (number) {
+    return number %2 === 0
+}
+console.log ("Even Number: " + isEven(6));
+
+// Greeting
+function greet (name) {
+    console.log(`Greeting: Hello ${name}`);
+}
+greet ("Tom")
+
+
+// Factorial (1*2*3*4*5=120) (Rekursine Funkcija: prasukti cikla (loops) nesukant ciklo)
+function factorial (number) {
+    if (number === 0 || number === 1) {
+        return 1
+    }
+    else {
+        return number * factorial (number - 1)
+    }
+}
+const factorial2 = factorial(5)
+console.log("Factorial 5: " + factorial2)
+
+
+//Rekursine Funkcija: prasukti cikla nesukant ciklo
+function prasuktiCikla (kartai) {
+    if (kartai>0) {
+        console.log ("Action No." + kartai)
+        prasuktiCikla(kartai-1)
+    }
+}
+prasuktiCikla(5)
+
+// Celsius to fahrenheit
+function celsiusToFarenheit (celsius) {
+    return (celsius * 9/5)+32
+}
+let celsius = 25
+console.log (`${celsius} Celsius is ${celsiusToFarenheit(25)} Fahrenheit`)
+
+// Max number form Arrey (...- (arrey destruction) leidzia pasiimti kiekviena arrey nari atskirai)
+function getMaxNumber (array){
+    return Math.max (...array)
+}
+console.log("Max number from arrey is: " + getMaxNumber([5,15,120,100,14]))
+
+// Get random number
+function getRandomNumber (min,max) {
+    return Math.floor (Math.random()*(max + min + 1)) +min
+}
+console.log ("Random number (0-10) is: " + getRandomNumber(0,10));
+
+// Unique values from arrey (...- (arrey destruction) leidzia pasiimti kiekviena arrey nari atskirai)
+function getUniqueValue (arr) {
+    return [...new Set(arr)]
+}
+console.log("Unique values from arrey are: " + getUniqueValue([1,1,5,25,5,5,2]))
+
+
+//Square all calues from arrey  (map nemodifikuoja originalu arrey (pasidaro kopija)) 
+function squareValues (arr) {
+    return arr.map(number => number*number)
+}
+const arrey = [1,2,3,4,5]
+console.log("Original Arrey: " + arrey)
+
+const squared = squareValues (arrey)
+console.log ("Squared arrey: " + squared)
+
+const squared2x = squareValues (squared )
+console.log ("Squared 2x arrey: " + squared2x)
+
+// To reduce Arrey 
+function sumazintiMasyva (arr, start, end) {
+    return arr.slice (start,end)
+}
+const sliced = sumazintiMasyva([1,5,7,8,1,4,2,8], 2,4)
+console.log("Sliced arrey: " + sliced)  
+
+//To double number
+function double (number) {
+    return number*2
+}
+console.log("Double the number: " + double(3))
+
+
+// Get Max number
+function maxNumber (num1, num2, num3){
+    return Math.max (num1, num2, num3)
+}
+console.log("Max number is: " + maxNumber(5,15,120,100,14))
+    
+
+// Flip text
+function flip (text) {
+    return text.split("").reverse().join("");
+}
+let string = "string";
+console.log(flip(string));
+
+//Sum of numbers in Arrey
+function sumArr (arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+    }
+    return sum ;
+}
+console.log(sumArr([2,3,4]));
+    </script>
+</body>
+</html>
