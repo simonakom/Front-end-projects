@@ -41,6 +41,10 @@ Rekomendacija: Tam, kad prisiminti HTML ir CSS, stilizuokite skaičiuotuvą; -->
         h1 {
             color: #3d210b;
         }
+
+        .info {
+            color: #352b1cba;
+        }
     
         #num1 {
             max-width: 150px;
@@ -111,6 +115,17 @@ Rekomendacija: Tam, kad prisiminti HTML ir CSS, stilizuokite skaičiuotuvą; -->
             color: #352b1cba;
         }
 
+        .again {
+            display: none;
+            background-color:  #be965a51;
+            color: #352b1cba;
+            max-height: 40px;
+            padding: 5px;
+            width: 50%;
+            margin: auto;
+            border: 1px solid #be965a2c;
+        }
+
         input {
         background-color: rgba(173, 216, 230, 0.376);
         }
@@ -155,8 +170,16 @@ Rekomendacija: Tam, kad prisiminti HTML ir CSS, stilizuokite skaičiuotuvą; -->
                         <button type="button" class="btn btn-light rounded-5 butn" onclick="appendNumberToActiveInput('0')">0</button>
                     </div>
 
-                    <button onclick="calculate()" type="button" class="btn btn-light rounded-5 butn calc my-3">Calculate</button>
-                    <p class="result rounded-4 text-center" id="result">Result will appear here</p>
+                    <button onclick="calculate()" type="button" class="calc btn btn-light rounded-5 butn my-3">Calculate</button>
+                    <p class="result rounded-4 text-center my-4" id="result">Result will appear here</p>
+                    <p class=" text-left info rounded-4 my-4" id="info">
+                        <b><u>How to use:</b></u><br>
+                        1. Insert <i><b>Number 1</b></i><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        2. Choose Math <b>Symbol ↓</b><br>
+                        3. Insert <i><b>Number 2</b></i><br>
+                        4. Press <i><b>Calculate</b></i>
+                    </p>
+                    <button onclick="again()" type="button" class="again btn btn-light rounded-5but">Try Again</button>
                 </div>
             </div>
     </div>
