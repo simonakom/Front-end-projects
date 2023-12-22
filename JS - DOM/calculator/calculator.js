@@ -10,6 +10,12 @@
 // Rekomendacija: Tam, kad prisiminti HTML ir CSS, stilizuokite skaičiuotuvą;
 
 
+function appendNumberToActiveInput(number) {
+    let operationValue = document.getElementById('operation').value;
+    let activeInputId = (operationValue === '+' || operationValue === '-' || operationValue === '*' || operationValue === '/' || operationValue === '**') ? 'num2' : 'num1';
+    document.getElementById(activeInputId).value += number;
+}
+
 function calculate() {
     let firstNumber = parseFloat(document.querySelector (`#num1`).value);
     let secondNumber = parseFloat(document.querySelector (`#num2`).value);
@@ -20,6 +26,8 @@ function calculate() {
 
     // console.log (firstNumber, secondNumber, operation)
     // console.log (typeof firstNumber, typeof secondNumber)
+
+
 
 if ( isNaN(firstNumber) || isNaN(secondNumber) ) {
     result.style.display = 'block';
@@ -77,6 +85,13 @@ else if(operation === `**`) {
         result.style.display = 'block';
         result.innerText = `Result = ${firstNumber**secondNumber}`};
     } 
+
+
+
+
+    document.getElementById('num1').placeholder = 'Number 1';
+    document.getElementById('num2').placeholder = 'Number 2';
+    document.getElementById('select').textContent = '↓';
 }
 
 
@@ -92,3 +107,6 @@ if (window.matchMedia("(max-width: 540px)").matches) {
     document.getElementById('num2').placeholder = 'Number 2'
     document.getElementById('defaultOption').textContent = 'Choose...';
   }
+
+
+
