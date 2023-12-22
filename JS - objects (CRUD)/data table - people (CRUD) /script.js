@@ -10,14 +10,12 @@ if (!localStorage.getItem("people")){
 
 //Jeigu nusetiname zmogui reiksme, kita karta turetume gauti ta reiksme (is localstorage) i people masyva (kai yra apsilankymas, turime gauti visu zmomiu irasus is localstorage):
 //irasus gauname string formatu - JASON.parse keicia string i objekta
-const people = JSON.parse (localStorage.getItem("people"))
+const people = JSON.parse (localStorage.getItem("people")) 
  
 //Kai yra atnaujinamas pats masyvas- reikia atnaujiti localstorage esancius duomenys ----> ziureti prie create, delete,update
 
 //kad atvaizduoti:
 generateTableContent (people)
-
-
 
 
 
