@@ -42,6 +42,39 @@ const addResult = document.querySelector (".add-result");
 const deleteResult = document.querySelector (".delete-result");
 const updateResult = document.querySelector (".update-result");
 
+filterNameElement = document.getElementById ("filterNameInput")
+filterLastNameElement = document.getElementById ("filterLastNameInput")
+filterAgeElement = document.getElementById ("filterAgeInput")
+filterNationalityElement = document.getElementById ("filterNationalityInput")
+resetFiltersButton = document.getElementById('resetFilters');
+
+
+
+//FILTER: if Arrey is same for each input
+
+filterNameElement.onkeyup = filter; 
+filterLastNameElement.onkeyup = filter; 
+filterAgeElement.onkeyup = filter; 
+filterNationalityElement.onkeyup = filter; 
+
+function filter (){
+    let personName = filterNameElement.value.toLowerCase();
+    let personLastName = filterLastNameElement.value.toLowerCase();
+    let personAge = +filterAgeElement.value;
+    let personNationality = filterNationalityElement.value.toLowerCase();
+ 
+    let filteredArrey = people.filter((person) => person.firstName.toLowerCase().includes (personName));
+    filteredArrey = filteredArrey.filter((person) => person.lastName.toLowerCase().includes (personLastName));
+    filteredArrey = filteredArrey.filter((person) => person.age >= personAge);
+    filteredArrey = filteredArrey.filter((person) => person.nationality.toLowerCase().includes (personNationality));
+
+     generateTableContent  (filteredArrey);
+}
+
+resetFiltersButton.addEventListener('click', refreshPage);
+function refreshPage() {
+location.reload();
+}
 
 //CREATE: When "Add" is pressed: 
 buttonElement.addEventListener("click", ()=>{

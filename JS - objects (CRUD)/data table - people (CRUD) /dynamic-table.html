@@ -13,6 +13,10 @@
             font-size: 40px;
             color: #490b6af8;
         }
+        .filter{
+            font-size: 30px;
+            color: #490b6af8;
+        }
         .age {
             min-width: 103px;
         }
@@ -103,6 +107,35 @@
     <div class="container text-center">
         <div><img src="search.png" class="mt-5"></div>
         <p class="title">Data Table</p>
+        <hr>
+
+        <p class="filter mt-4">Filtering</p>
+        <div class="d-flex gap-4">
+        <label class="input-group px-4 py-1">
+            <span class="input-group-text" id="basic-addon1">First Name</span>
+            <input id="filterNameInput" type="text" class="form-control" pattern="[A-Za-z]+" title="Only letters are allowed" placeholder="Type text..." >
+        </label>
+        <label class="input-group px-4 py-1">
+            <span class="input-group-text" id="basic-addon1">Last Name</span>
+            <input id="filterLastNameInput" type="text" class="form-control" placeholder="Type text...">
+        </label>
+    </div>
+
+    <div class="d-flex gap-4">
+        <label class="input-group px-4 py-1">
+            <span class="input-group-text age" id="basic-addon1">Age (from)</span>
+            <input id="filterAgeInput" type="text" class="form-control" placeholder="Type number...">
+        </label>
+        <label class="input-group px-4 py-1">
+            <span class="input-group-text" id="basic-addon1">Nationality</span>
+            <input id="filterNationalityInput" type="text" class="form-control" placeholder="Type text...">
+        </label>
+    </div>
+    <div><button type="button" class="btn btn-primary btn_hover butn mt-3 py-2 px-4" id="resetFilters">Reset filters</button></div> 
+    </form>
+    <hr class="mt-4">
+
+
         <table class="table table-bordered tablem table-hover">
             <thead>
                 <tr class="table-secondary">
