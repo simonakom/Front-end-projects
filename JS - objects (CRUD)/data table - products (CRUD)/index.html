@@ -92,30 +92,35 @@
         .logoSize {
             width: 90%  
         }
+
+        .table-responsive-custom {
+        margin: 0 10px; /* Adjust the left and right margins as needed */
+        }
         
-        @media screen and (max-width: 768px) {    
+    @media screen and (max-width: 768px) {    
         img {
-        width: 30%;
+            width: 30%;
         }   
         .d-flex {
-        flex-direction: column;
-        align-items: center;
+            flex-direction: column;
+            align-items: center;
         }
         .gap-4 {
-        gap: 0!important
+            gap: 0!important;
         }
 
         form {
             margin: auto;
+            padding: 0 10px; /* Adjust the left and right padding as needed */
         } 
-        }
+    }
 
-        @media screen and (max-width: 570px) {    
+    @media screen and (max-width: 570px) {    
         form {
-           width:  100%;
-           margin-left: 40px;
+            width: 100%;
+            margin-left: 0;
         }
-        }  
+    } 
     </style>
 </head>
 <body>
@@ -246,6 +251,7 @@
           </form>
         <hr>
 
+        <div class="table-responsive table-responsive-custom">
         <table class=" table table-light table-hover table-bordered my-5">
             <thead>
                 <tr class="table-dark">
@@ -270,6 +276,7 @@
                 </tr>
             </tbody>
         </table>
+        </div>
     </div>
 
     <dialog id="productInfo" style="width: 58%; padding: 0">
