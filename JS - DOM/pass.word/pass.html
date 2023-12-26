@@ -28,7 +28,7 @@ Jei slaptažodis praėjo validaciją: informuoti kad slaptazodis tinkamas -->
     .container1 {
         align-items: center;
         text-align: center;
-        width: 100%;
+        width: 60vw;
         display: flex;
         flex-direction: column;
     }
@@ -40,27 +40,12 @@ Jei slaptažodis praėjo validaciją: informuoti kad slaptazodis tinkamas -->
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 40%;
+        width: 100%;
     }
     img {
-        width: 30%;
-    }
-    /* .btn {
-        border: none;
-        outline: none;
-        border-radius: 15px;
-        color: rgb(21, 3, 3);
-        background-color: rgba(192, 174, 179, 0.615);
-        width: 40%;
-    }
-
-    .btn:hover {
-        transform: scale(1.1);
-        transition: transform 0.3s ease-in-out;
-        background-color: rgba(161, 83, 104, 0.615);
-        color: rgb(255, 255, 255);
-        opacity: 0.8;
-        } */
+    max-width: 40%;
+    height: auto;
+    }  
 
     .press {
         border: none;
@@ -68,7 +53,7 @@ Jei slaptažodis praėjo validaciją: informuoti kad slaptazodis tinkamas -->
         border-radius: 15px;
         color: #23445cef;
         background-color: rgba(192, 174, 179, 0.615);
-        width: 40%;
+        width: 20%;
     }
 
     .press:hover {
@@ -89,15 +74,8 @@ Jei slaptažodis praėjo validaciją: informuoti kad slaptazodis tinkamas -->
         color: white !important;
     }
 
-
-
-
-
-
-
     .form-control {
         width: 70%;
-       
     }
     .selected2 {
         background-color: #cf7a847f;
@@ -117,12 +95,24 @@ Jei slaptažodis praėjo validaciją: informuoti kad slaptazodis tinkamas -->
     }
     .title {
         color: #5c8badef;
-        font-size: 30px;
+        font-size: 2em;
     }
     .title2 {
         color: #23445cef;
         font-size: 20px;
     }
+    @media (max-width: 768px) {
+    .form-control {
+        width: 100%; 
+    }
+    .press{
+        width: 40%;
+    }
+    img {
+    max-width: 55%;
+    height: auto;
+}
+}
   </style>
 </head>
 <body>
@@ -130,7 +120,7 @@ Jei slaptažodis praėjo validaciją: informuoti kad slaptazodis tinkamas -->
         <div><img src="pass.png"> </div>
         <p class="title mt-5 mb-4">How Secure is Your Password?</p>
         <p class="title2 mb-5">Take the Password Test below! ⥥</p>
-        <div class="container2 form-group d-flex gap-3 mb-4">
+        <div class="container2 form-group d-flex gap-3 mb-5 px-3">
             <input type="password" class="form-control mt-5 py-2" id="password" name="password" placeholder="Type your password here..." required>
             <button type="button" onclick="validatePassword()" class="btn btn-primary py-2 press" id="again">Check</button>
             <p class="result" id="result"></p>
