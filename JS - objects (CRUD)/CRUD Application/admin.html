@@ -635,10 +635,14 @@
             const updatedStock = products[currentProduct].stock;
             const updatedBrand = products[currentProduct].brand;
             const updatedCategory = products[currentProduct].category;
+            const updatedThumbnail = products[currentProduct].thumbnail;
+            const updatedRating = products [currentProduct].rating;
+            const updatedDiscountPrecentage =  products [currentProduct].discountPrecentage;
+            const updatedDescription = products [currentProduct].description;
 
                 // Validations:
-                if (!updatedTitle || !updatedPrice || !updatedStock || !updatedBrand || !updatedCategory) {
-                addResult.innerText = (`Something is missing....\n Please, fill in the complete form!`)
+                if (!updatedTitle || !updatedPrice || !updatedStock || !updatedBrand || !updatedCategory || !updatedThumbnail || !updatedRating || !updatedDiscountPrecentage || !updatedDescription ) {
+                addResult.innerText = (`Please, fill in the complete form! \n Only number should be typed in Price/Stock/Discount/Rating`)
                 addResult.style.display = 'block';
                 addResult.style.backgroundColor = '#cf7a847f';
                 return;
@@ -646,14 +650,16 @@
                     addResult.style.display = 'none';
                 }
 
-                if (!/^\d+$/.test(updatedPrice) ||  !/^\d+$/.test(updatedStock) || category == "" || updatedCategory === 'Choose...') {
-                    addResult.innerText = (`Invalid input.\n Please use only letters for title/brand, numbers for price/stock and don't forget to choose category!`);
+                if (updatedCategory == '' || updatedCategory === 'Choose...') {
+                    addResult.innerText =  ('Please select a category!');
                     addResult.style.display = 'block';
                     addResult.style.backgroundColor = '#cf7a847f';
                     return;
                 } else {
                     addResult.style.display = 'none';
                 }
+
+            
 
             currentProduct = undefined;
             editMode = false; 
