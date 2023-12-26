@@ -114,25 +114,34 @@
             width: 90%  
         }
         
-        @media screen and (max-width: 768px) {    
+        .table-responsive-custom {
+        margin: 0 10px; 
+        }
+        
+    @media screen and (max-width: 768px) {    
+        img {
+            width: 30%;
+        }   
         .d-flex {
             flex-direction: column;
             align-items: center;
-            }
-            .gap-4 {
-            gap: 0!important
-            }
-            form {
-                margin: auto;
-            } 
+        }
+        .gap-4 {
+            gap: 0!important;
         }
 
-        @media screen and (max-width: 570px) {    
-            form {
-            width:  100%;
-            margin-left: 40px;
-            }
-        }  
+        form {
+            margin: auto;
+            padding: 0 10px; /* Adjust the left and right padding as needed */
+        } 
+    }
+
+    @media screen and (max-width: 570px) {    
+        form {
+            width: 100%;
+            margin-left: 0;
+        }
+    } 
     </style>
 </head>
 <body>
@@ -267,7 +276,8 @@
 
           </form>
         <hr>
-
+        
+        <div class="table-responsive table-responsive-custom">
         <table class="table table-light table-hover table-bordered my-4">
             <h3 class="my-4">Products</h3>
             <thead>
@@ -293,6 +303,7 @@
                 </tr>
             </tbody>
         </table>
+        </div>
     </div>
       
     <dialog id="productInfo" style="width: 58%; padding: 0">
