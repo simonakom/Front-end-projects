@@ -21,6 +21,9 @@
             font-size: 40px;
             color: #465d7a;
         }
+        h3 {
+            color: #465d7a;
+        }
         #submit {
             background-color: #6687b3;
             color:white;
@@ -28,7 +31,7 @@
         #submit:hover {
         transform: scale(1.1);
         transition: transform 0.3s ease-in-out;
-        background-color: rgb(55, 167, 211);
+        background-color: #6687b3;
         color:white;
         opacity: 0.8;
         border: none;
@@ -54,6 +57,18 @@
         background-color: rgba(161, 89, 161, 0.791);
         color:white;
         opacity: 0.8;
+        }
+        #resetFilters {
+            background-color: #6687b3;
+            color:white;
+        }
+        #resetFilter:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+        background-color: #6687b3;
+        color:white;
+        opacity: 0.8;
+        border: none;
         }
         .add-result {
         display: none;
@@ -107,6 +122,7 @@
     <div class="container text-center mx- my-3">
         <div><img src="new-product.png" class="logo my-3"></div>
         <p class="data mb-5">Data Table</p>
+        <hr>
         <p class="add-result mb-4" id="add-result"></p>
         <form>
             <h3 class="my-4">Adding new products</h3>
@@ -163,14 +179,72 @@
                     </div>
                 </div>
 
-                <div class="form-floating">
-                    <textarea name="description" id="description" class="form-control mb-4" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                    <label for="description" class="mx-2">&nbsp&nbsp Product Description</label>
-                </div>
+                <div class="input-group">
+                    <span class="input-group-text">Product Description</span>
+                    <textarea class="form-control" aria-label="With textarea" id="description" placeholder="Type text..."></textarea>
+                  </div>
                
-                <div><button type="button" class="btn btn-default px-5 mb-3" id="submit">Submit</button></div> 
+                <div><button type="button" class="btn btn-default px-5 my-4" id="submit">Submit</button></div> 
             </div>
         </form>
+        <hr>
+
+        <form>
+            <h3 class="my-4">Filtering</h3>
+            <div class="row">
+                <div class="d-flex gap-4">
+                    <div class="input-group mb-3">
+                        <span class="title input-group-text" id="basic-addon1">Title</span>
+                        <input type="text" id="filterName" name="filterName" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="brand input-group-text" id="basic-addon1">Brand</span>
+                        <input type="text" id="filterBrand" name="filterBrand" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+
+                <div class="d-flex gap-4">
+                    <div class="input-group mb-3">
+                        <span class="price input-group-text" id="basic-addon1">Price (from)</span>
+                        <input type="number" id="filterPriceFrom" min="0" name="filterPriceFrom" class="form-control" placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="price input-group-text" id="basic-addon1">Price (to)</span>
+                        <input type="number" id="filterPriceTo"  min="0" name="filterPriceTo" class="form-control" placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="d-flex gap-4">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="filterCategory">Category</label>
+                    <select class="form-select" id="filterCategory" name="filterCategory">
+                    <option disabled selected>Choose...</option>
+                    <option value="smartphones">Smartphones</option>
+                    <option value="laptops">Laptops</option>
+                    <option value="fragrances">Fragrances</option>
+                    <option value="skincare">Skincare</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="home-decoration">Home-decoration</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="discount input-group-text" id="basic-addon1">Discount (from)</span>
+                    <input type="number" min="0" max="100" value="0" id="filterDiscount" name="filterDiscount" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+
+                <div class="input-group">
+                    <span class="input-group-text">Product Description</span>
+                    <textarea class="form-control" aria-label="With textarea" id="filterDescription" placeholder="Type text..."></textarea>
+                </div>
+ 
+            <div><button type="button" class="btn btn-default px-5 my-4" id="resetFilters">Reset Filters</button></div> 
+          </form>
+        <hr>
 
         <table class=" table table-light table-hover table-bordered my-5">
             <thead>
@@ -224,6 +298,7 @@
         // Priega prie kintamuju is scripto "products": console.log (products);
         // JS kodas skirtas atlikti CRUD veiksmams;
         // Produktu atvaizdavimas yra per JS - atvaizduojami html tbody;
+        
 
         // elementu paemimas:
         const dynamicDataElement = document.getElementById("dynamic-data"),
@@ -239,9 +314,48 @@
                 photoElement = document.getElementById("imageUrl"),
                 discountElement = document.getElementById("discount"),
                 ratingElement = document.getElementById("rating"),
-                descriptionElement = document.getElementById("description");
+                descriptionElement = document.getElementById("description"),
+
+                filterNameElement = document.getElementById("filterName"),
+                filterBrandElement = document.getElementById("filterBrand"),
+                filterPriceFromElement = document.getElementById("filterPriceFrom"),
+                filterPriceToElement = document.getElementById("filterPriceTo"),
+                filterCategoryElement = document.getElementById("filterCategory"),
+                filterDiscountElement = document.getElementById("filterDiscount"),
+                filterDescriptionElement  = document.getElementById("filterDescription");
 
                 let currentId = 31;
+
+    //FILTERING:
+        filterNameElement.onkeyup = filter; 
+        filterBrandElement.onkeyup = filter; 
+        filterPriceFromElement.onkeyup = filter; 
+        filterPriceToElement .onkeyup = filter; 
+        filterDescriptionElement.onkeyup = filter;
+        filterDiscountElement.onkeyup = filter;
+      
+
+        function filter (){
+            let productName = filterNameElement.value.toLowerCase();
+            let brandName = filterBrandElement.value.toLowerCase();
+            let minPrice = +filterPriceFromElement.value;
+            let maxPrice = +filterPriceToElement.value;
+            let discountNumber = +filterDiscountElement.value
+            let descriptionText =  filterDescriptionElement.value;
+
+            let filteredArray = products.filter((product) => product.title.toLowerCase().includes (productName));
+            filteredArray = filteredArray.filter((product) => product.brand.toLowerCase().includes (brandName));
+            filteredArray = filteredArray.filter ((product) => product.price >= minPrice);
+            if (maxPrice !== 0){
+                filteredArray = filteredArray.filter ((product) => product.price <= maxPrice);
+            }
+            filteredArray = filteredArray.filter ((product) => product.description.toLowerCase().includes (descriptionText));
+            filteredArray = filteredArray.filter ((product) => product.discountPrecentage >= discountNumber);
+     
+
+            getTableContents (filteredArray);
+            console.log(filteredArray);
+        }
 
 
        // READ - kiekvieno produkto atvaizdavimas lenteleje
@@ -282,7 +396,7 @@
             <div class="product-details">
                 <div class="row">
                     <span class="col-lg-3 fw-bold">Discount</span>
-                    <span class="col-lg-1">${product.discountPrecentage}%</span>
+                    <span class="col-lg-1">${product.discountPercentage}%</span>
                 </div>
                 <div class="row">
                     <span class="col-lg-3 fw-bold">Rating</span>
@@ -324,7 +438,7 @@
 					title: titleInputElement.value,
                     description: descriptionElement.value,
 					price: + priceInputElement.value, //kad nebutu stringas
-                    discountPrecentage: +discountElement.value, //kad nebutu stringas
+                    discountPercentage: +discountElement.value, //kad nebutu stringas
                     rating: +ratingElement.value,
 					stock: +stockInputElement.value,
 					brand: brandInputElement.value,
@@ -436,28 +550,51 @@
         // Back to Initial state: kai updatinimas bus baigtas, grizti prie default vaizdo
         const updateProduct = (event)=>{
             event.preventDefault();
-            //reiskme bus tokia kokia inpute
-            products [currentProduct].title = titleInputElement.value;
-            products [currentProduct].price = +priceInputElement.value;
-            products [currentProduct].stock = +stockInputElement.value;
-            products [currentProduct].brand = brandInputElement.value;
-            products [currentProduct].category = categoryInputElement.value;
-            products [currentProduct].thumbnail = photoElement.value;
-            products [currentProduct].rating = +ratingElement.value;
-            products [currentProduct].discountPrecentage = +discountElement .value;
-            products [currentProduct].description  =  descriptionElement .value; 
 
-            // updated values for validation
-            const updatedTitle = products[currentProduct].title;
-            const updatedPrice = products[currentProduct].price;
-            const updatedStock = products[currentProduct].stock;
-            const updatedBrand = products[currentProduct].brand;
-            const updatedCategory = products[currentProduct].category;
-            const updatedThumbnail = products[currentProduct].thumbnail;
-            const updatedRating = products [currentProduct].rating;
-            const updatedDiscountPrecentage =  products [currentProduct].discountPrecentage;
-            const updatedDescription = products [currentProduct].description;
+             // Check for duplicates before updating
+                const updatedTitle = titleInputElement.value;
+                const updatedPrice = +priceInputElement.value;
+                const updatedStock = +stockInputElement.value;
+                const updatedBrand = brandInputElement.value;
+                const updatedCategory = categoryInputElement.value;
+                const updatedThumbnail = photoElement.value;
+                const updatedRating = +ratingElement.value;
+                const updatedDiscountPrecentage = +discountElement.value;
+                const updatedDescription = descriptionElement.value;
 
+                const duplicateProduct = products.find(
+                    (existingProduct) =>
+                        existingProduct.id !== currentProduct &&
+                        existingProduct.title.toLowerCase() === updatedTitle.toLowerCase() &&
+                        existingProduct.price === updatedPrice &&
+                        existingProduct.stock === updatedStock &&
+                        existingProduct.brand.toLowerCase() === updatedBrand.toLowerCase() &&
+                        existingProduct.category === updatedCategory &&
+                        existingProduct.thumbnail === updatedThumbnail &&
+                        existingProduct.rating === updatedRating &&
+                        existingProduct.discountPercentage === updatedDiscountPrecentage &&
+                        existingProduct.description === updatedDescription
+                );
+
+                if (duplicateProduct) {
+                    addResult.innerText = `A product with the same details already exists!`;
+                    addResult.style.display = 'block';
+                    addResult.style.backgroundColor = '#cf7a847f';
+                    return;
+                }
+
+                // Continue with the update if no duplicates found
+                // //reiskme bus tokia kokia inpute
+                products[currentProduct].title = updatedTitle;
+                products[currentProduct].price = updatedPrice;
+                products[currentProduct].stock = updatedStock;
+                products[currentProduct].brand = updatedBrand;
+                products[currentProduct].category = updatedCategory;
+                products[currentProduct].thumbnail = updatedThumbnail;
+                products[currentProduct].rating = updatedRating;
+                products[currentProduct].discountPercentage = updatedDiscountPrecentage;
+                products[currentProduct].description = updatedDescription;
+        
 
                 // Validations:
                 if (!updatedTitle || !updatedPrice || !updatedStock || !updatedBrand || !updatedCategory || !updatedThumbnail || !updatedRating || !updatedDiscountPrecentage || !updatedDescription ) {
@@ -484,7 +621,7 @@
             //Pakeisti mygtuko teksta
             submitButtonElement.innerText = 'Submit';
             //kad pakeisti naujo update button spalva (per klase- submitButtonElement.classList.add/remove('btn-primary');
-            submitButtonElement.style.backgroundColor = 'rgba(87, 191, 232, 0.712)';
+            submitButtonElement.style.backgroundColor = '#6687b3';
 
             // palikti inputus tuscius
             titleInputElement.value = "";
@@ -520,13 +657,13 @@
             categoryInputElement.value = product.category;
             photoElement.value = product.thumbnail;
             ratingElement.value = product.rating;
-            discountElement .value = product.discountPrecentage;
+            discountElement.value = product.discountPercentage;
             descriptionElement .value = product.description;
 
             //Pakeisti mygtuko teksta
             submitButtonElement.innerText = 'Update';
             //kad pakeisti naujo update button spalva (per klase-  submitButtonElement.classList.add/remove('btn-primary');
-            submitButtonElement.style.backgroundColor = 'rgba(177, 111, 177, 0.805)';
+            submitButtonElement.style.backgroundColor = '#6687b3';
             //priskirti mygtukui funkcija
             submitButtonElement.onclick = updateProduct;
 
