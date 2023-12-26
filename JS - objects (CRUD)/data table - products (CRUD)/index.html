@@ -14,7 +14,7 @@
             justify-content: center;
             align-items: center;
         }
-        img {
+        .logo {
             width: 15%;
         }
         .data{
@@ -67,6 +67,16 @@
         #delete {
             gap: 20px;
         }
+
+        #productInfo {
+        border: none;
+        border-radius: 20px;
+        background-color:  rgb(194, 214, 221);
+        }
+
+        .logoSize {
+            width: 90%  
+        }
         
         @media screen and (max-width: 768px) {    
         img {
@@ -94,36 +104,36 @@
     </style>
 </head>
 <body>
-    <!-- html kodas skirtas CRUD -->
     <div class="container text-center mx- my-3">
-        <div><img src="new-product.png" class="my-3"></div>
+        <div><img src="new-product.png" class="logo my-3"></div>
         <p class="data mb-5">Data Table</p>
         <p class="add-result mb-4" id="add-result"></p>
         <form>
+            <h3 class="my-4">Adding new products</h3>
             <div class="row">
                 <div class="d-flex gap-4">
                     <div class="input-group mb-3">
-                        <span class="title input-group-text" id="basic-addon1">Product</span>
+                        <span class="title input-group-text" id="basic-addon1">Title</span>
                         <input type="text" id="title" name="title" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
                     </div>
-    
                     <div class="input-group mb-3">
-                        <span class="price input-group-text" id="basic-addon1">Price</span>
-                        <input type="text" id="price" name="price" class="form-control" placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <span class="stock input-group-text" id="basic-addon1">Stock</span>
-                        <input type="text" id="stock" name="stock" class="form-control" placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
+                        <span class="brand input-group-text" id="basic-addon1">Brand</span>
+                        <input type="text" id="brand" name="brand" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
 
                 <div class="d-flex gap-4">
-                    <div class=" input-group mb-3">
-                        <span class="brand input-group-text" id="basic-addon1">Brand</span>
-                        <input type="text" id="brand" name="brand" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
+                    <div class="input-group mb-3">
+                        <span class="price input-group-text" id="basic-addon1">Price</span>
+                        <input type="number" id="price" name="price" class="form-control" placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
                     </div>
+                    <div class="input-group mb-3">
+                        <span class="stock input-group-text" id="basic-addon1">Stock</span>
+                        <input type="number" id="stock" name="stock" class="form-control" placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
 
+                <div class="d-flex gap-4">
                     <div class="input-group mb-3">
                         <label class="input-group-text" for="category">Category</label>
                         <select class="form-select" id="category" name="category">
@@ -136,9 +146,29 @@
                         <option value="home-decoration">Home-decoration</option>
                         </select>
                     </div>
-
-                  <div class="col-4"><button type="button" class="btn btn-default px-5" id="submit">Submit</button></div> 
+                    <div class="input-group mb-3">
+                        <span class="discount input-group-text" id="basic-addon1">Discount</span>
+                        <input type="number" min="0" max="100" value="0" id="discount" name="discount" class="form-control"   placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
                 </div>
+
+                <div class="d-flex gap-4">
+                    <div class="input-group mb-3">
+                        <span class="rating input-group-text" id="basic-addon1">Rating</span>
+                        <input type="number" min="0" max="5" value="0" id="rating" name="rating" class="form-control"   placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="imageUrl input-group-text" id="basic-addon1">Image</span>
+                        <input type="text" id="imageUrl" name="mageUrl" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+
+                <div class="form-floating">
+                    <textarea name="description" id="description" class="form-control mb-4" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="description" class="mx-2">&nbsp&nbsp Product Description</label>
+                </div>
+               
+                <div><button type="button" class="btn btn-default px-5 mb-3" id="submit">Submit</button></div> 
             </div>
         </form>
 
@@ -168,6 +198,26 @@
         </table>
     </div>
 
+    <dialog id="productInfo" style="width: 58%; padding: 0">
+        <!-- <div style="max-width: 70%; margin: 0 auto">
+            <img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="Product photo"/>
+            <div class="product-details">
+                <div class="row">
+                    <span class="col-2 fw-bold">Discount</span>
+                    <span class="col-1">-10%</span>
+                </div>
+                <div class="row">
+                    <span class="col-2 fw-bold">Rating</span>
+                    <span class="col-1">4.23</span>
+                </div>
+                <div class="row">
+                    <span class="col-2 fw-bold">Description</span>
+                    <span class="col-6"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
+                </div>
+            </div>
+        </div> -->
+    </dialog>
+
     <script src="products.js"></script>
 
     <script>
@@ -183,17 +233,26 @@
 				brandInputElement = document.getElementById("brand"),
 				categoryInputElement = document.getElementById("category"),
 				submitButtonElement = document.getElementById("submit"),
-                addResult = document.getElementById ("add-result");
+                addResult = document.getElementById ("add-result"),
 
-        // READ - kiekvieno produkto atvaizdavimas lenteleje
-        const getTableContents = () => {
+                modalElement = document.getElementById("productInfo"),
+                photoElement = document.getElementById("imageUrl"),
+                discountElement = document.getElementById("discount"),
+                ratingElement = document.getElementById("rating"),
+                descriptionElement = document.getElementById("description");
+
+                let currentId = 31;
+
+
+       // READ - kiekvieno produkto atvaizdavimas lenteleje
+       const getTableContents = (productsArrey) => {
 				let dynamicHTML = ``;
             // Einamasis vienas objektas "product" imtas is masyvo "products" ir ciklas kartojasi 30kartu
             for (const product of products) {
                 //Yra sukuriamas papildomai delete button (tik cia) ir jam priskiriama delete funkcija. Button duoda nuorodo i button id kuri reikia istrinti. Id lieka unikalus visada.
                 //Yyra sukuriamas papildomai update button (tik cia) ir jam priskiriama setEdit funkcija. Kai nusetinsime editinima kazkuriam produktui - tada visas reiskmes is produkto perkeliamos i imputus.
 					dynamicHTML += `<tr>
-						<td>${product.id}</td>
+						<td onclick="showaModal(${product.id})">${product.id}</td>
 						<td>${product.title}</td>
 						<td>${product.price}</td>
 						<td>${product.stock}</td>
@@ -210,32 +269,84 @@
         };
  
         // kad funkcija suveiktu ja reikia iskviesti (yra galimas automatinis funckijos sikvietimas apskliaudus funkcija ir uz jos ribu padejus skliaustelius).
-        getTableContents ();
+        getTableContents (products);
+
+        //MODAL: visas produkto objektas kuri bus tvaizduojamas lange
+        const showaModal = (id) =>{
+            let elementIndex = products.findIndex((value) => value.id === id); //gausime elemento indeksa (pozicija) masyve,
+            const product = products[elementIndex];
+
+            let dynamicHTML = 
+            `<div id="modalBody" style="width:100%; height: 100%;"><div style="max-width: 58%; margin: 0 auto">
+            <img src="${product.thumbnail}" class="my-3 logoSize rounded-5" alt="Product photo"/>
+            <div class="product-details">
+                <div class="row">
+                    <span class="col-lg-3 fw-bold">Discount</span>
+                    <span class="col-lg-1">${product.discountPrecentage}%</span>
+                </div>
+                <div class="row">
+                    <span class="col-lg-3 fw-bold">Rating</span>
+                    <span class="col-lg-9">${product.rating} out of 5 </span>
+                </div>
+                <div class="row">
+                    <span class="col-lg-3 fw-bold">Description </span>
+                    <span class="col-9">${product.description}</span>
+                </div>
+            </div>
+
+             <div class="d-flex align-items-center justify-content-center">
+                <button type="button" class="btn btn-default px-5 my-4" id="submit" onclick="modalElement.close()">Close</button>
+             </div>
+        </div></div>`;
+
+            modalElement.innerHTML = dynamicHTML;
+
+            // Kad paspaudus i bacground - isijungtu modal langas
+            document.querySelector("#modalBody").onclick = (event) => {   // kad butu du ciklai - window/background
+                event.stopPropagation();     //kad neperduotu clicko i bacground 
+                console.log("clicked on modal window")
+            }
+            modalElement.showModal();
+        } 
+            //Paspaudus ant modalinio background:
+            modalElement.onclick = () => {
+                modalElement.close ();
+                console.log ("cliclked on modal element")
+            }
+        
 
         // CREATE - funkcija sukuria nauja objekta i kuri isides input reiksmes 
         const createNewRecord = (event) => {
             //event.PreventDefault - kad puslapis nepersikrautu (dazniausiai naudojama su formomis kai nera nurodytas button type: button, nes tada automatiskai buna submit ir persikrauna)
             event.preventDefault(); //console.log (event);
 				const newProduct = {
-					id: products[products.length - 1].id + 1, //kiekvinas naujas pridetas elementas tures vis didesni id priklausomai nuo paskutnio elemento id.
+                    id: currentId,  //kiekvinas naujas pridetas elementas tures vis didesni id priklausomai nuo paskutnio elemento id.(iki modal prodejimo buvo id: products[products.length - 1].id + 1,)
 					title: titleInputElement.value,
-					price: priceInputElement.value,
-					stock: stockInputElement.value,
+                    description: descriptionElement.value,
+					price: + priceInputElement.value, //kad nebutu stringas
+                    discountPrecentage: +discountElement.value, //kad nebutu stringas
+                    rating: +ratingElement.value,
+					stock: +stockInputElement.value,
 					brand: brandInputElement.value,
 					category: categoryInputElement.value,
+                    thumbnail: photoElement.value
 				};
 
                     // Get input values for validation:
                     const title = titleInputElement.value;
+                    const brand = brandInputElement.value;
                     const price = priceInputElement.value;
                     const stock = stockInputElement.value;
-                    const brand = brandInputElement.value;
                     const category = categoryInputElement.value;
+                    const discountPrecentage = discountElement.value;
+                    const rating = ratingElement.value;
+                    const thumbnail = photoElement.value;
+                    const description = descriptionElement.value;
                     // console.log(title), console.log(price), console.log(stock), console.log(brand), console.log(category)
 
                    // Validations:
-                if (!title || !price || !stock || !brand || !category) {
-                    addResult.innerText = (`Something is missing....\n Please, fill in the complete form!`)
+                if (!title || !price || !stock || !brand || !category || !discountPrecentage || !rating || !thumbnail || !description) {
+                    addResult.innerText = (`Please, fill in the complete form! \n Only number should be typed in Price/Stock/Discount/Rating`)
                     addResult.style.display = 'block';
                     addResult.style.backgroundColor = '#cf7a847f';
                     return;
@@ -243,16 +354,7 @@
                     addResult.style.display = 'none';
                 }
 
-                if (!/^\d+$/.test(price) ||  !/^\d+$/.test(stock) || category == "") {
-                    addResult.innerText = (`Invalid input.\n Please use only letters for title/brand, numbers for price/stock and don't forget to choose category!`);
-                    addResult.style.display = 'block';
-                    addResult.style.backgroundColor = '#cf7a847f';
-                    return;
-                } else {
-                    addResult.style.display = 'none';
-                }
-
-                if (category === '' || category === 'Choose...') {
+                if (category == '' || category === 'Choose...') {
                     addResult.innerText =  ('Please select a category!');
                     addResult.style.display = 'block';
                     addResult.style.backgroundColor = '#cf7a847f';
@@ -261,13 +363,17 @@
                     addResult.style.display = 'none';
                 }
 
-                // Validations: Duplicate product check is performed based on product details.
-                const duplicateProduct = products.find((existingProduct) =>
+                 // Validations: Duplicate product check is performed based on product details.
+                 const duplicateProduct = products.find((existingProduct) =>
                 existingProduct.title.toLowerCase() === newProduct.title.toLowerCase() &&
                 existingProduct.price === newProduct.price &&
                 existingProduct.stock === newProduct.stock &&
                 existingProduct.brand.toLowerCase() === newProduct.brand.toLowerCase() &&
-                existingProduct.category === newProduct.category
+                existingProduct.category === newProduct.category &&
+                existingProduct.discountPrecentage === newProduct.discountPrecentage &&
+                existingProduct.rating === newProduct.rating &&
+                existingProduct.thumbnail === newProduct.thumbnail &&
+                existingProduct.description === newProduct.description
                 );
 
                 if (duplicateProduct) {
@@ -279,6 +385,7 @@
 
                 // prie "products" masyvo prideti nauja produkta
                 products.push(newProduct);
+                currentId++;
 
                 // palikti inputus tuscius
                     titleInputElement.value = "";
@@ -286,6 +393,10 @@
                     stockInputElement.value = "";
                     brandInputElement.value = "";
                     categoryInputElement.value = "";
+                    photoElement.value = "";
+                    ratingElement.value = "";
+                    discountElement .value = "";
+                    descriptionElement .value = "";
         
                 //Pakeisti alert teksta
                 addResult.style.display = 'block';
@@ -303,10 +414,10 @@
         // DELETE - Sukurti nuaja delete button ir istrina elementa pagal jo id(parametras)
         const deleteProduct = (id) => {
             // Unikalus/nesikartojantis ID. kad suzinoti elemento vieta masyve - naudoti findindex. Funkcija("value"- kiekvieno producto reiksme): joje ieskome produkto kurio id atitnka auksciau(deleteProducts) nurodyta id.
-            let elementIndex = products.findIndex(value=>value.id === id);
+            let elementIndex = products.findIndex((value)=>value.id === id);
             // console.log(elementIndex); 
             products.splice(elementIndex,1);
-
+ 
             //Pakeisti alert teksta
             addResult.style.display = 'block';
             addResult.innerText = 'Selected element has been successfully deleted!';
@@ -327,10 +438,14 @@
             event.preventDefault();
             //reiskme bus tokia kokia inpute
             products [currentProduct].title = titleInputElement.value;
-            products [currentProduct].price = priceInputElement.value;
-            products [currentProduct].stock = stockInputElement.value;
+            products [currentProduct].price = +priceInputElement.value;
+            products [currentProduct].stock = +stockInputElement.value;
             products [currentProduct].brand = brandInputElement.value;
             products [currentProduct].category = categoryInputElement.value;
+            products [currentProduct].thumbnail = photoElement.value;
+            products [currentProduct].rating = +ratingElement.value;
+            products [currentProduct].discountPrecentage = +discountElement .value;
+            products [currentProduct].description  =  descriptionElement .value; 
 
             // updated values for validation
             const updatedTitle = products[currentProduct].title;
@@ -338,10 +453,15 @@
             const updatedStock = products[currentProduct].stock;
             const updatedBrand = products[currentProduct].brand;
             const updatedCategory = products[currentProduct].category;
+            const updatedThumbnail = products[currentProduct].thumbnail;
+            const updatedRating = products [currentProduct].rating;
+            const updatedDiscountPrecentage =  products [currentProduct].discountPrecentage;
+            const updatedDescription = products [currentProduct].description;
+
 
                 // Validations:
-                if (!updatedTitle || !updatedPrice || !updatedStock || !updatedBrand || !updatedCategory) {
-                addResult.innerText = (`Something is missing....\n Please, fill in the complete form!`)
+                if (!updatedTitle || !updatedPrice || !updatedStock || !updatedBrand || !updatedCategory || !updatedThumbnail || !updatedRating || !updatedDiscountPrecentage || !updatedDescription ) {
+                addResult.innerText = (`Please, fill in the complete form! \n Only number should be typed in Price/Stock/Discount/Rating`)
                 addResult.style.display = 'block';
                 addResult.style.backgroundColor = '#cf7a847f';
                 return;
@@ -349,8 +469,8 @@
                     addResult.style.display = 'none';
                 }
 
-                if (!/^\d+$/.test(updatedPrice) ||  !/^\d+$/.test(updatedStock) || category == "" || updatedCategory === 'Choose...') {
-                    addResult.innerText = (`Invalid input.\n Please use only letters for title/brand, numbers for price/stock and don't forget to choose category!`);
+                if (updatedCategory == '' || updatedCategory === 'Choose...') {
+                    addResult.innerText =  ('Please select a category!');
                     addResult.style.display = 'block';
                     addResult.style.backgroundColor = '#cf7a847f';
                     return;
@@ -372,6 +492,10 @@
             stockInputElement.value = "";
             brandInputElement.value = "";
             categoryInputElement.value = "";
+            photoElement.value = "";
+            ratingElement.value = "";
+            discountElement .value = "";
+            descriptionElement .value = "";
 
              //Pakeisti alert teksta
              addResult.style.display = 'block';
@@ -394,6 +518,10 @@
             stockInputElement.value = product.stock;
             brandInputElement.value = product.brand;
             categoryInputElement.value = product.category;
+            photoElement.value = product.thumbnail;
+            ratingElement.value = product.rating;
+            discountElement .value = product.discountPrecentage;
+            descriptionElement .value = product.description;
 
             //Pakeisti mygtuko teksta
             submitButtonElement.innerText = 'Update';
