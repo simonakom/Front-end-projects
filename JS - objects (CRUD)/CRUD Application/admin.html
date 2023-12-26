@@ -201,12 +201,12 @@
                     </div>
                 </div>
 
-                <div class="form-floating">
-                    <textarea name="description" id="description" class="form-control mb-4" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                    <label for="description" class="mx-2">&nbsp&nbsp Product Description</label>
+                <div class="input-group">
+                    <span class="input-group-text">Product Description</span>
+                    <textarea class="form-control" aria-label="With textarea" id="description" placeholder="Type text..."></textarea>
                 </div>
                
-                <div><button type="button" class="btn btn-default px-5 mb-3" id="submit">Submit</button></div> 
+                <div><button type="button" class="btn btn-default px-5 my-4" id="submit">Submit</button></div> 
             </div>
         </form>
         <hr> 
@@ -259,11 +259,11 @@
                 </div>
             </div>
 
-            <div class="form-floating">
-                <textarea name="description" id="filterDescription" class="form-control mb-4" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                <label for="filterDescription" class="mx-2">&nbsp&nbsp Product Description</label>
+            <div class="input-group">
+                <span class="input-group-text">Product Description</span>
+                <textarea class="form-control" aria-label="With textarea" id="filterDescription" placeholder="Type text..."></textarea>
             </div>
-            <div><button type="button" class="btn btn-default px-5 mb-3" id="resetFilters">Reset filters</button></div> 
+            <div><button type="button" class="btn btn-default px-5 my-4" id="resetFilters">Reset filters</button></div> 
 
           </form>
         <hr>
@@ -613,32 +613,56 @@
         // UPDATE - Sukurti nuaja update button
         // Svarbus prie update: kai neesame update rezime (nepaspaustas mygtukas) tada yra false. Kaip paspaudziam, rezimas keiciasi i "true".
         let editMode = false; 
-        let  roduct;
+        let currentProduct;
 
         // Back to Initial state: kai updatinimas bus baigtas, grizti prie default vaizdo
         const updateProduct = (event)=>{
             event.preventDefault();
-            //reiskme bus tokia kokia inpute
-            products [currentProduct].title = titleInputElement.value;
-            products [currentProduct].price = +priceInputElement.value;
-            products [currentProduct].stock = +stockInputElement.value;
-            products [currentProduct].brand = brandInputElement.value;
-            products [currentProduct].category = categoryInputElement.value;
-            products [currentProduct].thumbnail = photoElement.value;
-            products [currentProduct].rating = +ratingElement.value;
-            products [currentProduct].discountPrecentage = +discountElement .value;
-            products [currentProduct].description  =  descriptionElement .value; 
 
-            // updated values for validation
-            const updatedTitle = products[currentProduct].title;
-            const updatedPrice = products[currentProduct].price;
-            const updatedStock = products[currentProduct].stock;
-            const updatedBrand = products[currentProduct].brand;
-            const updatedCategory = products[currentProduct].category;
-            const updatedThumbnail = products[currentProduct].thumbnail;
-            const updatedRating = products [currentProduct].rating;
-            const updatedDiscountPrecentage =  products [currentProduct].discountPrecentage;
-            const updatedDescription = products [currentProduct].description;
+         // Check for duplicates before updating
+                const updatedTitle = titleInputElement.value;
+                const updatedPrice = +priceInputElement.value;
+                const updatedStock = +stockInputElement.value;
+                const updatedBrand = brandInputElement.value;
+                const updatedCategory = categoryInputElement.value;
+                const updatedThumbnail = photoElement.value;
+                const updatedRating = +ratingElement.value;
+                const updatedDiscountPrecentage = +discountElement.value;
+                const updatedDescription = descriptionElement.value;
+
+                const duplicateProduct = products.find(
+                    (existingProduct) =>
+                        existingProduct.id !== currentProduct &&
+                        existingProduct.title.toLowerCase() === updatedTitle.toLowerCase() &&
+                        existingProduct.price === updatedPrice &&
+                        existingProduct.stock === updatedStock &&
+                        existingProduct.brand.toLowerCase() === updatedBrand.toLowerCase() &&
+                        existingProduct.category === updatedCategory &&
+                        existingProduct.thumbnail === updatedThumbnail &&
+                        existingProduct.rating === updatedRating &&
+                        existingProduct.discountPercentage === updatedDiscountPrecentage &&
+                        existingProduct.description === updatedDescription
+                );
+
+                if (duplicateProduct) {
+                    addResult.innerText = `A product with the same details already exists!`;
+                    addResult.style.display = 'block';
+                    addResult.style.backgroundColor = '#cf7a847f';
+                    return;
+                }
+
+                // Continue with the update if no duplicates found
+                // //reiskme bus tokia kokia inpute
+                products[currentProduct].title = updatedTitle;
+                products[currentProduct].price = updatedPrice;
+                products[currentProduct].stock = updatedStock;
+                products[currentProduct].brand = updatedBrand;
+                products[currentProduct].category = updatedCategory;
+                products[currentProduct].thumbnail = updatedThumbnail;
+                products[currentProduct].rating = updatedRating;
+                products[currentProduct].discountPercentage = updatedDiscountPrecentage;
+                products[currentProduct].description = updatedDescription;
+        
 
                 // Validations:
                 if (!updatedTitle || !updatedPrice || !updatedStock || !updatedBrand || !updatedCategory || !updatedThumbnail || !updatedRating || !updatedDiscountPrecentage || !updatedDescription ) {
@@ -659,15 +683,13 @@
                     addResult.style.display = 'none';
                 }
 
-            
-
             currentProduct = undefined;
             editMode = false; 
             submitButtonElement.onclick = createNewRecord;
             //Pakeisti mygtuko teksta
             submitButtonElement.innerText = 'Submit';
             //kad pakeisti naujo update button spalva (per klase- submitButtonElement.classList.add/remove('btn-primary');
-            submitButtonElement.style.backgroundColor = 'rgba(87, 191, 232, 0.712)';
+            submitButtonElement.style.backgroundColor = '#6687b3';
 
             // palikti inputus tuscius
             titleInputElement.value = "";
