@@ -54,6 +54,9 @@
             background-color: #9c4ea096 !important; /* Darker green color when active or clicked */
             color: white !important;
         }
+        #close-button{
+            background-color: rgba(161, 83, 104, 0.615);
+        }
 
          .form{
         box-shadow:  2px 5px rgba(145, 192, 236, 0.104);
@@ -90,6 +93,23 @@
         #update-button{
             display: none;
         }
+        #productInfo {
+        border: none;
+        border-radius: 20px;
+        background-color:  rgba(244, 235, 243, 0.904);
+        }
+        .celebrityImage{
+            width: 60%;
+
+        }
+        span {
+            font-size: 13px;
+        }
+        .bio{
+            font-size: 20px;
+            color: purple;
+        }
+      
         @media screen and (max-width: 991px) {
             .container {
                 flex-direction: column;
@@ -101,6 +121,18 @@
                 margin-bottom: 40px;
             }
         }
+        @media screen and (max-width: 700px) {
+            .col {
+                flex-direction: column;
+                align-items: center;
+                gap: 0 !important;
+            }
+        }
+        @media screen and (max-width: 380px) {
+            hr {
+                width: 115%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -110,18 +142,18 @@
         <hr>
 
         <p class="filter mt-4">Filtering</p>
-        <div class="d-flex gap-4">
-        <label class="input-group px-4 py-1">
-            <span class="input-group-text" id="basic-addon1">First Name</span>
-            <input id="filterNameInput" type="text" class="form-control" pattern="[A-Za-z]+" title="Only letters are allowed" placeholder="Type text..." >
-        </label>
-        <label class="input-group px-4 py-1">
-            <span class="input-group-text" id="basic-addon1">Last Name</span>
-            <input id="filterLastNameInput" type="text" class="form-control" placeholder="Type text...">
-        </label>
-    </div>
+        <div class="col d-flex gap-4">
+            <label class="input-group px-4 py-1">
+                <span class="input-group-text" id="basic-addon1">First Name</span>
+                <input id="filterNameInput" type="text" class="form-control" pattern="[A-Za-z]+" title="Only letters are allowed" placeholder="Type text..." >
+            </label>
+            <label class="input-group px-4 py-1">
+                <span class="input-group-text" id="basic-addon1">Last Name</span>
+                <input id="filterLastNameInput" type="text" class="form-control" placeholder="Type text...">
+            </label>
+        </div>
 
-    <div class="d-flex gap-4">
+    <div class=" col d-flex gap-4">
         <label class="input-group px-4 py-1">
             <span class="input-group-text age" id="basic-addon1">Age (from)</span>
             <input id="filterAgeInput" type="text" class="form-control" placeholder="Type number...">
@@ -135,7 +167,6 @@
     </form>
     <hr class="mt-4">
 
-
         <table class="table table-bordered tablem table-hover">
             <thead>
                 <tr class="table-secondary">
@@ -144,6 +175,7 @@
                     <th>Last Name</th>
                     <th>Age</th>
                     <th>Nationality</th>
+                    <th>Image <span><br>(Click to see Image)</span></th>
                 </tr>
             </thead>
             <tbody>
@@ -152,7 +184,8 @@
                     <td>John</td>
                     <td>Doe</td>
                     <td>36</td>
-                    <td>UK</td>   
+                    <td>UK</td>
+                    <td>Image</td>      
                 </tr>    
             </tbody>
         </table>
@@ -175,9 +208,13 @@
                     <span class="input-group-text age" id="basic-addon1">Age</span>
                     <input id="ageInput" type="text" class="form-control" placeholder="Type number...">
                 </label>
-                <label class="input-group px-4 pt-1 pb-3">
-                    <span class="input-group-text" id="basic-addon1">Nationality</span>
+                 <label class="input-group px-4 py-1">
+                    <span class="input-group-text age" id="basic-addon1">Nationality</span>
                     <input id="nationalityInput" type="text" class="form-control" placeholder="Type text...">
+                </label>
+                <label class="input-group px-4 pt-1 pb-3">
+                    <span class="input-group-text age" id="basic-addon1">Image</span>
+                    <input id="imageInput" type="text" class="form-control" placeholder="Type text...">
                 </label>
                 <p class="add-result"></p>
             </form>
@@ -217,10 +254,14 @@
                     <span class="input-group-text age" id="basic-addon1">Age</span>
                     <input id="updateAgeInput" type="text" class="form-control" placeholder="Type number...">
                 </label>
-                <label class="input-group px-4 pt-1 pb-3">
-                    <span class="input-group-text" id="basic-addon1">Nationality</span>
+                <label class="input-group px-4 py-1">
+                    <span class="input-group-text age" id="basic-addon1">Nationality</span>
                     <input id="updateNationalityInput" type="text" class="form-control" placeholder="Type text...">
                 </label>
+                <label class="input-group px-4 pt-1 pb-3">
+                    <span class="input-group-text" id="basic-addon1">Image</span>
+                    <input id="updateImageInput" type="text" class="form-control" placeholder="Type text...">
+                </label> 
                 </div>
                 
                 <p class="update-result"></p>
@@ -229,6 +270,17 @@
             <button id="update-button" type="button" class="btn btn-primary btn_hover butn mb-3 py-2 px-4">Update</button>
         </div>
     </div>
+
+    <dialog id="productInfo" style="width: 70%">
+        <!-- <div style="max-width: 70%; margin: 0 auto" class="text-center">
+            <img src="https://www.shutterstock.com/image-vector/celebrity-icon-vector-filled-flat-600nw-732462340.jpg" alt="celebrity foto">
+            <div class="product-details">
+                <div class="row">
+                    <span class="fw-bold">Name Surname, Age, Nationality</span>
+                </div>
+            </div> -->
+        </div>
+    </dialog>
     <script src="script.js"></script>
 </body>
 </html>

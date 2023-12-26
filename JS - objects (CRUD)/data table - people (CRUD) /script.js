@@ -48,6 +48,7 @@ filterAgeElement = document.getElementById ("filterAgeInput")
 filterNationalityElement = document.getElementById ("filterNationalityInput")
 resetFiltersButton = document.getElementById('resetFilters');
 
+modalElement = document.getElementById('productInfo')
 
 
 //FILTER: if Arrey is same for each input
@@ -82,12 +83,14 @@ buttonElement.addEventListener("click", ()=>{
     const person = {};
     person.firstName = document.getElementById(`firstNameInput`).value;
     person.lastName = document.getElementById(`lastNameInput`).value;
-    person.age = document.getElementById(`ageInput`).value;
+    person.age = +document.getElementById(`ageInput`).value;
     person.nationality = document.getElementById("nationalityInput").value.toUpperCase() 
+    person.image = document.getElementById("imageInput").value;
+
     // console.log (person);
 
     // Validations:
-    if (!person.firstName || !person.lastName || !person.age || !person.nationality) {
+    if (!person.firstName || !person.lastName || !person.age || !person.nationality || !person.image) {
         addResult.innerText = (`Something is missing....\n Please, fill in the complete form!`)
         addResult.style.backgroundColor = '#cf7a847f';
         addResult.style.display = 'block';
@@ -128,7 +131,8 @@ buttonElement.addEventListener("click", ()=>{
         existingPerson.firstName.toLowerCase() === person.firstName.toLowerCase() &&
         existingPerson.lastName.toLowerCase() === person.lastName.toLowerCase() &&
         existingPerson.age === person.age &&
-        existingPerson.nationality.toLowerCase() === person.nationality.toLowerCase()
+        existingPerson.nationality.toLowerCase() === person.nationality.toLowerCase() &&
+        existingPerson.image === person.image
     );
 
     if (duplicatePerson) {
@@ -172,12 +176,38 @@ function generateTableContent (people){
         <td>${person.lastName}</td>
         <td>${person.age}</td>
         <td>${person.nationality}</td>   
+        <td onclick="showModal(${person.number})"><span id="photoLink_${person.number}" onclick="toggleLinkVisibility('${person.number}', '${person.image}')">Photo of ${person.firstName} ${person.lastName} </span></td>
         </tr>`;
     }
-
     const tbody = document.querySelector(`table tbody`)
     tbody.innerHTML = dynamicHTML;
 }
+
+//MODAL
+const showModal = (num) => { 
+    let foundIndexDelete = people.findIndex((person) => person.number == num);
+    const person = people[foundIndexDelete];
+
+    let dynamicHTML =`
+    <div id="modalBody" style="width:100%; height: 100%";><div style="max-width: 70%; margin: 0 auto" class="text-center">
+    <img src="${person.image}" alt="celebrity  foto" class="celebrityImage my-3">
+    <div class="product-details">
+        <div class="row">
+            <span class="fw-bold bio">${person.firstName} ${person.lastName} - ${person.age} years, ${person.nationality} </span>
+        </div>
+        <button id="close-button" type="button" class="btn btn-primary btn_hover butn my-3 py-2 px-5" onclick="modalElement.close()">Close</button>
+    </div> </div>`
+    modalElement.innerHTML = dynamicHTML
+    document.querySelector("#modalBody").onclick = (event) => {
+        event.stopPropagation();
+    }
+    modalElement.showModal();
+}
+
+modalElement.onclick = () => {
+    modalElement.close();
+}
+
 
 //DELETE: When "delete" is pressed: 
 deleteElement.addEventListener("click", ()=>{
@@ -263,6 +293,8 @@ foundIndexUpdate = people.findIndex((person) => person.number == updateNumber); 
     document.getElementById("updateLastNameInput").value = foundPerson.lastName;
     document.getElementById("updateAgeInput").value = foundPerson.age;
     document.getElementById("updateNationalityInput").value = foundPerson.nationality;
+    document.getElementById("updateImageInput").value = foundPerson.image;
+
 
     updateForm.style.display = 'block';//show form
     findElement.style.display = 'none';//hide find button
@@ -285,6 +317,8 @@ updateElement.addEventListener("click", () => {
     updatedPerson.lastName = document.getElementById("updateLastNameInput").value;
     updatedPerson.age = document.getElementById("updateAgeInput").value;
     updatedPerson.nationality = document.getElementById("updateNationalityInput").value.toUpperCase();
+    updatedPerson.image = document.getElementById("updateImageInput").value;
+
     // console.log (updatedPerson);
 
    //Validation
@@ -346,13 +380,13 @@ updateElement.addEventListener("click", () => {
     updateElement.style.display = 'none'; //hide update button
 });
 
-
 function nullifyInputValues (){
     document.querySelector("#numberInputUpdate").value = "";
     document.getElementById("updateFirstNameInput").value = "";
     document.getElementById("updateLastNameInput").value = "";
     document.getElementById("updateAgeInput").value = "";
     document.getElementById("updateNationalityInput").value = "";
+    document.getElementById("updateImageInput").value = "";
 
         // Update the table with the modified data.
         generateTableContent(people);
