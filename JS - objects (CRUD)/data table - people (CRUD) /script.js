@@ -126,21 +126,20 @@ buttonElement.addEventListener("click", ()=>{
         addResult.style.display = 'none';
     }
 
-     // Validations: Duplicate person check is performed based on contact details.
-     const duplicatePerson = people.find((existingPerson) =>
-        existingPerson.firstName.toLowerCase() === person.firstName.toLowerCase() &&
-        existingPerson.lastName.toLowerCase() === person.lastName.toLowerCase() &&
-        existingPerson.age === person.age &&
-        existingPerson.nationality.toLowerCase() === person.nationality.toLowerCase() &&
-        existingPerson.image === person.image
-    );
+// Validations: Duplicate person check is performed based on contact details.
+const duplicatePerson = people.find((existingPerson) =>
+    existingPerson.firstName.toLowerCase() === person.firstName.toLowerCase() &&
+    existingPerson.lastName.toLowerCase() === person.lastName.toLowerCase()
+);
 
-    if (duplicatePerson) {
-        addResult.innerText = `A person with the same contact details already exists!`;
-        addResult.style.display = 'block';
-        addResult.style.backgroundColor = '#cf7a847f';
-        return;
-    } 
+if (duplicatePerson) {
+    addResult.innerText = `A person with the same contact details already exists!`;
+    addResult.style.display = 'block';
+    addResult.style.backgroundColor = '#cf7a847f';
+    return;
+}
+
+    
                                     // *disabeled as after deleting 2no. contact, new contact should be have 2id but it has 3id. Numeration is wrong: 1,3,4,5... Instead using (person.number = people.length + 1).
                                     // *person.number = currentNumeration; // assigns a number property to the person object.
                                     // *currentNumeration++; // After assigning the number to the current person, currentNumeration is incremented by 1.
@@ -367,23 +366,20 @@ updateElement.addEventListener("click", () => {
          const updatedImage = document.getElementById("updateImageInput").value;
          
          const duplicatePerson = people.find(
-             (existingPerson, index) =>
-                 index !== foundIndexUpdate &&
-                 existingPerson.firstName.toLowerCase() === updatedFirstName.toLowerCase() &&
-                 existingPerson.lastName.toLowerCase() === updatedLastName.toLowerCase() &&
-                 existingPerson.age === updatedAge &&
-                 existingPerson.nationality.toLowerCase() === updatedNationality.toLowerCase() &&
-                 existingPerson.image === updatedImage
-         );
-         
-         if (duplicatePerson) {
-             updateResult.innerText = 'Updated details match another existing contact!';
-             updateResult.style.backgroundColor = '#cf7a847f';
-             updateResult.style.display = 'block';
-             return;
-         } else {
-             updateResult.style.display = 'none';
-         }
+            (existingPerson, index) =>
+                index !== foundIndexUpdate &&
+                existingPerson.firstName.toLowerCase() === updatedFirstName.toLowerCase() &&
+                existingPerson.lastName.toLowerCase() === updatedLastName.toLowerCase()
+        );
+        
+        if (duplicatePerson) {
+            updateResult.innerText = 'Updated details match another existing contact!';
+            updateResult.style.backgroundColor = '#cf7a847f';
+            updateResult.style.display = 'block';
+            return;
+        } else {
+            updateResult.style.display = 'none';
+        }
 
 
     // Update the person in the people array at the index foundIndexUpdate.
