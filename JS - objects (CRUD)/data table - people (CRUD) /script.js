@@ -361,13 +361,8 @@ updateElement.addEventListener("click", () => {
 
          const updatedFirstName = document.getElementById("updateFirstNameInput").value;
          const updatedLastName = document.getElementById("updateLastNameInput").value;
-         const updatedAge = document.getElementById("updateAgeInput").value;
-         const updatedNationality = document.getElementById("updateNationalityInput").value.toUpperCase();
-         const updatedImage = document.getElementById("updateImageInput").value;
          
-         const duplicatePerson = people.find(
-            (existingPerson, index) =>
-                index !== foundIndexUpdate &&
+         const duplicatePerson = people.find((existingPerson) =>
                 existingPerson.firstName.toLowerCase() === updatedFirstName.toLowerCase() &&
                 existingPerson.lastName.toLowerCase() === updatedLastName.toLowerCase()
         );
@@ -380,6 +375,8 @@ updateElement.addEventListener("click", () => {
         } else {
             updateResult.style.display = 'none';
         }
+
+
 
 
     // Update the person in the people array at the index foundIndexUpdate.
