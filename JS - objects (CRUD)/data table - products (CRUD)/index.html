@@ -329,7 +329,8 @@
                 filterPriceToElement = document.getElementById("filterPriceTo"),
                 filterCategoryElement = document.getElementById("filterCategory"),
                 filterDiscountElement = document.getElementById("filterDiscount"),
-                filterDescriptionElement  = document.getElementById("filterDescription");
+                filterDescriptionElement  = document.getElementById("filterDescription"),
+                resetFiltersButton = document.getElementById("resetFilters");
 
                 let currentId = 31;
 
@@ -340,6 +341,7 @@
         filterPriceToElement .onkeyup = filter; 
         filterDescriptionElement.onkeyup = filter;
         filterDiscountElement.onkeyup = filter;
+        filterCategoryElement.addEventListener('change', filter);
       
 
         function filter (){
@@ -349,6 +351,8 @@
             let maxPrice = +filterPriceToElement.value;
             let discountNumber = +filterDiscountElement.value
             let descriptionText =  filterDescriptionElement.value;
+            let categoryName = filterCategoryElement.value.toLowerCase();
+
 
             let filteredArray = products.filter((product) => product.title.toLowerCase().includes (productName));
             filteredArray = filteredArray.filter((product) => product.brand.toLowerCase().includes (brandName));
@@ -356,20 +360,26 @@
             if (maxPrice !== 0){
                 filteredArray = filteredArray.filter ((product) => product.price <= maxPrice);
             }
+            filteredArray = filteredArray.filter ((product) => product.discountPercentage >= discountNumber);
             filteredArray = filteredArray.filter ((product) => product.description.toLowerCase().includes (descriptionText));
-            filteredArray = filteredArray.filter ((product) => product.discountPrecentage >= discountNumber);
-     
+            filteredArray = filteredArray.filter ((product) => {
+             return categoryName === 'choose...' || product.category.toLowerCase().includes(categoryName);
+             });
 
             getTableContents (filteredArray);
             console.log(filteredArray);
         }
 
+        resetFiltersButton.addEventListener('click', refreshPage);
+            function refreshPage() {
+            location.reload();
+        }
 
        // READ - kiekvieno produkto atvaizdavimas lenteleje
-       const getTableContents = (productsArrey) => {
+       function getTableContents (productsArray) {
 				let dynamicHTML = ``;
             // Einamasis vienas objektas "product" imtas is masyvo "products" ir ciklas kartojasi 30kartu
-            for (const product of products) {
+            for (const product of productsArray) {
                 //Yra sukuriamas papildomai delete button (tik cia) ir jam priskiriama delete funkcija. Button duoda nuorodo i button id kuri reikia istrinti. Id lieka unikalus visada.
                 //Yyra sukuriamas papildomai update button (tik cia) ir jam priskiriama setEdit funkcija. Kai nusetinsime editinima kazkuriam produktui - tada visas reiskmes is produkto perkeliamos i imputus.
 					dynamicHTML += `<tr>
@@ -526,7 +536,7 @@
                 addResult.style.backgroundColor = '#76cd7e7f';
 
                 // kad table atsinajunitu su naujU elementu, reikia vel iskviesti atvaizdavimo funkcija
-                getTableContents();
+                getTableContents (products);
         }; 
 
         // Kai mygtukas yra spaudziamas - issikviecia funkcija
@@ -546,7 +556,7 @@
             addResult.style.backgroundColor = '#76cd7e7f';
 
             // kad table atsinajunitu su istrintu elementu, reikia vel iskviesti atvaizdavimo funkcija
-             getTableContents();
+            getTableContents (products);
         };
  
         // UPDATE - Sukurti nuaja update button
@@ -647,7 +657,7 @@
             //kad pakeisti spalva
             addResult.style.backgroundColor = '#76cd7e7f';
 
-            getTableContents();
+            getTableContents (products);
         };
 
         // Edit state: elemento atnaujinimas. Bus editinamas tam tikras produktas ir jo id yra (id):
@@ -682,6 +692,3 @@
     </script>
 </body>
 </html>
-
-
-
