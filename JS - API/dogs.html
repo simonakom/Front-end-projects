@@ -1,6 +1,5 @@
 <!-- https://dog.ceo/dog-api/ -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,24 +52,16 @@
     }   
 </style>
 <body>
-
-
     <div class="container mt-4">
         <div><img src="paw-print.png" class="paw mt-3"></div>
-
         <form>
             <div class="my-3">
                 <label for="breeds" class="form-label title">Choose the breed of dog!</label>
                 <select id="breeds" class="form-select my-3 rounded-5 px-4" onchange="getDogImage()"></select>
             </div>
         </form>
-        
         <div id="dogImageContainer"></div>
     </div>
-
-      
-
-    
 <script>
 // 1. Gauti visas veisles pagal nuorodą
             fetch("https://dog.ceo/api/breeds/list/all")
@@ -107,7 +98,6 @@
                     dogImageContainer.innerHTML = `<img src="${dogImage}" alt="${selectedBreed}"><p><b>Breed:</b> ${selectedBreed}</p>`;
                 });
         }
-
 </script>
 </body>
 </html>
