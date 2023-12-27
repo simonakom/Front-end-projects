@@ -651,7 +651,7 @@
                         existingProduct.category === updatedCategory &&
                         existingProduct.thumbnail === updatedThumbnail &&
                         existingProduct.rating === updatedRating &&
-                        existingProduct.discountPercentage === updatedDiscountPrecentage &&
+                        existingProduct.discountPrecentage === updatedDiscountPrecentage &&
                         existingProduct.description === updatedDescription
                 );
 
@@ -737,8 +737,8 @@
             categoryInputElement.value = product.category;
             photoElement.value = product.thumbnail;
             ratingElement.value = product.rating;
-            discountElement .value = product.discountPrecentage;
-            descriptionElement .value = product.description;
+            discountElement.value = product.discountPrecentage;
+            descriptionElement.value = product.description;
 
             //Pakeisti mygtuko teksta
             submitButtonElement.innerText = 'Update';
