@@ -1,0 +1,115 @@
+<!-- https://dog.ceo/dog-api/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogs photo album</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head> 
+<style>
+</style>
+
+
+<body>
+    <div class="container my-5">
+        <div>
+            <select id="breeds-select" class="form-control"></select>
+        </div>
+        
+        <div id="photo-album" class="">
+            <div class="col-4 mx-auto"><img src="https:\/\/images.dog.ceo\/breeds\/affenpinscher\/n02110627_13939.jpg"></div>
+        </div>
+        <div id="photo-album" class="row">
+            <div class="col-4 mx-auto"><img src="https://images.dog.ceo/breeds/affenpinscher/n02110627_3246.jpg"></div>
+        </div>
+        <div id="photo-album" class="row">
+            <div class="col-4 mx-auto"><img src="https://images.dog.ceo/breeds/affenpinscher/n02110627_3246.jpg"></div>
+        </div>
+        
+    </div>
+
+
+
+<script>
+//1. Gauname visas šunų veisles
+//2. Atvaizduoti veisles select elemente per funkciją
+//3. Sukurti šuns nuotraukų atvaizdavimo funkciją (atvaizduojama pagal veislę)
+//3.1 Susikurti dinamini URL, tam kad kreiptis į šuns veislės nuotraukas
+//3.2 Kreipiames i serveri pagal dinaminį URL, norint gauti šuns veislės nuotraukas
+//3.3 Kai gauname atsakymą dinamiškai generuoti HTML kodą. (dinaminis kodas yra generuojamas pagal gauta nuotraukų masyvą)
+//3.4 Sugeneruotą kodą atvaizduoti tame elemente, kuriame norime kad atsirastų nuotraukos.
+//4. Pridėti event listeneri selectui, kuris keis nuotraukas pagal veislę.
+
+const breedsSelectElement = document.querySelector('#breeds-select');
+const dynamicAlbumElement = document.querySelector('#photo-album');
+const breedsArray = [];
+
+// //1. Gauname visas šunų veisles
+// fetch("https://dog.ceo/api/breeds/list/all")
+//     .then(response => response.json())
+//     .then(response => {
+//         parseAllBreeds(response.message)  //gauname masyvu pavadinimus
+//         // console.log(response.message)
+
+//     });
+
+// //2. Atvaizduoti veisles select elemente per funkciją
+// function parseAllBreeds(breeds){
+//     let dynamicHTML = "";
+//     console.log(breeds)
+//     for (let breed in breeds){  // breed- veisles pavadinimas; masyve esnacios reiksmes- seb-veisle.
+//     const subBreeds = breeds [breed]; //gauti sub-breed
+//     if(subBreeds.length === 0){
+//         dynamicHTML += `<option>${breed}</option>`
+//         breedsArray.push(breed); //atsirana po viena veisle inpute
+//     }
+//     else {
+//         for(let subBreed of subBreeds){
+//         dynamicHTML += `<option>${subBreed} ${breed}</option>`
+//         breedsArray.push(`${subBreed} ${breed}`); //atsiranda sub-veisle inpute
+//             }
+//         }
+//     }
+//     // console.log(breedsArray)
+//     parseDogImages(breedsArray[5]);
+//     breedsSelectElement.innerHTML = dynamicHTML;
+// }
+
+// function parseDogImages(breed){
+//     let dynamicURL = generateDynamicDogPhotosURL(breed); ////3.1 Susikurti dinamini URL, tam kad kreiptis į šuns veislės nuotraukas
+//     // console.log (dynamicURL);
+//     fetch(dynamicURL) //3.2
+//     .then(response => response.json())
+//     .then(response => generateDynamicDogPhotos(response.message))
+// }
+
+// function generateDynamicDogPhotosURL (breed){ ////3.1 Susikurti dinamini URL, tam kad kreiptis į šuns veislės nuotraukas
+//     let finalBreed =  breed.split(" ").reverse().join("/");
+//     return `https://dog.ceo/api/breed/${finalBreed}/images`
+//     console.log (breedSplitted);
+// }
+
+// function generateDynamicDogPhotos(photosArray){
+//     let dynamicHTML = "";
+//     for (let photo of photosArray)
+//     {
+//         dynamicHTML += `
+//         <div class="col-4 mx-auto"><img src="${photo}" style="width:100%;"></div>
+//         `
+//     }
+// dynamicAlbumElement.innerHTML = dynamicHTML;
+// }
+
+// //4.
+// breedsSelectElement.addEventListener("change", () => {
+//     parseDogImages(breedsSelectElement.value);
+// }
+// )
+
+</script>
+</body>
+</html>
+

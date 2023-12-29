@@ -19,8 +19,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border-radius: 10%;
-        
+        border-radius: 10%; 
+    }
+
+    .paw {
+      width: 120px; 
     }
 
     .title {
@@ -35,16 +38,6 @@
         margin-top: 20px;
     }
 
-    img {
-        border-radius: 20%;
-        max-height: 50%;
-        box-shadow: 5px 6px 5px 1px rgba(237, 110, 60, 0.246);
-    }
-
-    .paw {
-      width: 120px; 
-    }
-
     #breeds {
         background-color: rgba(103, 53, 17, 0.176);
         border: none;
@@ -52,7 +45,27 @@
         text-align: center;
         font-size:17px;
         box-shadow: 5px 6px 5px 1px rgba(237, 110, 60, 0.134);
-    }   
+    }  
+
+    .dogPhoto {
+        border-radius: 20%;
+        /* max-width: 50%;
+        max-height: 50%; */
+        margin-left: 10%;
+        margin-right: 10%;
+        box-shadow: 5px 6px 5px 1px rgba(237, 110, 60, 0.246);
+    }
+
+    #dogImageContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+   
+ 
 </style>
 <body>
     <div class="container mt-4">
@@ -74,7 +87,7 @@
                 const breeds = [];
                 for (const breed in response.message) {
                     breeds.push(breed);
-                // 3. Visas veisles atvaizduoti <select></select> HTML elemente
+                // 3. Visas veisles atvaizduoti <select> HTML elemente
                 const breedsSelect = document.getElementById('breeds');
                 const option = document.createElement('option');
                 option.value = breed;
@@ -98,7 +111,7 @@
                     const dogImage = response.message;
 
                     // 5. // Atvaizduoti šuns nuotrauką ir parašyti jo veislę
-                    dogImageContainer.innerHTML = `<img src="${dogImage}" alt="${selectedBreed}"><p><b>Breed:</b> ${selectedBreed}</p>`;
+                    dogImageContainer.innerHTML = `<img src="${dogImage}" class="dogPhoto" alt="${selectedBreed}"><p><b>Breed:</b> ${selectedBreed}</p>`;
                 });
         }
 </script>
