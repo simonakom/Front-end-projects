@@ -60,7 +60,7 @@
 
 <h4 style="font-size: 20px;">☆ Javascript API <h4> 
 
-<h4>• Dogs API sample - <a href="https://simonakom.github.io/Namu-darbai/JS - API/dogs.html">View</a><h4>
+<h4>• Dogs API sample - <a href="https://simonakom.github.io/Namu-darbai/JS - API/Dogs API/dogs - photo album.html">View</a><h4>
 
 
 
