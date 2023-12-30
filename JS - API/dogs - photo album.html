@@ -1,0 +1,204 @@
+<!-- https://dog.ceo/dog-api/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogs-photo album</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+</head> 
+<style>
+    body {
+        background-color: rgba(144, 101, 101, 0.369);
+        
+    }
+    .paw-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center; 
+    }
+    .paw {
+        width: 13%;
+    }
+    .title{
+        margin-bottom: 10px;
+        font-size: 50px;
+        font-family: 'Amatic SC', sans-serif;
+    }
+    .slogan{
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-family: 'Amatic SC', sans-serif;
+    }
+
+    img {
+        border-radius: 10%;
+        max-width: 100%;
+        height: auto; 
+    }
+
+    #breeds-select {
+        background-color: rgba(144, 101, 101, 0.369);
+        border: none;
+        color: rgba(53, 38, 38, 0.814);
+        text-align: center;
+        width: 100%
+    }
+
+    @media screen and (max-width: 500px) {
+    .paw {
+        width: 30%;
+    }
+}
+
+
+</style>
+<body>
+    <div class="container mt-4">
+        <div class="paw-container d-flex row">
+            <img src="paw-print.png" class="paw mt-3">
+            <p class="title"><b>Breed Beauties</b></p>
+            <p class="slogan">A Pictorial Journey Through Canine Diversity</p>
+        </div>
+
+        <div class="my-2">
+            <select id="breeds-select" class="form-control"></select>
+        </div>
+
+        <div id="photo-album" class="row g-3 my-5">
+            <div class="col-4 mx-auto"><img src="https://images.dog.ceo/breeds/affenpinscher/n02110627_3246.jpg"></div>
+        </div>
+        
+    </div>
+
+<script>
+//TO DO:
+//1. Gauname visas šunų veisles
+//2. Atvaizduoti veisles select elemente per funkciją
+//3. Sukurti šuns nuotraukų atvaizdavimo funkciją (atvaizduojama pagal veislę)
+    //3.1 Susikurti dinamini URL, tam kad kreiptis į šuns veislės nuotraukas
+    //3.2 Kreipiames i serveri pagal dinaminį URL, norint gauti šuns veislės nuotraukas
+    //3.3 Kai gauname atsakymą dinamiškai generuoti HTML kodą. (dinaminis kodas yra generuojamas pagal gauta nuotraukų masyvą)
+    //3.4 Sugeneruotą kodą atvaizduoti tame elemente, kuriame norime kad atsirastų nuotraukos.
+//4. Pridėti event listeneri selectui, kuris keis nuotraukas pagal veislę.
+
+const breedSelectElement = document.querySelector('#breeds-select');
+const dynamicAlbumElement = document.querySelector('#photo-album');
+const breedsArray = []; //sutvarkytos veisles
+
+//1. Gauname visas šunų veisles
+fetch("https://dog.ceo/api/breeds/list/all")
+    .then(response => response.json())
+    .then(response => { 
+        console.log(response) //- matome visas sunu veisles objekte
+        console.log(response.message) //- matome tik objekta  (be status success) su visom veislem kur yra masyvai (masyvu pavadinimai veisles o kas masyvo viduje tai subveisles)
+        parseAllBreeds(response.message) //-gauname visus masyvo pavadinimus (key) is objekto 
+    }); 
+
+ 
+//2. Atvaizduoti veisles select elemente per funkciją
+function parseAllBreeds(breeds){
+    // let dynamicHTML = "";
+    let dynamicHTML = '<option selected disabled>Select a breed ! 🐶</option>'; // Custom first option
+
+
+    console.log(breeds) //- matome tik objekta (be status success)
+
+    for (let breed in breeds){
+        console.log(breed) //-gauname visus masyvo pavadinimus (key) is objekto (breed-veisles pav. subveisle - masyve esancios reikmes)
+        const subBreeds = breeds[breed]; //gauname tik subveisles o kiti masyvai (su pagr. pavadinimais) yra tusti - console.log(subBreeds);
+        if (subBreeds.length === 0){
+             // jei (console.log(subBreeds))  masyvas tuscias (be subveisles) tada pridedam tik veisles pav.
+            dynamicHTML += `<option>${breed}</option>` 
+            breedsArray.push(breed);
+            
+        }
+        // jei turime daugiau nei viena subveisle vel reikia sukti cikla per subBreeds masyva ir prie sio masyvo reiksmiu pridedam pacia veisle
+        else{
+            for (let subBreed of subBreeds){
+                dynamicHTML += `<option>${subBreed} ${breed}</option>`; 
+                breedsArray.push(`${subBreed} ${breed}`);
+            }
+        }
+    }
+    parseDogImages (breedsArray[5]);
+
+    console.log(breedsArray); // veisles + subveisles
+    breedSelectElement.innerHTML = dynamicHTML // html select matomos visos reiksmes + subveisles
+}
+
+
+//3. Sukurti šuns nuotraukų atvaizdavimo funkciją (atvaizduojama pagal veislę)
+function parseDogImages (breed) {  //breed- veisle pasuojama cia tam kad visos nuotraukos atsivaizduotu pagal veisle
+    let dynamicURL = generateDynamicDogPhotosURL(breed); //3.1
+    console.log(dynamicURL);
+
+    //3.2 Kreipiames i serveri pagal dinaminį URL, norint gauti šuns veislės nuotraukas
+    fetch(dynamicURL)
+    .then(response => response.json())
+    .then (response => { console.log (response) //gavome to suns visas nuotraukas-photosArrey
+                        generateDynamicPhotos(response.message)}) //3.3
+}
+
+    //3.1 Susikurti dinamini URL, tam kad kreiptis į šuns veislės nuotraukas
+    function generateDynamicDogPhotosURL (breed) {
+        let breedSplitted = breed.split(" "); //splitinam per tarpus i masyva breedSplitted
+        let breedSplittedReverse = breedSplitted.reverse(); //apkeisti vietom zodzius
+        let finalBreed = breedSplittedReverse.join('/'); // sujungti su / 
+        // let finalBreed =  breed.split(" ").reverse()join('/');
+        console.log(finalBreed)
+
+        let fullUrl = `https://dog.ceo/api/breed/${finalBreed}/images`; //check on "reuquest headers -random " how url should look like
+        return fullUrl;
+    }
+
+    //3.3 Kai gauname atsakymą dinamiškai generuoti HTML kodą. Kad atvaizduoti gautas nuotraukas 3.2. (dinaminis kodas yra generuojamas pagal gauta nuotraukų masyvą)
+    function generateDynamicPhotos(photosArrey) {
+        console.log(photosArrey) //pareina masyvas su visai foto url
+
+        //3.4 Sugeneruotą kodą atvaizduoti tame elemente, kuriame norime kad atsirastų nuotraukos.
+        let dynamicHTML = ''; 
+        //sukti cikla per visas nuotraukas
+        for (let photo of photosArrey){
+            dynamicHTML += `<div class="col-4 mx-auto"><img src="${photo}" style="width:100%"></div>`
+        }
+        dynamicAlbumElement.innerHTML = dynamicHTML
+    }
+
+    //4. Pridėti event listeneri selectui, kuris keis nuotraukas pagal veislę.
+    breedSelectElement.addEventListener('change', () => {
+        parseDogImages (breedSelectElement.value);
+    })
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
