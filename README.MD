@@ -29,7 +29,6 @@
 <h4>• "Collab" Landing page sample - <a href="https://simonakom.github.io/Namu-darbai/Additional%20tasks/Collab-landing%20page/collab.html">View</a><h4>
 
 
-
 <h4 style="font-size: 20px;">💡 Javascript<h4> 
 
 <h4>• "Counter App" sample - <a href="https://simonakom.github.io/Namu-darbai/Additional%20tasks/Workshop%202023.12.06%20(JS-number%20counter)/js.html">View</a><h4>
@@ -49,6 +48,7 @@
 
 <h4>• "Palindrome app" sample - <a href="https://simonakom.github.io/Namu-darbai/Additional tasks/Workshop 2023.12.20 (Palindrome app)/index.html">View</a><h4>
 
+
 <h4 style="font-size: 20px;">📁 Javascript CRUD <h4> 
 
 <h4>• "Catalog of Products" DOM Manipulation sample - <a href="https://simonakom.github.io/Namu-darbai/JS - objects (CRUD)/DOM Manipulation/products.html">View</a><h4>
@@ -58,6 +58,7 @@
 <h4>• "Data Table of Products" CRUD sample - <a href="https://simonakom.github.io/Namu-darbai/JS - objects (CRUD)/data table - products (CRUD)/index.html">View</a><h4>
 
 <h4>• CRUD App sample - <a href="https://simonakom.github.io/Namu-darbai/JS - objects (CRUD)/CRUD Application/admin.html">View</a><h4>
+
 
 <h4 style="font-size: 20px;">🔗 Javascript API <h4> 
 
