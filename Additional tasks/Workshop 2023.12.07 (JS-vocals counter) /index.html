@@ -3,10 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vowel Counter</title>
+    <title>Vowel counter</title>
     <link rel="icon" href="a.png">
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    body {
+    background-color: rgba(97, 97, 189, 0.305);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 350px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow:  2px 5px rgba(130, 100, 194, 0.2)
+}
+
+input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(147, 31, 114, 0.555);
+    padding: 10px 9px;
+    font-size: 1,6rem;
+}
+
+.btn {
+    padding: 10px 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(161, 83, 104, 0.592);
+}
+.btn:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    color: white;
+    background-color: rgba(161, 83, 104, 0.492);
+    opacity: 0.8;
+    }
+
+.result {
+    display: none;
+    border: 1px solid black ;
+    border-style: dotted;
+    border-radius: 9px;
+    padding: 8px;
+    color: rgba(62, 62, 218, 0.844);
+    margin-top: 30px;
+}
+
+img {
+    height: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+</style>
 <body>
     <div class="container">
         <div><img src="vowels.png"></div>
@@ -16,6 +78,40 @@
         </div>
         <p class="result">Result will appear here</p>
     </div>
-    <script src="script.js"></script>
+<script>
+const btn = document.querySelector(".btn")
+const word = document.querySelector(".input-text")
+const result = document.querySelector(".result")
+
+btn.addEventListener("click", countVowel)
+
+function countVowel () {
+    let vowelCount = 0;
+    let wordValue = word.value;
+
+    for (let i = 0; i < wordValue.length; i++) {
+        let letter =  wordValue[i];
+        console.log(letter)
+
+        if (letter.match(/([a,e,o,u,i])/)) {
+            vowelCount++
+        }
+    }
+
+    if (word.value === "") {
+        result.style.display = 'block';
+        result.innerText = `Please enter a word`;
+        return;
+    }
+    if (/^\d+$/.test(word.value) || /[^a-zA-Z]/.test(word.value)) {
+        result.style.display = 'block';
+        result.innerText = `Please enter a valid word \n (only letters are allowed)`;
+        return;
+    }
+
+    result.innerHTML=`${word.value.toUpperCase()} has ${vowelCount} vowels`
+    result.style.display = 'block';
+}
+</script>
 </body>
 </html>
