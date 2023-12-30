@@ -1,10 +1,7 @@
 
-<h1 style="font-size: 30px;border-bottom: 1px solid pink;">Samples<h1>
+<h1 style="font-size: 30px;border-bottom: 1px;">Samples<h1>
 
-@@ <font color="purple"><strong>text in purple (and bold)</strong></font> @@
-
-
-<h4 style="font-size: 20px;">☆ HTML/CSS<h4> 
+<h4 style="font-size: 20px;">🎨 HTML/CSS<h4> 
 
 <h4>• Wikipedia page sample - <a href="https://simonakom.github.io/Namu-darbai/1.RichardGere/Richard%20Gere.html" style="font-size:small;">View</a><h4>
 
@@ -21,7 +18,7 @@
 <h4>• SingIn page sample - <a href="https://simonakom.github.io/Namu-darbai/6.RegistrationForm/Registration.html" style="font-size:small;">View</a><h4>
 
 
-<h4 style="font-size: 20px;">☆ Bootstrap<h4> 
+<h4 style="font-size: 20px;">⚡️ Bootstrap<h4> 
 
 <h4>• 2048 Game sample - <a href="https://simonakom.github.io/Namu-darbai/7.%20Bootstrap/2048-Game/Game2048.html" style="font-size:small;">View</a><h4>
 
@@ -33,7 +30,7 @@
 
 
 
-<h4 style="font-size: 20px;">☆ Javascript<h4> 
+<h4 style="font-size: 20px;">💡 Javascript<h4> 
 
 <h4>• "Counter App" sample - <a href="https://simonakom.github.io/Namu-darbai/Additional%20tasks/Workshop%202023.12.06%20(JS-number%20counter)/js.html">View</a><h4>
 
@@ -52,7 +49,7 @@
 
 <h4>• "Palindrome app" sample - <a href="https://simonakom.github.io/Namu-darbai/Additional tasks/Workshop 2023.12.20 (Palindrome app)/index.html">View</a><h4>
 
-<h4 style="font-size: 20px;">☆ Javascript CRUD <h4> 
+<h4 style="font-size: 20px;">📁 Javascript CRUD <h4> 
 
 <h4>• "Catalog of Products" DOM Manipulation sample - <a href="https://simonakom.github.io/Namu-darbai/JS - objects (CRUD)/DOM Manipulation/products.html">View</a><h4>
 
@@ -62,7 +59,7 @@
 
 <h4>• CRUD App sample - <a href="https://simonakom.github.io/Namu-darbai/JS - objects (CRUD)/CRUD Application/admin.html">View</a><h4>
 
-<h4 style="font-size: 20px;">☆ Javascript API <h4> 
+<h4 style="font-size: 20px;">🔗 Javascript API <h4> 
 
 <h4>• Dogs API sample - <a href="https://simonakom.github.io/Namu-darbai/JS - API/Dogs API/dogs - photo album.html">View</a><h4>
 
