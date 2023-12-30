@@ -37,21 +37,27 @@
         font-size: 30px;
         font-family: 'Amatic SC', sans-serif;
     }
-
-    img {
+    .dogPhoto {
         border-radius: 10%;
         max-width: 100%;
         height: auto; 
+        box-shadow: 5px 6px 5px 1px rgba(178, 145, 145, 0.369);
     }
-
+    .dogPhoto:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+        background-color: rgba(161, 83, 104, 0.615);
+        color: rgba(255, 255, 255, 0.426);
+        opacity: 0.9;
+    } 
     #breeds-select {
         background-color: rgba(144, 101, 101, 0.369);
         border: none;
         color: rgba(53, 38, 38, 0.814);
         text-align: center;
-        width: 100%
+        width: 100%;
+        box-shadow: 5px 6px 5px 1px rgba(178, 145, 145, 0.369);
     }
-
     @media screen and (max-width: 500px) {
     .paw {
         width: 30%;
@@ -65,15 +71,12 @@
             <p class="title"><b>Breed Beauties</b></p>
             <p class="slogan">A Pictorial Journey Through Canine Diversity</p>
         </div>
-
         <div class="my-2">
-            <select id="breeds-select" class="form-control"></select>
+            <select id="breeds-select" class="form-control rounded-5"></select>
         </div>
-
-        <div id="photo-album" class="row g-3 my-5">
+        <div id="photo-album" class="row g-4 my-5">
             <div class="col-4 mx-auto"><img src="https://images.dog.ceo/breeds/affenpinscher/n02110627_3246.jpg"></div>
         </div>
-        
     </div>
 <script>
 //TO DO:
@@ -99,13 +102,10 @@ fetch("https://dog.ceo/api/breeds/list/all")
         parseAllBreeds(response.message) //-gauname visus masyvo pavadinimus (key) is objekto 
     }); 
 
- 
 //2. Atvaizduoti veisles select elemente per funkciją
 function parseAllBreeds(breeds){
     // let dynamicHTML = "";
     let dynamicHTML = '<option selected disabled>Select a breed ! 🐶</option>'; // Custom first option
-    
-
     console.log(breeds) //- matome tik objekta (be status success)
 
     for (let breed in breeds){
@@ -115,7 +115,6 @@ function parseAllBreeds(breeds){
              // jei (console.log(subBreeds))  masyvas tuscias (be subveisles) tada pridedam tik veisles pav.
             dynamicHTML += `<option>${breed}</option>` 
             breedsArray.push(breed);
-            
         }
         // jei turime daugiau nei viena subveisle vel reikia sukti cikla per subBreeds masyva ir prie sio masyvo reiksmiu pridedam pacia veisle
         else{
@@ -131,7 +130,6 @@ function parseAllBreeds(breeds){
     breedSelectElement.innerHTML = dynamicHTML // html select matomos visos reiksmes + subveisles
 }
 
-
 //3. Sukurti šuns nuotraukų atvaizdavimo funkciją (atvaizduojama pagal veislę)
 function parseDogImages (breed) {  //breed- veisle pasuojama cia tam kad visos nuotraukos atsivaizduotu pagal veisle
     let dynamicURL = generateDynamicDogPhotosURL(breed); //3.1
@@ -143,7 +141,6 @@ function parseDogImages (breed) {  //breed- veisle pasuojama cia tam kad visos n
     .then (response => { console.log (response) //gavome to suns visas nuotraukas-photosArrey
                         generateDynamicPhotos(response.message)}) //3.3
 }
-
     //3.1 Susikurti dinamini URL, tam kad kreiptis į šuns veislės nuotraukas
     function generateDynamicDogPhotosURL (breed) {
         let breedSplitted = breed.split(" "); //splitinam per tarpus i masyva breedSplitted
@@ -164,7 +161,7 @@ function parseDogImages (breed) {  //breed- veisle pasuojama cia tam kad visos n
         let dynamicHTML = ''; 
         //sukti cikla per visas nuotraukas
         for (let photo of photosArrey){
-            dynamicHTML += `<div class="col-4 mx-auto"><img src="${photo}" style="width:100%"></div>`
+            dynamicHTML += `<div class="col-4 mx-auto"><img class="dogPhoto" src="${photo}" style="width:100%"></div>`
         }
         dynamicAlbumElement.innerHTML = dynamicHTML
     }
