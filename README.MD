@@ -1,6 +1,8 @@
 
 <h1 style="font-size: 30px;border-bottom: 1px solid pink;">Samples<h1>
 
+#### <font color="pink">☆</font> <font color="blue">Javascript API</font>
+
 
 #### <span style="color: rgb(178, 108, 119); font-size: 20px;">☆</span> <span style="color: #89CFF0;">HTML/CSS</span>
 
