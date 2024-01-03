@@ -93,34 +93,39 @@
         border-bottom-right-radius: 15%;
     }
     .drink:hover {
-        transform: scale(1.1);
-        transition: transform 0.3s ease-in-out;
+        transform: scale(1.02);
+        transition: transform 0.2s ease-in-out;
         background-color: rgba(247, 228, 204, 0.892);
         opacity: 0.8;
         box-shadow: 1px 1px 40px rgba(164, 200, 232, 0.539);
     } 
+
     .drink .drink-title{
-        margin: 0 auto;
-        text-align: center;
-        color: antiquewhite;
+    margin: 0 auto;
+    text-align: center;
+    color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    height: 30%;
+    padding: 0px 30px 32px 30px;
     }
     .drink:hover .drink-title {
         color:  rgb(0, 0, 0);
     }
     .drink img{
-        width: 100%;
-        border-top-left-radius: 15%;
-        border-top-right-radius: 15%;
-        border-bottom-right-radius: 40%;
+    width: 100%;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+    border-bottom-right-radius: 40%;
     }
     .star1 {
         width: 4%;
         display: block;
         position: absolute;
-        bottom: 700px;
+        bottom: 720px;
         left: 650px;
         }
-     
 
 </style>
 </head>
@@ -236,7 +241,7 @@
         let dynamicHTML = "";
         for(let drink of drinks){
             dynamicHTML += `<div class="drink"><img src="${drink.strDrinkThumb}" alt="Coctail photo">
-            <h2 class="drink-title py-3 px-4">${drink.strDrink}</h2></div>`;
+            <h2 class="drink-title mb-4">${drink.strDrink}</h2></div>`;
         }
         dynamicDrinksElement.innerHTML=dynamicHTML; 
     }
