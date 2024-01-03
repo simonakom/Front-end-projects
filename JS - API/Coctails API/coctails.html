@@ -15,39 +15,42 @@
 <style>
     body {
         font-family: 'Cormorant SC', serif;
-        /* font-family: 'Cormorant Garamond', serif; */
         margin: 0;
         background-color: #1e1e2c;
     }
-    .title{
-        color: antiquewhite;
-        background-color: #15151f;
-        font-size: 40px;
-        text-align: center;
-        font-family: 'Cormorant SC', serif;
-        margin: 0;
-    }
-    .coctail-container {
-        font-family: 'Cormorant Garamond', serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        background-color: #15151f;
-        }
-    .coctail {
-        width: 6%;
-    }
-    hr.gradient {
-    border: none;
-    height: 2px;
-    background: linear-gradient(to right, #5da5c9, #d494de, #7b97bb, #4169e1, #8a2be2);
-    }
-
-
     nav {
         background-color: #15151f;
     }
+    .nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .coctail {
+        width: 6%;
+    }
+    .title{
+        color: antiquewhite;
+        font-size: 40px;
+        text-align: center;
+        margin: 0;
+    }
+    .gradient_one {
+        border: none;
+        height: 2px;
+        background: linear-gradient(to right, #5da5c9, #d494de, #7b97bb, #4169e1, #8a2be2);
+        width: 100%; 
+    }
+    .gradient_two {
+        border: none;
+        height: 2px;
+        background: linear-gradient(to right, #8a2be2, #4169e1, #7b97bb, #d494de, #5da5c9);
+        width: 100%; 
+    }
+
+
+    
     .container {
         max-width: 1200px;
         margin:0 auto;
@@ -85,8 +88,6 @@
         gap: 3rem;
     }
     .drink {
-        /* width: 80%; */
-        /* margin: 0 auto; */
         box-shadow: 1px 2px 13px rgba(164, 200, 232, 0.539);
         background-color: #c0b1c322;
         border-top-left-radius: 15%;
@@ -101,7 +102,6 @@
         opacity: 0.8;
         box-shadow: 1px 1px 40px rgba(164, 200, 232, 0.539);
     } 
-
     .drink .drink-title{
         margin: 0 auto;
         text-align: center;
@@ -121,24 +121,39 @@
         border-top-right-radius: 15%;
         border-bottom-right-radius: 40%;
     }
-    .star1 {
-        width: 4%;
-        display: block;
-        position: absolute;
-        bottom: 720px;
-        left: 650px;
+
+    @media only screen and (max-width: 860px) {
+    .d-flex {
+        flex-direction: column;
+        align-items: center; 
     }
+    .buton {
+        width: 50%;
+    }
+    .coctail {
+        width: 14%;
+        margin-top: 10px;
+    }
+    .container {
+        padding: 0 50px;
+    } 
+    .drinks {
+        grid-template-columns: 1fr;
+    }    
+    .drink {
+        width: 100%;
+    }
+}
 </style>
 </head>
 <body>
-    <div class="coctail-container decoration row py-3">
-        <img src="cocktail.png" class="coctail">
-        <img src="sparkling.png" class="star1">       
-        <p class="title mb-3">Coctail Finder</p>
-        <hr class="gradient">
-    </div>
     <nav>
-        <div class="container pb-4">
+        <div class="nav-container pt-4">
+            <img src="cocktail.png" class="coctail">
+            <p class="title">Coctail Finder</p>
+        </div>
+        <hr class="gradient_one">
+        <div class="container py-3">
             <div class="d-flex gap-4">
                 <input type="text" class="form-control" id="coctail-name-filter" placeholder="Search by Coctail Name" aria-label="Username" aria-describedby="basic-addon1">
                 <select class="form-select" id="category-select"></select>
@@ -148,7 +163,7 @@
                 <button id="challenge" class="buton" type="button" class="btn btn-light">Challenge!</button>
             </div>
         </div>
-        <hr class="gradient">
+        <hr class="gradient_two">
     </nav>
 
 <div class="container my-5">
