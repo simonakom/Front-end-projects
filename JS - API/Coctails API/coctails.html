@@ -21,33 +21,38 @@
             <p class="title">Coctail Finder</p>
         </div>
         <hr class="gradient_one">
-        <div class="container py-3">
+        <div class="container py-3 text-center">
             <div class="d-flex gap-4">
-                <input type="text" class="form-control" id="coctail-name-filter" placeholder="Search by Coctail Name" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" id="coctail-name-filter" placeholder="Type Coctail Name..." aria-label="Username" aria-describedby="basic-addon1">
                 <select class="form-select" id="category-select">
-                    <option value="" selected disabled>Select Category...</option>
+                    <option value="Select Category..." selected disabled>Select Category...</option>
                 </select>
                 <select class="form-select" id="glass-type-select">
-                    <option value="" selected disabled>Select Glass Type...</option>
+                    <option value="Select Glass Type..." selected disabled>Select Glass Type...</option>
                 </select>
                 <select class="form-select" id="ingredient-select">
-                    <option value="" selected disabled>Select Ingredient...</option>
+                    <option value="Select Ingredient..." selected disabled>Select Ingredient...</option>
                 </select>
                 <button id="search" class="buton" type="button" class="btn btn-light">Search</button>
                 <button id="challenge" class="buton" type="button" class="btn btn-light">Challenge!</button>
             </div>
+            <div>                
+                <button id="reset" class="butonReset mt-4" type="button" class="btn btn-light">Reset Filters</button>
+            </div>
+            <p class="note mt-4 px-4" id="note">Please, use at least one filter field!</p>
         </div>
         <hr class="gradient_two">
     </nav>
 
 <div class="container my-5">
-    <div class="drinks">
+    <!-- generuoja naujai funkcija "generateDrinksHTML" -->
+    <div class="drinks"> 
          <!-- <div class="drink"><img src="https://www.thecocktaildb.com/images/media/drink/km84qi1513705868.jpg" alt="Coctail photo">
             <h2 class="drink-title py-3 px-4">Boulevardier</h2>
         </div>
-        <d iv class="drink"><img src="https://www.thecocktaildb.com/images/media/drink/rptuxy1472669372.jpg" alt="Coctail photo">
+        <div class="drink"><img src="https://www.thecocktaildb.com/images/media/drink/rptuxy1472669372.jpg" alt="Coctail photo">
             <h2 class="drink-title py-3 px-4">A True Amaretto Sour</h2>
-        </d>
+        </div>
         <div class="drink"><img src="https://www.thecocktaildb.com/images/media/drink/ck6d0p1504388696.jpg" alt="Coctail photo">
             <h2 class="drink-title py-3">Cuba Libra</h2>
         </div> -->
@@ -56,5 +61,5 @@
     <script src="script.js"></script>
 </body>
 </html> 
-
+ 
 
