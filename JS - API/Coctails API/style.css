@@ -1,0 +1,159 @@
+
+    body {
+        font-family: 'Cormorant SC', serif;
+        margin: 0;
+        background-color: #1e1e2c;
+    }
+    nav {
+        background-color: #15151f;
+    }
+    .nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .coctail {
+        width: 6%;
+    }
+    .title{
+        color: antiquewhite;
+        font-size: 40px;
+        text-align: center;
+        margin: 0;
+    }
+    .gradient_one {
+        border: none;
+        height: 2px;
+        background: linear-gradient(to right, #5da5c9, #d494de, #7b97bb, #4169e1, #8a2be2);
+        width: 100%; 
+    }
+    .gradient_two {
+        border: none;
+        height: 2px;
+        background: linear-gradient(to right, #8a2be2, #4169e1, #7b97bb, #d494de, #5da5c9);
+        width: 100%; 
+    }
+
+
+    
+    .container {
+        max-width: 1200px;
+        margin:0 auto;
+    }
+    #coctail-name-filter, #category-select, #glass-type-select, #ingredient-select {
+        background-color: #c0b1c381;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 6px;
+        color: antiquewhite;
+        width: 100%;
+        box-shadow: 0px 0px 5px rgba(164, 200, 232, 0.539);
+    }
+    .buton {
+        padding: 10px 30px;
+        border: none;
+        outline: none;
+        border-radius: 15px;
+        color: antiquewhite;
+        background-color: #c0b1c381;
+    }
+    .buton:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+        background-color: rgba(247, 228, 204, 0.892);
+        color:  rgb(0, 0, 0);
+        opacity: 0.8;
+        box-shadow: 1px 1px 10px rgba(164, 200, 232, 0.539);
+    } 
+
+
+    .drinks {
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap: 3rem;
+    }
+    .drink {
+        box-shadow: 1px 2px 13px rgba(164, 200, 232, 0.539);
+        background-color: #c0b1c322;
+        border-top-left-radius: 15%;
+        border-top-right-radius: 15%;
+        border-bottom-left-radius: 15%;
+        border-bottom-right-radius: 15%;
+    }
+    .drink:hover {
+        transform: scale(1.02);
+        transition: transform 0.2s ease-in-out;
+        background-color: rgba(247, 228, 204, 0.892);
+        opacity: 0.8;
+        box-shadow: 1px 1px 40px rgba(164, 200, 232, 0.539);
+    } 
+    .drink .drink-title{
+        margin: 0 auto;
+        text-align: center;
+        color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        height: 30%;
+        padding: 0px 30px 32px 30px;
+    }
+    .drink:hover .drink-title {
+        color:  rgb(0, 0, 0);
+    }
+    .drink img{
+        width: 100%;
+        border-top-left-radius: 15%;
+        border-top-right-radius: 15%;
+        border-bottom-right-radius: 40%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media only screen and (max-width: 860px) {
+    .d-flex {
+        flex-direction: column;
+        align-items: center; 
+    }
+    .buton {
+        width: 50%;
+    }
+    .coctail {
+        width: 14%;
+        margin-top: 10px;
+    }
+    .container {
+        padding: 0 50px;
+    } 
+    .drinks {
+        grid-template-columns: 1fr;
+    }    
+    .drink {
+        width: 100%;
+    }
+    .drink .drink-title{
+
+        text-align: center;
+        color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        /* height: 20%; */
+        padding: 0px 30px 25px 30px;
+    }
+    }
