@@ -1,22 +1,19 @@
 
+    /*  Logo Tab */
+    
     body {
         font-family: 'Cormorant SC', serif;
         margin: 0;
-        background-color: #222231;
+        background-color: #27273b 
     }
     nav {
-        /* background-color: #15151f */
-        background-color: #1e1e2c;
-        background-image: linear-gradient(0deg, #222231 0%, #101015 100%);
-
-        
-
+        background-image: linear-gradient(0deg, #27273b 0%, #101015 100%);
     }
     .nav-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .coctail {
         width: 6%;
@@ -40,17 +37,17 @@
         width: 100%; 
     }
 
+    /*  Navigation Tab */
 
-    
     .container {
         max-width: 1200px;
         margin:0 auto;
+        padding: 0 50px;
 
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-   
     }
     #coctail-name-filter, #category-select, #glass-type-select, #ingredient-select {
         background-color: #c0b1c381;
@@ -103,12 +100,13 @@
         padding: 12px;  
         max-width:50%;   
         margin: auto;
-        }
+    }
 
+    /*  Drinks Tab */
 
     .drinks {
         display: grid;
-        grid-template-columns:1fr 1fr 1fr;
+        grid-template-columns:1fr 1fr 1fr 1fr;
         gap: 3rem;
     }
     .drink {
@@ -127,17 +125,14 @@
         box-shadow: 1px 1px 40px rgba(164, 200, 232, 0.539);
     } 
     .drink .drink-title{
-        margin: 0 auto;
-        text-align: center;
-        color: antiquewhite;
-        display: flex;
-        flex-direction: column;
-        justify-content: center; 
-        height: 30%;
-        padding: 0px 30px 32px 30px;
+        color:  #e4cbe4;
+        text-shadow: 1px 1px 6px rgba(250, 235, 215, 0.405); 
+        padding: 20px 20px 0px 20px; 
+        font-size: 20px;
     }
     .drink:hover .drink-title {
-        color:  rgb(0, 0, 0);
+        color:  #460b46;
+        /* text-shadow: 3px 3px 16px rgba(250, 235, 215, 0.405);  */
     }
     .drink img{
         width: 100%;
@@ -146,52 +141,162 @@
         border-bottom-right-radius: 40%;
     }
 
+    /*  Modal Window */
 
+    .modal-bg {
+        /* nebus problemu su scroll - goes on top of page */
+        position:fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .6);
+        /* kad modal window butu per viduri */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* z-index: kad hr nebutu on top of modal */
+        z-index: 1;
+        /* paslepti modal kai puslapis atidaromas */
+        display: none;
+    }
+    /* modal klase neveikia su bootstrap */
+    .modal-w {
+        /* kad butu galima x mygtuka pozicijonuoti su position:absolut */
+        position: relative;
+        background-image: linear-gradient(0deg, #413d4c 0%, #1b191e 100%);
+        color: antiquewhite;
+        max-width: 1100px;
+        box-shadow: 1px 1px 20px rgba(164, 200, 232, 0.539);
 
+        /* overflow-y: scroll ; */
+    
+        /* kad close button butu per viduri */
+        display: flex;
+        align-items: center;  
+        flex-direction: column;  
+    }
+    .two-sides {
+        display: flex;
+        align-items: flex-start; 
+        justify-content: center;
+    }
+    .modal-img {
+        /* kad nuotrauka butu per viduri */
+         margin: 0 auto;
+         display: block;
+         width: 80%;
+     }
+    .modal-close-button-x {
+        position: absolute;
+        right: 3%;
+        top: 2%;
+        font-size: 22px;
+        cursor: pointer;
+        color: #a5907e;
+    }
+    .modal-close-button {
+        cursor: pointer;
+        font-size: 20px;
+        color: #a5907e;
+    }
+    .modal-close-button:hover,  .modal-close-button-x:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+        color:  #ffbbff;
+        text-shadow: 1px 1px 10px antiquewhite; /* horizontal, vertical, blur, color */
+    }
+    .modal-details {
+        width: 50%;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: space-between; */
+        font-family: 'Cormorant Garamond', serif;
+    }
+    .row {
+        margin-left: 7%;
+    }
+    .height {
+        line-height: 14px;
+    }
+    .justify-text {
+        text-align: justify;
+    }
+    .left {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    .dark {
+        color:  #b08ab0;
+        text-shadow: 1px 1px 6px rgba(250, 235, 215, 0.405); 
+    }
 
+    /*  Responsive */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @media only screen and (max-width: 1137px) {
+        .modal-w {
+            margin: 0 50px;
+        }
+    }
+    @media only screen and (max-width: 985px) {
+        .modal-w {
+            overflow-y: scroll ;
+            height: 80%;
+        }
+        .two-sides {
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-details{
+            margin-left: 20%;
+            width: 60%;
+        }
+        .modal-title {
+            font-size: 35px;
+        }
+        .modal-img{
+            width: 60%;
+        }
+    }
     @media only screen and (max-width: 860px) {
+    .coctail {
+        width: 12%;
+        margin-top: 20px;
+     }
     .d-flex {
         flex-direction: column;
         align-items: center; 
-    }
-    .buton {
         width: 80%;
-    }
-    .coctail {
-        width: 14%;
-        margin-top: 10px;
-    }
+        }
+    .buton {
+        width: 70%;
+     }
+    .drinks {
+        grid-template-columns:1fr 1fr;
+        }    
     .container {
         padding: 0 50px;
-    } 
-    .drinks {
-        grid-template-columns: 1fr;
-    }    
-    .drink {
-        width: 100%;
-    }
+        } 
     .drink .drink-title{
-
-        text-align: center;
-        color: antiquewhite;
         display: flex;
         flex-direction: column;
         justify-content: center; 
         /* height: 20%; */
-        padding: 0px 30px 25px 30px;
+        padding: 20px 30px 10px 30px;
+        }
+       
+        .modal-details{
+            margin-left: 20%;
+            width: 50%;
+        }
     }
+    @media only screen and (max-width: 630px) {  
+        .coctail {
+            width: 15%;
+            margin-top: 20px;
+        }
+        .drinks {
+            grid-template-columns:1fr;
+            width: 80%;
+        }    
     }

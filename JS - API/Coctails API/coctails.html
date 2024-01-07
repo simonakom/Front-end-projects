@@ -9,15 +9,57 @@
     <link rel="icon" href="cocktail.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Cormorant+SC:wght@400;700&display=swap" rel="stylesheet">
+<!-- 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap" rel="stylesheet"> -->
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    <div class="modal-bg">
+        <div class="modal-w rounded-4">
+            <div class="two-sides">
+                <div class="modal-close-button-x"><i class="bi bi-x-circle"></i> </div>
+                <div><img  class="modal-img img-fluid mt-5 rounded-4" src="https://www.thecocktaildb.com/images/media/drink/rptuxy1472669372.jpg" alt="Coctail Photo"></div>
+                    <div class="modal-details mt-5 me-5">
+                        <h3 class="modal-title text-center dark"><i>A True Amaretto Sour</i></h3>
+                        <div class="row mt-4">
+                            <b class="col-sm-3 dark">Category:</b>
+                            <p id="modal-category" class="col-9">Coctail</p>
+                        </div>
+                        <div class="row">
+                            <b class="col-sm-3 dark">Alcohol:</b>
+                            <p id="modal-alcohol" class="col-9">Alcoholic</p>
+                        </div>
+                        <div class="row">
+                            <b class="col-sm-3 dark">Glass:</b>
+                            <p id="modal-glass" class="col-9">Old-fashioned glass</p>
+                        </div>
+                        <div class="row">
+                            <b class="col-sm-2 mb-2 dark">Ingredients:</b>
+                            <div id="modal-ingredients" class="col-sm-10 d-flex row height">
+                                <b class="col-6">Amaretto:</b>
+                                <p class="col-6">1 jigger</p>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <b class="col-sm-3  dark">Recipe:</b>
+                            <p class="col-9 justify-text" id="modal-recipe">Rub the rim of an old fashioned glass with lemon, and dip repeatedly into granulated sugar until it has a good "frosted" rim. Shake a jigger of Amaretto with the juice of 1/2 a lemon. Strain into glass and add ice. Garnish with a Marachino Cherry.</p>
+                        </div>
+                    </div>  
+            </div>
+            <div class="modal-close-button mt-3 mb-4">Back to all cocktails <i class="bi bi-chevron-double-right"></i></div>
+        </div>
+    </div>
+
     <nav>
         <div class="nav-container pt-4">
-            <img src="cocktail.png" class="coctail">
+            <img src="cocktail.png" class="coctail img-fluid">
             <p class="title">Coctail Finder</p>
         </div>
         <hr class="gradient_one">
@@ -48,13 +90,10 @@
     <!-- generuoja naujai funkcija "generateDrinksHTML" -->
     <div class="drinks"> 
          <!-- <div class="drink"><img src="https://www.thecocktaildb.com/images/media/drink/km84qi1513705868.jpg" alt="Coctail photo">
-            <h2 class="drink-title py-3 px-4">Boulevardier</h2>
+            <h2 class="drink-title mb-4">Boulevardier</h2>
         </div>
         <div class="drink"><img src="https://www.thecocktaildb.com/images/media/drink/rptuxy1472669372.jpg" alt="Coctail photo">
-            <h2 class="drink-title py-3 px-4">A True Amaretto Sour</h2>
-        </div>
-        <div class="drink"><img src="https://www.thecocktaildb.com/images/media/drink/ck6d0p1504388696.jpg" alt="Coctail photo">
-            <h2 class="drink-title py-3">Cuba Libra</h2>
+            <h2 class="drink-title mb-4">A True Amaretto Sour</h2>
         </div> -->
     </div>
 </div>

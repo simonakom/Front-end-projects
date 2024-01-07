@@ -1,12 +1,12 @@
 //TO-DO:
-//1. Selectu uzpildymas duomenimis ----------------> ✓ (functions fillSelectElements + fillSelect)
-//2. Gauname visus gerimus is API -----------------> ✓ (function getAllDrinks)
-//3. Juos atvaizduojame ---------------------------> ✓ (function generateDrinksHTML)
-//4. Atlikti filtracijas kokteiliams (selects) ----> ✓ (function filter)
-    //4.1. Filtracija: Paieska pagal pavadinima ---> ✓ (searchValue)
-//5. Modalinio lango sukurimas
-//6. Modalinio lango uzdarymas
-//7. Atsitiktinio kokteilio gavimas su mygtuku "Challenge"
+//1. Selectu uzpildymas duomenimis ---------------------------> ✓ (functions fillSelectElements + fillSelect)
+//2. Gauname visus gerimus is API ----------------------------> ✓ (function getAllDrinks)
+//3. Juos atvaizduojame --------------------------------------> ✓ (function generateDrinksHTML)
+//4. Atlikti filtracijas kokteiliams (selects) ---------------> ✓ (function filter)
+    //4.1. Filtracija: Paieska pagal pavadinima --------------> ✓ (searchValue)
+//5. Modalinio lango sukurimas -------------------------------> ✓ (functions openModal/generateModalContent)
+//6. Modalinio lango uzdarymas -------------------------------> ✓ (functions closeModal/EscapeKey) (esc key+2 buttons+bacground)
+//7. Atsitiktinio kokteilio gavimas su mygtuku "Challenge" ---> ✓ (functions randomCoctail)
 
     const selectValues = {}; console.log(selectValues);  // objektas kuriam bus priksirti 3 laukai is "fillSelectElements" funkcijos
     const drinksArray = []; console.log(drinksArray);
@@ -15,10 +15,27 @@
     categorySelectElement = document.querySelector("#category-select"),
     glassSelectElement = document.querySelector("#glass-type-select"),
     ingredientSelectElement = document.querySelector("#ingredient-select"),
+
     dynamicDrinksElement = document.querySelector(".drinks"),
+
     buttonSearch = document.querySelector ("#search"),
     buttonReset = document.querySelector(".butonReset"),
-    note = document.querySelector(".note");
+    buttonChallenge = document.querySelector("#challenge"),
+    note = document.querySelector(".note"),
+
+    modalOpen = document.querySelector (".modal-bg"),
+    modalCloseX = document.querySelector (".modal-close-button-x"),
+    modalClose = document.querySelector (".modal-close-button"),
+    modalCloseBackground = document.querySelector (".modal-bg"),
+
+
+    modalImg = document.querySelector (".modal-img"),
+    modalTitle = document.querySelector (".modal-title"),
+    modalCategory = document.querySelector ("#modal-category"),
+    modalAlcohol = document.querySelector ("#modal-alcohol"),
+    modalGlass = document.querySelector ("#modal-glass"),
+    modalIngredients = document.querySelector ("#modal-ingredients"),
+    modalRecipe = document.querySelector ("#modal-recipe");
 
 
     async function fillSelectElements (){  //Visi Fetchai apdorojami veinu metu (greitesnis apdorojimo budas)
@@ -82,15 +99,15 @@
         let dynamicHTML = "";
         for(let drink of drinks){ //iteruojama per kiekviena gerima
             //pakeiciami laukai yra pemami is "drinksArray"
-            dynamicHTML += ` 
-            <div class="drink"><img src="${drink.strDrinkThumb}" alt="Coctail photo">
+            dynamicHTML += `   
+            <div class="drink" onclick="openModal(${drink.idDrink})">
+                <img src="${drink.strDrinkThumb}" alt="Coctail photo">
                 <h2 class="drink-title mb-4">${drink.strDrink}</h2>
             </div>
             `;
         }
         dynamicDrinksElement.innerHTML = dynamicHTML; 
     }
-
 
     // async nes filtracijos metu kreipsimes i API kad gauti gerimus pagal pateiktus filtrus (lokali filtracija kai nurodytas gerimo pavadinimas bet kai nurodyti selectai kreipiamasi i API )
     async function filter (){  //parametru nera nes juos gausim is select inputu. Funkcija suveikia tik kai paspaudziamas mygtukas
@@ -126,7 +143,7 @@
             // filtro tikslas: istikinti kad gerimas egzistuoja abejuose masyvuose ir ji palikti
             // Masyvo metodas masyvo metode: (drink) - isfiltruoto masyvo gerimas / einamoji reiksme / value
             filteredArray = filteredArray.filter((drink) => drinksOfCategory.drinks.some((drinksOfCategory) => drink.idDrink === drinksOfCategory.idDrink));
-                 // .filter - išfiltruoja tuos elementus, kurie callback funkcijoje returnina false reikšmę. Gražina išfiltruotą masyvą;
+                // .filter - išfiltruoja tuos elementus, kurie callback funkcijoje returnina false reikšmę. Gražina išfiltruotą masyvą;
                 // .some - tikrina, ar bent vienas laukelis masyve atitinka kriterijų, jei taip - gražina true, kitu atveju false;
            }   
            console.log(filteredArray); // matomi isfiltruoti gerimai tik pagal 1-2 laukelius
@@ -159,7 +176,7 @@
 
            buttonReset.style.display = 'block';
 
-        // Validations:
+        // Validations: jei joks filtras nepasirinktas
         if (!coctailNameFilterElement.value && categorySelectElement.value === 'Select Category...' && glassSelectElement.value === 'Select Glass Type...' && ingredientSelectElement.value === 'Select Ingredient...') {
             note.innerText = 'Please, use at least one filter field !';
             note.style.display = 'block';
@@ -170,7 +187,7 @@
             note.style.display = 'none';
         }
 
-          // Jei nera results po filtering
+          // Jei nera jokiu results po filtering
             if (filteredArray.length === 0) {
             note.innerText = 'No results found with the selected filters 🥲';
             note.style.display = 'block';
@@ -190,9 +207,77 @@
        // Generuoti gėrimų HTML su pradiniu gėrimų masyvu drinksArray
         generateDrinksHTML(drinksArray);
         buttonReset.style.display = 'none';
+        note.style.display = 'none';
     }
 
+    // atidarymas (kai paspaudziama an nuotraukas): ant kiekvieno gerimo su klase "drink" prideti onclick listener per js funkcija "generateDrinksHTML". Kaip parametra nurodyti id (${drink.idDrink})
+    // async- nes reikes daryti palaukima pries atvaizduojant duomenys
+    async function openModal (id) { //nurodomas id, nes pagal ji bus gaunami duomenis is API ir atvaizduojami modale
+        modalOpen.style.display = "flex";
+        const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
+        const response = await promise.json();
+        console.log(response);
+        const drink = response.drinks[0];
+        console.log(drink);
+        generateModalContent(drink);
+    }
+    // openModal(); // check
+
+function generateModalContent(drink) {
+    modalImg.src = drink.strDrinkThumb;
+    modalTitle.innerText = drink.strDrink;
+    modalCategory.innerText = drink.strCategory;
+    modalAlcohol.innerText = drink.strAlcoholic;
+    modalGlass.innerText = drink.strGlass;
+    modalRecipe.innerText = drink.strInstructions, drink.strInstructionsIT;
+
+    let ingredientsHTML = ``;
+    let ingredients = []; console.log(ingredients);
+    let measure = []; console.log(measure);
+
+    // ingredienttu  perkellimas i tuscius masyvus
+    for (let i = 1; i <= 15; i++) {
+        let ingredient = drink[`strIngredient${i}`];
+        let count = drink[`strMeasure${i}`];
     
+        if (ingredient) {
+            count = count !== null ? count : "On your preference";
+            ingredients.push(ingredient);
+            measure.push(count);
+        }
+    }
+    // Suka cikla per keikviena elementa masyve "Ingredients"
+    //let index = 0;: Initialize a variable index to start the loop from the first element of the array.
+    // index < ingredients.length;: Set the condition to continue the loop as long as the index is less than the length of the ingredients array (15).
+    //index++: Increment the index after each iteration. (to do another circle)
+    for (let index = 0; index < ingredients.length; index++) {
+        ingredientsHTML += `
+        <b class="col-sm-6">${ingredients[index]}</b>
+        <p class="col-sm-6">${measure[index]}</p>`
+    }
+    modalIngredients.innerHTML = ingredientsHTML;
+}
+
+    function closeModal () {
+        modalOpen.style.display = "none";
+    }
+
+    function EscapeKey(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    }
+
+    // Random drink from API 
+    async function randomCoctail() {
+        const response = await fetch(
+          `https://www.thecocktaildb.com/api/json/v1/1/random.php`
+        );
+        const obj = await response.json();
+        const drink = obj.drinks[0];
+        generateModalContent(drink);
+        modalOpen.style.display = "flex";
+      }
 
     async function initialization (){ //Aprasinejama kas atsitinka pasileidus kodui. Funkcija kuri igalins kitas funkcijas paeiliui kad aplikacija galetu veikti su minimaliais duomenimis. 
         //1 initializazion fase 
@@ -201,7 +286,24 @@
         generateDrinksHTML(drinksArray); //-gerimu dinaminis atvaizdavimas
         buttonSearch.addEventListener('click', filter) //prideti po filtracijos - tada kada butu pareje select values ("filter"-callback funkcija ir ja paduodame kaip kitamaji)
         buttonReset.addEventListener('click', reset)
+        buttonChallenge.addEventListener("click", randomCoctail);
+        modalCloseX.onclick = closeModal;
+        modalClose.onclick = closeModal;
+        // modalCloseBackground.addEventListener('click', (event) => {
+        //     event.stopPropagation(); // Prevent the click event from reaching the modal content
+        //     closeModal();
+        //  });
+         document.addEventListener('keydown', EscapeKey);
+
            
+
         //2 initializazion fase - dinaminis gerimu atvaizdavimas. Is pirmo reikia gauti visas kategorijas i viena array.
     }
     initialization();
+
+
+
+
+
+
+
