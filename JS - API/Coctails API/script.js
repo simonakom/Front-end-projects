@@ -28,7 +28,6 @@
     modalClose = document.querySelector (".modal-close-button"),
     modalCloseBackground = document.querySelector (".modal-bg"),
 
-
     modalImg = document.querySelector (".modal-img"),
     modalTitle = document.querySelector (".modal-title"),
     modalCategory = document.querySelector ("#modal-category"),
@@ -279,6 +278,7 @@ function generateModalContent(drink) {
         modalOpen.style.display = "flex";
       }
 
+
     async function initialization (){ //Aprasinejama kas atsitinka pasileidus kodui. Funkcija kuri igalins kitas funkcijas paeiliui kad aplikacija galetu veikti su minimaliais duomenimis. 
         //1 initializazion fase 
         await fillSelectElements(); //-uzpildomi selectai
@@ -289,15 +289,14 @@ function generateModalContent(drink) {
         buttonChallenge.addEventListener("click", randomCoctail);
         modalCloseX.onclick = closeModal;
         modalClose.onclick = closeModal;
-        // modalCloseBackground.addEventListener('click', (event) => {
-        //     event.stopPropagation(); // Prevent the click event from reaching the modal content
-        //     closeModal();
-        //  });
+
+        // Only close the modal when clicking on the background, not its children
+        modalCloseBackground.addEventListener('click', (event) => {
+        if (event.target === modalCloseBackground) {
+            closeModal();
+        }
+    });
          document.addEventListener('keydown', EscapeKey);
-
-           
-
-        //2 initializazion fase - dinaminis gerimu atvaizdavimas. Is pirmo reikia gauti visas kategorijas i viena array.
     }
     initialization();
 
