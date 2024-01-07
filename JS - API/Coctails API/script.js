@@ -5,7 +5,7 @@
 //4. Atlikti filtracijas kokteiliams (selects) ---------------> ✓ (function filter)
     //4.1. Filtracija: Paieska pagal pavadinima --------------> ✓ (searchValue)
 //5. Modalinio lango sukurimas -------------------------------> ✓ (functions openModal/generateModalContent)
-//6. Modalinio lango uzdarymas -------------------------------> ✓ (functions closeModal/EscapeKey) (esc key+2 buttons+bacground)
+//6. Modalinio lango uzdarymas -------------------------------> ✓ (functions closeModal/EscapeKey) (esc key+2 buttons+background)
 //7. Atsitiktinio kokteilio gavimas su mygtuku "Challenge" ---> ✓ (functions randomCoctail)
 
     const selectValues = {}; console.log(selectValues);  // objektas kuriam bus priksirti 3 laukai is "fillSelectElements" funkcijos
