@@ -230,6 +230,11 @@
         color:  #b08ab0;
         text-shadow: 1px 1px 6px rgba(250, 235, 215, 0.405); 
     }
+    .col-9 a#modal-alcohol {
+        color:  #fe9efe;
+        text-shadow: 1px 1px 6px rgba(250, 235, 215, 0.405); 
+        text-decoration: none;
+      }
 
     /*  Responsive */
 

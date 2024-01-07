@@ -73,7 +73,7 @@
         selectElement.innerHTML += dynamicHTML; //"+" prideti kartu tai kas yra html
     }
 
-    // funkcija kuris iskvies visus gerimus is API, kai gerimai bus gauti viename masyve  - bus daromas atvaizdavimas
+    // funkcija kuri iskvies visus gerimus is API, kai gerimai bus gauti viename masyve  - bus daromas atvaizdavimas
      async function getAllDrinks(){ // https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink
         const categoryDrinksUrls =  []; //masyvas uzpildomas ciklo eigoje
         for (const category of selectValues.categories){ //Cikle einame per visas turimas kategorijas "selectValues.categories"
@@ -222,50 +222,50 @@
     }
     // openModal(); // check
 
-function generateModalContent(drink) {
-    modalImg.src = drink.strDrinkThumb;
-    modalTitle.innerText = drink.strDrink;
-    modalCategory.innerText = drink.strCategory;
-    modalAlcohol.innerText = drink.strAlcoholic;
-    modalGlass.innerText = drink.strGlass;
-    modalRecipe.innerText = drink.strInstructions, drink.strInstructionsIT;
+    function generateModalContent(drink) {
+        modalImg.src = drink.strDrinkThumb;
+        modalTitle.innerText = drink.strDrink;
+        modalCategory.innerText = drink.strCategory;
+        modalAlcohol.innerText = drink.strAlcoholic;
+        modalGlass.innerText = drink.strGlass;
+        modalRecipe.innerText = drink.strInstructions, drink.strInstructionsIT;
 
-    let ingredientsHTML = ``;
-    let ingredients = []; console.log(ingredients);
-    let measure = []; console.log(measure);
+        let ingredientsHTML = ``;
+        let ingredients = []; console.log(ingredients);
+        let measure = []; console.log(measure);
 
-    // ingredienttu  perkellimas i tuscius masyvus
-    for (let i = 1; i <= 15; i++) {
-        let ingredient = drink[`strIngredient${i}`];
-        let count = drink[`strMeasure${i}`];
-    
-        if (ingredient) {
-            count = count !== null ? count : "On your preference";
-            ingredients.push(ingredient);
-            measure.push(count);
+        // ingredienttu  perkellimas i tuscius masyvus
+        for (let i = 1; i <= 15; i++) {
+            let ingredient = drink[`strIngredient${i}`];
+            let count = drink[`strMeasure${i}`];
+
+            if (ingredient) {
+                count = count !== null ? count : "On your preference";
+                ingredients.push(ingredient);
+                measure.push(count);
+            }
         }
-    }
-    // Suka cikla per keikviena elementa masyve "Ingredients"
-    //let index = 0;: Initialize a variable index to start the loop from the first element of the array.
-    // index < ingredients.length;: Set the condition to continue the loop as long as the index is less than the length of the ingredients array (15).
-    //index++: Increment the index after each iteration. (to do another circle)
-    for (let index = 0; index < ingredients.length; index++) {
-        ingredientsHTML += `
-        <b class="col-sm-6">${ingredients[index]}</b>
-        <p class="col-sm-6">${measure[index]}</p>`
-    }
-    modalIngredients.innerHTML = ingredientsHTML;
-}
-
-    function closeModal () {
-        modalOpen.style.display = "none";
-    }
-
-    function EscapeKey(event) {
-        if (event.key === 'Escape') {
-            closeModal();
+        // Suka cikla per keikviena elementa masyve "Ingredients"
+        //let index = 0;: Initialize a variable index to start the loop from the first element of the array.
+        // index < ingredients.length;: Set the condition to continue the loop as long as the index is less than the length of the ingredients array (15).
+        //index++: Increment the index after each iteration. (to do another circle)
+        for (let index = 0; index < ingredients.length; index++) {
+            ingredientsHTML += `
+            <b class="col-sm-6">${ingredients[index]}</b>
+            <p class="col-sm-6">${measure[index]}</p>`
         }
+        modalIngredients.innerHTML = ingredientsHTML;
     }
+
+        function closeModal () {
+            modalOpen.style.display = "none";
+        }
+
+        function EscapeKey(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        }
 
     // Random drink from API 
     async function randomCoctail() {
@@ -278,29 +278,37 @@ function generateModalContent(drink) {
         modalOpen.style.display = "flex";
       }
 
+    // Link to Alkoholic/nonAlkoholic drinks
+    async function drinkAlcoholicOrNonAlcoholic() {
+        const link =  modalAlcohol.innerText; // pasieme reiksme is html: Alkoholic or non alkoholic
+        const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${link.replaceAll(" ","_")}`);
+        const value = await response.json();
+        const drinks = value.drinks;
+        generateDrinksHTML(drinks); //atvaizduoja Alkoholic/non alkoholic gerimus pagal linka 
+        modalOpen.style.display = "none";
+    }
 
     async function initialization (){ //Aprasinejama kas atsitinka pasileidus kodui. Funkcija kuri igalins kitas funkcijas paeiliui kad aplikacija galetu veikti su minimaliais duomenimis. 
-        //1 initializazion fase 
         await fillSelectElements(); //-uzpildomi selectai
         await getAllDrinks(); //-gaunami visi gerimai i "drinksArray" masyva
         generateDrinksHTML(drinksArray); //-gerimu dinaminis atvaizdavimas
+
         buttonSearch.addEventListener('click', filter) //prideti po filtracijos - tada kada butu pareje select values ("filter"-callback funkcija ir ja paduodame kaip kitamaji)
         buttonReset.addEventListener('click', reset)
         buttonChallenge.addEventListener("click", randomCoctail);
+
         modalCloseX.onclick = closeModal;
         modalClose.onclick = closeModal;
+        document.addEventListener('keydown', EscapeKey); // esc - close
 
-        // Only close the modal when clicking on the background, not its children
-        modalCloseBackground.addEventListener('click', (event) => {
+        modalCloseBackground.addEventListener('click', (event) => { // background - close
         if (event.target === modalCloseBackground) {
             closeModal();
-        }
-    });
-         document.addEventListener('keydown', EscapeKey);
+        } });
+
+        modalAlcohol.addEventListener('click', drinkAlcoholicOrNonAlcoholic)
     }
     initialization();
-
-
 
 
 
