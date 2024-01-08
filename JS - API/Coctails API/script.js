@@ -22,7 +22,8 @@
     buttonReset = document.querySelector(".butonReset"),
     buttonChallenge = document.querySelector("#challenge"),
     note = document.querySelector(".note"),
-
+    noteOfDrinks = document.querySelector(".noteOfDrinks"),
+  
     modalOpen = document.querySelector (".modal-bg"),
     modalCloseX = document.querySelector (".modal-close-button-x"),
     modalClose = document.querySelector (".modal-close-button"),
@@ -34,8 +35,9 @@
     modalAlcohol = document.querySelector ("#modal-alcohol"),
     modalGlass = document.querySelector ("#modal-glass"),
     modalIngredients = document.querySelector ("#modal-ingredients"),
-    modalRecipe = document.querySelector ("#modal-recipe");
+    modalRecipe = document.querySelector ("#modal-recipe"),
 
+    alphabetContainer = document.getElementById('alphabet-letters');
 
     async function fillSelectElements (){  //Visi Fetchai apdorojami veinu metu (greitesnis apdorojimo budas)
     const allUrls = [ //Gauname visus "promise" i viena masyva
@@ -172,8 +174,9 @@
            console.log(filteredArray); // matomi isfiltruoti gerimai pagal 1-2-3-4 laukelius
 
            generateDrinksHTML(filteredArray); //kad atvaizduoti filtracijos rezultata reikia iskviesti "generateDrinksHTML" su parametru "filteredArray"
-
            buttonReset.style.display = 'block';
+           noteOfDrinks.style.display = 'none';
+
 
         // Validations: jei joks filtras nepasirinktas
         if (!coctailNameFilterElement.value && categorySelectElement.value === 'Select Category...' && glassSelectElement.value === 'Select Glass Type...' && ingredientSelectElement.value === 'Select Ingredient...') {
@@ -202,8 +205,8 @@
         categorySelectElement.value = 'Select Category...'; 
         glassSelectElement.value = 'Select Glass Type...'; 
         ingredientSelectElement.value = 'Select Ingredient...';
-    
-       // Generuoti gėrimų HTML su pradiniu gėrimų masyvu drinksArray
+
+        // Generuoti gėrimų HTML su pradiniu gėrimų masyvu drinksArray
         generateDrinksHTML(drinksArray);
         buttonReset.style.display = 'none';
         note.style.display = 'none';
@@ -257,98 +260,93 @@
         modalIngredients.innerHTML = ingredientsHTML;
     }
 
-        function closeModal () {
-            modalOpen.style.display = "none";
-        }
+    function closeModal () {
+        modalOpen.style.display = "none";
+    }
 
-        function EscapeKey(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
+    function EscapeKey(event) {
+        if (event.key === 'Escape') {
+            closeModal();
         }
+    }
 
     // Random drink from API 
     async function randomCoctail() {
-        const response = await fetch(
-          `https://www.thecocktaildb.com/api/json/v1/1/random.php`
-        );
-        const obj = await response.json();
-        const drink = obj.drinks[0];
+        const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`);
+        const object = await response.json();
+        const drink = object.drinks[0];
         generateModalContent(drink);
         modalOpen.style.display = "flex";
-      }
+    }
 
     // Link to Alkoholic/nonAlkoholic drinks
     async function drinkAlcoholicOrNonAlcoholic() {
         const link =  modalAlcohol.innerText; // pasieme reiksme is html: Alkoholic or non alkoholic
         const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${link.replaceAll(" ","_")}`);
-        const value = await response.json();
-        const drinks = value.drinks;
+        const object = await response.json();
+        const drinks = object.drinks;
         generateDrinksHTML(drinks); //atvaizduoja Alkoholic/non alkoholic gerimus pagal linka 
         modalOpen.style.display = "none";
     }
 
+    // create alphabetical letters/numbers
+    function createAlphabeticalLinks() {
+    let letersHTML = ``;
+    let numbersHTML = ``;
+    for (let i = 65; i <= 90; i++) {
+      let char = String.fromCharCode(i);
+      letersHTML += `<a onclick="displayFirstSymbolDrinks('${char}')" href="#">${char}</a>`;
+    }
+    for (let i = 49; i <= 57; i++) {
+      let char = String.fromCharCode(i);
+      numbersHTML  += `<a onclick="displayFirstSymbolDrinks('${char}')" href="#">${char}</a>`;
+    }
+        document.querySelector(".alphabet-letters").innerHTML = letersHTML;
+        document.querySelector(".alphabet-numbers").innerHTML = numbersHTML ;
+    }
 
+  // display drinks by first letter/number
+  async function displayFirstSymbolDrinks(char) {
+    const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${char}`);
+    const object = await response.json();
+    console.log(object);
+    const drinks = object.drinks;
+    console.log(drinks);
+    if (drinks !== null) {
+      generateDrinksHTML(drinks);
+      note.style.display = 'none';
+      noteOfDrinks.style.display = 'none';
+    } else {
+        generateDrinksHTML([]);
+        noteOfDrinks.style.display = 'block';
+        noteOfDrinks.style.backgroundColor = 'rgba(250, 235, 215, 0.24);';
+    }
+  }
+  
 
     async function initialization (){ //Aprasinejama kas atsitinka pasileidus kodui. Funkcija kuri igalins kitas funkcijas paeiliui kad aplikacija galetu veikti su minimaliais duomenimis. 
         await fillSelectElements(); //-uzpildomi selectai
         await getAllDrinks(); //-gaunami visi gerimai i "drinksArray" masyva
         generateDrinksHTML(drinksArray); //-gerimu dinaminis atvaizdavimas
 
-        buttonSearch.addEventListener('click', filter) //prideti po filtracijos - tada kada butu pareje select values ("filter"-callback funkcija ir ja paduodame kaip kitamaji)
-        buttonReset.addEventListener('click', reset)
+        buttonSearch.addEventListener('click', filter); //prideti po filtracijos - tada kada butu pareje select values ("filter"-callback funkcija ir ja paduodame kaip kitamaji)
+        buttonReset.addEventListener('click', reset);
         buttonChallenge.addEventListener("click", randomCoctail);
 
         modalCloseX.onclick = closeModal;
         modalClose.onclick = closeModal;
         document.addEventListener('keydown', EscapeKey); // esc - close
-
         modalCloseBackground.addEventListener('click', (event) => { // background - close
         if (event.target === modalCloseBackground) {
             closeModal();
         } });
 
-        modalAlcohol.addEventListener('click', drinkAlcoholicOrNonAlcoholic)
+        modalAlcohol.addEventListener('click', drinkAlcoholicOrNonAlcoholic);
+
+        createAlphabeticalLinks()
     }
     initialization();
 
 
 
-    function generateAlphabetLetters() {
-        const alphabetContainer = document.getElementById('alphabet-letters');
-        // generuoja raides is unicode
-        for (let charCode = 65; charCode <= 90; charCode++) {
-            const letter = String.fromCharCode(charCode);
-            const letterButton = document.createElement('button');
-            letterButton.textContent = letter;
-            letterButton.addEventListener('click', () => {
-                displayFirstLetterDrinks(letter);
-            });
-            alphabetContainer.appendChild(letterButton);
-        }
-    }
-        generateAlphabetLetters();
 
-
-
-    
-        async function displayFirstLetterDrinks (char) {
-            const response = await fetch(
-                `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${char}`);
-            const value = await response.json();
-            const drinks = value.drinks;
-            console.log(drinks);
-            if (drinks !== null) {
-                generateDrinksHTML(drinks);
-            } else {
-                note.innerText = 'No results found with the selected letter 🥲';
-                note.style.display = 'block';
-                note.style.backgroundColor = 'rgba(250, 235, 215, 0.24);';
-                // alert(` '${char}'empty`);
-                generateDrinksHTML(drinks);
-            }
-       
-        }
-
-
-        // ux

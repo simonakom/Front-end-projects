@@ -96,37 +96,32 @@
     }
     .note{
         display: none;
-        background-color: rgba(250, 235, 215, 0.24);
+        background-color: rgba(250, 235, 215, 0.107);
         color: antiquewhite;
         border-radius: 20px;
-        padding: 12px;  
-        max-width:50%;   
+        padding: 10px 25px 10px 25px;  
+        max-width:80%;   
         margin: auto;
     }
-    .alphabet-letters {
+    .alphabet-letters, .alphabet-numbers {
         display: flex;
         gap: 16px;
-        margin-top: 20px;
     }
-    .alphabet-letters button {
+    .alphabet-letters a, .alphabet-numbers a {
         background-color: transparent;
-        color:  #e4cbe4;
+        color:  #f4cff4;
         text-shadow: 1px 1px 6px rgba(250, 235, 215, 0.405); 
         border: none;
         font-size: 20px;
         cursor: pointer;
         padding: 5px;
+        text-decoration: none;
     }
-    .alphabet-letters button:hover {
+    .alphabet-letters a:hover, .alphabet-numbers a:hover {
         transition: transform 0.3s ease-in-out;
-        color:  #cd80cd;
+        color:  #f28cf2;
         transform: scale(1.8);
     }
-
-
-
-
-
 
     /*  Drinks Tab */
 
@@ -142,6 +137,7 @@
         border-top-right-radius: 15%;
         border-bottom-left-radius: 15%;
         border-bottom-right-radius: 15%;
+        cursor: pointer;
     }
     .drink:hover {
         transform: scale(1.02);
@@ -158,13 +154,22 @@
     }
     .drink:hover .drink-title {
         color:  #460b46;
-        /* text-shadow: 3px 3px 16px rgba(250, 235, 215, 0.405);  */
+        text-shadow: 3px 3px 16px rgba(250, 235, 215, 0.405); 
     }
     .drink img{
         width: 100%;
         border-top-left-radius: 15%;
         border-top-right-radius: 15%;
         border-bottom-right-radius: 40%;
+    }
+    .noteOfDrinks {
+        display: none;
+        background-color: rgba(250, 235, 215, 0.107);
+        color: antiquewhite;
+        border-radius: 20px;
+        padding: 10px 25px 10px 25px;  
+        max-width:80%;   
+        margin: auto;
     }
 
     /*  Modal Window */
@@ -217,12 +222,12 @@
         top: 2%;
         font-size: 22px;
         cursor: pointer;
-        color: #a5907e;
+        color: #d0c3b8;
     }
     .modal-close-button {
         cursor: pointer;
         font-size: 20px;
-        color: #a5907e;
+        color: #d0c3b8;
     }
     .modal-close-button:hover,  .modal-close-button-x:hover {
         transform: scale(1.1);
@@ -256,7 +261,7 @@
         color:  #b08ab0;
         text-shadow: 1px 1px 6px rgba(250, 235, 215, 0.405); 
     }
-    .col-9 a#modal-alcohol {
+    #modal-alcohol {
         color:  #fe9efe;
         text-shadow: 1px 1px 6px rgba(250, 235, 215, 0.405); 
         text-decoration: none;
@@ -268,10 +273,9 @@
         .modal-w {
             margin: 0 50px;
         }
-        .alphabet-letters {
+        .alphabet-letters, .alphabet-numbers {
             gap: 13px;
             margin: 0 50px;
-            margin-top: 20px;
         }
     }
     @media only screen and (max-width: 985px) {
@@ -293,10 +297,9 @@
         .modal-img{
             width: 60%;
         }
-        .alphabet-letters {
+        .alphabet-letters, .alphabet-numbers {
             gap: 10px;
             margin: 0 50px;
-            margin-top: 20px;
         }
     }
     @media only screen and (max-width: 860px) {
@@ -325,12 +328,12 @@
         justify-content: center; 
         padding: 20px 30px 10px 30px;
         }   
-        .alphabet-letters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-        }     
+    .alphabet-letters, .alphabet-numbers {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }     
     }
     @media only screen and (max-width: 630px) {  
         .coctail {
@@ -340,5 +343,5 @@
         .drinks {
             grid-template-columns:1fr;
             width: 80%;
-        }    
+        }  
     }
