@@ -248,6 +248,7 @@
     .height {
         line-height: 14px;
     }
+    /* recipe text align */
     .justify-text {
         text-align: justify;
     }
@@ -265,7 +266,12 @@
         color:  #fe9efe;
         text-shadow: 1px 1px 6px rgba(250, 235, 215, 0.405); 
         text-decoration: none;
-      }
+    }
+    #modal-alcohol:hover {
+        transform: scale(1.1);
+        transition: transform 0.9s ease-in-out;
+        text-shadow: 1px 1px 10px antiquewhite;
+    }
 
     /*  Responsive */
 

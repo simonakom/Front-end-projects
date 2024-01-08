@@ -254,8 +254,8 @@
         //index++: Increment the index after each iteration. (to do another circle)
         for (let index = 0; index < ingredients.length; index++) {
             ingredientsHTML += `
-            <b class="col-sm-6">${ingredients[index]}</b>
-            <p class="col-sm-6">${measure[index]}</p>`
+            <b class="col-sm-6 my-1">${ingredients[index]}</b>
+            <p class="col-sm-6 my-1">${measure[index]}</p>`
         }
         modalIngredients.innerHTML = ingredientsHTML;
     }
