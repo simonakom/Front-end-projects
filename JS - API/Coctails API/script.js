@@ -288,6 +288,8 @@
         modalOpen.style.display = "none";
     }
 
+
+
     async function initialization (){ //Aprasinejama kas atsitinka pasileidus kodui. Funkcija kuri igalins kitas funkcijas paeiliui kad aplikacija galetu veikti su minimaliais duomenimis. 
         await fillSelectElements(); //-uzpildomi selectai
         await getAllDrinks(); //-gaunami visi gerimai i "drinksArray" masyva
@@ -312,5 +314,33 @@
 
 
 
+    function generateAlphabetLetters() {
+        const alphabetContainer = document.getElementById('alphabet-letters');
+
+        for (let charCode = 65; charCode <= 90; charCode++) {
+            const letter = String.fromCharCode(charCode);
+            const letterButton = document.createElement('button');
+            letterButton.textContent = letter;
+            letterButton.addEventListener('click', () => {
+                getDrinksListByChar(letter);
+            });
+            alphabetContainer.appendChild(letterButton);
+        }
+        }
+        generateAlphabetLetters();
+
+        async function getDrinksListByChar(char) {
+            const response = await fetch(
+                `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${char}`
+            );
+            const obj = await response.json();
+            const drinks = obj.drinks;
+            if (drinks !== null) {
+                generateDrinksHTML(drinks);
+            } else {
+                alert(`Drink list of symbol '${char}' is empty`);
+            }
+       
+        }
 
 

@@ -29,12 +29,14 @@
         height: 2px;
         background: linear-gradient(to right, #5da5c9, #d494de, #7b97bb, #4169e1, #8a2be2);
         width: 100%; 
+        margin: 0 auto;
     }
     .gradient_two {
         border: none;
         height: 2px;
         background: linear-gradient(to right, #8a2be2, #4169e1, #7b97bb, #d494de, #5da5c9);
         width: 100%; 
+        margin: 0 auto;
     }
 
     /*  Navigation Tab */
@@ -101,6 +103,30 @@
         max-width:50%;   
         margin: auto;
     }
+    .alphabet-letters {
+        display: flex;
+        gap: 16px;
+        margin-top: 20px;
+    }
+    .alphabet-letters button {
+        background-color: transparent;
+        color:  #e4cbe4;
+        text-shadow: 1px 1px 6px rgba(250, 235, 215, 0.405); 
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 5px;
+    }
+    .alphabet-letters button:hover {
+        transition: transform 0.3s ease-in-out;
+        color:  #cd80cd;
+        transform: scale(1.8);
+    }
+
+
+
+
+
 
     /*  Drinks Tab */
 
@@ -242,6 +268,11 @@
         .modal-w {
             margin: 0 50px;
         }
+        .alphabet-letters {
+            gap: 13px;
+            margin: 0 50px;
+            margin-top: 20px;
+        }
     }
     @media only screen and (max-width: 985px) {
         .modal-w {
@@ -261,6 +292,11 @@
         }
         .modal-img{
             width: 60%;
+        }
+        .alphabet-letters {
+            gap: 10px;
+            margin: 0 50px;
+            margin-top: 20px;
         }
     }
     @media only screen and (max-width: 860px) {
@@ -288,7 +324,13 @@
         flex-direction: column;
         justify-content: center; 
         padding: 20px 30px 10px 30px;
-        }        
+        }   
+        .alphabet-letters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }     
     }
     @media only screen and (max-width: 630px) {  
         .coctail {
