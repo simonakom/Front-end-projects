@@ -333,12 +333,12 @@
             const response = await fetch(
                 `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${char}`
             );
-            const obj = await response.json();
-            const drinks = obj.drinks;
+            const value = await response.json();
+            const drinks = value.drinks;
             if (drinks !== null) {
                 generateDrinksHTML(drinks);
             } else {
-                alert(`Drink list of symbol '${char}' is empty`);
+                alert(` '${char}'empty`);
             }
        
         }
