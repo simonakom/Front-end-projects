@@ -323,7 +323,6 @@
     }
   }
   
-
     async function initialization (){ //Aprasinejama kas atsitinka pasileidus kodui. Funkcija kuri igalins kitas funkcijas paeiliui kad aplikacija galetu veikti su minimaliais duomenimis. 
         await fillSelectElements(); //-uzpildomi selectai
         await getAllDrinks(); //-gaunami visi gerimai i "drinksArray" masyva
