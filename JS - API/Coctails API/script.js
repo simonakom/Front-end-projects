@@ -316,31 +316,39 @@
 
     function generateAlphabetLetters() {
         const alphabetContainer = document.getElementById('alphabet-letters');
-
+        // generuoja raides is unicode
         for (let charCode = 65; charCode <= 90; charCode++) {
             const letter = String.fromCharCode(charCode);
             const letterButton = document.createElement('button');
             letterButton.textContent = letter;
             letterButton.addEventListener('click', () => {
-                getDrinksListByChar(letter);
+                displayFirstLetterDrinks(letter);
             });
             alphabetContainer.appendChild(letterButton);
         }
-        }
+    }
         generateAlphabetLetters();
 
-        async function getDrinksListByChar(char) {
+
+
+    
+        async function displayFirstLetterDrinks (char) {
             const response = await fetch(
-                `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${char}`
-            );
+                `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${char}`);
             const value = await response.json();
             const drinks = value.drinks;
+            console.log(drinks);
             if (drinks !== null) {
                 generateDrinksHTML(drinks);
             } else {
-                alert(` '${char}'empty`);
+                note.innerText = 'No results found with the selected letter 🥲';
+                note.style.display = 'block';
+                note.style.backgroundColor = 'rgba(250, 235, 215, 0.24);';
+                // alert(` '${char}'empty`);
+                generateDrinksHTML(drinks);
             }
        
         }
 
 
+        // ux
