@@ -178,6 +178,9 @@
            noteOfDrinks.style.display = 'none';
 
 
+        // LocalStorage: filtru saugojimas (Pries validation, kitaip neklausys siu nurodymu)
+        saveFiltersToLocalStorage();
+
         // Validations: jei joks filtras nepasirinktas
         if (!coctailNameFilterElement.value && categorySelectElement.value === 'Select Category...' && glassSelectElement.value === 'Select Glass Type...' && ingredientSelectElement.value === 'Select Ingredient...') {
             note.innerText = 'Please, use at least one filter field !';
@@ -210,7 +213,11 @@
         generateDrinksHTML(drinksArray);
         buttonReset.style.display = 'none';
         note.style.display = 'none';
+
+    // LocalStorage: filtru salinimas
+    localStorage.removeItem('filters');
     }
+
 
     // atidarymas (kai paspaudziama an nuotraukas): ant kiekvieno gerimo su klase "drink" prideti onclick listener per js funkcija "generateDrinksHTML". Kaip parametra nurodyti id (${drink.idDrink})
     // async- nes reikes daryti palaukima pries atvaizduojant duomenys
@@ -305,28 +312,30 @@
         document.querySelector(".alphabet-numbers").innerHTML = numbersHTML ;
     }
 
-  // display drinks by first letter/number
-  async function displayFirstSymbolDrinks(char) {
-    const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${char}`);
-    const object = await response.json();
-    console.log(object);
-    const drinks = object.drinks;
-    console.log(drinks);
-    if (drinks !== null) {
-      generateDrinksHTML(drinks);
-      note.style.display = 'none';
-      noteOfDrinks.style.display = 'none';
-    } else {
-        generateDrinksHTML([]);
-        noteOfDrinks.style.display = 'block';
-        noteOfDrinks.style.backgroundColor = 'rgba(250, 235, 215, 0.24);';
+    // display drinks by first letter/number
+    async function displayFirstSymbolDrinks(char) {
+        const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${char}`);
+        const object = await response.json();
+        console.log(object);
+        const drinks = object.drinks;
+        console.log(drinks);
+        if (drinks !== null) {
+        generateDrinksHTML(drinks);
+        note.style.display = 'none';
+        noteOfDrinks.style.display = 'none';
+        } else {
+            generateDrinksHTML([]);
+            noteOfDrinks.style.display = 'block';
+            noteOfDrinks.style.backgroundColor = 'rgba(250, 235, 215, 0.24);';
+        }
     }
-  }
   
     async function initialization (){ //Aprasinejama kas atsitinka pasileidus kodui. Funkcija kuri igalins kitas funkcijas paeiliui kad aplikacija galetu veikti su minimaliais duomenimis. 
         await fillSelectElements(); //-uzpildomi selectai
         await getAllDrinks(); //-gaunami visi gerimai i "drinksArray" masyva
-        generateDrinksHTML(drinksArray); //-gerimu dinaminis atvaizdavimas
+        loadFiltersFromLocalStorage();
+        // generateDrinksHTML(drinksArray); //-gerimu dinaminis atvaizdavimas. Pasleptas nes pridetas "filter" (jame jau yra sita funkcija) -> tada greitesnis atvaizdavimas buna filtru po refresh page ir pirmomis sekundemis nera default atvaizdavimo o iskarto filtruotas atvaizdavimas
+        filter();
 
         buttonSearch.addEventListener('click', filter); //prideti po filtracijos - tada kada butu pareje select values ("filter"-callback funkcija ir ja paduodame kaip kitamaji)
         buttonReset.addEventListener('click', reset);
@@ -337,8 +346,8 @@
         document.addEventListener('keydown', EscapeKey); // esc - close
         modalCloseBackground.addEventListener('click', (event) => { // background - close
         if (event.target === modalCloseBackground) {
-            closeModal();
-        } });
+            closeModal();}
+         });
 
         modalAlcohol.addEventListener('click', drinkAlcoholicOrNonAlcoholic);
 
@@ -347,5 +356,24 @@
     initialization();
 
 
+// -------------------LOCAL STORAGE-----------------------------------
+//1. Function "saveFiltersToLocalStorage()" ---> Sukurti funkcija kuri issaugo selected filter value to localStorage
+//2. "saveFiltersToLocalStorage()" ---> panaudoti ten kur filtrai (nes saugom filtrus) ir pries validation !!! (jei po validation tada neklauso tu nurodymu is validation)
+//3. Function "loadFiltersFromLocalStorage()" ---> Sukurti funkcija kuri paims issaugotus filtrus if localStorage
+//4. "loadFiltersFromLocalStorage()"  ---> paliesti funkcija kartu su funkcija filter "Initalization" viduje. Tada galima istrinti "generateDrinksHTML(drinksArray)" kad butu gretesnis atvaizdavimas 
+//5. kad mygtukas rest veiktu reikia pridet prie "reset" funkcijos --> localStorage.removeItem('filters');
 
-
+// Saugoti selected filter value to localStorage
+function saveFiltersToLocalStorage() {
+    localStorage.setItem('coctailNameFilter', coctailNameFilterElement.value);
+    localStorage.setItem('categorySelect', categorySelectElement.value);
+    localStorage.setItem('glassSelect', glassSelectElement.value);
+    localStorage.setItem('ingredientSelect', ingredientSelectElement.value);
+}
+// // Uzkrauti selected filters from localStorage
+function loadFiltersFromLocalStorage() {
+    coctailNameFilterElement.value = localStorage.getItem('coctailNameFilter') || '';
+    categorySelectElement.value = localStorage.getItem('categorySelect') || 'Select Category...' ;
+    glassSelectElement.value = localStorage.getItem('glassSelect') || 'Select Glass Type...';
+    ingredientSelectElement.value = localStorage.getItem('ingredientSelect') || 'Select Ingredient...';     
+}
