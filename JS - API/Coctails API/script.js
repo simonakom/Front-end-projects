@@ -218,7 +218,6 @@
     localStorage.removeItem('filters');
     }
 
-
     // atidarymas (kai paspaudziama an nuotraukas): ant kiekvieno gerimo su klase "drink" prideti onclick listener per js funkcija "generateDrinksHTML". Kaip parametra nurodyti id (${drink.idDrink})
     // async- nes reikes daryti palaukima pries atvaizduojant duomenys
     async function openModal (id) { //nurodomas id, nes pagal ji bus gaunami duomenis is API ir atvaizduojami modale
@@ -230,7 +229,7 @@
         console.log(drink);
         generateModalContent(drink);
     }
-    // openModal(); // check
+    // openModal(); // only to check
 
     function generateModalContent(drink) {
         modalImg.src = drink.strDrinkThumb;
@@ -313,8 +312,8 @@
     }
 
     // display drinks by first letter/number
-    async function displayFirstSymbolDrinks(char) {
-        const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${char}`);
+    async function displayFirstSymbolDrinks(letter) {
+        const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`);
         const object = await response.json();
         console.log(object);
         const drinks = object.drinks;
@@ -356,12 +355,12 @@
     initialization();
 
 
-// -------------------LOCAL STORAGE-----------------------------------
-//1. Function "saveFiltersToLocalStorage()" ---> Sukurti funkcija kuri issaugo selected filter value to localStorage
-//2. "saveFiltersToLocalStorage()" ---> panaudoti ten kur filtrai (nes saugom filtrus) ir pries validation !!! (jei po validation tada neklauso tu nurodymu is validation)
+// -------------------LOCAL STORAGE-------------------------------
+//1. Function "saveFiltersToLocalStorage()" -----> Sukurti funkcija kuri issaugo selected filter value to localStorage
+//2. "saveFiltersToLocalStorage()" --------------> panaudoti ten kur filtrai (nes saugom filtrus) ir pries validation !!! (jei po validation tada neklauso tu nurodymu is validation)
 //3. Function "loadFiltersFromLocalStorage()" ---> Sukurti funkcija kuri paims issaugotus filtrus if localStorage
-//4. "loadFiltersFromLocalStorage()"  ---> paliesti funkcija kartu su funkcija filter "Initalization" viduje. Tada galima istrinti "generateDrinksHTML(drinksArray)" kad butu gretesnis atvaizdavimas 
-//5. kad mygtukas rest veiktu reikia pridet prie "reset" funkcijos --> localStorage.removeItem('filters');
+//4. "loadFiltersFromLocalStorage()"  -----------> paliesti funkcija kartu su funkcija filter "Initalization" viduje. Tada galima istrinti "generateDrinksHTML(drinksArray)" kad butu gretesnis atvaizdavimas 
+//5. kad mygtukas rest veiktu reikia pridet prie "reset" funkcijos ---> localStorage.removeItem('filters');
 
 // Saugoti selected filter value to localStorage
 function saveFiltersToLocalStorage() {
@@ -370,7 +369,7 @@ function saveFiltersToLocalStorage() {
     localStorage.setItem('glassSelect', glassSelectElement.value);
     localStorage.setItem('ingredientSelect', ingredientSelectElement.value);
 }
-// // Uzkrauti selected filters from localStorage
+// Uzkrauti selected filters from localStorage
 function loadFiltersFromLocalStorage() {
     coctailNameFilterElement.value = localStorage.getItem('coctailNameFilter') || '';
     categorySelectElement.value = localStorage.getItem('categorySelect') || 'Select Category...' ;
