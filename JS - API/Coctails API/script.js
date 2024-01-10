@@ -76,7 +76,7 @@
     }
 
     // funkcija kuri iskvies visus gerimus is API, kai gerimai bus gauti viename masyve  - bus daromas atvaizdavimas
-     async function getAllDrinks(){ // https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink
+    async function getAllDrinks(){ // https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink
         const categoryDrinksUrls =  []; //masyvas uzpildomas ciklo eigoje
         for (const category of selectValues.categories){ //Cikle einame per visas turimas kategorijas "selectValues.categories"
             let dynamicUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category.replaceAll(" ", "_")}`; //Dinaminis url generuojamas kiekvienai kategorijai
@@ -111,7 +111,7 @@
     }
 
     // async nes filtracijos metu kreipsimes i API kad gauti gerimus pagal pateiktus filtrus (lokali filtracija kai nurodytas gerimo pavadinimas bet kai nurodyti selectai kreipiamasi i API )
-    async function filter (){  //parametru nera nes juos gausim is select inputu. Funkcija suveikia tik kai paspaudziamas mygtukas
+    async function filter (event){  //parametru nera nes juos gausim is select inputu. Funkcija suveikia tik kai paspaudziamas mygtukas
         const searchValue = coctailNameFilterElement.value, //is pirmo filtruos pagal name ir poto ziures pagal selectus
                 category =  categorySelectElement.value,
                 glass = glassSelectElement.value,
@@ -174,32 +174,37 @@
            console.log(filteredArray); // matomi isfiltruoti gerimai pagal 1-2-3-4 laukelius
 
            generateDrinksHTML(filteredArray); //kad atvaizduoti filtracijos rezultata reikia iskviesti "generateDrinksHTML" su parametru "filteredArray"
-           buttonReset.style.display = 'block';
-           noteOfDrinks.style.display = 'none';
-
+        //    noteOfDrinks.style.display = 'none';
+        //    note.style.display = 'block';
+        //    buttonReset.style.display = 'none'; 
 
         // LocalStorage: filtru saugojimas (Pries validation, kitaip neklausys siu nurodymu)
         saveFiltersToLocalStorage();
 
         // Validations: jei joks filtras nepasirinktas
-        if (!coctailNameFilterElement.value && categorySelectElement.value === 'Select Category...' && glassSelectElement.value === 'Select Glass Type...' && ingredientSelectElement.value === 'Select Ingredient...') {
-            note.innerText = 'Please, use at least one filter field !';
+        // pridedamas event.target.id === 'search' ---> kad veiktu tik kai paspaudziama search button
+        if (event.target.id === 'search' && !coctailNameFilterElement.value && categorySelectElement.value === 'Select Category...' && glassSelectElement.value === 'Select Glass Type...' && ingredientSelectElement.value === 'Select Ingredient...') {
             note.style.display = 'block';
+            note.innerText = 'Please, use at least one filter field !';
             note.style.backgroundColor = 'rgba(250, 235, 215, 0.24);';
-            buttonReset.style.display = 'none';
             return;
         } else {
-            note.style.display = 'none';
+            // note.style.display = 'none';
+            buttonReset.style.display = 'block'; 
+            buttonReset.innerText = 'Reset Filters';
+            noteOfDrinks.style.display = 'none';
         }
-
           // Jei nera jokiu results po filtering
-            if (filteredArray.length === 0) {
+        if (filteredArray.length === 0) {
             note.innerText = 'No results found with the selected filters 🥲';
             note.style.display = 'block';
             note.style.backgroundColor = 'rgba(250, 235, 215, 0.24);';
             return;
         } else {
-            note.style.display = 'none';
+            // note.style.display = 'none';
+            buttonReset.style.display = 'block'; 
+            buttonReset.innerText = 'Reset Filters';
+            noteOfDrinks.style.display = 'none';
         }
     }
 
@@ -213,6 +218,7 @@
         generateDrinksHTML(drinksArray);
         buttonReset.style.display = 'none';
         note.style.display = 'none';
+        noteOfDrinks.style.display = 'none';
 
     // LocalStorage: filtru salinimas
     localStorage.removeItem('filters');
@@ -319,13 +325,17 @@
         const drinks = object.drinks;
         console.log(drinks);
         if (drinks !== null) {
-        generateDrinksHTML(drinks);
-        note.style.display = 'none';
-        noteOfDrinks.style.display = 'none';
+            generateDrinksHTML(drinks);
+            note.style.display = 'none';
+            noteOfDrinks.style.display = 'none';
+            buttonReset.style.display = 'block'; 
+            buttonReset.innerText = 'See all drinks !';
         } else {
             generateDrinksHTML([]);
             noteOfDrinks.style.display = 'block';
             noteOfDrinks.style.backgroundColor = 'rgba(250, 235, 215, 0.24);';
+            buttonReset.style.display = 'block'; 
+            buttonReset.innerText = 'See all drinks !';
         }
     }
   
@@ -353,7 +363,6 @@
         createAlphabeticalLinks()
     }
     initialization();
-
 
 // -------------------LOCAL STORAGE-------------------------------
 //1. Function "saveFiltersToLocalStorage()" -----> Sukurti funkcija kuri issaugo selected filter value to localStorage
