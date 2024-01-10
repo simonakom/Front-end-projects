@@ -189,7 +189,7 @@
             note.style.backgroundColor = 'rgba(250, 235, 215, 0.24);';
             return;
         } else {
-            // note.style.display = 'none';
+            note.style.display = 'none';
             buttonReset.style.display = 'block'; 
             buttonReset.innerText = 'Reset Filters';
             noteOfDrinks.style.display = 'none';
@@ -201,7 +201,7 @@
             note.style.backgroundColor = 'rgba(250, 235, 215, 0.24);';
             return;
         } else {
-            // note.style.display = 'none';
+            note.style.display = 'none';
             buttonReset.style.display = 'block'; 
             buttonReset.innerText = 'Reset Filters';
             noteOfDrinks.style.display = 'none';
