@@ -32,6 +32,7 @@ section {
     max-width:80%;   
     margin: auto;
     font-size: 15px;
+    line-height: 20px;
 }
 /* .p-header {
     position: relative;
