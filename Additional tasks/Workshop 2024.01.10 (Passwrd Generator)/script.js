@@ -48,6 +48,7 @@ copy.addEventListener("click", () => {
         // alert("Password is copied succesfully! ")
         note.style.display = 'block';
         note.innerText = "Password is copied succesfully !"
+        note.style.backgroundColor = 'rgba(104, 154, 105, 0.379)';
     }
 })
 
