@@ -81,12 +81,14 @@ span {
 }
 .form-filed {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     padding: 12px 0;
     border-bottom: 1px solid rgba(136, 110, 126, 0.281);
     font-size: 1.3rem;
     color: rgba(49, 53, 55, 0.864);
+    
 }
 #p-length {
     width: 15%;
