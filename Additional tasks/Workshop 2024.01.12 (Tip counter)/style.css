@@ -1,0 +1,99 @@
+ body {
+        background-color: rgb(14, 94, 94);
+        overflow: hidden;
+      }
+      h2 {
+        text-align: center;
+      }
+
+      label {
+        font-size: 17px;
+        font-weight: bold;
+      }
+
+      .tipContainer {
+        background-color: rgba(118, 253, 246, 0.596);
+        border-radius: 10px;
+        padding: 3rem;
+        margin-top: 7rem;
+        box-shadow: 1px 1px 10px rgba(1, 14, 16, 0.584); 
+
+      }
+      .image-div {
+        position: absolute;
+        top: 30vh;
+        left: -15px;
+        width: 30%;
+        display: none;
+      }
+      #blockingDiv {
+        position: absolute;
+        top: 0;
+        left: 47%;
+        height: 56%;
+        width: 50%;
+        background-color: rgb(14, 94, 94);
+      }
+
+      #onTop {
+        position: absolute;
+        top: 0;
+        left: 40%;
+        width: 50%;
+        transform: rotate(180deg);
+      }
+      .image-div2 {
+        position: absolute;
+        top: 0;
+        left: 40%;
+        transform: rotate(-90deg);
+        width: 15%;
+        display: none;
+      }
+      .image-div3 {
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        width: 15%;
+        display: none;
+      }
+      #tipJar {
+        position: absolute;
+        right: -25%;
+        top: 120%;
+        width: 180%;
+        height: 200%;
+      }
+      .icon {
+        width: 60px;
+        height: 60px;
+      }
+
+      .letter-spacing {
+        font-size: 20px;
+        font-weight: bold;
+        /* letter-spacing: 5px; */
+      }
+      /* .textarea {
+        display: none;
+      } */
+
+      #noTipText {
+        display: none;
+        background-color: rgba(216, 150, 175, 0.651); 
+        color:  #fff9f9;
+        box-shadow:  2px 5pxrgba(205, 191, 191, 0.625); 
+        border-radius: 20px;
+        margin: 10px 50px 10px 50px;
+        padding: 10px 20px 10px 20px;
+      }
+     
+      #calculate:hover{
+        background-color: rgba(255, 255, 255, 0.347);
+        color: rgb(4, 1, 1);
+        border: none;
+        box-shadow: 1px 1px 10px rgba(69, 87, 102, 0.232); 
+        transform: scale(0.9);
+        transition: transform 0.3s ease-in-out;
+        opacity: 0.8;
+    }   
