@@ -50,6 +50,8 @@
 
 <h4>• "Password generator" sample - <a href="https://simonakom.github.io/Namu-darbai/Additional tasks/Workshop 2024.01.10 (Passwrd Generator)/index.html">View</a><h4>
 
+<h4>• "Tip Counter" sample - <a href="https://simonakom.github.io/Namu-darbai/Additional tasks/Workshop 2024.01.12 (Tip counter)/index.html">View</a><h4>
+
 <h4 style="font-size: 20px;">📁 Javascript CRUD <h4> 
 
 <h4>• "Catalog of Products" DOM Manipulation sample - <a href="https://simonakom.github.io/Namu-darbai/JS - objects (CRUD)/DOM Manipulation/products.html">View</a><h4>
