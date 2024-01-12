@@ -4,72 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tip App</title>
-    <link rel="icon" href="fall-in-value.png"/>
+    <link rel="icon" href="dollar.png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
     <body>
-        <section
-          class="d-flex justify-content-center align-items-center"
-          style="height: 100vh"
-        >
-          <div class="tipContainer">
-            <div class="header d-flex">
-              <img class="icon" src="tips.png" alt="" />
-              <h2 class="fs-1 mb-5 mx-2">Tip calculator</h2>
+        <section class="d-flex flex-column align-items-center">
+            <div class="header">
+              <h2 class="fs-1 m-5 mx-2">Tip calculator</h2>
             </div>
+
+          <div class="tipContainer text-center px-5 pb-4 pt-4 mx-4">
             <div class="body">
-              <form>
-                <div class="pb-3 d-flex justify-content-between">
-                  <label for="bill">Bill amount:</label>
-                  <input
-                    class="border-0 rounded-2"
-                    type="number"
-                    id="bill"
-                    name="bill"
-                  />
-                </div>
-                <div class="pb-3 d-flex justify-content-between">
-                  <label for="tip">Tip percentage:</label>
-                  <select class="px-3 rounded-2" id="tip" name="tip" onchange="ShowTextArea()">
-                    <option value="" selected>Choose the tip</option>
-                    <option value="0">no tip - bad</option>
-                    <option value="5">5% - medium</option>
-                    <option value="10">10% - Good</option>
-                    <option value="25">25% - Exelent</option>
-                  </select>
-                </div>
-                <textarea class="textarea form-control mb-4" aria-label="With textarea" placeholder="Please, comment your choice here..." id="commentTextArea" style="display: none;"></textarea>
-                <button class="btn btn-dark w-100 mb-3 letter-spacing" type="submit" id="calculate">Calculate</button>
+              <img class="icon mb-4" src="tips.png" alt="Tips icon"/>
+              <form class="d-flex flex-column align-items-center">
+                  <div class="input-group pb-3 d-flex justify-content-between">
+                    <span class="input-group-text" id="basic-addon1">Bill amount:</span>
+                    <input type="number" id="bill" name="bill" class="form-control" placeholder="Type mumber..." aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group pb-3">
+                    <label class="input-group-text pe-5" for="tip">Tip %:</label>
+                    <select class="form-select" id="tip" name="tip" onchange="ShowTextArea()">
+                      <option disabled selected>Choose the tip...</option>
+                      <option value="0">No tips!</option>
+                      <option value="5">5% - Average</option>
+                      <option value="10">10% - Good</option>
+                      <option value="25">25% - Exelent!</option>
+                    </select>
+                  </div>
+                <textarea class="textarea form-control mt-2 mb-4" aria-label="With textarea" placeholder="Please, comment your choice here..."></textarea>
+                <button type="button" class="submitBtn btn btn-dark px-5 mb-4 rounded-5">Submit</button>
+                <button type="button" class="btn btn-dark px-5 mb-4 rounded-5" id="calculate">Calculate</button>
               </form>
             </div>
-            <div class="footer">
-              <div class="d-flex justify-content-between">
-                <h3 class=".text-dark">Tip:</h3>
-                <h3 id="finalTip">$0.00</h3>
+
+            <div class="footer d-flex flex-column align-items-center">
+              <div class="result px-5 pb-4 pt-3">
+                  <div class="line d-flex justify-content-between">
+                      <h3 class=".text-dark">Tip:</h3>
+                      <h3 id="finalTip">0.00$</h3>
+                  </div>
+                  <div class="line d-flex justify-content-between">
+                      <h3 class=".text-dark">Total:</h3>
+                      <h3 id="total">0.00$</h3>
+                  </div>
               </div>
-              <div class="d-flex justify-content-between">
-                <h3 class=".text-dark">Total:</h3>
-                <h3 id="total">$0.00</h3>
-              </div>
-              <p id="noTipText">Please choose a tip percentage !</p>
+              <p class="note mt-2 px-3 py-2">Please choose a bill amount!</p>
             </div>
-            <div class="image-div">
+
+              <div class="image-div">
+                  <div id="blockingDiv"></div>
+                  <img class="img-fluid" src="coin-toss.png" alt="" />
+                  <img class="img-fluid" id="onTop" src="fall-in-value.png" alt="" />
+              </div>
+              <div class="image-div2">
+                <img class="img-fluid" src="fall-in-value.png" alt="" />
+              </div>
+              <div class="image-div3">
+                <img class="img-fluid" src="fall-in-value.png" alt="" />
+              </div>
               <div>
-                <div id="blockingDiv"></div>
-                <img class="img-fluid" src="coin-toss.png" alt="" />
+                <img id="tipJar" src="tip.png" alt="" />
               </div>
-              <img class="img-fluid" id="onTop" src="fall-in-value.png" alt="" />
-            </div>
-            <div class="image-div2">
-              <img class="img-fluid" src="fall-in-value.png" alt="" />
-            </div>
-            <div class="image-div3">
-              <img class="img-fluid" src="fall-in-value.png" id="fallingCoin" alt="" />
-              <img id="tipJar" src="tip.png" alt="" />
-            </div>
           </div>
         </section>
         <script src="script.js"></script>

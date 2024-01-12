@@ -1,99 +1,197 @@
- body {
-        background-color: rgb(14, 94, 94);
-        overflow: hidden;
-      }
-      h2 {
-        text-align: center;
-      }
+  body {
+    background-color: rgb(64, 107, 107);
+    overflow: hidden;
+  }
+  section{
+    max-width: 2560px;
+    max-height: 1600px ;
+  }
+  h2 {
+    text-align: center;
+    color: rgb(189, 229, 229);
+  }
+  .tipContainer {
+    background-color: rgba(118, 253, 246, 0.596);
+    border-radius: 30px;
+    box-shadow: 1px 1px 10px rgba(1, 14, 16, 0.584);
+  }
+  .icon {
+    width: 20%;
+  }
+  .input-group-text{
+    background-color: rgba(207, 200, 208, 0.848);
+    border: none;
+    /* width: 40%; */
+  }
+  .input-group input {
+    background-color: rgb(172, 237, 237);
+    border: none;
+  }
+  .input-group select {
+    background-color: rgb(172, 237, 237);
+    border: none;
+    color: #445859;
+  }
+  .textarea{
+    display: none;
+    width: 80%;
+    background-color: #b9e3d6;
+  }
+  #calculate {
+    background-color: rgba(0, 0, 0, 0.651);
+    border: none;
+    color: #f4f4f4;
+    box-shadow: 1px 1px 5px rgba(111, 118, 119, 0.584);
+  }
+  #calculate:hover{
+    background-color: #08f2a6;
+    color: rgb(0, 0, 0);
+    border: none;
+    box-shadow: 1px 1px 10px rgba(69, 87, 102, 0.232); 
+    transform: scale(1.06);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+  }   
+  .submitBtn {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.651);
+    border: none;
+    color: #f4f4f4;
+    box-shadow: 1px 1px 5px rgba(111, 118, 119, 0.584);
+  }
+  .submitBtn:hover{
+    background-color: #08f2a6;
+    color: rgb(0, 0, 0);
+    border: none;
+    box-shadow: 1px 1px 10px rgba(69, 87, 102, 0.232); 
+    transform: scale(1.06);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+  } 
+  .result {
+    display: none;
+    background-color: rgba(172, 237, 237, 0.493);
+    border-radius: 50px;
+    color: #445859;
+    box-shadow: 1px 1px 10px rgba(1, 14, 16, 0.152);
+    width: 80%;
+  }
+  .line{
+    border-bottom: 2px dashed #ffffff59; 
+  }
+  .note {
+    display: none;
+    background-color: rgba(216, 150, 175, 0.651); 
+    color:  #fff9f9;
+    box-shadow:  2px 5pxrgba(205, 191, 191, 0.625); 
+    border-radius: 20px;
+    width: 100%;
+  }
 
-      label {
-        font-size: 17px;
-        font-weight: bold;
-      }
 
-      .tipContainer {
-        background-color: rgba(118, 253, 246, 0.596);
-        border-radius: 10px;
-        padding: 3rem;
-        margin-top: 7rem;
-        box-shadow: 1px 1px 10px rgba(1, 14, 16, 0.584); 
 
+/* Coin */
+    .image-div {
+      position: absolute;
+      top: 30vh;
+      left: -15px;
+      width: 20%;
+      display: none;
+    }
+    #blockingDiv {
+      position: absolute;
+      top: 0;
+      left: 47%;
+      height: 56%;
+      width: 50%;
+      background-color: rgb(64, 107, 107);
+    }
+    #onTop {
+      position: absolute;
+      top: 0;
+      left: 40%;
+      width: 40%;
+      transform: rotate(180deg);
+    }
+    .image-div2 {
+      position: absolute;
+      top: 0;
+      left: 20%;
+      transform: rotate(-1200deg);
+      width: 10%;
+      display: none;
+    }
+    .image-div3 {
+      position: absolute;
+      top: 45%;
+      right: 3%;
+      width: 10%;
+      display: none;
+      animation: moveUpDown 5s linear infinite;
+
+    }
+    #tipJar {
+      position: absolute;
+      right: 0%;
+      top: 70%;
+      width: 17%;
+      display: none;
+      animation: vibrate 0.5s ease-in-out infinite; 
+    }
+ 
+
+    @keyframes vibrate {
+      0% {
+        transform: translateY(0);
       }
+      25% {
+        transform: translateY(-5px);
+      }
+      50% {
+        transform: translateY(5px);
+      }
+      75% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    @keyframes moveUpDown {
+      0% {
+        top: 15%; /* Starting position */
+      }
+      50% {
+        top: 85%; /* Midway point, adjust based on your layout */
+      }
+      100% {
+        top: 15%; /* Ending position */
+      }
+    }
+
+    @media only screen and (max-width: 960px) {  
       .image-div {
-        position: absolute;
-        top: 30vh;
-        left: -15px;
-        width: 30%;
-        display: none;
-      }
-      #blockingDiv {
-        position: absolute;
-        top: 0;
-        left: 47%;
-        height: 56%;
-        width: 50%;
-        background-color: rgb(14, 94, 94);
-      }
-
-      #onTop {
-        position: absolute;
-        top: 0;
-        left: 40%;
-        width: 50%;
-        transform: rotate(180deg);
+          display: none !important
       }
       .image-div2 {
-        position: absolute;
-        top: 0;
-        left: 40%;
-        transform: rotate(-90deg);
-        width: 15%;
-        display: none;
-      }
-      .image-div3 {
-        position: absolute;
-        top: 15%;
-        right: 5%;
-        width: 15%;
-        display: none;
+        display: none !important
       }
       #tipJar {
-        position: absolute;
-        right: -25%;
-        top: 120%;
-        width: 180%;
-        height: 200%;
+        display: none !important
+      }    
+      .image-div3 {
+        display: none !important
       }
-      .icon {
-        width: 60px;
-        height: 60px;
-      }
-
-      .letter-spacing {
-        font-size: 20px;
-        font-weight: bold;
-        /* letter-spacing: 5px; */
-      }
-      /* .textarea {
-        display: none;
-      } */
-
-      #noTipText {
-        display: none;
-        background-color: rgba(216, 150, 175, 0.651); 
-        color:  #fff9f9;
-        box-shadow:  2px 5pxrgba(205, 191, 191, 0.625); 
-        border-radius: 20px;
-        margin: 10px 50px 10px 50px;
-        padding: 10px 20px 10px 20px;
-      }
-     
-      #calculate:hover{
-        background-color: rgba(255, 255, 255, 0.347);
-        color: rgb(4, 1, 1);
-        border: none;
-        box-shadow: 1px 1px 10px rgba(69, 87, 102, 0.232); 
-        transform: scale(0.9);
-        transition: transform 0.3s ease-in-out;
-        opacity: 0.8;
-    }   
+  }
+  @media only screen and (max-width: 660px) {  
+    .icon {
+      width: 25%;
+    }
+}
+@media only screen and (max-width: 420px) {  
+  .icon {
+    width: 40%;
+  }
+}
+    
+  
