@@ -24,11 +24,11 @@
     /* width: 40%; */
   }
   .input-group input {
-    background-color: rgb(172, 237, 237);
+    background-color: rgba(210, 228, 228, 0.5);
     border: none;
   }
   .input-group select {
-    background-color: rgb(172, 237, 237);
+    background-color: rgba(210, 228, 228, 0.5);
     border: none;
     color: #445859;
   }
