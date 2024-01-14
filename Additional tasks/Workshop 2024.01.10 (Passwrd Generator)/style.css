@@ -115,6 +115,9 @@ span {
     transition: transform 0.3s ease-in-out;
     opacity: 0.8;
 }   
+.color {
+    background-color: rgba(240, 198, 242, 0.393);
+}
 @media only screen and (max-width: 470px) {  
     img {
         width: 40%;
