@@ -81,9 +81,9 @@
   }
   .note {
     display: none;
-    background-color: rgba(216, 150, 175, 0.651); 
+    background-color: rgba(201, 98, 120, 0.37); 
     color:  #fff9f9;
-    box-shadow:  2px 5pxrgba(205, 191, 191, 0.625); 
+    box-shadow:  2px 5px rgba(205, 191, 191, 0.625); 
     border-radius: 20px;
     width: 100%;
   }

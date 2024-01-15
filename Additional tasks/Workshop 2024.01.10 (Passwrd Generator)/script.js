@@ -41,6 +41,7 @@ copy.addEventListener("click", () => {
     if (password.value === "") {
         // alert ("Please, first generate your password !")
         note.style.display = 'block';
+        note.style.backgroundColor = 'rgba(201, 98, 120, 0.37)';
     }
     else {
         password.select()
@@ -48,7 +49,7 @@ copy.addEventListener("click", () => {
         // alert("Password is copied succesfully! ")
         note.style.display = 'block';
         note.innerText = "Password is copied succesfully !"
-        note.style.backgroundColor = 'rgba(104, 154, 105, 0.379)';
+        note.style.backgroundColor = 'rgba(67, 121, 91, 0.481)';
     }
 })
 
