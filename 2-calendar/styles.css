@@ -1,4 +1,3 @@
-/* Title+Subtitle+Color */
 
 .calendar_title {
     text-align: center;
@@ -6,55 +5,43 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 55px;
     margin-top: 30px;
-    
+    } 
+.web_title {
+    text-align: center;
+    font-weight: 300;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     }
-    
-    .web_title {
-        text-align: center;
-        font-weight: 300;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 25px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        }
-    
-    .red {
-        color: red;
-    }
-    
-
-/* Table */
-
+.red {
+    color: red;
+}
 body {
     margin-bottom: 80px;
 }
-
-    .table_frame {
-        border: 2px solid black;
-        border-collapse: collapse;  
-        width: 65%;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        /* table appears in the middle of page */
-        margin: 0 auto;
-    }
-
-    .cell_frame {
-        border-right: 2px solid black;
-        border-bottom: 2px solid black;
-        
-        padding-right: 5mm;
-        padding-left: 5mm ;
-        padding-top: 1mm ;
-        padding-bottom: 1mm;
-    }
-
-    .inner_table {
-        width: 100%;
-        text-align: center;
-        height: 5cm;
-        
-    }
-
-    .weekdays {
-        font-weight: 600;
-    }
+.table_frame {
+    border: 2px solid black;
+    border-collapse: collapse;  
+    width: 65%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* table appears in the middle of page */
+    margin: 0 auto;
+}
+.cell_frame {
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    
+    padding-right: 5mm;
+    padding-left: 5mm ;
+    padding-top: 1mm ;
+    padding-bottom: 1mm;
+}
+.inner_table {
+    width: 100%;
+    text-align: center;
+    height: 5cm;   
+}
+.weekdays {
+    font-weight: 600;
+}
