@@ -4,13 +4,11 @@
     src: url('fonts/circularstd-book-webfont.woff') format('woff');
     font-weight: 300;
 }
-
 @font-face {
     font-family: "CircularSTD";
     src: url('fonts/circularstd-bold-webfont.woff') format('woff');
     font-weight: 600;
 }
-
 @font-face {
     font-family: "CircularSTD";
     src: url('fonts/circularstd-black-webfont.woff') format('woff');
@@ -21,7 +19,6 @@
     --bs-border-radius: 1.5rem;
     --primary-color: #F85E9F;
 }
-
 body {
     font-family: "CircularSTD";
     background-image: url(images/background.png);
@@ -29,53 +26,41 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
-
 .container-lg {
-    margin-left: 6rem;
+    /* margin-left: 6rem; */
 }
-
 img {
     max-width: 100%;
 }
-
 /* Header */
-
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
 header {
     padding: 2.25rem 0;
 }
-
 nav.navbar {
     font-size: 14px;
 }
-
 nav.navbar a {
     color: #19182588;
     text-decoration: none;
     font-weight: 600;
 }
-
 nav.navbar li.active a {
     color: #222831;
 }
-
 .hover:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease-in-out;
     opacity: 0.8;
- }
-
+}
 /* Section Home */
-
 section.home .decoration {
     position: relative;
 }
-
 section.home .decoration::before {
     content: "";
     background: url(images/deco.png) no-repeat center center;
@@ -86,7 +71,6 @@ section.home .decoration::before {
     bottom: -80px;
     left: -71px;
 }
-
 .btn {
     --bs-btn-padding-y: .9rem;
     --bs-btn-padding-x: 2rem;
@@ -99,13 +83,10 @@ section.home .decoration::before {
    --bs-btn-hover-bg: #EEEEEE;
    --bs-btn-hover-border-color: #EEEEEE;
 }
-
-     /* added height to adjust to singup button  */
-     .btn-empty {
-        max-height: 51px;
-        }
-
-
+/* added height to adjust to singup button  */
+.btn-empty {
+    max-height: 51px;
+}
 .btn-primary {
     --bs-btn-bg: #5D50C6;
     --bs-btn-hover-bg: #5245b0;
@@ -117,7 +98,6 @@ section.home .decoration::before {
     align-items: center;
     justify-content: center;
 }
-
 .shadow {
      box-shadow: 0 15px 15px 0 #00000012;
     --bs-btn-color: var(--primary-color);
@@ -126,7 +106,6 @@ section.home .decoration::before {
     gap: 10px;
     align-items: center;
 }
-
 .btn-shadow {
     box-shadow: 0 15px 15px 0 #00000012;
     --bs-btn-color: var(--primary-color);
@@ -135,7 +114,6 @@ section.home .decoration::before {
     gap: 10px;
     align-items: center;
 }
-
 .btn-shadow::after {
     content: "";
     background: url('icons/1.svg');
@@ -143,28 +121,23 @@ section.home .decoration::before {
     height: 24px;
     display: block;
 }
-
 .home h2 {
     font-size: 69px;
     font-weight: 600;
     line-height: 120%;
 }
-
 .home h2 span {
     color: var(--primary-color);
 }
-
 .home p {
     font-family: Inter;
     font-size: 18px;
     color: #19182580;
 }
-
 .buttons {
     display: flex;
     gap: 1rem;
 }
-
 .btn-outline-primary {
     --bs-btn-border-color: #EEEEEE;
     --bs-btn-color: #222831;
@@ -176,7 +149,6 @@ section.home .decoration::before {
     align-items: center;
     gap: .5rem;
 }
-
 .btn-outline-primary::before {
     content: "";
     background: url(icons/2.svg) no-repeat center center;
@@ -184,19 +156,13 @@ section.home .decoration::before {
     height: 24px;
     display: block;
 }
-
 .hamburger {
     border: none;
     width: 48px;
     height: 49px;
     background: url(icons/14.svg) no-repeat center center;
 }
-
-
-
 /* Section Services */
-
-
 .section-heading h3 {
     text-transform: uppercase;
     color: var(--primary-color);
@@ -204,61 +170,50 @@ section.home .decoration::before {
     font-weight: bold;
     letter-spacing: 5px;
 }
-
 .section-heading h2 {
     font-size: 44px;
     font-weight: bold;
     line-height: 120%;
     margin: 1rem 0 0;
 }
-
 .service {
     height: 100%;
     transition: all .5s ease-in-out;
     border: 1px solid rgb(25, 24, 27, .1);
 }
-
 .service:hover {
     box-shadow: 0 0 25px 0px rgba(0, 0, 0, .1); 
     border-color: white;
 }
-
 .service h3 {
     font-weight: 600;
     font-size: 28px;
 }
-
 .service p {
     color: #19182584;
     font-family: Inter;
     font-size: 18px;
 }
-
 /* Section destination */
-
 .destination {
     background-color: white;
     box-shadow: 0 0 25px 0px rgba(0, 0, 0, .1); 
 }
-
 .destination h3 {
     font-size: 23px;
     font-weight: bold;
 }
-
 .destination .price {
     font-size: 23px;
     font-weight: bold;
     color: var(--primary-color);
 }
-
 .destination .location {
     color: rgba(25, 24, 37, 0.752);
     font-family: Inter;
     font-size: 18px;
     margin-top: .5rem;
 }
-
 .destination .rating {
     color: #FF5722;
     font-size: 23px;
@@ -268,7 +223,6 @@ section.home .decoration::before {
     align-items: center;
     gap: 8px;
 }
-
 .destination .rating::after {
     content: "";
     background: url(icons/5.svg) no-repeat center center;
@@ -277,13 +231,11 @@ section.home .decoration::before {
     display: block;
     margin-top: -3px;
 }
-
 .arrows {
     display: flex;
     justify-content: end;
     gap: 2rem;
 }
-
 .arrows a {
     display: flex;
     width: 100px;
@@ -294,34 +246,27 @@ section.home .decoration::before {
     border-radius: 50%;
     transition: all .5s ease-in-out;
 }
-
 .arrows svg {
     fill: #191825;
     transition: all .5s ease-in-out;
 }
-
 .arrows a:hover {
     background-color: #5D50C6;
     border-color: #5D50C6;
 }
-
 .arrows a:hover svg {
     fill: white;
 }
-
 /* Section travel */
-
 .travel p {
     color: rgba(25, 24, 37, 0.50);
     font-family: Inter;
     font-size: 18px;
     margin: 1.5rem 0 4rem;
 }
-
 section.travel .decoration {
     position: relative;
 }
-
 section.travel .decoration::before {
     content: "";
     background: url(images/discount-icon.png) no-repeat center center;
@@ -332,35 +277,29 @@ section.travel .decoration::before {
     bottom: 143px;
     left: 1050px;
 }
-
 /* Section feature */
-
 .feature {
     border: 1px solid rgb(25, 24, 27, .1);
     text-align: center;
     border-radius: 25px;
     padding: 2rem 0;
 } 
-
 .feature h3 {
     color: #FF5722;
     font-size: 35px;
     font-weight: bold;
     margin: 0 0 .7rem;
 }
-
 .feature span {
     color: #191825;
     font-family: Inter;
     font-size: 18px;
 }
-
 .travel .image {
     background: url(images/discount.png) no-repeat 70% 0;
     height: 100%;
     position: relative;
 }
-
 .travel .image::before {
     content: "";
     background-color: #facd49;
@@ -371,11 +310,9 @@ section.travel .decoration::before {
     top: 129px;
     left: -1000%;
 }
-
 .offer {
     margin-top: 4rem;
 }
-
 .offer .text {
     color: rgba(25, 24, 37, 0.50);
     font-family: Inter;
@@ -383,8 +320,6 @@ section.travel .decoration::before {
     margin: 1.5rem 0 4rem; 
     line-height: 160%;
 }
-
-
  .option h3 {
     color: #191825;
     font-size: 23px;
@@ -393,52 +328,61 @@ section.travel .decoration::before {
     line-height: 120%; 
     margin-bottom: 10px;
 }
-
-
  .option p {
     color: rgba(25, 24, 37, 0.50);
     font-size: 18px;
     font-style: normal;
     line-height: 160%; 
 }
-
 .option img {
     margin-right: 2rem;
 }
-
 .option{
     padding: 20px;
 }
-
 .option:hover {
     border: 1px solid rgb(25, 24, 27, .1);
     border-radius: 25px;
     padding: 20px;
 }
-
 .offer .church {
     height: 100%;
     width: 120%;
     margin-left: 3rem;
 }
-
 /* Section Testimonials*/
-
-
-.testimonials  {
+/* .testimonials  {
     position: relative;
     background-image: url(images/bg-shape.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
-    width: 100%
+    width: 100%;
+    z-index: 2;
+} */
+
+.testimonials {
+    position: relative;
+    width: 100%;
+    z-index: 1;
 }
-
-
+.testimonials::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(images/bg-shape.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Adjust the opacity as needed */
+    z-index: 2; 
+}
  .testimonials span {
     color:#FF5722;
     font-size: 28px;
-
  }
  .enthusiast {
     color: rgba(25, 24, 37, 0.75);
@@ -446,13 +390,11 @@ section.travel .decoration::before {
     font-weight: bold;
     margin-bottom: 20px;
  }
-
  .testimonials p {
     color: rgba(25, 24, 37, 0.75);
     font-size: 23px;
     text-align: center;
  }
-
  .dots a {
     background: #19182513;
     border-radius: 50%;
@@ -461,49 +403,38 @@ section.travel .decoration::before {
     height: 24px;
     transition: all 0.5s ease-in-out;
   }
-
   .dots a:nth-child(2) {
     background: var(--primary-color);
   }
-
   .space {
     padding-top: 300px;
  }
-
-
 /* Section Subscribe*/
-
 .subscribe .container-lg {
     border-radius: 32px;
     background: rgba(250, 205, 73, 0.08);
     margin-top: 100px;
 }
-
 .subscribe p {
     color: var(--grey-scale-black, #191825);
     font-size: 55px;
     font-weight: bold;
     line-height: 120%;
 }
-
 .input-group span  {
     background: #FFF;
     border: #FFF;
     border-radius: 32%; 
 }
-
 .input-group .form-control {
     background: #FFF;
     border: #FFF;
     height: 80px;
     width: 480px;
 }
-
-
 section.subscribe .decoration {
     position: relative;
 }
-
 section.subscribe .decoration::before {
     content: "";
     background: url(images/deco2.png) no-repeat center center;
@@ -514,27 +445,20 @@ section.subscribe .decoration::before {
     bottom: 75px;
     left: -35px;
 }
-
-
 /* Footer*/
-
-
 footer {
     padding-bottom: 2rem;
     padding-top: 5rem;
 }
-
 footer p {
     color: rgba(25, 24, 37, 0.50);
     font-size: 23px;
     margin: 2rem 0 3rem;
 }
-
 footer .social ul {
     display: flex;
     gap: 2rem;
 }
-
 footer .social a {
     background-color: #5D50C6;
     width: 32px;
@@ -544,15 +468,12 @@ footer .social a {
     justify-content: center;
     border-radius: 50%;
 }
-
 footer .social a svg {
     fill: white;
 }
-
 footer .social ul > li:nth-child(1) a svg {
     transform: scale(.8);
 }
-
 footer .footer-links li,
 footer .footer-links a {
     font-size: 18px;
@@ -560,28 +481,22 @@ footer .footer-links a {
     color: #191825c7;
     text-decoration: none;
 }
-
 footer .footer-links li {
     padding: .8rem 0;
 }
-
 footer .footer-links a:hover {
     text-decoration: underline;
 }
-
 footer h3 {
     font-weight: bold;
     font-size: 23px;
 }
-
 footer .decoration {
     position: relative;
 }
-
 footer .decoration {
     position: relative;
 }
-
 footer .decoration::after {
     content: "";
     background: url(images/deco3.png) no-repeat center center;
@@ -594,16 +509,11 @@ footer .decoration::after {
 }
 
 
-
-
-
-
 @media screen and (min-width: 992px) {
     nav.navbar {
         display: block;
     }
 }
-
 @media screen and (max-width: 992px) {
     nav.navbar {
         position: fixed;
@@ -618,7 +528,6 @@ footer .decoration::after {
         border-right: 1px solid rgb(153 153 153);
         transition: left .5s ease-in-out;
     }
-
     nav.navbar::after {
         content: "";
         position: fixed;
@@ -629,40 +538,32 @@ footer .decoration::after {
         height: 100vh;
         transition: left .5s ease-in-out;
     }
-
     input[name="nav-toggler"]:checked + nav {
         display: block;
         left: 0;
     }
-
     input[name="nav-toggler"]:checked + nav::after {
         left: 280px;
     }
-
     body {
-        background-image: url(images/Tablet.png);
+        background-image: url(images/tablet.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
     }
-
     .section-heading {
         text-align: center;
     }
-
     .arrows {
         justify-content: center; 
         align-items: center;
     }
-
     section.destinations .decoration::before { 
         display: none;
     }
-
     section.travel .decoration::before { 
         display: none;
     }
-
     footer .decoration::after {
         content: "";
         background: url(images/deco3.png) no-repeat center center;
@@ -673,36 +574,28 @@ footer .decoration::after {
         bottom: 10px;
         right: -220px;
     }
-
     .travel p {
         text-align: center;
     }
-
     .reverse {
         display: flex;
         flex-direction:column-reverse;
     }
-
     .offer .text {
         text-align: center;
     }
 } 
 
-
 @media screen and (max-width: 768px) {
-
     body {
         background-image: none;
     }
-
     section.home h2 {
         font-size: 40px;
     }
-
     section.home .decoration::before { 
         display: none;
     }
-
     .section-heading h2 {
         font-size: 32px;
     }
@@ -712,30 +605,23 @@ footer .decoration::after {
     .travel .image {
         height: 320px;
     }  
-
     .arrows {
         justify-content: space-between;
     }
-
     .testimonials  {
         background-image: none;
     }
-
     .space {
         padding-top: 800px;
      }
-
-
      .column7 {
         display: flex;
         flex-direction: column;  
      }
-
      .flex {
         display: flex;
         flex-direction: column;  
      }
-
      .input-group .form-control {
         background: #FFF;
         border: #FFF;
@@ -745,22 +631,18 @@ footer .decoration::after {
      .btnsubscribe {
         height: 80px;
      }
-     
      footer .decoration::after {
       display: none;
     }
-
     section.subscribe .decoration::before {
         display: none;
     }
 }
 
-
 @media screen and (min-width: 1400px) {
       .p-custom {
         padding-left: 100px;
     }
-
     .container-lg {
         max-width: 1184px;
     }
