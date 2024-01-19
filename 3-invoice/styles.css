@@ -1,11 +1,15 @@
+body {
+    margin: 50px 0px;
+}
 .container {
-    min-width: 70%;
-    margin: 0 auto; 
-    padding: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 40px;
     line-height: 1.4;
     background-color: white;
     border-radius: 60px;
     padding-bottom: 60px;
+    box-shadow: 0px 4px 24px 0px rgba(56, 55, 54, 0.3);
     }
 /* Font */
 h1,td,th{
@@ -167,7 +171,4 @@ width: 150px;
 .height_td{
     height: 40px;
     }
-
-
-
 
