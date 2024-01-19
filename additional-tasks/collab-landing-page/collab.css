@@ -1,14 +1,11 @@
 body {
-    font-family: 'Roboto', sans-serif;}
-
-
+    font-family: 'Roboto', sans-serif;
+}
 /* Header */
-
 .purple {
     background-color: #60267F;
     height: 30px;
 }
-
 .india {
     font-family: 'DM Sans', sans-serif;
     color: #FFF;
@@ -16,18 +13,15 @@ body {
     text-align: center;
     padding-top: 4px;
 }
-
  span a {
     color: #FFF;
 }
- 
 .navigation a {
     text-decoration: none;
     color: #2B0236;
     font-weight: 600;
     font-size: 10px;
 }
-
 .navigation button {
     color: #9A54BC;
     font-weight: 700;
@@ -36,16 +30,12 @@ body {
     border-color: #9A54BC ;
     border-radius: 3px;
 } 
-
 /* 1 section */
-
 .title-1 {
 color: #2B0236;
 font-size: 28.173px;
 font-weight: 500;
 }
-
-
 .btn_1 {
 background: #9A54BC;
 border: 1.482px solid  #9A54BC;
@@ -55,14 +45,11 @@ color: var(--White, #FFF);
 font-size: 10.565px;
 font-weight: 700;
 }
-
-
 .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
+}
 .btn_2 {
     background: var(--White, #FFF);
     border: 2px solid #9A54BC;
@@ -72,11 +59,8 @@ font-weight: 700;
     font-size: 10.565px;
     font-weight: 500;
     margin-top: 300px;
-    }
-
-
+}
 /* 2 section */
-
 .title-2 {
     color: #000;
     text-align: center;
@@ -84,10 +68,7 @@ font-weight: 700;
     font-weight: 500;
     margin-top: 100px;
 }
-
 /* 3 section */
-    
-
 .title-3 {
     color: #000;
     text-align: center;
@@ -95,7 +76,6 @@ font-weight: 700;
     font-weight: 500;
     margin-top: 100px;
 }
-
 .btt1 {
     background: #60267F;
     border: 4px solid rgba(154, 84, 188, 1);
@@ -106,7 +86,6 @@ font-weight: 700;
     font-weight: 700;
     width: 100%;
 }
-
 .btt2 {
     border: none;
     background-color: #FFF;
@@ -116,9 +95,7 @@ font-weight: 700;
     font-size: 15px;
     font-weight: 600;
     width: 100%;
-
-}
-    
+}  
 .row {
     background-color: #F2F2F2;
     font-size: 15px;
@@ -126,7 +103,6 @@ font-weight: 700;
     padding: 30px 20px 30px 20px;
     margin-top: 10px;
 }
-
 .phone{
     width: 60%;
     margin-left: 10rem;
