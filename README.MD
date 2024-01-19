@@ -3,28 +3,28 @@
 
 <h4 style="font-size: 20px;">🎨 HTML/CSS<h4> 
 
-<h4>• Wikipedia page sample - <a href="https://simonakom.github.io/Namu-darbai/1.RichardGere/Richard%20Gere.html" style="font-size:small;">View</a><h4>
+<h4>• Wikipedia page sample - <a href="https://simonakom.github.io/Namu-darbai/1-wikipedia-page/richard-gere.html" style="font-size:small;">View</a><h4>
 
-<h4>• 2023 Year Calendar - <a href="https://simonakom.github.io/Namu-darbai/2.Calendar2023/2023%20Calendar.html" style="font-size:small;">View</a><h4>
+<h4>• 2023 Year Calendar - <a href="https://simonakom.github.io/Namu-darbai/2-calendar/calendar.html" style="font-size:small;">View</a><h4>
 
-<h4>• Invoice sample - <a href="https://simonakom.github.io/Namu-darbai/3.Invoice/invoice.html" style="font-size:small;">View</a><h4>
+<h4>• Invoice sample - <a href="https://simonakom.github.io/Namu-darbai/3-invoice/invoice.html" style="font-size:small;">View</a><h4>
 
-<h4>• "Christmas" Landing page sample - <a href="https://simonakom.github.io/Namu-darbai/4.SamplePage/sample-page.html" style="font-size:small;">View</a><h4>
+<h4>• "Christmas" Landing page sample - <a href="https://simonakom.github.io/Namu-darbai/4-sample-page/sample-page.html" style="font-size:small;">View</a><h4>
 
 <h4>• "Sneaker" home page sample - <a href="https://simonakom.github.io/Namu-darbai/Additional%20tasks/Sneaker/sneaker.html">View</a><h4>
 
-<h4>• Contact Form sample - <a href="https://simonakom.github.io/Namu-darbai/5.ContactForm/contactform(with responsive).html" style="font-size:small;">View</a><h4>
+<h4>• Contact Form sample - <a href="https://simonakom.github.io/Namu-darbai/5-contact-form/contact-form-responsive.html" style="font-size:small;">View</a><h4>
 
-<h4>• SingIn page sample - <a href="https://simonakom.github.io/Namu-darbai/6.RegistrationForm/Registration.html" style="font-size:small;">View</a><h4>
+<h4>• SingIn page sample - <a href="https://simonakom.github.io/Namu-darbai/6-registration-form/registration.html" style="font-size:small;">View</a><h4>
 
 
 <h4 style="font-size: 20px;">⚡️ Bootstrap<h4> 
 
-<h4>• 2048 Game sample - <a href="https://simonakom.github.io/Namu-darbai/7.%20Bootstrap/2048-Game/Game2048.html" style="font-size:small;">View</a><h4>
+<h4>• 2048 Game sample - <a href="https://simonakom.github.io/Namu-darbai/7-bootstrap/game2048" style="font-size:small;">View</a><h4>
 
-<h4>• Shopping Cart sample - <a href="https://simonakom.github.io/Namu-darbai/7.%20Bootstrap/Shopping-Cart/ShoppingCard.html" style="font-size:small;">View</a><h4>
+<h4>• Shopping Cart sample - <a href="https://simonakom.github.io/Namu-darbai/7-bootstrap/shopping-cart" style="font-size:small;">View</a><h4>
 
-<h4>• "Travlog" Landing page sample - <a href="https://simonakom.github.io/Namu-darbai/8.Travlog-landing%20page/Travlog.html">View</a><h4>
+<h4>• "Travlog" Landing page sample - <a href="https://simonakom.github.io/Namu-darbai/8-travlog-landing-page/travlog.html">View</a><h4>
 
 <h4>• "Collab" Landing page sample - <a href="https://simonakom.github.io/Namu-darbai/Additional%20tasks/Collab-landing%20page/collab.html">View</a><h4>
 
