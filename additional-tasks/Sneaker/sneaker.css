@@ -1,179 +1,151 @@
 /* Purple Bacground */
-
 body{
-    background: url(Pictures/bg.png) no-repeat center center / cover;
+    background: url(./pictures/bg.png) no-repeat center center / cover;
     margin: 0;
 }
-
-
 /* White Block */
-
-        /* Header */
-        .box{
-            position: relative;
-            background-color: var(--shade-background, #F9F9F9);
-            max-width: 1440px;
-            min-height: 780px;
-            width: 95%;
-            margin: 100px auto;
-            padding-top: 30px;
-            box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
-                }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row;
-        }
-
-        .logo div{
-            color: #111111;
-            font-size: 36px;
-            font-family: 'Jost', sans-serif;
-            font-weight: bold;
-            margin-left: 100px;
-        }
-
-        .logo span{
-            color:#C8815F;
-        }
-
-        .navigation ul{
-            display: flex;
-            justify-content: center;
-            flex-direction: row;
-            align-items: center;
-            gap: 35px;
-            list-style: none;
-            font-family: 'Jost', sans-serif;
-            font-size: 17px;
-        }
-
-        .navigation ul li:hover {
-            color:rgb(126, 13, 83);
-            font-size: 17px;
-            transform: scale(1.2);
-            transition: transform 0.3s ease-in-out;
-            opacity: 0.8;
-          }
-
-        .icon ul{
-            display: flex;
-            justify-content: center;
-            flex-direction:row;
-            align-items: center;
-            gap: 35px;
-            list-style:none;
-            margin-right: 100px;
-        }
-
-        .icon img:hover {
-            transform: scale(1.2);
-            transition: transform 0.3s ease-in-out;
-            opacity: 0.8;
-          }
-
-        p {
-            margin-bottom: 30px;
-        }
-
-                /* Middle */
-                .right{
-                    float: right;
-                    margin-top: 340px;
-                    padding-right:50px;
-                }
-
-                .right img:hover {
-                    transform: scale(1.2);
-                    transition: transform 0.3s ease-in-out;
-                    opacity: 0.8;
-                  }
-
-                .left{
-                    margin-top: 340px;
-                    position:absolute;
-                    padding-left:50px;
-                }
-
-                .left img:hover {
-                    transform: scale(1.2);
-                    transition: transform 0.3s ease-in-out;
-                    opacity: 0.8;
-                  }
-
-                .title{
-                    position: absolute;
-                    margin-top: 7%;
-                    margin-left: 10%;
-                    font-family:'Jost', sans-serif;
-                    font-weight: bold;
-                    font-size: 50px;
-                    line-height: 60px;
-                }
-
-                .title span{
-                    font-size: 17px;
-                }
-
-                button{
-                    background:none;
-                    font-family:'Jost', sans-serif;
-                    font-size: 16px;
-                    border: 1px solid #111111;
-                    padding: 9px 32px 12px 32px;
-                    border-radius: 4px;
-                }
-
-                .title button:hover {
-                    color:rgb(126, 13, 83);
-                    font-size: 17px;
-                    transform: scale(1.2);
-                    transition: transform 0.3s ease-in-out;
-                    opacity: 0.8;
-                  }
-
-                .nike{
-                    margin-left: 30%;
-                }
-
-                .nike img{
-                    width: 80%;
-                    padding-left: 70px;
-                }
-
+/* Header */
+.box{
+    position: relative;
+    background-color: var(--shade-background, #F9F9F9);
+    max-width: 1440px;
+    min-height: 780px;
+    width: 95%;
+    margin: 100px auto;
+    padding-top: 30px;
+    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.30); 
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.logo div{
+    color: #111111;
+    font-size: 36px;
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    margin-left: 100px;
+}
+.logo span{
+    color:#C8815F;
+}
+.navigation ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    font-family: 'Jost', sans-serif;
+    font-size: 17px;
+}
+.navigation ul li:hover {
+    color:rgb(126, 13, 83);
+    font-size: 17px;
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+}
+.icon ul{
+    display: flex;
+    justify-content: center;
+    flex-direction:row;
+    align-items: center;
+    gap: 35px;
+    list-style:none;
+    margin-right: 100px;
+}
+.icon img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+    }
+p {
+    margin-bottom: 30px;
+}
+/* Middle */
+.right{
+    float: right;
+    margin-top: 340px;
+    padding-right:50px;
+}
+.right img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+}
+.left{
+    margin-top: 340px;
+    position:absolute;
+    padding-left:50px;
+}
+.left img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+}
+.title{
+    position: absolute;
+    margin-top: 7%;
+    margin-left: 10%;
+    font-family:'Jost', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 60px;
+}
+.title span{
+    font-size: 17px;
+}
+button{
+    background:none;
+    font-family:'Jost', sans-serif;
+    font-size: 16px;
+    border: 1px solid #111111;
+    padding: 9px 32px 12px 32px;
+    border-radius: 4px;
+}
+.title button:hover {
+    color:rgb(126, 13, 83);
+    font-size: 17px;
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.8;
+    }
+.nike{
+    margin-left: 30%;
+}
+.nike img{
+    width: 80%;
+    padding-left: 70px;
+}
 /* Footer */
-
 footer img:hover {
     transform: scale(1.2);
     transition: transform 0.3s ease-in-out;
     opacity: 0.8;
-  }
-
+}
 footer{
     display: flex;
     justify-content: center;
 }
-
 .dots {
     display: flex;
     gap:50px;
     padding-top:20px;
 }
-
 .dot1  {
     width: 7px;
     height: 7px;
     background: black;
     border-radius: 50%;
     margin: 0px; 
-  }
-
-  .dot1:hover {
+}
+.dot1:hover {
     font-size: 17px;
     transform: scale(1.2);
     transition: transform 0.3s ease-in-out;
     opacity: 0.8;
     box-shadow: 0 0 0 10px #b9c0c5; 
-  }
+}
 
