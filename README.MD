@@ -3,7 +3,7 @@
 
 <h4 style="font-size: 20px;">🎨 HTML/CSS<h4> 
 
-<h4>• Wikipedia page sample - <a href="https://simonakom.github.io/1-wikipedia-page/richard-gere.html" style="font-size:small;">View</a><h4>
+<h4>• Wikipedia page sample - <a href="https://simonakom.github.io/front-end-projects/1-wikipedia-page/richard-gere.html" style="font-size:small;">View</a><h4>
 
 <h4>• 2023 Year Calendar - <a href="https://simonakom.github.io/front-end-projects/2-calendar/calendar.html" style="font-size:small;">View</a><h4>
 
