@@ -5,7 +5,6 @@ function rand(min, max) {
 // Kazys ir Petras žaidžiai šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų.
 console.log(`\n 4 Task`);
 
-
 // //to keep track of the accumulated points:
 let petrasSum = 0;
 let kazysSum = 0;
@@ -31,7 +30,7 @@ while (petrasSum < 222 && kazysSum < 222) {
 }
 
 // 5 Task
-/*Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija.     Vinnies ilgis 8.5cm (pilnai sulenda į lentą).   
+/*Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija. Vinnies ilgis 8.5cm (pilnai sulenda į lentą).   
 a. “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.*/
 console.log(`\n 5 Task: a.`);
 
@@ -136,7 +135,6 @@ const sum = smugiuSkaicius + smugiuSkaicius2 + smugiuSkaicius3 + smugiuSkaicius4
 console.log(`5 vinims įkalti reikėjo: ${sum} mažų smūgių`);
 
 
-
 /*b. “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.*/
 
 console.log(`\n 5 Task: b.`);
@@ -176,6 +174,7 @@ while (likusiViniesDalisB > vinisLentojeB) {
         smugiuPataikeSkaiciusB++;
     }
 }
+
 let summ = smugiuPataikeSkaiciusB + smugiuNepataikeSkaiciusB;
 console.log(`Iš viso buvo padaryta ${summ} didelių smūgių įkalinti vinį.`);
 
@@ -216,6 +215,7 @@ while (likusiViniesDalisB2 > vinisLentojeB2) {
         smugiuPataikeSkaiciusB2++;
     }
 }
+
 let summ2 = smugiuPataikeSkaiciusB2 + smugiuNepataikeSkaiciusB2;
 console.log(`Iš viso buvo padaryta ${summ2} didelių smūgių įkalinti vinį.`);
 
@@ -233,7 +233,6 @@ let smugiuSkaiciusB3 = 0
 let smugiuPataikeSkaiciusB3 = 0;
 let smugiuNepataikeSkaiciusB3 = 0;
 let likusiViniesDalisB3 = viniesIlgisB3; 
-
 
 while (likusiViniesDalisB3 > vinisLentojeB3) {
     const smugioPataikymoTikimybeB3 = Math.random().toFixed(2);;
@@ -256,6 +255,7 @@ while (likusiViniesDalisB3 > vinisLentojeB3) {
         smugiuPataikeSkaiciusB3++;
     }
 }
+
 let summ3 = smugiuPataikeSkaiciusB3 + smugiuNepataikeSkaiciusB3;
 console.log(`Iš viso buvo padaryta ${summ3} didelių smūgių įkalinti vinį.`);
 
@@ -272,7 +272,6 @@ let smugiuSkaiciusB4 = 0
 let smugiuPataikeSkaiciusB4 = 0;
 let smugiuNepataikeSkaiciusB4 = 0;
 let likusiViniesDalisB4 = viniesIlgisB4; 
-
 
 while (likusiViniesDalisB4 > vinisLentojeB4) {
     const smugioPataikymoTikimybeB4 = Math.random().toFixed(2);;
@@ -295,6 +294,7 @@ while (likusiViniesDalisB4 > vinisLentojeB4) {
         smugiuPataikeSkaiciusB4++;
     }
 }
+
 let summ4 = smugiuPataikeSkaiciusB4 + smugiuNepataikeSkaiciusB4;
 console.log(`Iš viso buvo padaryta ${summ4} didelių smūgių įkalinti vinį.`);
 
@@ -311,7 +311,6 @@ let smugiuSkaiciusB5 = 0
 let smugiuPataikeSkaiciusB5 = 0;
 let smugiuNepataikeSkaiciusB5 = 0;
 let likusiViniesDalisB5 = viniesIlgisB5; 
-
 
 while (likusiViniesDalisB5 > vinisLentojeB5) {
     const smugioPataikymoTikimybeB5 = Math.random().toFixed(2);;
@@ -334,13 +333,13 @@ while (likusiViniesDalisB5 > vinisLentojeB5) {
         smugiuPataikeSkaiciusB5++;
     }
 }
+
 let summ5 = smugiuPataikeSkaiciusB5 + smugiuNepataikeSkaiciusB5;
 console.log(`Iš viso buvo padaryta ${summ5} didelių smūgių įkalinti vinį.`);
 
 console.log(`Bendrai pataikyta smūgių: ${smugiuPataikeSkaiciusB5}`);
 console.log(`Bendrai nepataikyta smūgių: ${smugiuNepataikeSkaiciusB5}`);
 console.log(`Reikės ${smugiuSkaiciusB5} didelių smūgių įkalinti vinį.`);
-
 
 //5 Total
 const sssum = smugiuSkaiciusB + smugiuSkaiciusB2 + smugiuSkaiciusB3 + smugiuSkaiciusB4 + smugiuSkaiciusB5;

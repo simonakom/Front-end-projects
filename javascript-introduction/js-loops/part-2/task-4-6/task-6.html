@@ -12,16 +12,13 @@
   </style>
 </head>
 <body>
-
 <script>
-
 function getRandomColor() {
 //This line declares a helper function named randomComponent. It's an arrow function that generates a random number between 0 and 255.
   const randomComponent = () => Math.floor(Math.random() * 256);
 // The return statement sends a value back to the code that called the function. In this case, the function returns a string representing an RGB color constructed by calling randomComponent() three times for the red, green, and blue components.
   return `rgb(${randomComponent()}, ${randomComponent()}, ${randomComponent()})`;
 }
-
   const n = 10;
 
   // upper
@@ -47,8 +44,6 @@ function getRandomColor() {
   
     document.write(row + '<br>');
   }
-
 </script>
-
 </body>
 </html>

@@ -1,6 +1,5 @@
 
- // 0 Task
-
+// Task: a;b.
 
 // Naršyklėje nupieškite linija iš 400 “*”. 
 for (let i = 0; i < 400; i++) {
@@ -8,7 +7,6 @@ for (let i = 0; i < 400; i++) {
     document.querySelector("#first_line").innerText +=line;
       // document.write (line);
 }
-
 
 // a.Naudodami css stilių “suskaldykite” liniją taip, kad visos žvaigždutės matytųsi ekrane;
 
@@ -18,7 +16,6 @@ for (let i = 0; i < 400; i++) {
     // let breakStars = document.querySelector (`#break_lines`);
     // breakStars.innerText += line 
 }
-
 
 
 // // b. Programiškai “suskaldykite” žvaigždutes taip, kad vienoje eilutėje nebūtų daugiau nei 50 “*”; 

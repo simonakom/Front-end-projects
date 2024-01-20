@@ -10,7 +10,7 @@ console.log (numb)
 document.querySelector("#result").innerText = `Rezultatas: ${numb}`;
 
 // 2 task
-// //Naudokite funkcija rand(). Atspausdinkite 3 skaičius nuo -10 iki 10. Skaičiai mažesni už 0 turi būti žali, 0 - raudonas, didesni už 0 mėlyni.
+//Naudokite funkcija rand(). Atspausdinkite 3 skaičius nuo -10 iki 10. Skaičiai mažesni už 0 turi būti žali, 0 - raudonas, didesni už 0 mėlyni.
 
 for (let i = 0; i < 3; i++) {
     let randomNumber = rand(-10, 10);
@@ -31,7 +31,7 @@ for (let i = 0; i < 3; i++) {
 }
 
 // 3 task
-//  /*Sukurkite kintamąjį su stringu: “An American in Paris”. Jame ištrinti visas balses. Rezultatą atspausdinti. Kodą pakartoti su stringais: “Breakfast at Tiffany's”, “2001: A Space Odyssey” ir “It's a Wonderful Life”.*/
+//Sukurkite kintamąjį su stringu: “An American in Paris”. Jame ištrinti visas balses. Rezultatą atspausdinti. Kodą pakartoti su stringais: “Breakfast at Tiffany's”, “2001: A Space Odyssey” ir “It's a Wonderful Life”.
 
  let text = ["An American in Paris",
                     "Breakfast at Tiffany's",
@@ -46,8 +46,7 @@ for (let i = 0; i < 3; i++) {
 
 
 // 4 task
-//  /*Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite juos atskirtus tarpais ir suskaičiuokite kiek tarp jų yra didesnių už 150.  Skaičiai didesni nei 275 turi būti raudonos spalvos.*/
-
+//Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite juos atskirtus tarpais ir suskaičiuokite kiek tarp jų yra didesnių už 150.  Skaičiai didesni nei 275 turi būti raudonos spalvos.
 
      let x = 0;
      let xnumber = 0;
@@ -90,12 +89,8 @@ for (let i = 0; i < 3; i++) {
     //  }
     //  console.log(`Didesnių skaičių nei 150 masyve yra: ${biggerThan150}`);
 
-
-
-
 // 5 task
-/*Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia, panaudokite css, kad visi rezultatai matytųsi ekrane.*/
-
+//Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia, panaudokite css, kad visi rezultatai matytųsi ekrane.
 
 let sk = [];
 
@@ -125,9 +120,8 @@ document.write('<br>')
 // document.write("<br>"+sk+"<br>"+"<br>");
 
 
-
 // 6 task
-//*Duotas vardų masyvas, kuriame visi vardai prasideda mažąja raide. Reikia sukurti algoritmą, kuris visus vardus konvertuoja į iš didžiosios raidės prasidedančius vardus:*/
+//Duotas vardų masyvas, kuriame visi vardai prasideda mažąja raide. Reikia sukurti algoritmą, kuris visus vardus konvertuoja į iš didžiosios raidės prasidedančius vardus:
 
     let namesArray = [
         'alice', 'bob', 'charlie', 'david', 'emily',
