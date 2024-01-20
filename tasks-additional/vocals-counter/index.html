@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vowel counter</title>
     <link rel="icon" href="a.png">
-    <link rel="stylesheet" href="styles.css">
 </head>
 <style>
     body {
@@ -15,7 +14,6 @@
     align-items: center;
     height: 100vh;
 }
-
 .container {
     width: 450px;
     height: 300px;
@@ -28,7 +26,6 @@
     box-shadow:  2px 5px rgba(130, 100, 194, 0.2);
     margin: 10px;
 }
-
 input {
     border: none;
     outline: none;
@@ -37,7 +34,6 @@ input {
     font-size: 1,6rem;
     width: 70%
 }
-
 .btn {
     padding: 10px 10px;
     border: none;
@@ -57,8 +53,7 @@ input {
     color: white;
     background-color: rgba(161, 83, 104, 0.492);
     opacity: 0.8;
-    }
-
+}
 .result {
     display: none;
     border: 1px solid black ;
@@ -68,7 +63,6 @@ input {
     color: rgba(62, 62, 218, 0.844);
     margin-top: 30px;
 }
-
 img {
     height: 40px;
     padding-bottom: 20px;
@@ -99,12 +93,10 @@ function countVowel () {
     for (let i = 0; i < wordValue.length; i++) {
         let letter =  wordValue[i];
         console.log(letter)
-
         if (letter.match(/([a,e,o,u,i])/)) {
             vowelCount++
         }
     }
-
     if (word.value === "") {
         result.style.display = 'block';
         result.innerText = `Please enter a word`;
@@ -115,7 +107,6 @@ function countVowel () {
         result.innerText = `Please enter a valid word \n (only letters are allowed)`;
         return;
     }
-
     result.innerHTML=`${word.value.toUpperCase()} has ${vowelCount} vowels`
     result.style.display = 'block';
 }
