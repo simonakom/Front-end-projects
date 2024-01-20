@@ -41,7 +41,7 @@ https://simonakom.github.io/front-end-projects/
 
 <h4>• "Quiz" sample - <a href="https://simonakom.github.io/front-end-projects/javascript-dom/quiz/index.html">View</a><h4>
 
-<h4>• "Password Validator" sample - <a href="https://simonakom.github.io/front-end-projects/">View</a><h4>
+<h4>• "Password Validator" sample - <a href="https://simonakom.github.io/front-end-projects/javascript-dom/check-pass-strength/index.html">View</a><h4>
 
 <h4>• "Guess the Number" sample - <a href="https://simonakom.github.io/front-end-projects/javascript-dom/guessing-number-game/index.html">View</a><h4>
 
@@ -55,13 +55,13 @@ https://simonakom.github.io/front-end-projects/
 
 <h4 style="font-size: 20px;">📁 Javascript CRUD <h4> 
 
-<h4>• "Catalog of Products" DOM Manipulation sample - <a href="https://simonakom.github.io/front-end-projects/">View</a><h4>
+<h4>• "Catalog of Products" DOM Manipulation sample - <a href="https://simonakom.github.io/front-end-projects/javascript-crud/dom-manipulation/products.html">View</a><h4>
 
-<h4>• "Data Table of People" CRUD sample - <a href="https://simonakom.github.io/front-end-projects/">View</a><h4>
+<h4>• "Data Table of People" CRUD sample - <a href="https://simonakom.github.io/front-end-projects/javascript-crud/crud-people-data-table/dynamic-table.html">View</a><h4>
 
-<h4>• "Data Table of Products" CRUD sample - <a href="https://simonakom.github.io/front-end-projects/">View</a><h4>
+<h4>• "Data Table of Products" CRUD sample - <a href="https://simonakom.github.io/front-end-projects/javascript-crud/crud-products-data-table/index.html">View</a><h4>
 
-<h4>• CRUD App sample - <a href="https://simonakom.github.io/front-end-projects/">View</a><h4>
+<h4>• CRUD App sample - <a href="https://simonakom.github.io/front-end-projects/javascript-crud/data-table-app/admin.html">View</a><h4>
 
 
 <h4 style="font-size: 20px;">🔗 Javascript API <h4> 
