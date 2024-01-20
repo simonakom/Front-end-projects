@@ -5,15 +5,13 @@
 
 <h4>• Wikipedia page sample - <a href="https://simonakom.github.io/front-end-projects/1-wikipedia-page/richard-gere.html" style="font-size:small;">View</a><h4>
 
-<h4>• 2023 Year Calendar - <a href="https://simonakom.github.io/front-end-projects/2-calendar.html" style="font-size:small;">View</a><h4>
+<h4>• 2023 Year Calendar - <a href="https://simonakom.github.io/front-end-projects/2-calendar/calendar.html" style="font-size:small;">View</a><h4>
 
 <h4>• Invoice sample - <a href="https://simonakom.github.io/front-end-projects/3-invoice/invoice.html" style="font-size:small;">View</a><h4>
 
 <h4>• "Christmas" Landing page sample - <a href="https://simonakom.github.io/front-end-projects/4-sample-page/sample-page.html" style="font-size:small;">View</a><h4>
 
 <h4>• "Sneaker" home page sample - <a href="https://simonakom.github.io/front-end-projects/tasks-additional/sneaker/sneaker.html">View</a><h4>
-
-
 
 <h4>• Contact Form sample - <a href="https://simonakom.github.io/front-end-projects/5-contact-form/contact-form.html" style="font-size:small;">View</a><h4>
 
