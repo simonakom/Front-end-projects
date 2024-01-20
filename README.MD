@@ -11,13 +11,13 @@
 
 <h4>• "Christmas" Landing page sample - <a href="https://simonakom.github.io/front-end-projects/4-sample-page/sample-page.html" style="font-size:small;">View</a><h4>
 
-<h4>• "Sneaker" home page sample - <a href="https://simonakom.github.io/front-end-projects/additional-tasks/Sneaker/sneaker.html">View</a><h4>
+<h4>• "Sneaker" home page sample - <a href="https://simonakom.github.io/front-end-projects/tasks-additional/sneaker/sneaker.html">View</a><h4>
+
+
 
 <h4>• Contact Form sample - <a href="https://simonakom.github.io/front-end-projects/5-contact-form/contact-form.html" style="font-size:small;">View</a><h4>
 
 <h4>• SingIn page sample - <a href="https://simonakom.github.io/front-end-projects/6-registration-form/registration.html" style="font-size:small;">View</a><h4>
-S
-
 
 <h4 style="font-size: 20px;">⚡️ Bootstrap<h4> 
 
