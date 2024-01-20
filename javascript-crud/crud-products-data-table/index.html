@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table of Products</title>
+    <link rel="icon" href="new-product.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container text-center mx- my-3">
+        <div><img src="new-product.png" class="logo my-3"></div>
+        <p class="data mb-5">Data Table</p>
+        <hr>
+        <p class="add-result mb-4" id="add-result"></p>
+        <form>
+            <h3 class="my-4">Adding new products</h3>
+            <div class="row">
+                <div class="d-flex gap-4">
+                    <div class="input-group mb-3">
+                        <span class="title input-group-text" id="basic-addon1">Title</span>
+                        <input type="text" id="title" name="title" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="brand input-group-text" id="basic-addon1">Brand</span>
+                        <input type="text" id="brand" name="brand" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="d-flex gap-4">
+                    <div class="input-group mb-3">
+                        <span class="price input-group-text" id="basic-addon1">Price</span>
+                        <input type="number" id="price" name="price" class="form-control" placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="stock input-group-text" id="basic-addon1">Stock</span>
+                        <input type="number" id="stock" name="stock" class="form-control" placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="d-flex gap-4">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="category">Category</label>
+                        <select class="form-select" id="category" name="category">
+                        <option disabled selected>Choose...</option>
+                        <option value="smartphones">Smartphones</option>
+                        <option value="laptops">Laptops</option>
+                        <option value="fragrances">Fragrances</option>
+                        <option value="skincare">Skincare</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="home-decoration">Home-decoration</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="discount input-group-text" id="basic-addon1">Discount</span>
+                        <input type="number" min="0" max="100" value="0" id="discount" name="discount" class="form-control"   placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="d-flex gap-4">
+                    <div class="input-group mb-3">
+                        <span class="rating input-group-text" id="basic-addon1">Rating</span>
+                        <input type="number" min="0" max="5" value="0" id="rating" name="rating" class="form-control"   placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="imageUrl input-group-text" id="basic-addon1">Image</span>
+                        <input type="text" id="imageUrl" name="mageUrl" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">Product Description</span>
+                    <textarea class="form-control" aria-label="With textarea" id="description" placeholder="Type text..."></textarea>
+                </div>
+                <div><button type="button" class="btn btn-default px-5 my-4" id="submit">Submit</button></div> 
+            </div>
+        </form>
+        <hr>
+
+        <form>
+            <h3 class="my-4">Filtering</h3>
+            <div class="row">
+                <div class="d-flex gap-4">
+                    <div class="input-group mb-3">
+                        <span class="title input-group-text" id="basic-addon1">Title</span>
+                        <input type="text" id="filterName" name="filterName" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="brand input-group-text" id="basic-addon1">Brand</span>
+                        <input type="text" id="filterBrand" name="filterBrand" class="form-control" placeholder="Type text..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="d-flex gap-4">
+                    <div class="input-group mb-3">
+                        <span class="price input-group-text" id="basic-addon1">Price (from)</span>
+                        <input type="number" id="filterPriceFrom" min="0" name="filterPriceFrom" class="form-control" placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="price input-group-text" id="basic-addon1">Price (to)</span>
+                        <input type="number" id="filterPriceTo"  min="0" name="filterPriceTo" class="form-control" placeholder="Type number..." aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex gap-4">
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="filterCategory">Category</label>
+                    <select class="form-select" id="filterCategory" name="filterCategory">
+                    <option disabled selected>Choose...</option>
+                    <option value="smartphones">Smartphones</option>
+                    <option value="laptops">Laptops</option>
+                    <option value="fragrances">Fragrances</option>
+                    <option value="skincare">Skincare</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="home-decoration">Home-decoration</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="discount input-group-text" id="basic-addon1">Discount (from)</span>
+                    <input type="number" min="0" max="100" value="0" id="filterDiscount" name="filterDiscount" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+            </div>
+                <div class="input-group">
+                    <span class="input-group-text">Product Description</span>
+                    <textarea class="form-control" aria-label="With textarea" id="filterDescription" placeholder="Type text..."></textarea>
+                </div>
+            <div><button type="button" class="btn btn-default px-5 my-4" id="resetFilters">Reset Filters</button></div> 
+        </form>
+        <hr>
+
+        <div class="table-responsive table-responsive-custom">
+        <table class=" table table-light table-hover table-bordered my-5">
+            <thead>
+                <tr class="table-dark">
+                    <th>#</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Brand</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="dynamic-data">
+                <tr> 
+                    <!-- sita eilute buna perrasoma per "for" ir yra nereikalinga  -->
+                    <td>EXAMPLE</td>
+                    <td>Apple Product</td>
+                    <td>1.50</td>
+                    <td>40</td>
+                    <td>Apple</td>
+                    <td>Groceries</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <dialog id="productInfo" style="width: 58%; padding: 0">
+        <!-- <div style="max-width: 70%; margin: 0 auto">
+            <img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="Product photo"/>
+            <div class="product-details">
+                <div class="row">
+                    <span class="col-2 fw-bold">Discount</span>
+                    <span class="col-1">-10%</span>
+                </div>
+                <div class="row">
+                    <span class="col-2 fw-bold">Rating</span>
+                    <span class="col-1">4.23</span>
+                </div>
+                <div class="row">
+                    <span class="col-2 fw-bold">Description</span>
+                    <span class="col-6"></span>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span>
+                </div>
+            </div>
+        </div> -->
+    </dialog>
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

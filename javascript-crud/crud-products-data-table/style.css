@@ -1,0 +1,114 @@
+ body {
+            background-color:rgba(215, 211, 207, 0.248);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo {
+            width: 15%;
+        }
+        .data{
+            font-size: 40px;
+            color: #465d7a;
+        }
+        h3 {
+            color: #465d7a;
+        }
+        #submit {
+            background-color: #6687b3;
+            color:white;
+        }
+        #submit:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+        background-color: #6687b3;
+        color:white;
+        opacity: 0.8;
+        border: none;
+        }
+        #delete {
+            background-color: rgba(179, 27, 47, 0.612);
+            color:white;
+        }
+        #delete:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+        background-color: rgb(180, 20, 63);
+        color:white;
+        opacity: 0.8;
+        }
+        #update {
+            background-color: rgba(122, 87, 122, 0.56);
+            color:white;
+        }
+        #update:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+        background-color: rgba(161, 89, 161, 0.791);
+        color:white;
+        opacity: 0.8;
+        }
+        #resetFilters {
+            background-color: #6687b3;
+            color:white;
+        }
+        #resetFilters:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+        background-color: #6687b3;
+        color:white;
+        opacity: 0.8;
+        border: none;
+        }
+
+        .add-result {
+        display: none;
+        background-color: #cf7a847f;
+        color:  rgb(255, 255, 255);
+        border-radius: 20px;
+        padding: 10px;  
+        max-width: 800px;
+        margin: auto;
+        }
+        #delete {
+            gap: 20px;
+        }
+
+        #productInfo {
+        border: none;
+        border-radius: 20px;
+        background-color:  rgb(194, 214, 221);
+        }
+
+        .logoSize {
+            width: 90%  
+        }
+
+        .table-responsive-custom {
+        margin: 0 10px; 
+        }
+        
+    @media screen and (max-width: 768px) {    
+        img {
+            width: 30%;
+        }   
+        .d-flex {
+            flex-direction: column;
+            align-items: center;
+        }
+        .gap-4 {
+            gap: 0!important;
+        }
+
+        form {
+            margin: auto;
+            padding: 0 10px; /* Adjust the left and right padding as needed */
+        } 
+    }
+
+    @media screen and (max-width: 570px) {    
+        form {
+            width: 100%;
+            margin-left: 0;
+        }
+    } 
