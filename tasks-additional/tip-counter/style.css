@@ -1,5 +1,5 @@
   body {
-    background-color: rgb(64, 107, 107);
+    background-color: rgba(148, 189, 189, 0.176);
     overflow: hidden;
   }
   section{
@@ -8,7 +8,7 @@
   }
   h2 {
     text-align: center;
-    color: rgb(189, 229, 229);
+    color: rgb(76, 94, 94);
   }
   .tipContainer {
     background-color: rgba(195, 235, 233, 0.596);
@@ -24,11 +24,11 @@
     /* width: 40%; */
   }
   .input-group input {
-    background-color: rgba(210, 228, 228, 0.5);
+    background-color: rgba(185, 208, 208, 0.798);
     border: none;
   }
   .input-group select {
-    background-color: rgba(210, 228, 228, 0.5);
+    background-color: rgba(185, 208, 208, 0.798);
     border: none;
     color: #445859;
   }
@@ -83,115 +83,111 @@
     display: none;
     background-color: rgba(201, 98, 120, 0.37); 
     color:  #fff9f9;
-    box-shadow:  2px 5px rgba(205, 191, 191, 0.625); 
+    box-shadow: 1px 1px 6px rgba(84, 79, 79, 0.625); 
     border-radius: 20px;
     width: 100%;
   }
-
-
-
 /* Coin */
+  .image-div {
+    position: absolute;
+    top: 30vh;
+    left: -15px;
+    width: 20%;
+    display: none;
+  }
+  #blockingDiv {
+    position: absolute;
+    top: 0;
+    left: 47%;
+    height: 56%;
+    width: 50%;
+    background-color: #ecf3f3;
+  }
+  #onTop {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    width: 40%;
+    transform: rotate(180deg);
+  }
+  .image-div2 {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    transform: rotate(-1200deg);
+    width: 10%;
+    display: none;
+  }
+  .image-div3 {
+    position: absolute;
+    top: 45%;
+    right: 3%;
+    width: 10%;
+    display: none;
+    animation: moveUpDown 5s linear infinite;
+
+  }
+  #tipJar {
+    position: absolute;
+    right: 0%;
+    top: 70%;
+    width: 17%;
+    display: none;
+    animation: vibrate 0.5s ease-in-out infinite; 
+  }
+
+  @keyframes vibrate {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    75% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes moveUpDown {
+    0% {
+      top: 15%; /* Starting position */
+    }
+    50% {
+      top: 85%; /* Midway point, adjust based on your layout */
+    }
+    100% {
+      top: 15%; /* Ending position */
+    }
+  }
+
+  @media only screen and (max-width: 960px) {  
     .image-div {
-      position: absolute;
-      top: 30vh;
-      left: -15px;
-      width: 20%;
-      display: none;
-    }
-    #blockingDiv {
-      position: absolute;
-      top: 0;
-      left: 47%;
-      height: 56%;
-      width: 50%;
-      background-color: rgb(64, 107, 107);
-    }
-    #onTop {
-      position: absolute;
-      top: 0;
-      left: 40%;
-      width: 40%;
-      transform: rotate(180deg);
+        display: none !important
     }
     .image-div2 {
-      position: absolute;
-      top: 0;
-      left: 20%;
-      transform: rotate(-1200deg);
-      width: 10%;
-      display: none;
-    }
-    .image-div3 {
-      position: absolute;
-      top: 45%;
-      right: 3%;
-      width: 10%;
-      display: none;
-      animation: moveUpDown 5s linear infinite;
-
+      display: none !important
     }
     #tipJar {
-      position: absolute;
-      right: 0%;
-      top: 70%;
-      width: 17%;
-      display: none;
-      animation: vibrate 0.5s ease-in-out infinite; 
+      display: none !important
+    }    
+    .image-div3 {
+      display: none !important
     }
- 
-
-    @keyframes vibrate {
-      0% {
-        transform: translateY(0);
-      }
-      25% {
-        transform: translateY(-5px);
-      }
-      50% {
-        transform: translateY(5px);
-      }
-      75% {
-        transform: translateY(-5px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-    @keyframes moveUpDown {
-      0% {
-        top: 15%; /* Starting position */
-      }
-      50% {
-        top: 85%; /* Midway point, adjust based on your layout */
-      }
-      100% {
-        top: 15%; /* Ending position */
-      }
-    }
-
-    @media only screen and (max-width: 960px) {  
-      .image-div {
-          display: none !important
-      }
-      .image-div2 {
-        display: none !important
-      }
-      #tipJar {
-        display: none !important
-      }    
-      .image-div3 {
-        display: none !important
-      }
   }
   @media only screen and (max-width: 660px) {  
     .icon {
       width: 25%;
     }
-}
-@media only screen and (max-width: 420px) {  
-  .icon {
-    width: 40%;
   }
-}
-    
+  @media only screen and (max-width: 420px) {  
+    .icon {
+    width: 40%;
+    }
+  }
+
   

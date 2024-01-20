@@ -29,20 +29,20 @@ event.preventDefault();
     finalTip.innerHTML = (`${tipAmount} $`);
     total.innerHTML = (`${totalAmount} $`);
 
-   // Validation:
-    if (isNaN(bill) || !bill || bill <= 0) {
-        note.style.display = "block";
-        note.innerText = 'Please choose a bill amount!';
-        return;
-    } else if (!tip) {
-        note.style.display = "block";
-        note.innerText = 'Please choose a tip!';
-        return;
-    } else {
-        result.style.display = "block";
-        note.style.display = "none"; 
-    }
-    showImage();
+// Validation:
+if (isNaN(bill) || !bill || bill <= 0) {
+    note.style.display = "block";
+    note.innerText = 'Please choose a bill amount!';
+    return;
+} else if (!tip) {
+    note.style.display = "block";
+    note.innerText = 'Please choose a tip!';
+    return;
+} else {
+    result.style.display = "block";
+    note.style.display = "none"; 
+}
+showImage();
 });
 
 function ShowTextArea() {
