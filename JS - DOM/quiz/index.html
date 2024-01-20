@@ -8,121 +8,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <title>Quiz</title>
-  <link rel="icon" href="quiz.png">
-  <style>
-    body {
-      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      background-color: rgba(211, 211, 222, 0.305);
-    }
-
-    .container {
-        width: 25rem;
-        height: 25rem;
-        text-align: center;
-    }
-
-    img {
-        width:15%;
-    }
-
-    .option:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-    color: #472e47c3;
-    opacity: 0.8;
-    }
-
-    .title {
-    color: #c02a6e8f;
-    font-weight: 700;
-    font-size: 17px;
-    }
-
-    .correct_answer {
-    color: #a81048;
-    }
-
-    .check {
-    color: white;
-    background-color: #c74d848f;
-    border-radius: 20px;
-    margin-top: 30px;
-    }
-
-    .check:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-    color: white;
-    background-color: #c74d848f;
-    opacity: 0.8;
-        } 
-
-    .check:active {
-        background-color: rgba(161, 83, 104, 0.615)  !important;
-        color: rgb(255, 255, 255)  !important;
-    }
-
-    .check:active
-    .check:focus {
-    background-color: #c74d848f !important; /* Darker green color when active or clicked */
-    color: white !important;
-    }
-
-    .answer-option {
-    padding: 4px 8px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    display: inline-block;
-    }
-
-    .selected {
-        background-color: #604caf11;
-        color:  #63426393;
-        border-radius: 20px;
-        width: 90%;
-    }      
-    
-    .selected2 {
-        background-color: #4ab26628;
-        color:  #30744793;
-    }   
-
-    .selected3 {
-        background-color: #a20e222c;
-        color:  #cf134fcf;
-    }   
-
-    .color{
-        color: #264829;
-    }
-
-    #result {
-        color: #c32043b7;
-        font-size:20px;
-    }
-
-    @media screen and (max-width: 700px) {
-
-    img {
-        width: 25%
-    }
-    }
-
-    @media screen and (max-width: 400px) {
-
-img {
-    width: 35%
-}
-}
-  </style>
+  <link rel="icon" href="./pictures/quiz.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="col-12 d-flex flex-column align-items-center
- text-center my-5">
-    <img src="speech-bubble.png">
+<div class="col-12 d-flex flex-column align-items-center text-center my-5">
+    <img src="./pictures/speech-bubble.png">
         <!-- question 1 -->
-
         <div class="my-3" id="question1">
             <p class="my-2 title">What is the capital of France?</p>
                 <div class="color d-flex flex-column text-center">
@@ -131,9 +23,7 @@ img {
                     <p onclick="markSelectedAnswer('question1', 'paris')" id="paris"  class="option answer-option my-1">C) Paris</p>
                 </div>
             <p id="displayCorrectAnswer1" class="correct_answer px-4"></p>
-          </div>
-
-
+        </div>
         <!-- question 2 -->
         <div class="my-3" id="question2">
             <p class="my-2 title">How many continents are there on Earth?</p>
@@ -143,8 +33,7 @@ img {
                     <p onclick="markSelectedAnswer('question2', 'six')" id="six"  class="option answer-option my-1">C) 6</p>
                 </div>
             <p id="displayCorrectAnswer2" class="correct_answer my-2"></p>
-          </div>
-
+        </div>
         <!-- question 3 -->
         <div class="my-3" id="question3">
             <p class="my-2 title">Which planet is known as the Red Planet?</p>
@@ -154,10 +43,9 @@ img {
                     <p onclick="markSelectedAnswer('question3', 'saturn')" id="saturn"  class="option answer-option my-1">C) Saturn</p>
                 </div>
             <p id="displayCorrectAnswer3" class="correct_answer my-2"></p>
-          </div>
-
+        </div>
          <!-- question 4 -->
-         <div class="my-3" id="question4">
+        <div class="my-3" id="question4">
             <p class="my-2 title">What gas do plants breathe in that humans and animals breathe out?</p>
                 <div class="color d-flex flex-column">
                     <p onclick="markSelectedAnswer('question4', 'oxygen')" id="oxygen" class="option answer-option my-1">A) Oxygen</p>
@@ -165,8 +53,7 @@ img {
                     <p onclick="markSelectedAnswer('question4', 'nitrogen')" id="nitrogen"  class="option answer-option my-1">C) Nitrogen</p>
                 </div>
             <p id="displayCorrectAnswer4" class="correct_answer my-2"></p>
-          </div>
-
+        </div>
         <!-- question 5 -->
         <div class="my-3" id="question5">
             <p class="my-2 title">What is the largest mammal in the world?</p>
@@ -176,12 +63,11 @@ img {
                     <p onclick="markSelectedAnswer('question5', 'giraffe')" id="giraffe"  class="option answer-option my-1">C) Giraffe</p>
                 </div>
             <p id="displayCorrectAnswer5" class="correct_answer px-5 "></p>
-          </div>
-
+        </div>
   <button onclick="calculateScore()" class="btn btn-lightpx-4 py-2 check" id="hide">Check Answers!</button>
   <p class="result rounded-4 text-center mt-4 pt-2" id="result"></p>
 </div>
-<script src="quiz.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
 
