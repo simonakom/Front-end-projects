@@ -19,7 +19,6 @@
 // Skaičius - 28, Kategorija 3, operacijos rezultatas: 26
 
 
-
 // Using fuctions
 
 function rand(min, max) {
@@ -56,8 +55,6 @@ function categoryFifthCalculation(skaicius) {
 	return result;
 }
 
-
-
 let sk = rand(0,99); console.log (sk);
 
 
@@ -91,8 +88,6 @@ else if (sk>=50 && sk % 3 ===0){
 else {
     console.log (`Skaičius ${sk} nepriklauso nei vienai kategorijai`)
 }
-
-
 
 
 // // // Not using fuctions

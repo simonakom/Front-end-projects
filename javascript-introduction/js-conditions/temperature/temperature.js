@@ -1,5 +1,3 @@
-
-
 // 3 Task
 
 // Skaičiai t1, t2, t3 reiškia vidutinę trijų iš eilės einančių dienų temperatūrą. Kelias dienas temperatūra buvo neigiama, o kelias - teigiama? Rezultatą išspausdinkite žodžiais. Šiuo atveju 0 skaitome, kaip teigiamą temperatūrą.
@@ -11,7 +9,6 @@ let t1 = 2,
 
 let negative = 0;
 let positive = 0;
-
 
 if (t1 < 0) {
     negative++;
@@ -32,5 +29,4 @@ if (t3 < 0) {
 }
 
 document.write (`Neigiama temperatura buvo <b style="color:red">  ${negative}</b> diena(-ų).<br>`);
-
 document.write (`Teigiama temperatura buvo <b style="color:blue">  ${positive}</b> diena(-ų).`);

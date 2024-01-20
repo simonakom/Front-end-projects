@@ -14,7 +14,6 @@ let t = 2;  // Laikas
 let s = (v1 - v2) * t;
 document.write(`Atstumas tarp automobilių po ${t} valandų yra: ${s} km.<br>`);
 
-
 if (s === 0) {
     document.write("Automobiliai yra vienas šalia kito");
 } else if (0 < s) {

@@ -1,5 +1,3 @@
-
-
 // Antras variantas
 
 // Kategorija 1: 0 – 5. skaičius dauginamas iš 3
@@ -36,8 +34,6 @@ function categoryFiveCalculation(number) {
 	return result;
 }
 
-
-
 let sk = rand(0, 99); console.log (sk);
 
 
@@ -57,10 +53,6 @@ else if (sk<=99 && +sk.toString()[1]===6 || +sk.toString()[1]===7) {
     console.log (`Skaičius: ${sk},\t Kategorija: 5,\t Rezultatas: ${categoryFiveCalculation(sk)}.`);
 }
     
-
-
-
-
 // // Not using fuctions
 
 // function rand(min, max) {
