@@ -1,0 +1,129 @@
+img {
+    width: 10%;
+}
+.title{
+    font-size: 40px;
+    color: #490b6af8;
+}
+.filter{
+    font-size: 30px;
+    color: #490b6af8;
+}
+.age {
+    min-width: 103px;
+}
+.tablem {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.butn {
+    padding: 10px 10px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(123, 35, 116, 0.557);
+    margin: auto;
+}
+.butn:hover {
+    transform: scale(1.2);
+    transition: transform 0.9s ease-in-out;
+    color: rgb(255, 255, 255);
+    background-color: rgba(123, 35, 116, 0.557);
+    opacity: 0.8;
+    border: none; 
+} 
+.butn:active {
+    background-color: rgba(161, 83, 104, 0.615)  !important;
+    color: rgb(255, 255, 255)  !important;
+}
+.butn:active
+.butn:focus {
+    background-color: #9c4ea096 !important; /* Darker green color when active or clicked */
+    color: white !important;
+}
+#close-button{
+    background-color: rgba(161, 83, 104, 0.615);
+}
+ .form{
+box-shadow:  2px 5px rgba(145, 192, 236, 0.104);
+margin-bottom: 50px;
+background-color:rgba(155, 180, 198, 0.207);
+}
+.add-result {
+display: none;
+background-color: #cf7a847f;
+color:  rgb(255, 255, 255);
+border-radius: 20px;
+margin: 20px;
+padding: 5px;
+}
+.delete-result {
+display: none;
+background-color: #cf7a847f;
+color:  rgb(255, 255, 255);
+border-radius: 20px;
+margin: 20px;
+padding: 5px;
+}
+.update-result {
+display: none;
+background-color: #cf7a847f;
+color:  rgb(255, 255, 255);
+border-radius: 20px;
+margin: 20px;
+padding: 5px;
+}
+#update-form{
+    display: none;
+}
+#update-button{
+    display: none;
+}
+#productInfo {
+border: none;
+border-radius: 20px;
+background-color:  rgba(244, 235, 243, 0.904);
+}
+.celebrityImage{
+    width: 60%;
+}
+span {
+    font-size: 13px;
+}
+.bio{
+    font-size: 20px;
+    color: purple;
+}
+@media screen and (max-width: 991px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .form {
+        width: fit-content;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+    img {
+    width: 15%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .col {
+        flex-direction: column;
+        align-items: center;
+        gap: 0 !important;
+    }
+    img {
+    width: 15%;
+    }
+}
+@media screen and (max-width: 380px) {
+    hr {
+        width: 115%;
+    }
+    img {
+    width: 15%;
+    }
+}

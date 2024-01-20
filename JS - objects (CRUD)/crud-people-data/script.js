@@ -7,7 +7,6 @@ if (!localStorage.getItem("people")){
     //Tuscio masyvo issaugoti negalima.Tik teksines strnig reiksmes. Tad reikia prideti kabutes ('[]') arba JSON
     localStorage.setItem("people", JSON.stringify([]));
 } 
-
 //Jeigu nusetiname zmogui reiksme, kita karta turetume gauti ta reiksme (is localstorage) i people masyva (kai yra apsilankymas, turime gauti visu zmomiu irasus is localstorage):
 //irasus gauname string formatu - JASON.parse keicia string i objekta
 const people = JSON.parse (localStorage.getItem("people")) 
@@ -17,16 +16,14 @@ const people = JSON.parse (localStorage.getItem("people"))
 //kad atvaizduoti:
 generateTableContent (people)
 
-
-
 // const people = []; //An array to store information about people. is hidden as there is local storage
 const allowedNationalities = ['US', 'CANADA', 'UK', 'AUSTRALIA', 'FRANCE', 'GERMANY', 'JAPAN'];
 
-                                 /* *currentNumeration disabeled as after deleting 2no. contact, new contact should be have 2id but it has 3id. Numeration is wrong: 1,3,4,5...
-                                 let currentNumeration= +localStorage.getItem("currentNumeration"); //A variable to keep track of the current numeration for each person.*/
-                                 /*to have right numeration in storage with currentNumeration style:
-                                 if(!localStorage.getItem('currentNumeration'))
-                                 localStorage.setItem("currentNumeration", "1");*/
+                    /* *currentNumeration disabeled as after deleting 2no. contact, new contact should have 2id but it has 3id. Numeration is wrong: 1,3,4,5...
+                    let currentNumeration= +localStorage.getItem("currentNumeration"); //A variable to keep track of the current numeration for each person.*/
+                    /*to have right numeration in storage with currentNumeration style:
+                    if(!localStorage.getItem('currentNumeration'))
+                    localStorage.setItem("currentNumeration", "1");*/
 
 
 //selecting HTML elements 
@@ -50,7 +47,6 @@ resetFiltersButton = document.getElementById('resetFilters');
 
 modalElement = document.getElementById('productInfo')
 
-
 //FILTER: if Arrey is same for each input
 
 filterNameElement.onkeyup = filter; 
@@ -58,7 +54,7 @@ filterLastNameElement.onkeyup = filter;
 filterAgeElement.onkeyup = filter; 
 filterNationalityElement.onkeyup = filter; 
 
-function filter (){
+function filter () {
     let personName = filterNameElement.value.toLowerCase();
     let personLastName = filterLastNameElement.value.toLowerCase();
     let personAge = +filterAgeElement.value;
@@ -131,34 +127,31 @@ const duplicatePerson = people.find((existingPerson) =>
     existingPerson.firstName.toLowerCase() === person.firstName.toLowerCase() &&
     existingPerson.lastName.toLowerCase() === person.lastName.toLowerCase()
 );
-
 if (duplicatePerson) {
     addResult.innerText = `A person with the same contact details already exists!`;
     addResult.style.display = 'block';
     addResult.style.backgroundColor = '#cf7a847f';
     return;
 }
+                    // *disabeled as after deleting 2no. contact, new contact should be have 2id but it has 3id. Numeration is wrong: 1,3,4,5... Instead using (person.number = people.length + 1).
+                    // *person.number = currentNumeration; // assigns a number property to the person object.
+                    // *currentNumeration++; // After assigning the number to the current person, currentNumeration is incremented by 1.
+                    // localStorage.setItem("currentNumeration", "" + currentNumeration );
 
-    
-                                    // *disabeled as after deleting 2no. contact, new contact should be have 2id but it has 3id. Numeration is wrong: 1,3,4,5... Instead using (person.number = people.length + 1).
-                                    // *person.number = currentNumeration; // assigns a number property to the person object.
-                                    // *currentNumeration++; // After assigning the number to the current person, currentNumeration is incremented by 1.
-                                    // localStorage.setItem("currentNumeration", "" + currentNumeration );
+// This will assign a unique number to each person based on the length of the people array. The +1 is added because array indices start from 0, but you want to display a human-readable number starting from 1.
+person.number = people.length + 1;
 
-        // This will assign a unique number to each person based on the length of the people array. The +1 is added because array indices start from 0, but you want to display a human-readable number starting from 1.
-        person.number = people.length + 1;
+// If all checks pass, the person object is added to people array, and the table (generateTableContent) is updated.
+people.push(person);
 
-        // If all checks pass, the person object is added to people array, and the table (generateTableContent) is updated.
-        people.push(person);
+    //Pakeisti alert teksta
+    addResult.style.display = 'block';
+    addResult.innerText = 'New Person has been successfully added!';
+    //kad pakeisti spalva
+    addResult.style.backgroundColor = '#1a995750';
 
-         //Pakeisti alert teksta
-         addResult.style.display = 'block';
-         addResult.innerText = 'New Person has been successfully added!';
-         //kad pakeisti spalva
-         addResult.style.backgroundColor = '#1a995750';
-
-        generateTableContent (people); //calls the generateTableContent function, passing the updated people array as an argument. The purpose of this function is to generate HTML content for displaying the list of people in a table. 
-        formElement.reset(); //resets the form (formElement) after adding a person. It clears the input fields in the form.
+generateTableContent (people); //calls the generateTableContent function, passing the updated people array as an argument. The purpose of this function is to generate HTML content for displaying the list of people in a table. 
+formElement.reset(); //resets the form (formElement) after adding a person. It clears the input fields in the form.
          
 //Kai yra atnaujinamas pats masyvas- reikia atnaujiti localstorage esancius duomenys 
 localStorage.setItem("people", JSON.stringify(people));
@@ -207,7 +200,6 @@ modalElement.onclick = () => {
     modalElement.close();
 }
 
-
 //DELETE: When "delete" is pressed: 
 deleteElement.addEventListener("click", ()=>{
     const removeElementImput = document.querySelector ("#numberInput"); //representing the number of the person to be deleted.
@@ -243,8 +235,8 @@ deleteElement.addEventListener("click", ()=>{
     //kad pakeisti spalva
     deleteResult.style.backgroundColor = '#1a995750';
 
-    
-                                    // (disabled as currentnumeration)*people.splice(foundIndexDelete,1);//If the validation checks pass, it uses splice to remove one element at the found index from the people array.
+                        // (disabled as currentnumeration)*people.splice(foundIndexDelete,1);//If the validation checks pass, it uses splice to remove one element at the found index from the people array.
+
     // Remove the person from the array
     people.splice(foundIndexDelete, 1);
     // Reassign numbers to all people in the array
@@ -276,14 +268,12 @@ foundIndexUpdate = people.findIndex((person) => person.number == updateNumber); 
         updateResult.style.backgroundColor = '#cf7a847f';
         return;
     }
-
     if (foundIndexUpdate === -1) {
         updateResult.innerText = `Person with provided number do not exist`;
         updateResult.style.display = 'block';
         updateResult.style.backgroundColor = '#cf7a847f';
         return;
     } 
-
     //If the validation checks pass, it retrieves the found person from the people array using foundIndexUpdate.
     const foundPerson = people[foundIndexUpdate];
 
@@ -357,27 +347,23 @@ updateElement.addEventListener("click", () => {
         updateResult.style.display = 'none';
     }
 
-         // Validations: Duplicate person check is performed based on contact details.
-
-         const updatedFirstName = document.getElementById("updateFirstNameInput").value;
-         const updatedLastName = document.getElementById("updateLastNameInput").value;
-         
-         const duplicatePerson = people.find((existingPerson) =>
-                existingPerson.firstName.toLowerCase() === updatedFirstName.toLowerCase() &&
-                existingPerson.lastName.toLowerCase() === updatedLastName.toLowerCase()
-        );
-        
-        if (duplicatePerson) {
-            updateResult.innerText = 'Updated details match another existing contact!';
-            updateResult.style.backgroundColor = '#cf7a847f';
-            updateResult.style.display = 'block';
-            return;
-        } else {
-            updateResult.style.display = 'none';
-        }
-
-
-
+    // Validations: Duplicate person check is performed based on contact details.
+    const updatedFirstName = document.getElementById("updateFirstNameInput").value;
+    const updatedLastName = document.getElementById("updateLastNameInput").value;
+    
+    const duplicatePerson = people.find((existingPerson) =>
+        existingPerson.firstName.toLowerCase() === updatedFirstName.toLowerCase() &&
+        existingPerson.lastName.toLowerCase() === updatedLastName.toLowerCase()
+    );
+    
+    if (duplicatePerson) {
+        updateResult.innerText = 'Updated details match another existing contact!';
+        updateResult.style.backgroundColor = '#cf7a847f';
+        updateResult.style.display = 'block';
+        return;
+    } else {
+        updateResult.style.display = 'none';
+    }
 
     // Update the person in the people array at the index foundIndexUpdate.
     people[foundIndexUpdate] = updatedPerson;
