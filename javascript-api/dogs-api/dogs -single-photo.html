@@ -37,13 +37,11 @@
         font-size: 30px;
         font-family: 'Amatic SC', sans-serif;
     }
-
     img {
         border-radius: 10%;
         max-width: 100%;
         height: auto; 
     }
-
     #breeds {
         background-color: rgba(144, 101, 101, 0.369);
         border: none;
@@ -94,40 +92,37 @@
     </div>
 <script>
 // 1. Gauti visas veisles pagal nuorodą
-            fetch("https://dog.ceo/api/breeds/list/all")
-            .then(response => response.json())
-            .then(response => {
-            // 2. Sutvarkyti iš serverio gautą objektą
-                const breeds = [];
-                for (const breed in response.message) {
-                    breeds.push(breed);
-                // 3. Visas veisles atvaizduoti <select> HTML elemente
-                const breedsSelect = document.getElementById('breeds');
-                const option = document.createElement('option');
-                option.value = breed;
-                option.text = breed;
-                breedsSelect.appendChild(option);
-            }
-            
-            // Atvaizduoti nuotrauka tik puslapiui atsidarius
-                getDogImage();
-            });
+fetch("https://dog.ceo/api/breeds/list/all")
+.then(response => response.json())
+.then(response => {
+// 2. Sutvarkyti iš serverio gautą objektą
+    const breeds = [];
+    for (const breed in response.message) {
+        breeds.push(breed);
+    // 3. Visas veisles atvaizduoti <select> HTML elemente
+    const breedsSelect = document.getElementById('breeds');
+    const option = document.createElement('option');
+    option.value = breed;
+    option.text = breed;
+    breedsSelect.appendChild(option);
+}
+// Atvaizduoti nuotrauka tik puslapiui atsidarius
+    getDogImage();
+});
 
-        function getDogImage() {
-            const breedsSelect = document.getElementById('breeds');
-            const selectedBreed = breedsSelect.value;
-
-            // 4. Dinamiškai generuoti kreipimosi adresą ir gauti nuotrauką
-            fetch(`https://dog.ceo/api/breed/${selectedBreed}/images/random`)
-                .then(response => response.json())
-                .then(response => {
-                    const dogImageContainer = document.getElementById('dogImageContainer');
-                    const dogImage = response.message;
-
-                    // 5. // Atvaizduoti šuns nuotrauką ir parašyti jo veislę
-                    dogImageContainer.innerHTML = `<img src="${dogImage}" class="dogPhoto" alt="${selectedBreed}"><p class="name"><b>Breed:</b> ${selectedBreed}</p>`;
-                });
-        }
+function getDogImage() {
+    const breedsSelect = document.getElementById('breeds');
+    const selectedBreed = breedsSelect.value;
+// 4. Dinamiškai generuoti kreipimosi adresą ir gauti nuotrauką
+fetch(`https://dog.ceo/api/breed/${selectedBreed}/images/random`)
+    .then(response => response.json())
+    .then(response => {
+        const dogImageContainer = document.getElementById('dogImageContainer');
+        const dogImage = response.message;
+        // 5. // Atvaizduoti šuns nuotrauką ir parašyti jo veislę
+        dogImageContainer.innerHTML = `<img src="${dogImage}" class="dogPhoto" alt="${selectedBreed}"><p class="name"><b>Breed:</b> ${selectedBreed}</p>`;
+    });
+}
 </script>
 </body>
 </html>

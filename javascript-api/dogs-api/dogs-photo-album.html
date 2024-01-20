@@ -16,7 +16,6 @@
 <style>
     body {
         background-color: rgba(144, 101, 101, 0.369);
-        
     }
     .paw-container {
         display: flex;
@@ -100,7 +99,7 @@ fetch("https://dog.ceo/api/breeds/list/all")
     .then(response => { 
         console.log(response) //- matome visas sunu veisles objekte
         console.log(response.message) //- matome tik objekta  (be status success) su visom veislem kur yra masyvai (masyvu pavadinimai veisles o kas masyvo viduje tai subveisles)
-        parseAllBreeds(response.message) //-gauname visus masyvo pavadinimus (key) is objekto 
+        parseAllBreeds(response.message) //- gauname visus masyvo pavadinimus (key) is objekto 
     }); 
 
 //2. Atvaizduoti veisles select elemente per funkciją
@@ -140,37 +139,36 @@ function parseDogImages (breed) {  //breed- veisle pasuojama cia tam kad visos n
     fetch(dynamicURL)
     .then(response => response.json())
     .then (response => { console.log (response) //gavome to suns visas nuotraukas-photosArrey
-                        generateDynamicPhotos(response.message)}) //3.3
+    
+    generateDynamicPhotos(response.message)}) //3.3
 }
-    //3.1 Susikurti dinamini URL, tam kad kreiptis į šuns veislės nuotraukas
-    function generateDynamicDogPhotosURL (breed) {
-        let breedSplitted = breed.split(" "); //splitinam per tarpus i masyva breedSplitted
-        let breedSplittedReverse = breedSplitted.reverse(); //apkeisti vietom zodzius
-        let finalBreed = breedSplittedReverse.join('/'); // sujungti su / 
-        // let finalBreed =  breed.split(" ").reverse()join('/');
-        console.log(finalBreed)
+//3.1 Susikurti dinamini URL, tam kad kreiptis į šuns veislės nuotraukas
+function generateDynamicDogPhotosURL (breed) {
+    let breedSplitted = breed.split(" "); //splitinam per tarpus i masyva breedSplitted
+    let breedSplittedReverse = breedSplitted.reverse(); //apkeisti vietom zodzius
+    let finalBreed = breedSplittedReverse.join('/'); // sujungti su / 
+    // let finalBreed =  breed.split(" ").reverse()join('/');
+    console.log(finalBreed)
 
-        let fullUrl = `https://dog.ceo/api/breed/${finalBreed}/images`; //check on "reuquest headers -random " how url should look like
-        return fullUrl;
+    let fullUrl = `https://dog.ceo/api/breed/${finalBreed}/images`; //check on "reuquest headers -random " how url should look like
+    return fullUrl;
+}
+//3.3 Kai gauname atsakymą dinamiškai generuoti HTML kodą. Kad atvaizduoti gautas nuotraukas 3.2. (dinaminis kodas yra generuojamas pagal gauta nuotraukų masyvą)
+function generateDynamicPhotos(photosArrey) {
+    console.log(photosArrey) //pareina masyvas su visai foto url
+
+    //3.4 Sugeneruotą kodą atvaizduoti tame elemente, kuriame norime kad atsirastų nuotraukos.
+    let dynamicHTML = ''; 
+    //sukti cikla per visas nuotraukas
+    for (let photo of photosArrey){
+        dynamicHTML += `<div class="col-4 mx-auto"><img class="dogPhoto" src="${photo}" style="width:100%"></div>`
     }
-
-    //3.3 Kai gauname atsakymą dinamiškai generuoti HTML kodą. Kad atvaizduoti gautas nuotraukas 3.2. (dinaminis kodas yra generuojamas pagal gauta nuotraukų masyvą)
-    function generateDynamicPhotos(photosArrey) {
-        console.log(photosArrey) //pareina masyvas su visai foto url
-
-        //3.4 Sugeneruotą kodą atvaizduoti tame elemente, kuriame norime kad atsirastų nuotraukos.
-        let dynamicHTML = ''; 
-        //sukti cikla per visas nuotraukas
-        for (let photo of photosArrey){
-            dynamicHTML += `<div class="col-4 mx-auto"><img class="dogPhoto" src="${photo}" style="width:100%"></div>`
-        }
-        dynamicAlbumElement.innerHTML = dynamicHTML
-    }
-
-    //4. Pridėti event listeneri selectui, kuris keis nuotraukas pagal veislę.
-    breedSelectElement.addEventListener('change', () => {
-        parseDogImages (breedSelectElement.value);
-    })
+    dynamicAlbumElement.innerHTML = dynamicHTML
+}
+//4. Pridėti event listeneri selectui, kuris keis nuotraukas pagal veislę.
+breedSelectElement.addEventListener('change', () => {
+    parseDogImages (breedSelectElement.value);
+})
 </script>
 </body>
 </html>
