@@ -1,0 +1,74 @@
+<!-- Skaičiuotuvas: Vartotojui pateikiami du įvesties laukai, o tarp jų <select> elementas. Modeliuojamas skaičiuotuvo veikimas. <select> elemente atvaizduojami šie veiksmai:
+	+ (sudėtis)
+   	- (atimtis)
+   	* (daugyba)
+   	/ (dalyba)
+	xy (kėlimas laipsniu)
+ 
+Vartotojui paspaudus mygtuką „Apskaičiuoti“ programa turi apskaičiuoti vartotojo įvestą matematinį veiksmą bei išvesti rezultatą vartotojui. Jei veiksmas, pirmasis arba antrasis skaičius nėra įvestas – programa turi tai pranešti vartotojui. Taipogi galite atlikti validaciją dėl netinkamų matematinių veiksmų. (dalyba iš 0 ir t.t.)
+Pro tip: tam, kad nuskaityti select įvesties reikšmę, naudokite element.value;
+Rekomendacija: Tam, kad prisiminti HTML ir CSS, stilizuokite skaičiuotuvą; -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" href="calculator.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container text-center d-flex flex-column align-items-center">
+        <div>
+            <div><img src="calculator.png" class="mb-"></div>
+            <div><h1 class="my-3">Calculator</h1></div>
+        </div>
+        <div class="frame py-4 px-3">
+            <div class="d-flex justify-content-center my-3">
+                <input type="number" id="num1" placeholder="Number 1" required class="form-control rounded-5 px-3 mx-3">
+                <select name="operation" id="operation" class="form-select rounded-5 py-1 px-5" >
+                        <option selected disabled selected id="select">↓</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                        <option value="**">x²</option> 
+                </select>
+                <input type="number" id="num2" placeholder="Number 2" required class="form-control rounded-5 px-3 mx-3">
+            </div>
+            <div class="buttons">
+                <div class="d-flex justify-content-center my-2 gap-1"> 
+                    <button type="button" class="btn btn-light rounded-5 butn" onclick="appendNumberToActiveInput('1')">1</button>
+                    <button type="button" class="btn btn-light rounded-5 butn" onclick="appendNumberToActiveInput('2')">2</button>
+                    <button type="button" class="btn btn-light rounded-5 butn" onclick="appendNumberToActiveInput('3')">3</button>
+                    <button type="button" class="btn btn-light rounded-5 butn" onclick="appendNumberToActiveInput('4')">4</button>
+                    <button type="button" class="btn btn-light rounded-5 butn" onclick="appendNumberToActiveInput('5')">5</button>
+                </div>
+                <div class="d-flex justify-content-center my-2 gap-1"> 
+                    <button type="button" class="btn btn-light rounded-5 butn" onclick="appendNumberToActiveInput('6')">6</button>
+                    <button type="button" class="btn btn-light rounded-5 butn" onclick="appendNumberToActiveInput('7')">7</button>
+                    <button type="button" class="btn btn-light rounded-5 butn" onclick="appendNumberToActiveInput('8')">8</button>
+                </div>
+                <div class="text-center mb-1">
+                    <button type="button" class="btn btn-light rounded-5 butn" onclick="appendNumberToActiveInput('9')">9</button>
+                    <button type="button" class="btn btn-light rounded-5 butn" onclick="appendNumberToActiveInput('0')">0</button>
+                </div>
+                <button onclick="calculate()" type="button" class="calc btn btn-light rounded-5 butn my-3">Calculate</button>
+                <p class="result rounded-4 text-center my-4" id="result">Result will appear here</p>
+                <p class=" text-left info rounded-4 my-4" id="info">
+                    <b><u>How to use:</b></u><br>
+                    1. Insert <i><b>Number 1</b></i><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    2. Choose Math <b>Symbol ↓</b><br>
+                    3. Insert <i><b>Number 2</b></i><br>
+                    4. Press <i><b>Calculate</b></i>
+                </p>
+                <button onclick="again()" type="button" class="again btn btn-light rounded-5but">Try Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
