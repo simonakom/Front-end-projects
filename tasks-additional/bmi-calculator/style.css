@@ -1,0 +1,64 @@
+body {
+    background-color: rgba(0, 0, 0, 0.886);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px 20px 0px 20px;
+}
+.container {
+    background-color: rgba(208, 194, 194, 0.122);
+    width: 30rem;
+    box-shadow:  2px 5px rgba(244, 244, 244, 0.038);
+}
+.title {
+    color: #92d2ff;
+    font-size: 30px;
+}
+img {
+    width: 30%;
+}
+hr {
+    border: 1px solid grey; 
+    margin: 30px 0;
+}
+.result { 
+    display: none;
+    background-color: rgba(205, 191, 191, 0.18); 
+    color:  #ffffff;
+    box-shadow:  2px 5pxrgba(205, 191, 191, 0.625); 
+    border-radius: 20px;
+    margin: 10px 50px 10px 50px;
+    padding: 10px 20px 10px 20px;
+}
+.reset {
+    display: none;
+    margin: auto;
+}
+.calc {
+    margin: auto;
+}
+.buton {
+    padding: 10px 10px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);       
+    background-color: rgba(192, 174, 179, 0.615);
+}
+.buton:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: rgba(161, 83, 104, 0.615);
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+} 
+.buton:active {
+    background-color: rgba(161, 83, 104, 0.615)  !important;
+    color: rgb(255, 255, 255)  !important;
+}
+.buton:active
+    .buton:focus {
+    background-color: #9c4ea096 !important; /* Darker green color when active or clicked */
+    color: white !important;
+}
