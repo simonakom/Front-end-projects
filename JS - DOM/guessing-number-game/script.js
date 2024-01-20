@@ -4,9 +4,7 @@ function rand(min, max) {
 
 let atsitiktinisSkaičius = rand(1, 20),
 	spejimuSkaicius = 6;
-
 console.log(atsitiktinisSkaičius);
-
 
 function guessNumber() {
 	let inputElement = document.querySelector("#guess");
@@ -18,7 +16,6 @@ function guessNumber() {
 		resultParagraph.innerText = `Please enter a guess 🔮`;
         return;
     }
-
 	// run out of guesses
 	if (spejimuSkaicius === 0) {
 		resultParagraph.innerText = `The number of guesses has run out, please try again! 😓`;
@@ -28,7 +25,6 @@ function guessNumber() {
 		document.getElementById("again2").style.display = "block";
 		return;
 	}
-
 	// comments
 	spejimuSkaicius--;
 	guessCountElement.innerText = spejimuSkaicius;
@@ -48,7 +44,6 @@ function guessNumber() {
 		document.getElementById("again2").style.display = "block";
 	}
 }
-
 function refreshPage() {
     location.reload();
 }

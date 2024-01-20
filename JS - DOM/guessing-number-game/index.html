@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess Number</title>
+  <link rel="icon" href="./pictures/help.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container my-5">
+        <div><img class="my-5" src="./pictures/logo.png"></div>
+        <p class="title">A number between <b>1</b> and <b>20</b> has been generated.  Enter your guess.<br> If your guess was lower or higher than the number generated, we will notify you.<br><br> You have a total of <b id="spejimu-skaicius">6</b> guesses. Good luck!</p> 
+        <div class="align my-5">
+            <input id="guess" class="form-control py-3 px-4 rounded-5" type="number" placeholder="Type your number here..." required/>
+        </div>
+        <button type="button" onclick="guessNumber()" class="again btn btn-primary py-3 px-5 rounded-5" id="again">Check</button>
+        <p class="my-4" id="rez"></p>
+        <button type="button" style="display: none" onclick="refreshPage()" class="again2 btn btn-primary py-3 my-4 px-5 rounded-5" id="again2">Play Again!</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

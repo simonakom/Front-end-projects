@@ -1,0 +1,106 @@
+body {
+    background-color: rgba(211, 211, 222, 0.305);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    align-items: center;
+    text-align: center;
+    width: 70%;
+}
+.form-control {
+    align-items: center;
+    justify-content: center;
+    box-shadow:  2px 5px rgba(130, 100, 194, 0.2);
+}
+ /* .selected {
+    background-color: #cf7a847f;
+    color:  rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 20px 20px 20px 20px;
+    margin-left: 250px;
+    margin-right: 250px
+} */
+.align {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+img {
+    width: 40%;
+    padding-right: 20px;
+}
+p {
+    color: rgba(47, 37, 113, 0.974);
+}
+.again2 {
+    margin: auto;
+}
+.again {
+    padding: 10px 10px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background-color: #4a0099a9;
+    box-shadow:  2px 5px rgba(130, 100, 194, 0.2);
+}
+.again:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: #4a0099c6;
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+} 
+.again:active {
+    background-color: rgba(92, 29, 159, 0.804)  !important;
+}
+.again:active
+.again:focus {
+    background-color: #9c4ea096 !important; /* Darker green color when active or clicked */
+    color: white !important;
+}
+.again2 {
+    padding: 10px 10px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background-color: #4a0099a9;
+    box-shadow:  2px 5px rgba(130, 100, 194, 0.2);
+}
+.again2:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: #4a0099c6;
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+} 
+.again2:active {
+    background-color: rgba(92, 29, 159, 0.804)  !important;
+}
+.again2:active
+.again2:focus {
+    background-color: #9c4ea096 !important; /* Darker green color when active or clicked */
+    color: white !important;
+}
+@media screen and (max-width: 992px) {
+    .align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    img {
+        width: 60%;
+        padding-right: 20px;
+    }
+}
+@media screen and (max-width: 400px) {
+    img {
+        width: 70%;
+        padding-right: 20px;
+    }
+}
