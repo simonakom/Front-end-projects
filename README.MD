@@ -28,7 +28,7 @@ https://simonakom.github.io/front-end-projects/
 
 <h4>• "Travlog" Landing page sample - <a href="https://simonakom.github.io/front-end-projects/8-travlog-landing-page/travlog.html">View</a><h4>
 
-<h4>• "Collab" Landing page sample - <a href="https://simonakom.github.io/front-end-projects/additional-tasks/collab-landing-page/collab.html">View</a><h4>
+<h4>• "Collab" Landing page sample - <a href="https://simonakom.github.io/front-end-projects/tasks-additional/collab-landing-page/collab.html">View</a><h4>
 
 
 <h4 style="font-size: 20px;">💡 Javascript<h4> 
