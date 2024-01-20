@@ -1,0 +1,116 @@
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+}
+.title {
+    color: #465d7a;
+    font-size: 40px;
+    margin-bottom: 3%;
+    margin-top: 2%;
+}
+.logo {
+    height: 15vh;   
+    margin-top: 50%;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.product {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+.product-image {
+    width: 20%;
+    padding-bottom: 2%;
+}
+.product-img {
+    width: 100%;
+}
+.product-details {
+    width: 50%;
+    margin-top:2%
+}
+.product-price {
+    width: 20%;
+    margin-top:2%
+}
+.stars {
+    color: rgb(255, 208, 0);
+}
+.product-title {
+    margin: 0;
+    font-size: small;
+    color: rgb(103, 161, 255);
+}
+.product-description {
+    margin: 1rem 0;
+    font-size: small;
+}
+.price {
+    color: rgb(255, 125, 102);
+}
+.older-price {
+    color: #888888;
+    text-decoration: line-through;
+    margin-left: 0.5rem;
+}
+.add-to-cart {
+    background-color: #f1c13eed;
+    color: rgb(73, 71, 71);
+    border: none;
+    padding: 0.5rem 1.25rem;
+    margin-top: 1rem;
+    border-radius: 3px;
+    width: 100%;
+    cursor: pointer;
+}
+.add-to-cart:hover {
+    background-color: rgb(230, 190, 10);
+}
+.discount {
+    background-color: rgba(228, 91, 91, 0.895);
+    color: white;
+    padding: 2px 4px;
+    font-size: small;
+    position: relative;
+    top: 21px;
+    left: 159px;
+}
+
+@media screen and (max-width: 910px) {  
+.discount {
+    background-color: rgba(228, 91, 91, 0.895);
+    color: white;
+    margin-top: 12px;
+    padding: 3px 4px;
+    font-size: small;
+    position: initial;
+}  
+.product {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;            
+}
+.product-image {
+    width: 30%;
+    padding-bottom: 2%;
+}
+    .add-to-cart {   
+    width: max-content;
+    margin-left: -20px;
+    }
+}
+@media screen and (max-width: 600px) {  
+    .product-image {
+    width: 40%;
+    padding-bottom: 2%;
+    }
+}  
