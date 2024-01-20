@@ -16,7 +16,6 @@ function rand(min, max) {
 }
 
 // 1. Sukurti funkciją, kuri generuoja x kiekį atsitiktinių skaičiu nuo min iki max reikšmės
-
 const generateRandomNumbersArray = (length, min, max) => {
     const arr = [];
     for(let i = 0; i<length; i++){
@@ -26,7 +25,6 @@ return arr;
 }
 
 // 2. Sukurti masyvą iš 100 elementų, sudarytą iš String'ų, kurių ilgis yra 4 simboliai;
-
 const generateString = (length) => {
     let str= "";
     for (let i = 0; i<length; i++){
@@ -43,22 +41,18 @@ for (let i = 0; i<100; i++){
 console.log(`2. Array with 100 strings(length-4):\n ${stringArray}`)
  
 // 3. Išrūšiuoti String'ų masyvą didėjančia tvarka;
-
 stringArray.sort()
 console.log(`3. Ascending order\n ${stringArray}`)
 
 // 4. Išrūšiuoti tą patį masyvą mažėjančia tvarka;
-
 stringArray.sort().reverse();
 console.log(`4. Descending order\n ${stringArray}`)  
 
 // 5. Sukurti masyvą iš 100 elementų, sudarytą iš skaičių nuo -100 iki 200;
- 
 const numbersArray = generateRandomNumbersArray(100, -100, 200);
 console.log(`5 Array with 100 elements(-100;200):\n ${numbersArray}`)  
 
 // 6. Patikrinti ar skaičius 68 egzistuoja masyve. Ar egzistuoja skaičius - praneškite pasinaudodami console.log()
-
 if(numbersArray.includes(68)){
     console.log(`6.\n Number 68 exists in array "numbersArray`)
 } else {
@@ -95,7 +89,6 @@ console.log(`8.Descending order\n ${numbersArray}`);
 console.log(`9. Min array value:\n ${min}`);
 console.log(`9. Max array value:\n ${max}`);
 
-
 // let min = Math.min(...numbersArray);
 // let max = Math.max(...numbersArray);
 // console.log(`9. Min array value:\n ${min}`);
@@ -103,7 +96,6 @@ console.log(`9. Max array value:\n ${max}`);
 
 
 // 10. Apskaičiuoti visų skaičių vidurkį;
-
 let total = 0;
 for (let i = 0; i < numbersArray.length; i++) {
     total += numbersArray[i];
@@ -128,11 +120,9 @@ console.log(`-------------------------------------------------------------------
 10. Atraskite, kurioje masyvo pozicijoje randasi žodis 'XMAS'
 */
 
-
 // 1.Sukurti funkciją, kuri generuoja x kiekį atsitiktinių string'ų, sudarytą iš strLength simbolių. Generavimas nuo A iki Z. Sukurti masyvą iš 100 elementų, sudarytą iš String'ų, kurių ilgis yra 4 simboliai;
 
 // generates random string of a specified length. It iterates length times, and in each iteration, it adds a random uppercase letter to the strngs variable.
-
 const randomString = (length) => {
     let str = "";
     for (let i = 0; i < length; i++) {
@@ -151,7 +141,6 @@ console.log(`1. Array with 100 strings(length-4):\n %c${arrayForString}`, 'color
 
 
 // 2. Patikrinti, ar String masyve egzistuoja reikšmių, prasidedančių bei užsibaigiančių raide A. Jei taip - pranešti kokia šio elemento pozicija masyve bei  reikšmė;
-
 let matchingElementFound = false;
 
 for (let value of arrayForString){
@@ -167,7 +156,6 @@ if (!matchingElementFound) {
     }
 
 // 3. Išfiltruokite visas masyvo reikšmes, pasidedančias raidėmis: 'X', 'M', 'K'
-
 const filteredValueXmk = arrayForString.filter(value => value.startsWith('X') || value.startsWith('M') || value.startsWith('K'));
 
 if (filteredValueXmk.length > 0) {
@@ -185,7 +173,6 @@ if (filteredValueXmk.length > 0) {
 
 
 // 4. Išfiltruokite visas masyvo reikšmes, kurių viduriniai du simboliai yra vienodi. Sukurkite išfiltruotų reikšmių masyvą;
-
 const filteredValueMid = arrayForString.filter((value) => {
     return value[1] === value[2];
 });
@@ -197,7 +184,6 @@ if (filteredValueMid.length > 0) {
 }
 
 // 5. Jei išfiltruotų reikšmių masyve reikšmių mažiau nei 3 - rikiuoti didėjančia, kitu atveju - rikiuoti mažėjančia tvarka.
-
 if (filteredValueMid.length < 3) {
     filteredValueMid.sort();
 } else {
@@ -220,7 +206,6 @@ for (let value of filteredValueMid){
 console.log(`6. New letter added  to the end of each string of array from (4.)\n %c${randLetter}`, 'color: green');
 
 // 7. Kiekvieną stringų masyvo elementų reikšmę išrikiuoti pagal abėcėlę didėjančia tvarka
-
 let sortAlfb = filteredValueMid.map(value => value.split('').sort().join(''))
 
 console.log(`7. Sort each string in the array from (4.) alphabetically:\n %c${sortAlfb}`, 'color: green');
@@ -228,7 +213,6 @@ console.log(`7. Sort array from (4.) alphabetically:\n %c${sortAlfb.sort()}`, 'c
 
 
 // 8. Sukurkite naują masyvą atsitiktinėms Sring'ų reikšmėms generuoti. Sugeneruokite atsitiktines String reikšmes iš 4 simbolių tol, kol jame bus žodis XMAS; Išveskite, kiek kartų reikėjo generuoti reikšmes kol buvo gautas toks žodis.
-
 let attempts = 0
 let arrayXmas = []
 
@@ -251,7 +235,6 @@ console.log(`Values were generated %c${attempts} times until word "XMAS"`, 'colo
 
 
 // 9. Išrikiuokite masyvą priešinga nei abecelės tvarka
-
 arrayXmas.sort().reverse();
 
 console.log("9. Sorted values from (8.) in reverse alphabetical order:");
@@ -259,7 +242,6 @@ console.log(arrayXmas)
 
 
 // 10. Atraskite, kurioje masyvo pozicijoje randasi žodis 'XMAS'
-
 const indexOfXmas = arrayXmas.indexOf('XMAS');
 
 if (indexOfXmas !== -1) {

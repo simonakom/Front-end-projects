@@ -2,20 +2,19 @@ function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
 // 4 Task
 // Sukurkite atsitiktinio stringo iš 15 lotyniškų mažųjų raidžių generavimo algoritmą. Pasinaudokite String.fromCharCode(skaicius) funkcija, kad sugeneruoti atsitiktinę raidę. 
 
-    let randomString = '';
+let randomString = '';
 
-    for (let i = 0; i < 15; i++) {
-        let letters = rand(97,122);
-        // Konvertuojama skaičių į raidę:
-        randomString += String.fromCharCode(letters);
-    }
+for (let i = 0; i < 15; i++) {
+    let letters = rand(97,122);
+    // Konvertuojama skaičių į raidę:
+    randomString += String.fromCharCode(letters);
+}
 
-    console.log(randomString);
-    // console.log(String.fromCharCode(randomString)); - nekonvertuota i string 
+console.log(randomString);
+// console.log(String.fromCharCode(randomString)); - nekonvertuota i string 
 
 
 // 5 Task
@@ -33,7 +32,6 @@ for (let i = 0; i < 100; i++) {
 }
 console.log(randomArrey);
 
-
 // 6 Task
 //  Pasinaudojant document.write() funkcija išveskite lyginius 5 uždavinio masyvo skaičius su spalva - žalia, o nelyginius su spalva - raudona;
 
@@ -47,7 +45,6 @@ for (let i = 0; i < randomArrey.length; i++) {
 
 // 7 Task
 // Sugeneruokite 80 atsitiktinių skaičių nuo 8 iki 32. Apskaičiuokite visų šių skaičių vidurkį.
-
 
 let numbers = [];
 let sum = 0;

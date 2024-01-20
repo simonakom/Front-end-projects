@@ -1,10 +1,9 @@
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-//// with functions
 // 3Task: iš f masyvo ištrinkite elementus kurie:
 
+//----------------------------------with-functions--------------------------------
 function generateArrayOfRandomNumbers(min,max, countOfElements) {
 	let array = [];
 	for (let i = 0; i < countOfElements  ; i++) {
@@ -12,7 +11,6 @@ function generateArrayOfRandomNumbers(min,max, countOfElements) {
 	}
 	return array;
 }
-
 
 function getNextElement (array, index ){
   if (array.length - 1 === index)
@@ -30,7 +28,6 @@ function getNextElement (array, index ){
 // }
 // return nextElement;
 // }
-
 
 // a. Yra lyginiai;
 let third = generateArrayOfRandomNumbers(0,10,20);
@@ -137,11 +134,9 @@ for (let i = 0; i < third.length; i++) {
 console.log(third);
 
 
+//----------------------------------without-functions--------------------------------
 
-
-
-// // No functions
-// // 3Task: iš f masyvo ištrinkite elementus kurie:
+//3Task: iš f masyvo ištrinkite elementus kurie:
 
 // let third = [];
 // for(let i = 0; i < 20; i++) {
