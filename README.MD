@@ -30,9 +30,9 @@
 
 <h4 style="font-size: 20px;">💡 Javascript<h4> 
 
-<h4>• "Counter App" sample - <a href="https://simonakom.github.io/front-end-projects/">View</a><h4>
+<h4>• "Counter App" sample - <a href="https://simonakom.github.io/front-end-projects/tasks-additional/number-counter/index.html">View</a><h4>
 
-<h4>• "Vowel Counter App" sample - <a href="https://simonakom.github.io/front-end-projects/">View</a><h4>
+<h4>• "Vowel Counter App" sample - <a href="https://simonakom.github.io/front-end-projects/tasks-additional/vocals-counter/index.html">View</a><h4>
 
 <h4>• "Calculator" sample - <a href="https://simonakom.github.io/front-end-projects/javascript-dom/calculator/calculator.html">View</a><h4>
 
@@ -42,13 +42,13 @@
 
 <h4>• "Guess the Number" sample - <a href="https://simonakom.github.io/front-end-projects/javascript-dom/guessing-number-game/index.html">View</a><h4>
 
-<h4>• "BMI Calculator" sample - <a href="https://simonakom.github.io/front-end-projects/">View</a><h4>
+<h4>• "BMI Calculator" sample - <a href="https://simonakom.github.io/front-end-projects/tasks-additional/bmi-calculator/index.html">View</a><h4>
 
-<h4>• "Palindrome app" sample - <a href="https://simonakom.github.io/front-end-projects/">View</a><h4>
+<h4>• "Palindrome app" sample - <a href="https://simonakom.github.io/front-end-projects/tasks-additional/palindrome-app/index.html">View</a><h4>
 
-<h4>• "Password generator" sample - <a href="https://simonakom.github.io/front-end-projects/">View</a><h4>
+<h4>• "Password generator" sample - <a href="https://simonakom.github.io/front-end-projects/tasks-additional/passwrd-generator/index.html">View</a><h4>
 
-<h4>• "Tip Counter" sample - <a href="https://simonakom.github.io/front-end-projects/">View</a><h4>
+<h4>• "Tip Counter" sample - <a href="https://simonakom.github.io/front-end-projects/tasks-additional/tip-counter/index.html">View</a><h4>
 
 <h4 style="font-size: 20px;">📁 Javascript CRUD <h4> 
 
