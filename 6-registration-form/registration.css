@@ -19,7 +19,7 @@ body {
 }
 /* Left side */
 .left {
-    background-image: url(Pictures/background.png);
+    background-image: url(./pictures/background.png);
     background-position: center center ;
      /* flex-grow,flex-shring,flex basis - to center */
     flex: 0 1 500px;
