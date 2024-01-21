@@ -1,7 +1,7 @@
 
 # Front-end-projects
 
-*Updated versions of these projects can be found in separate repositories for each project.
+*These projects, originally created in this repository, have been moved to separate repositories to facilitate their separation and more detailed description. Check updated versions of projects in their individual repositories!
 
 <h4 style="font-size: 20px;"> HTML/CSS<h4> 
 
