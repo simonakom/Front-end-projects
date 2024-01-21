@@ -1,28 +1,25 @@
-
-
-/* Navbar (Mantvydas */
-
+/* header */
 nav {
-    height: 90px;
+    height: 87px;
     background-color: black;
     align-items: center;
   }
-  .ps-2 {
-    margin: 0;
+  .line {
     border-left: 2px solid white;
+    margin-top: 2px;
   }  
   .img {
     font-size: 24px;
     color: white;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.5;
     transition: all;
     transition-duration: 0.2s;
   }
   .text {
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 300;
     color: white;
     text-decoration: none;
   }
@@ -39,33 +36,30 @@ nav {
   .img:visited {
     color: white;
   }
-  
   #button {
-    font-weight: 400;
-    background-color: black;
+    font-weight: 300;
+    background-color:#191a1b;
     color: white;
-    border-radius: 10px;
+    border-radius: 7px;
     border: 1px solid white;
     width: 230px;
     font-size: 24px;
-    height: 49px;
+    height: 50px;
     text-align: center;
   }
-  
   #button1 {
-    font-weight: 400;
-    width: 139px;
-    height: 49px;
-    font-size: 24px;
-    text-align: center;
-    color: white;
-    border-radius: 10px;
-    border: none;
+    font-weight: 300;
     background-color: #4c5fd5;
+    color: white;
+    border-radius: 7px;
+    width: 139px;
+    font-size: 24px;
+    height: 50px;
+    text-align: center;
+    border: none;
     transition: all;
     transition-duration: 0.2s;
   }
-  
   #button1:hover {
     background-color: white;
     color: black;
@@ -74,24 +68,28 @@ nav {
     width: 40px;
     height: 35px;
   }
-
-/* 1 section (Ausra */
-
+  .right-side{
+    text-align: center;
+    align-items: center;
+    height: 6vh;
+    width: 29vw;
+  }
+  /* Search section  */
 .searchSection{
     padding-top: 80px;
     padding-bottom: 115px;
     background-color: #DADBF1;
     color: black;
     overflow: hidden;
-}
+  }
 .searchText {
     font-family: 'GT America Standard', sans-serif;
     font-size: 80px;
     letter-spacing: -4px;
-    font-weight: 400;
+    font-weight: 350;
     margin: 0 0 1rem;
     text-align: center;
-}
+  }
 .searchBox{
    line-height: 32px;
    color: black;
@@ -101,102 +99,85 @@ nav {
    width: 720px;
    padding: 1rem 1rem;
    box-shadow: 0 9px 14px 0 rgba(0, 0, 0, 0.1);
-   
-}
-/* input:hover
-{
-border: 1px solid #4C5FD5;
-} */
+  }
 .searchInput{
    text-align: center;
    box-sizing: border-box;
    border-radius: 4px;
    position: relative;
-}
+  }
 input::placeholder {
     font-size: 20px;
     font-family: inherit;
-    
-}
+    color: #a8a8a8;
+  }
 .arrowR {
    position: absolute;
    right: 375px;
    bottom: 15px;
    transition: all .3s;
-}
+  }
 .arrowR:hover
 {fill: #4C5FD5;}
-
 .searchInput:hover input {
     border: 1px solid #4C5FD5;
-}
+  }
 .searchInput:hover svg 
-{
+  {
     fill: #4C5FD5;
-}
-
-
-/* main content (Kestutis) */
-
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
+  }
+/* Content section */
 .main {
     width: 80%;
     margin: auto;
+    margin-top: 8rem;
   }
-  
-  .row {
-    width: 100%;
+.row {
+    width: 95%;
   }
-  
-  .topic {
-    display: flex;
-    justify-content: center;
-    padding: 3rem;
-  }
-  
-  .image img {
-    width: 88px;
-    margin-right: 30px;
-  }
-  
-  .topic-title {
-    font-size: 30px;
-    line-height: 30px;
-    font-weight: 700;
-  }
-  
-  .topic-text {
-    margin: 20px 0;
-    font-size: 26px;
-    line-height: 34px;
-  }
-  
-  .topic a {
-    color: #4c5fd5;
-    font-size: 22px;
-    line-height: 20px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-decoration: none;
-  }
-  
-  a:visited {
-    color: #4c5fd5;
-  }
-  
-  a:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-
-
+.topic {
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+}
+.image img {
+  width: 88px;
+  margin-right: 30px;
+}
+.topic-title {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+}
+.topic-text {
+  margin: 16px 0;
+  font-size: 25px;
+  line-height: 34px;
+  font-weight: 300;
+  padding-bottom: 25px;
+}
+.topic a {
+  color: #4c5fd5;
+  font-size: 22px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+a:visited {
+  color: #4c5fd5;
+}
+a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.ending {
+margin-bottom: 100px;
+}
 /* footer */
-
+.container {
+height: 340px;
+}
 footer {
    background-color: black;
    color: white;
@@ -205,13 +186,19 @@ footer {
    font-weight: 400;
    padding-bottom: 60px;
 }
+.row {
+  margin-left: 8px;
+}
 footer h3 {
     font-size: 24px;
     line-height: 28px;
-    font-weight: bold;
     padding-bottom: 10px;
+    font-weight: 600;
 }
-
+footer a{
+  line-height: 25px;
+  font-weight: 300;
+}
 footer .footer-links li,
 footer .footer-links a {
     color: white;
@@ -228,25 +215,26 @@ footer .footer-links ul {
 .footer-logo img {
     width: 30px;
 }
-
 footer .copyright {
     padding-top: 15%;
-    padding-left: 5%;
-    font-size: 20px;
-    line-height: 22px;
-    }
+    padding-left: 15%; 
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 300;
+    width: 28vw;
+}
+.copyright img {
+  width: 44px;
+}
 p {
     margin: 0;
 }
-
 p span {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     line-height: 30px;
 }
-
-
-
+/* help button */
 .helpButton {
     background-color: #4C5FD5;
     border: none;
@@ -256,13 +244,11 @@ p span {
     bottom: 20px;
     right: 20px;
     padding: 10px 0;
-
 }
 .helpButton:hover {
     background-color: #4C5FD5; 
 }
 .helpButton:focus {
-    /* background-color: #8fbc30;  */
     border: 3px solid #aab2e1;
 }
 svg {
