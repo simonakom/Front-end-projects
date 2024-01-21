@@ -1,0 +1,86 @@
+body {
+    background-color: black;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    background-color: rgb(36, 37, 37);
+    border-radius: 30px;
+    width: 70%;
+}
+img {
+    width: 13%;
+    max-width: 100%
+}
+section {
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    font-size: 2.9rem;
+    text-align: center;
+    padding: 1rem;
+    color: rgb(206, 231, 252);
+    text-shadow: 1px 1px 5px rgba(143, 136, 143, 0.911); 
+}
+.accordion {
+    background-color: rgba(162, 165, 168, 0.738);
+    cursor: pointer;
+    padding: 20px 30px;
+    width: 90%;
+    border-bottom: 2px solid rgba(92, 88, 203, 0.732);
+    transition: all .4s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 16px;
+    color: rgb(40, 40, 58);
+    text-shadow: 1px 1px 10px rgba(108, 95, 125, 0.911); 
+    font-weight: 500;
+
+}
+.active, .accordion:hover {
+    background-color: rgba(149, 164, 208, 0.631);
+    color: aliceblue;
+}
+.accordion::after {
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    content: "\f067";
+}
+.active::after {
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    content: "\f068";
+}
+/* .active {
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    content: "\f068";
+} */
+.description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    width: 80%;
+    color: rgb(235, 237, 238);
+    text-align: justify;
+    text-shadow: 1px 0px 10px rgba(50, 42, 50, 0.911); 
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 750px) {
+    img {
+        width: 23%;
+    }
+}
+@media screen and (max-width: 480px) {
+    img {
+        width: 33%;
+    }
+}
