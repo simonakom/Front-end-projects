@@ -3,7 +3,7 @@
 
 *These projects, originally created in this repository, have been moved to separate repositories to facilitate their separation and more detailed description. Check updated versions of projects in their individual repositories!
 
-🔹<h4 style="font-size: 20px;text-decoration: underline;">HTML/CSS<h4> 
+<h4 style="font-size: 20px;text-decoration: underline;">🔹 HTML/CSS<h4> 
 
 <h4>• Wikipedia page sample - <a href="https://simonakom.github.io/front-end-projects/1-wikipedia-page/richard-gere.html" style="font-size:small;">View</a><h4>
 
@@ -19,7 +19,7 @@
 
 <h4>• SingIn page sample - <a href="https://simonakom.github.io/front-end-projects/6-registration-form/registration.html" style="font-size:small;">View</a><h4>
 
-🔹<h4 style="font-size: 20px;text-decoration: underline;"> Bootstrap<h4> 
+<h4 style="font-size: 20px;text-decoration: underline;">🔹 Bootstrap<h4> 
 
 <h4>• 2048 Game sample - <a href="https://simonakom.github.io/front-end-projects/7-bootstrap/game2048/game-2048.html">View</a><h4>
 
@@ -29,7 +29,8 @@
 
 <h4>• "Collab" Landing page sample - <a href="https://simonakom.github.io/front-end-projects/tasks-additional/collab-landing-page/collab.html">View</a><h4>
 
-🔹<h4 style="font-size: 20px;text-decoration: underline;"> Javascript<h4> 
+
+<h4 style="font-size: 20px;text-decoration: underline;">🔹 Javascript<h4> 
 
 <h4>• "Counter App" sample - <a href="https://simonakom.github.io/front-end-projects/tasks-additional/number-counter/index.html">View</a><h4>
 
@@ -51,7 +52,7 @@
 
 <h4>• "Tip Counter" sample - <a href="https://simonakom.github.io/front-end-projects/tasks-additional/tip-counter/index.html">View</a><h4>
 
-🔹<h4 style="font-size: 20px; text-decoration: underline;"> Javascript CRUD <h4> 
+<h4 style="font-size: 20px; text-decoration: underline;">🔹 Javascript CRUD <h4> 
 
 <h4>• "Catalog of Products" DOM Manipulation sample - <a href="https://simonakom.github.io/front-end-projects/javascript-crud/dom-manipulation/products.html">View</a><h4>
 
@@ -61,7 +62,8 @@
 
 <h4>• CRUD App sample - <a href="https://simonakom.github.io/front-end-projects/javascript-crud/data-table-app/admin.html">View</a><h4>
 
-🔹<h4 style="font-size: 20px;text-decoration: underline;"> Javascript API <h4> 
+
+<h4 style="font-size: 20px;text-decoration: underline;">🔹 Javascript API <h4> 
 
 <h4>• Dogs API sample - <a href="https://simonakom.github.io/front-end-projects/javascript-api/dogs-api/dogs-photo-album.html">View</a><h4>
 
